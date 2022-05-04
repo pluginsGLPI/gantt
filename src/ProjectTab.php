@@ -38,4 +38,20 @@ class ProjectTab extends \CommonGLPI
             'id' => $project_id,
         ]);
     }
+
+    static function menuLinks(\CommonGLPI $item): array {
+        if ($item instanceof \Project) {
+            $label = '
+                <i class="fas fa-stream" title="' . __('Global GANTT', 'gantt') . '"></i>
+                <span class="d-none d-xxl-block">
+                ' . __('Global GANTT', 'gantt') . '
+                </span>
+            ';
+            return [
+                $label => \Plugin::getPhpDir('gantt', false) . '/front/global.php',
+            ];
+        }
+
+        return [];
+    }
 }
