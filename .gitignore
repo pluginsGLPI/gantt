@@ -1,0 +1,6 @@
+dist/
+vendor/
+.gh_token
+composer.lock
+*.min.*
+
