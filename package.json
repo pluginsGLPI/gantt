@@ -1,7 +1,7 @@
 {
   "name": "glpi-gantt",
   "version": "1.0.0",
-  "description": "Add your plugin description here.",
+  "description": "Add gantt view to GLPI projects.",
   "main": "index.js",
   "scripts": {
     "build": "webpack --config webpack.config.js",
