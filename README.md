@@ -1,6 +1,6 @@
 ![icon](gantt.png)
 
-# Gantt GLPI plugin
+# GLPI Gantt plugin
 
 This GLPI plugin add Gantt view to GLPI projects.
 The feature was removed from core from 10.0.1 version due to license incompatibility.
