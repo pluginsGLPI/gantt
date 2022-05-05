@@ -1,24 +1,14 @@
 {
-  "name": "glpi-gantt",
-  "version": "1.0.0",
+  "name": "@glpi-plugins/glpi-gantt",
   "description": "Add gantt view to GLPI projects.",
-  "main": "index.js",
+  "private": true,
+  "license": "GPL-2.0-or-later",
+  "dependencies": {
+    "dhtmlx-gantt": "^7.1.11"
+  },
   "scripts": {
     "build": "webpack --config webpack.config.js",
     "postinstall": "npm run-script build"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/pluginsGLPI/gantt.git"
-  },
-  "author": "",
-  "license": "GPL-2.0-or-later",
-  "bugs": {
-    "url": "https://github.com/pluginsGLPI/gantt/issues"
-  },
-  "homepage": "https://github.com/pluginsGLPI/gantt#readme",
-  "dependencies": {
-    "dhtmlx-gantt": "^7.1.11"
   },
   "devDependencies": {
     "clean-webpack-plugin": "^4.0.0",
