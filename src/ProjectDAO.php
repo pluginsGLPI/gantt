@@ -52,7 +52,7 @@ class ProjectDAO
             'priority' => 3,  //medium
             'projectstates_id' => 1,
             'users_id' => \Session::getLoginUserID(),
-            'show_on_global_view' => 1
+            'show_on_global_gantt' => 1
         ];
         $proj = new \Project();
         $proj->add($input);
