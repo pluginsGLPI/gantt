@@ -28,7 +28,7 @@
  * -------------------------------------------------------------------------
  */
 
-define('PLUGIN_GANTT_VERSION', '0.1.0');
+define('PLUGIN_GANTT_VERSION', '1.0.0');
 
 // Minimal GLPI version, inclusive
 define("PLUGIN_GANTT_MIN_GLPI_VERSION", "10.0.1");
