@@ -35,7 +35,20 @@ var GlpiGantt = (function() {
     var plugin_path = CFG_GLPI.root_doc + '/' + (GLPI_PLUGINS_PATH['gantt'] ?? "");
     var url = plugin_path +  '/ajax/gantt.php';
     var parseDateFormat = "%Y-%m-%d %H:%i";
-    var uiDateFormat = CFG_GLPI.gantt_date_format;
+    var uiDateFormat = null;
+    switch (CFG_GLPI.date_format) {
+        case 1:
+            uiDateFormat = '%d-%m-%Y';
+            break;
+        case 2:
+            uiDateFormat = '%m-%d-%Y';
+            break;
+        case 0:
+        default:
+            uiDateFormat = '%Y-%m-%d';
+            break;
+    }
+
     var formatFunc = gantt.date.date_to_str(parseDateFormat);
 
     return {
