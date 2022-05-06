@@ -3,6 +3,5 @@ node_modules/
 public/build/
 vendor/
 .gh_token
-composer.lock
 *.min.*
 
