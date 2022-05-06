@@ -95,34 +95,3 @@ function plugin_version_gantt()
         ]
     ];
 }
-
-/**
- * Check pre-requisites before install
- * OPTIONNAL, but recommanded
- *
- * @return boolean
- */
-function plugin_gantt_check_prerequisites()
-{
-
-    return true;
-}
-
-/**
- * Check configuration process
- *
- * @param boolean $verbose Whether to display message on failure. Defaults to false
- *
- * @return boolean
- */
-function plugin_gantt_check_config($verbose = false)
-{
-    if (true) { // Your configuration check
-        return true;
-    }
-
-    if ($verbose) {
-        echo __('Installed / not configured', 'gantt');
-    }
-    return false;
-}
