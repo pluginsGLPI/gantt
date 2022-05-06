@@ -1,0 +1,220 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# Cédric Anne, 2022
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-05-06 15:07+0000\n"
+"PO-Revision-Date: 2022-05-06 13:53+0000\n"
+"Last-Translator: Cédric Anne, 2022\n"
+"Language-Team: Japanese (Japan) (https://www.transifex.com/teclib/teams/28042/ja_JP/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ja_JP\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: js/gantt-helper.js:395
+msgid "Cancel"
+msgstr "中止"
+
+#: js/gantt-helper.js:156
+msgid "Comment:"
+msgstr "コメント :"
+
+#: js/gantt-helper.js:746
+msgid "Could not create project: "
+msgstr "プロジェクトを作成できませんでした :"
+
+#: js/gantt-helper.js:607
+msgid "Could not create task: "
+msgstr "タスクを作成できませんでした :"
+
+#: js/gantt-helper.js:774
+#, javascript-format
+msgid "Could not update Project[%s]: "
+msgstr "%s プロジェクトを更新できませんでした :"
+
+#: js/gantt-helper.js:641 js/gantt-helper.js:668
+#, javascript-format
+msgid "Could not update Task[%s]: "
+msgstr "%s タスクを更新できませんでした :"
+
+#: templates/view.html.twig
+msgid "Days"
+msgstr "日"
+
+#: js/gantt-helper.js:396
+msgid "Delete"
+msgstr "削除"
+
+#: js/gantt-helper.js:153
+msgid "Description:"
+msgstr "詳細 :"
+
+#: js/gantt-helper.js:165
+msgid "Duration"
+msgstr "期間"
+
+#: js/gantt-helper.js:150
+msgid "End date:"
+msgstr "終了日 :"
+
+#: templates/view.html.twig
+msgid "Filter"
+msgstr "フィルター"
+
+#: templates/view.html.twig
+msgid "Find"
+msgstr "検索"
+
+#: js/gantt-helper.js:376
+msgid "Finish to Finish: "
+msgstr "終了して終了 :"
+
+#: js/gantt-helper.js:373
+msgid "Finish to Start: "
+msgstr "開始して終了 :"
+
+#: templates/view.html.twig
+msgid "Fullscreen"
+msgstr "全画面表示"
+
+#: src/ProjectTab.php:45
+msgid "Gantt"
+msgstr ""
+
+#: js/gantt-helper.js:518
+msgid "Gantt mode: 'Readonly'"
+msgstr "GANTT モード : 「表示のみ」"
+
+#: src/ProjectTab.php:73 src/ProjectTab.php:75
+msgid "Global GANTT"
+msgstr "全体 GANTT"
+
+#: ajax/gantt.php:140
+msgid "Item must be of project type"
+msgstr "アイテムは、プロジェクトの型に合致していなくてはなりません"
+
+#: js/gantt-helper.js:391
+msgid "Lag"
+msgstr "遅れ"
+
+#: ajax/gantt.php:205
+msgid "Link already exist!"
+msgstr "リンクがすでに存在します！"
+
+#: js/gantt-helper.js:567
+msgid "Links between projects and tasks cannot be created."
+msgstr "プロジェクトとタスクのリンクを作成できません。"
+
+#: js/gantt-helper.js:564
+msgid "Links between projects cannot be created."
+msgstr "プロジェクトとのリンクを作成できません。"
+
+#: js/gantt-helper.js:60 js/gantt-helper.js:65
+msgid "Milestone"
+msgstr "マイルストーン"
+
+#: templates/view.html.twig
+msgid "Months"
+msgstr "カ月"
+
+#: js/gantt-helper.js:69 js/gantt-helper.js:74 js/gantt-helper.js:324
+msgid "New project"
+msgstr "新規プロジェクト"
+
+#: src/TaskDAO.php:42 src/TaskDAO.php:77 src/TaskDAO.php:97
+#: src/ProjectDAO.php:42 src/ProjectDAO.php:68 src/ProjectDAO.php:85
+msgid "Not enough rights"
+msgstr "十分な権利がない"
+
+#: js/gantt-helper.js:151
+msgid "Progress:"
+msgstr "進行状況 :"
+
+#: js/gantt-helper.js:58
+msgid "Project"
+msgid_plural "Projects"
+msgstr[0] "プロジェクト"
+
+#: js/gantt-helper.js:163
+msgid "Project / Task"
+msgstr "プロジェクト・タスク"
+
+#: templates/view.html.twig
+msgid "Quarters"
+msgstr "四半期"
+
+#: js/gantt-helper.js:394
+msgid "Save"
+msgstr "保存"
+
+#: js/gantt-helper.js:164
+msgid "Start date"
+msgstr "開始日"
+
+#: js/gantt-helper.js:148
+msgid "Start date:"
+msgstr "開始日 :"
+
+#: js/gantt-helper.js:382
+msgid "Start to Finish: "
+msgstr "終了して開始 :"
+
+#: js/gantt-helper.js:379
+msgid "Start to Start: "
+msgstr "開始して開始 :"
+
+#: ajax/gantt.php:107
+msgid "Target item must be of project type"
+msgstr "対象のアイテムは、プロジェクトの型に合致していなくてはなりません"
+
+#: js/gantt-helper.js:576
+msgid "Target task can't end before source task ends."
+msgstr "対象のタスクは、元のタスクが終了しないと終了できません。"
+
+#: js/gantt-helper.js:579
+msgid "Target task can't end before the source task starts."
+msgstr "対象のタスクは、元のタスクが開始しないと終了できません。"
+
+#: js/gantt-helper.js:570
+msgid "Target task can't start before source task ends."
+msgstr "対象のタスクは、元タスクが終了しないと開始できません。"
+
+#: js/gantt-helper.js:573
+msgid "Target task can't start before source task starts."
+msgstr "対象のタスクは、元のタスクが開始しないと開始できません。"
+
+#: js/gantt-helper.js:59 js/gantt-helper.js:64
+msgid "Task"
+msgid_plural "Tasks"
+msgstr[0] "タスク"
+
+#: js/gantt-helper.js:213
+#, javascript-format
+msgid "Week #%s"
+msgstr "第 %s 週"
+
+#: templates/view.html.twig
+msgid "Weeks"
+msgstr "週"
+
+#: templates/view.html.twig
+msgid "Years"
+msgstr "年"
+
+#: templates/view.html.twig
+msgid "Zoom"
+msgstr "ズーム"
+
+#: templates/view.html.twig
+msgid "by name"
+msgstr "名前ごと"

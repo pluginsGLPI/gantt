@@ -32,7 +32,7 @@
    <ul class="gantt-block__controls mt-3">
       <li class="gantt-menu-item gantt-menu-item-right">
          <a href="#" class="btn btn-outline-secondary btn-icon" onclick="gantt.ext.fullscreen.toggle();"
-            title="{{ __('Fullscreen') }}" data-bs-toggle="tooltip">
+            title="{{ __('Fullscreen', 'gantt') }}" data-bs-toggle="tooltip">
             <i class="fas fa-expand"></i>
          </a>
       </li>
@@ -41,23 +41,23 @@
          <div class="btn-group flex-wrap" role="group">
             <span class="btn bg-blue-lt pe-none" aria-disabled="true">
                <i class="fas fa-search-plus"></i>
-               <span>{{ __('Zoom') }}</span>
+               <span>{{ __('Zoom', 'gantt') }}</span>
             </span>
 
             <input type="radio" id="scale1" class="btn-check gantt_radio" name="scale" value="day" checked />
-            <label class="btn btn-outline-secondary" for="scale1">{{ __('Days') }}</label>
+            <label class="btn btn-outline-secondary" for="scale1">{{ __('Days', 'gantt') }}</label>
 
             <input type="radio" id="scale2" class="btn-check gantt_radio" name="scale" value="week" />
-            <label class="btn btn-outline-secondary" for="scale2">{{ __('Weeks') }}</label>
+            <label class="btn btn-outline-secondary" for="scale2">{{ __('Weeks', 'gantt') }}</label>
 
             <input type="radio" id="scale3" class="btn-check gantt_radio" name="scale" value="month" checked />
-            <label class="btn btn-outline-secondary" for="scale3">{{ __('Months') }}</label>
+            <label class="btn btn-outline-secondary" for="scale3">{{ __('Months', 'gantt') }}</label>
 
             <input type="radio" id="scale4" class="btn-check gantt_radio" name="scale" value="quarter" />
-            <label class="btn btn-outline-secondary" for="scale4">{{ __('Quarters') }}</label>
+            <label class="btn btn-outline-secondary" for="scale4">{{ __('Quarters', 'gantt') }}</label>
 
             <input type="radio" id="scale5" class="btn-check gantt_radio" name="scale" value="year" />
-            <label class="btn btn-outline-secondary" for="scale5">{{ __('Years') }}</label>
+            <label class="btn btn-outline-secondary" for="scale5">{{ __('Years', 'gantt') }}</label>
          </div>
 
       </li>
@@ -67,16 +67,16 @@
             <input type="radio" id="rb-find" class="btn-check rb-optype gantt_radio" name="rb-optype" checked />
             <label class="btn btn-outline-secondary" for="rb-find">
                <i class="fas fa-search"></i>
-               <span>{{ __('Find') }}</span>
+               <span>{{ __('Find', 'gantt') }}</span>
             </label>
 
             <input type="radio" id="rb-filter" class="btn-check rb-optype gantt_radio" name="rb-optype" />
             <label class="btn btn-outline-secondary" for="rb-filter">
                <i class="fas fa-filter"></i>
-               <span>{{ __('Filter') }}</span>
+               <span>{{ __('Filter', 'gantt') }}</span>
             </label>
 
-            <input id="search" data-text-filter type="field" placeholder="{{ __('by name') }}"
+            <input id="search" data-text-filter type="field" placeholder="{{ __('by name', 'gantt') }}"
                    class="form-control"
                    oninput="gantt.$doFilter(this.value);" />
          </div>

@@ -49,29 +49,31 @@ var GlpiGantt = (function() {
             break;
     }
 
+    gantt.i18n.setLocale(CFG_GLPI.language.substr(0, 2));
+
     var formatFunc = gantt.date.date_to_str(parseDateFormat);
 
     return {
         init: function($ID) {
 
             var project_subtypes = [
-                { key: gantt.config.types.project, label: _n("Project", "Projects", 1) },
-                { key: gantt.config.types.task, label: _n("Task", "Tasks", 1) },
-                { key: gantt.config.types.milestone, label: __("Milestone") }
+                { key: gantt.config.types.project, label: _n("Project", "Projects", 1, 'gantt') },
+                { key: gantt.config.types.task, label: _n("Task", "Tasks", 1, 'gantt') },
+                { key: gantt.config.types.milestone, label: __("Milestone", 'gantt') }
             ];
 
             var task_subtypes = [
-                { key: gantt.config.types.task, label:  _n("Task", "Tasks", 1) },
-                { key: gantt.config.types.milestone, label: __("Milestone") }
+                { key: gantt.config.types.task, label:  _n("Task", "Tasks", 1, 'gantt') },
+                { key: gantt.config.types.milestone, label: __("Milestone", 'gantt') }
             ];
 
             var default_section = [
-                { name: "description", height: 70, map_to: "text", type: "textarea", focus: true, default_value: __("New project") },
+                { name: "description", height: 70, map_to: "text", type: "textarea", focus: true, default_value: __("New project", 'gantt') },
                 { name: "time", type: "duration", map_to: "auto" }
             ];
 
             var new_project_section = [
-                { name: "description", height: 70, map_to: "text", type: "textarea", focus: true, default_value: __("New project") },
+                { name: "description", height: 70, map_to: "text", type: "textarea", focus: true, default_value: __("New project", 'gantt') },
                 { name: "time", type: "duration", map_to: "auto" },
                 { name: "type", type: "radio", map_to: "type", options: project_subtypes, default_value: gantt.config.types.project }
             ];
@@ -145,24 +147,24 @@ var GlpiGantt = (function() {
 
             gantt.templates.tooltip_text = function(start, end, task) {
                 var text = "<b><span class=\"capitalize\">" +
-               task.type + ":</span></b> " + task.text + "<br/><b>" + __("Start date:") + "</b> " +
+               task.type + ":</span></b> " + task.text + "<br/><b>" + __("Start date:", 'gantt') + "</b> " +
                gantt.templates.tooltip_date_format(start) +
-               "<br/><b>" + __("End date:") + "</b> " + gantt.templates.tooltip_date_format(end) +
-               "<br/><b>" + __("Progress:") + "</b> " + parseInt(task.progress * 100) + "%";
+               "<br/><b>" + __("End date:", 'gantt') + "</b> " + gantt.templates.tooltip_date_format(end) +
+               "<br/><b>" + __("Progress:", 'gantt') + "</b> " + parseInt(task.progress * 100) + "%";
                 if (task.content && task.content.length > 0) {
-                    text += "<br/><b>" + __("Description:") + "</b><div style=\"padding-left:25px\">" + task.content + "</div>";
+                    text += "<br/><b>" + __("Description:", 'gantt') + "</b><div style=\"padding-left:25px\">" + task.content + "</div>";
                 }
                 if (task.comment && task.comment.length > 0) {
-                    text += "<br/><b>" + __("Comment:") + "</b><div style=\"padding-left:25px\">" + task.comment + "</div>";
+                    text += "<br/><b>" + __("Comment:", 'gantt') + "</b><div style=\"padding-left:25px\">" + task.comment + "</div>";
                 }
                 return text;
             };
 
             // columns definition
             gantt.config.columns = [
-                { name: "text", label: __("Project / Task"), width: 290, tree: true, align: "left" },
-                { name: "start_date", label: __("Start date"), align: "left", width: 90 },
-                { name: "duration", label: __("Duration"), align: "center", width: 47 },
+                { name: "text", label: __("Project / Task", 'gantt'), width: 290, tree: true, align: "left" },
+                { name: "start_date", label: __("Start date", 'gantt'), align: "left", width: 90 },
+                { name: "duration", label: __("Duration", 'gantt'), align: "center", width: 47 },
                 { name: "add", align: "center" }
             ];
 
@@ -210,7 +212,7 @@ var GlpiGantt = (function() {
                             },
                             {
                                 unit: "week",
-                                format: __("Week #%s").replace('%s', '%W')
+                                format: __("Week #%s", 'gantt').replace('%s', '%W')
                             }
                         ]
                     },
@@ -321,7 +323,7 @@ var GlpiGantt = (function() {
                     if (task.$new) {
                         gantt.getLightboxSection("time").setValue(new Date());
                         if (!isNaN(task.parent)) {
-                            gantt.getLightboxSection("description").setValue(__('New project'));
+                            gantt.getLightboxSection("description").setValue(__('New project', 'gantt'));
                         }
                     } else {
                         if (gantt.getLightboxSection("type")) {
@@ -370,16 +372,16 @@ var GlpiGantt = (function() {
 
                         switch (parseInt(link.type)) {
                             case parseInt(gantt.config.links.finish_to_start):
-                                linkTitle = __("Finish to Start: ");
+                                linkTitle = __("Finish to Start: ", 'gantt');
                                 break;
                             case parseInt(gantt.config.links.finish_to_finish):
-                                linkTitle = __("Finish to Finish: ");
+                                linkTitle = __("Finish to Finish: ", 'gantt');
                                 break;
                             case parseInt(gantt.config.links.start_to_start):
-                                linkTitle = __("Start to Start: ");
+                                linkTitle = __("Start to Start: ", 'gantt');
                                 break;
                             case parseInt(gantt.config.links.start_to_finish):
-                                linkTitle = __("Start to Finish: ");
+                                linkTitle = __("Start to Finish: ", 'gantt');
                                 break;
                         }
 
@@ -388,12 +390,12 @@ var GlpiGantt = (function() {
                         modal = gantt.modalbox({
                             title: `<p class="gantt_cal_lsection" style="line-height:normal">${linkTitle}</p>`,
                             text: `<div class="gantt_cal_lsection">
-                     <label>${__("Lag")} <input type="number" class="lag-input" /></label>
+                     <label>${__("Lag", 'gantt')} <input type="number" class="lag-input" /></label>
                      </div>`,
                             buttons: [
-                                { label: __("Save"), css: "gantt_save_btn", value: "save" },
-                                { label: __("Cancel"), css: "gantt_cancel_btn", value: "cancel" },
-                                { label: __("Delete"), css: "gantt_delete_btn", value: "delete" }
+                                { label: __("Save", 'gantt'), css: "gantt_save_btn", value: "save" },
+                                { label: __("Cancel", 'gantt'), css: "gantt_cancel_btn", value: "cancel" },
+                                { label: __("Delete", 'gantt'), css: "gantt_delete_btn", value: "delete" }
                             ],
                             width: "500px",
                             callback: function(result) {
@@ -515,7 +517,7 @@ var GlpiGantt = (function() {
                             gantt.message.position = 'bottom';
                             gantt.message({
                                 type: 'warning',
-                                text: __('Gantt mode: \'Readonly\''),
+                                text: __('Gantt mode: \'Readonly\'', 'gantt'),
                                 expire: -1
                             });
                         }
@@ -561,22 +563,22 @@ var GlpiGantt = (function() {
         var valid = true;
 
         if (source.type == 'project' && target.type == 'project') {
-            gantt.alert(__("Links between projects cannot be created."));
+            gantt.alert(__("Links between projects cannot be created.", 'gantt'));
             valid = false;
         } else if (source.type == 'project' || target.type == 'project') {
-            gantt.alert(__("Links between projects and tasks cannot be created."));
+            gantt.alert(__("Links between projects and tasks cannot be created.", 'gantt'));
             valid = false;
         } else if (type == gantt.config.links.finish_to_start && target.start_date < source.end_date) {
-            gantt.alert(__("Target task can't start before source task ends."));
+            gantt.alert(__("Target task can't start before source task ends.", 'gantt'));
             valid = false;
         } else if (type == gantt.config.links.start_to_start && target.start_date < source.start_date) {
-            gantt.alert(__("Target task can't start before source task starts."));
+            gantt.alert(__("Target task can't start before source task starts.", 'gantt'));
             valid = false;
         } else if (type == gantt.config.links.finish_to_finish && target.end_date < source.end_date) {
-            gantt.alert(__("Target task can't end before source task ends."));
+            gantt.alert(__("Target task can't end before source task ends.", 'gantt'));
             valid = false;
         } else if (type == gantt.config.links.start_to_finish && target.end_date < source.start_date) {
-            gantt.alert(__("Target task can't end before the source task starts."));
+            gantt.alert(__("Target task can't end before the source task starts.", 'gantt'));
             valid = false;
         }
         return valid;
@@ -604,7 +606,7 @@ var GlpiGantt = (function() {
                     gantt.deleteTask(id);
                     displayAjaxMessageAfterRedirect();
                 } else {
-                    gantt.alert(__('Could not create task: ') + json.error);
+                    gantt.alert(__('Could not create task: ', 'gantt') + json.error);
                 }
             },
             error: function(resp) {
@@ -638,7 +640,7 @@ var GlpiGantt = (function() {
                     gantt.hideLightbox();
                     displayAjaxMessageAfterRedirect();
                 } else
-                    gantt.alert(__('Could not update Task[%s]: ').replace('%s', item.text) + json.error);
+                    gantt.alert(__('Could not update Task[%s]: ', 'gantt').replace('%s', item.text) + json.error);
             },
             error: function(resp) {
                 gantt.alert(resp.responseText);
@@ -665,7 +667,7 @@ var GlpiGantt = (function() {
                     gantt.updateTask(task.id);
                     displayAjaxMessageAfterRedirect();
                 } else {
-                    gantt.alert(__('Could not update Task[%s]: ').replace('%s', task.text) + json.error);
+                    gantt.alert(__('Could not update Task[%s]: ', 'gantt').replace('%s', task.text) + json.error);
                     gantt.undo();
                 }
             }
@@ -743,7 +745,7 @@ var GlpiGantt = (function() {
                     gantt.deleteTask(id);
                     displayAjaxMessageAfterRedirect();
                 } else {
-                    gantt.alert(__('Could not create project: ') + json.error);
+                    gantt.alert(__('Could not create project: ', 'gantt') + json.error);
                 }
             },
             error: function(resp) {
@@ -771,7 +773,7 @@ var GlpiGantt = (function() {
                     gantt.hideLightbox();
                     displayAjaxMessageAfterRedirect();
                 } else {
-                    gantt.alert(__('Could not update Project[%s]: ').replace('%s', item.text) + json.error);
+                    gantt.alert(__('Could not update Project[%s]: ', 'gantt').replace('%s', item.text) + json.error);
                 }
             },
             error: function(resp) {

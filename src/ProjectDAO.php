@@ -39,7 +39,7 @@ class ProjectDAO
     {
 
         if (!\Project::canCreate()) {
-            throw new \Exception(__('Not enough rights'));
+            throw new \Exception(__('Not enough rights', 'gantt'));
         }
 
         $input = [
@@ -65,7 +65,7 @@ class ProjectDAO
         $p->getFromDB($project->id);
 
         if (!$p::canUpdate() || !$p->canUpdateItem()) {
-            throw new \Exception(__('Not enough rights'));
+            throw new \Exception(__('Not enough rights', 'gantt'));
         }
 
         $p->update([
@@ -82,7 +82,7 @@ class ProjectDAO
         $p->getFromDB($project->id);
 
         if (!$p::canUpdate() || !$p->canUpdateItem()) {
-            throw new \Exception(__('Not enough rights'));
+            throw new \Exception(__('Not enough rights', 'gantt'));
         }
 
         $input = [
