@@ -9,8 +9,8 @@
          <fr>Plugin GLPI gantt</fr>
       </short>
       <long>
-         <en>Add a gantt tab to GLPI projects items</en>
-         <fr>Ajoute un onglet Gantt aux objets projet de GLPI</fr>
+         <en>Add a gantt tab to GLPI projects items. The feature was removed in GLPI core from 10.0.1 version.</en>
+         <fr>Ajoute un onglet Gantt aux objets projet de GLPI. La fonctionnalité a été retiré du coeur de GLPI depuis la version 10.0.1.</fr>
       </long>
    </description>
    <homepage>https://github.com/pluginsGLPI/gantt</homepage>
