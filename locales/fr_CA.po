@@ -1,0 +1,223 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# Cédric Anne, 2022
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-05-06 15:07+0000\n"
+"PO-Revision-Date: 2022-05-06 13:53+0000\n"
+"Last-Translator: Cédric Anne, 2022\n"
+"Language-Team: French (Canada) (https://www.transifex.com/teclib/teams/28042/fr_CA/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: fr_CA\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: js/gantt-helper.js:395
+msgid "Cancel"
+msgstr "Annuler"
+
+#: js/gantt-helper.js:156
+msgid "Comment:"
+msgstr "Commentaires"
+
+#: js/gantt-helper.js:746
+msgid "Could not create project: "
+msgstr "Ne peut pas créer le projet:"
+
+#: js/gantt-helper.js:607
+msgid "Could not create task: "
+msgstr "Ne peut pas créer la tâche:"
+
+#: js/gantt-helper.js:774
+#, javascript-format
+msgid "Could not update Project[%s]: "
+msgstr "Ne peut pas mettre à jour le projet[%s]:"
+
+#: js/gantt-helper.js:641 js/gantt-helper.js:668
+#, javascript-format
+msgid "Could not update Task[%s]: "
+msgstr "Ne peut pas mettre à jour la tâche[%s]:"
+
+#: templates/view.html.twig
+msgid "Days"
+msgstr "Jours"
+
+#: js/gantt-helper.js:396
+msgid "Delete"
+msgstr "Supprimer"
+
+#: js/gantt-helper.js:153
+msgid "Description:"
+msgstr "Description"
+
+#: js/gantt-helper.js:165
+msgid "Duration"
+msgstr "Durée"
+
+#: js/gantt-helper.js:150
+msgid "End date:"
+msgstr "Date de fin"
+
+#: templates/view.html.twig
+msgid "Filter"
+msgstr "Filtrer"
+
+#: templates/view.html.twig
+msgid "Find"
+msgstr "Chercher"
+
+#: js/gantt-helper.js:376
+msgid "Finish to Finish: "
+msgstr "Fin-Fin :"
+
+#: js/gantt-helper.js:373
+msgid "Finish to Start: "
+msgstr "Fin-Début :"
+
+#: templates/view.html.twig
+msgid "Fullscreen"
+msgstr "Plein écran"
+
+#: src/ProjectTab.php:45
+msgid "Gantt"
+msgstr ""
+
+#: js/gantt-helper.js:518
+msgid "Gantt mode: 'Readonly'"
+msgstr "Mode Gantt : 'Lecture seule\""
+
+#: src/ProjectTab.php:73 src/ProjectTab.php:75
+msgid "Global GANTT"
+msgstr "GANTT Global"
+
+#: ajax/gantt.php:140
+msgid "Item must be of project type"
+msgstr "L'item doit être de type projet."
+
+#: js/gantt-helper.js:391
+msgid "Lag"
+msgstr "Latence"
+
+#: ajax/gantt.php:205
+msgid "Link already exist!"
+msgstr "Le lien existe déjà !"
+
+#: js/gantt-helper.js:567
+msgid "Links between projects and tasks cannot be created."
+msgstr "Les liens entre les projets et les tâches ne peuvent pas être créés."
+
+#: js/gantt-helper.js:564
+msgid "Links between projects cannot be created."
+msgstr "Les liens entre les projets ne peuvent pas être créés."
+
+#: js/gantt-helper.js:60 js/gantt-helper.js:65
+msgid "Milestone"
+msgstr "Étape"
+
+#: templates/view.html.twig
+msgid "Months"
+msgstr "Mois"
+
+#: js/gantt-helper.js:69 js/gantt-helper.js:74 js/gantt-helper.js:324
+msgid "New project"
+msgstr "Nouveau projet"
+
+#: src/TaskDAO.php:42 src/TaskDAO.php:77 src/TaskDAO.php:97
+#: src/ProjectDAO.php:42 src/ProjectDAO.php:68 src/ProjectDAO.php:85
+msgid "Not enough rights"
+msgstr "Autorisations insuffisantes"
+
+#: js/gantt-helper.js:151
+msgid "Progress:"
+msgstr "Progression"
+
+#: js/gantt-helper.js:58
+msgid "Project"
+msgid_plural "Projects"
+msgstr[0] "Projet"
+msgstr[1] "Projets"
+
+#: js/gantt-helper.js:163
+msgid "Project / Task"
+msgstr "Projet / Tâche"
+
+#: templates/view.html.twig
+msgid "Quarters"
+msgstr "Trimestres"
+
+#: js/gantt-helper.js:394
+msgid "Save"
+msgstr "Enregistrer"
+
+#: js/gantt-helper.js:164
+msgid "Start date"
+msgstr "Date de début"
+
+#: js/gantt-helper.js:148
+msgid "Start date:"
+msgstr "Date de début"
+
+#: js/gantt-helper.js:382
+msgid "Start to Finish: "
+msgstr "Début-Fin :"
+
+#: js/gantt-helper.js:379
+msgid "Start to Start: "
+msgstr "Début-Début :"
+
+#: ajax/gantt.php:107
+msgid "Target item must be of project type"
+msgstr "L'item cible doit être de type projet."
+
+#: js/gantt-helper.js:576
+msgid "Target task can't end before source task ends."
+msgstr "La tâche cible ne peut pas se finir avant la fin de la tâche source."
+
+#: js/gantt-helper.js:579
+msgid "Target task can't end before the source task starts."
+msgstr "La tâche cible ne peut pas se finir avant le début la tâche source."
+
+#: js/gantt-helper.js:570
+msgid "Target task can't start before source task ends."
+msgstr "La tâche cible ne peut pas démarrer avant la fin de la tâche source."
+
+#: js/gantt-helper.js:573
+msgid "Target task can't start before source task starts."
+msgstr ""
+"La tâche cible ne peut pas démarrer avant le début de la tâche source."
+
+#: js/gantt-helper.js:59 js/gantt-helper.js:64
+msgid "Task"
+msgid_plural "Tasks"
+msgstr[0] "Tâche"
+msgstr[1] "Tâches"
+
+#: js/gantt-helper.js:213
+#, javascript-format
+msgid "Week #%s"
+msgstr "Semaine # %s"
+
+#: templates/view.html.twig
+msgid "Weeks"
+msgstr "Semaines"
+
+#: templates/view.html.twig
+msgid "Years"
+msgstr "Années"
+
+#: templates/view.html.twig
+msgid "Zoom"
+msgstr "Zoom"
+
+#: templates/view.html.twig
+msgid "by name"
+msgstr "par nom"

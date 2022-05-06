@@ -1,0 +1,222 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# Cédric Anne, 2022
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-05-06 15:07+0000\n"
+"PO-Revision-Date: 2022-05-06 13:53+0000\n"
+"Last-Translator: Cédric Anne, 2022\n"
+"Language-Team: Persian (Iran) (https://www.transifex.com/teclib/teams/28042/fa_IR/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: fa_IR\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: js/gantt-helper.js:395
+msgid "Cancel"
+msgstr "لغو"
+
+#: js/gantt-helper.js:156
+msgid "Comment:"
+msgstr ""
+
+#: js/gantt-helper.js:746
+msgid "Could not create project: "
+msgstr ""
+
+#: js/gantt-helper.js:607
+msgid "Could not create task: "
+msgstr ""
+
+#: js/gantt-helper.js:774
+#, javascript-format
+msgid "Could not update Project[%s]: "
+msgstr ""
+
+#: js/gantt-helper.js:641 js/gantt-helper.js:668
+#, javascript-format
+msgid "Could not update Task[%s]: "
+msgstr ""
+
+#: templates/view.html.twig
+msgid "Days"
+msgstr "روز"
+
+#: js/gantt-helper.js:396
+msgid "Delete"
+msgstr "برای حذف"
+
+#: js/gantt-helper.js:153
+msgid "Description:"
+msgstr ""
+
+#: js/gantt-helper.js:165
+msgid "Duration"
+msgstr "مدت"
+
+#: js/gantt-helper.js:150
+msgid "End date:"
+msgstr ""
+
+#: templates/view.html.twig
+msgid "Filter"
+msgstr ""
+
+#: templates/view.html.twig
+msgid "Find"
+msgstr ""
+
+#: js/gantt-helper.js:376
+msgid "Finish to Finish: "
+msgstr ""
+
+#: js/gantt-helper.js:373
+msgid "Finish to Start: "
+msgstr ""
+
+#: templates/view.html.twig
+msgid "Fullscreen"
+msgstr ""
+
+#: src/ProjectTab.php:45
+msgid "Gantt"
+msgstr ""
+
+#: js/gantt-helper.js:518
+msgid "Gantt mode: 'Readonly'"
+msgstr ""
+
+#: src/ProjectTab.php:73 src/ProjectTab.php:75
+msgid "Global GANTT"
+msgstr ""
+
+#: ajax/gantt.php:140
+msgid "Item must be of project type"
+msgstr ""
+
+#: js/gantt-helper.js:391
+msgid "Lag"
+msgstr ""
+
+#: ajax/gantt.php:205
+msgid "Link already exist!"
+msgstr ""
+
+#: js/gantt-helper.js:567
+msgid "Links between projects and tasks cannot be created."
+msgstr ""
+
+#: js/gantt-helper.js:564
+msgid "Links between projects cannot be created."
+msgstr ""
+
+#: js/gantt-helper.js:60 js/gantt-helper.js:65
+msgid "Milestone"
+msgstr ""
+
+#: templates/view.html.twig
+msgid "Months"
+msgstr ""
+
+#: js/gantt-helper.js:69 js/gantt-helper.js:74 js/gantt-helper.js:324
+msgid "New project"
+msgstr ""
+
+#: src/TaskDAO.php:42 src/TaskDAO.php:77 src/TaskDAO.php:97
+#: src/ProjectDAO.php:42 src/ProjectDAO.php:68 src/ProjectDAO.php:85
+msgid "Not enough rights"
+msgstr ""
+
+#: js/gantt-helper.js:151
+msgid "Progress:"
+msgstr ""
+
+#: js/gantt-helper.js:58
+msgid "Project"
+msgid_plural "Projects"
+msgstr[0] ""
+msgstr[1] ""
+
+#: js/gantt-helper.js:163
+msgid "Project / Task"
+msgstr ""
+
+#: templates/view.html.twig
+msgid "Quarters"
+msgstr ""
+
+#: js/gantt-helper.js:394
+msgid "Save"
+msgstr "ذخیره"
+
+#: js/gantt-helper.js:164
+msgid "Start date"
+msgstr "تاریخ شروع"
+
+#: js/gantt-helper.js:148
+msgid "Start date:"
+msgstr ""
+
+#: js/gantt-helper.js:382
+msgid "Start to Finish: "
+msgstr ""
+
+#: js/gantt-helper.js:379
+msgid "Start to Start: "
+msgstr ""
+
+#: ajax/gantt.php:107
+msgid "Target item must be of project type"
+msgstr ""
+
+#: js/gantt-helper.js:576
+msgid "Target task can't end before source task ends."
+msgstr ""
+
+#: js/gantt-helper.js:579
+msgid "Target task can't end before the source task starts."
+msgstr ""
+
+#: js/gantt-helper.js:570
+msgid "Target task can't start before source task ends."
+msgstr ""
+
+#: js/gantt-helper.js:573
+msgid "Target task can't start before source task starts."
+msgstr ""
+
+#: js/gantt-helper.js:59 js/gantt-helper.js:64
+msgid "Task"
+msgid_plural "Tasks"
+msgstr[0] ""
+msgstr[1] ""
+
+#: js/gantt-helper.js:213
+#, javascript-format
+msgid "Week #%s"
+msgstr ""
+
+#: templates/view.html.twig
+msgid "Weeks"
+msgstr ""
+
+#: templates/view.html.twig
+msgid "Years"
+msgstr ""
+
+#: templates/view.html.twig
+msgid "Zoom"
+msgstr ""
+
+#: templates/view.html.twig
+msgid "by name"
+msgstr ""
