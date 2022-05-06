@@ -44,6 +44,16 @@ module.exports = [
       module: {
          rules: [
             {
+                // Load scripts with no compilation for packages that are directly providing "dist" files.
+                // This prevents useless compilation pass and can also
+                // prevents incompatibility issues with the webpack require feature.
+                test: /\.js$/,
+                include: [
+                    path.resolve(__dirname, 'node_modules/dhtmlx-gantt'),
+                ],
+                use: ['script-loader'],
+            },
+            {
                test: /\.css$/,
                use: ['style-loader', 'css-loader'],
             },
