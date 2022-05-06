@@ -43,7 +43,7 @@
       </fr>
    </tags>
    <screenshots>
-      <screenshot>https://github.com/pluginsGLPI/gantt/raw/master/screenshots/project_tab.png</screenshot>
-      <screenshot>https://github.com/pluginsGLPI/gantt/raw/master/screenshots/create_task.png</screenshot>
+      <screenshot>https://github.com/pluginsGLPI/gantt/raw/main/screenshots/project_tab.png</screenshot>
+      <screenshot>https://github.com/pluginsGLPI/gantt/raw/main/screenshots/create_task.png</screenshot>
    </screenshots>
 </root>
