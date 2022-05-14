@@ -123,7 +123,7 @@ const GlpiGantt = (function() {
             ];
 
             // disable task specific controls on projects
-            gantt.templates.task_class = function(start, end, task) {
+            gantt.templates.task_class = (start, end, task) =>{
                 const css = [];
                 if (task.type == "project") {
                     css.push("no_progress_drag");
@@ -133,14 +133,14 @@ const GlpiGantt = (function() {
             };
 
             // set text labels for milestones
-            gantt.templates.rightside_text = function(start, end, task) {
+            gantt.templates.rightside_text = (start, end, task) => {
                 if (task.type == gantt.config.types.milestone) {
                     return task.text;
                 }
                 return "";
             };
 
-            gantt.templates.progress_text = function(start, end, task) {
+            gantt.templates.progress_text = (start, end, task) => {
                 return "<span style='text-align:left; color: #fff;'>" + Math.round(task.progress * 100) + "% </span>";
             };
 
@@ -151,7 +151,7 @@ const GlpiGantt = (function() {
                 undo: true
             });
 
-            gantt.templates.tooltip_text = function(start, end, task) {
+            gantt.templates.tooltip_text = (start, end, task) => {
                let text = "<b><span class=\"capitalize\">" +
                task.type + ":</span></b> " + task.text + "<br/><b>" + __("Start date:", 'gantt') + "</b> " +
                gantt.templates.tooltip_date_format(start) +
@@ -175,7 +175,7 @@ const GlpiGantt = (function() {
             ];
 
             // specify fullscreen root element
-            gantt.ext.fullscreen.getFullscreenElement = function() {
+            gantt.ext.fullscreen.getFullscreenElement = () => {
                 return document.getElementById("gantt-container");
             };
 
@@ -197,7 +197,7 @@ const GlpiGantt = (function() {
                             {
                                 unit: "week",
                                 step: 1,
-                                format: function(date) {
+                                format: (date) => {
                                     const dateToStr = gantt.date.date_to_str("%d %M");
                                     const endDate = gantt.date.add(date, 6, "day");
                                     const weekNum = gantt.date.date_to_str("%W")(date);
@@ -231,7 +231,7 @@ const GlpiGantt = (function() {
                             {
                                 unit: "quarter",
                                 step: 1,
-                                format: function(date) {
+                                format: (date) => {
                                     const dateToStr = gantt.date.date_to_str("%M");
                                     const endDate = gantt.date.add(gantt.date.add(date, 3, "month"), -1, "day");
                                     return dateToStr(date) + " - " + dateToStr(endDate);
@@ -258,19 +258,19 @@ const GlpiGantt = (function() {
 
             // >>>>> Event handlers
 
-            gantt.ext.zoom.attachEvent("onAfterZoom", function(level, config) {
+            gantt.ext.zoom.attachEvent("onAfterZoom", (level, config) => {
                 document.querySelector(".gantt_radio[value='" + config.name + "']").checked = true;
             });
 
-            $("input[name='scale']").on('click', function(event) {
+            $("input[name='scale']").on('click', (event) => {
                 gantt.ext.zoom.setLevel(event.target.value);
             });
 
-            gantt.attachEvent("onBeforeRowDragMove", function(id) {
+            gantt.attachEvent("onBeforeRowDragMove", (id) => {
                 $('#hf_gantt_item_state').val(id + "|" + gantt.getTask(id).parent);
             });
 
-            gantt.attachEvent("onBeforeRowDragEnd", function(id, target) {
+            gantt.attachEvent("onBeforeRowDragEnd", (id, target) => {
                 const item = gantt.getTask(id);
                 let parent = null;
                 let retval = true;
@@ -294,21 +294,21 @@ const GlpiGantt = (function() {
 
             if (!readonly) {
             // catch task drag event to update db
-                gantt.attachEvent("onAfterTaskDrag", function(id) {
+                gantt.attachEvent("onAfterTaskDrag", (id) => {
                     const task = gantt.getTask(id);
                     const progress = (Math.round(task.progress * 100 / 5) * 5) / 100; // prevent server side exception for wrong stepping
                     onTaskDrag(id, task, progress);
                 });
 
-                gantt.attachEvent("onAfterTaskUpdate", function(id) {
+                gantt.attachEvent("onAfterTaskUpdate", (id) => {
                     parentProgress(id);
                 });
 
-                gantt.attachEvent("onTaskDblClick", function(id) {
+                gantt.attachEvent("onTaskDblClick", (id) => {
                     openEditForm(gantt.getTask(id));
                 });
 
-                gantt.attachEvent("onBeforeLightbox", function(id) {
+                gantt.attachEvent("onBeforeLightbox", (id) => {
                     const task = gantt.getTask(id);
                     if (task.$new) {
                         if (task.parent && !isNaN(task.parent)) {
@@ -324,7 +324,7 @@ const GlpiGantt = (function() {
                     return true;
                 });
 
-                gantt.attachEvent("onLightbox", function(id) {
+                gantt.attachEvent("onLightbox", (id) => {
                     const task = gantt.getTask(id);
                     if (task.$new) {
                         gantt.getLightboxSection("time").setValue(new Date());
@@ -339,7 +339,7 @@ const GlpiGantt = (function() {
                 });
 
                 // handle lightbox Save action
-                gantt.attachEvent("onLightboxSave", function(id, item, is_new) {
+                gantt.attachEvent("onLightboxSave", (id, item, is_new) => {
                     if (is_new) {
                         if (item.parent == 0 || (gantt.getLightboxSection("type") && gantt.getLightboxSection("type").getValue() == gantt.config.types.project)) {
                             addProject(id, item);
@@ -354,7 +354,7 @@ const GlpiGantt = (function() {
                     return false;
                 });
 
-                gantt.attachEvent("onBeforeLinkAdd", function(id, link) {
+                gantt.attachEvent("onBeforeLinkAdd", (id, link) => {
 
                     const sourceTask = gantt.getTask(link.source);
                     const targetTask = gantt.getTask(link.target);
@@ -370,7 +370,7 @@ const GlpiGantt = (function() {
 
                     let modal;
                     let editLinkId;
-                    gantt.attachEvent("onLinkDblClick", function(id) {
+                    gantt.attachEvent("onLinkDblClick", (id) => {
 
                         editLinkId = id;
                         const link = gantt.getLink(id);
@@ -404,7 +404,7 @@ const GlpiGantt = (function() {
                                 { label: __("Delete", 'gantt'), css: "gantt_delete_btn", value: "delete" }
                             ],
                             width: "500px",
-                            callback: function(result) {
+                            callback: (result) => {
                                 switch (result) {
                                     case "save":
                                         saveLink();
@@ -451,7 +451,7 @@ const GlpiGantt = (function() {
             }
 
             // adjust elements visibility on Fullscreen expand/collapse
-            gantt.attachEvent("onBeforeExpand", function() {
+            gantt.attachEvent("onBeforeExpand", () => {
                 $('.gantt-block__features').css({
                     'position': 'absolute',
                     'bottom': '18px',
@@ -465,7 +465,7 @@ const GlpiGantt = (function() {
                 return true;
             });
 
-            gantt.attachEvent("onCollapse", function() {
+            gantt.attachEvent("onCollapse", () => {
                 $('.gantt-block__features').css({
                     'position': 'initial',
                     'bottom': '10px'
@@ -478,7 +478,7 @@ const GlpiGantt = (function() {
                 return true;
             });
 
-            gantt.templates.grid_row_class = function(start, end, task) {
+            gantt.templates.grid_row_class = (start, end, task) => {
                 if (!filterValue || !$('#rb-find').is(':checked')) {
                     return "";
                 }
@@ -487,7 +487,7 @@ const GlpiGantt = (function() {
                 return (normalizedText.indexOf(normalizedValue) > -1) ? "highlight" : "";
             };
 
-            gantt.attachEvent("onBeforeTaskDisplay", function(id, task) {
+            gantt.attachEvent("onBeforeTaskDisplay", (id, task) => {
                 if (!filterValue || !$('#rb-filter').is(':checked')) {
                     return true;
                 }
@@ -496,18 +496,18 @@ const GlpiGantt = (function() {
                 return (normalizedText.indexOf(normalizedValue) > -1);
             });
 
-            $('.gantt_radio[name=rb-optype]').on('change', function() {
+            $('.gantt_radio[name=rb-optype]').on('change', () => {
                 gantt.render();
             });
 
-            gantt.attachEvent("onGanttRender", function() {
+            gantt.attachEvent("onGanttRender", () => {
                 $("#search").val(filterValue);
             });
 
-            gantt.$doFilter = function(value) {
+            gantt.$doFilter = (value) => {
                 filterValue = value;
                 clearTimeout(delay);
-                delay = setTimeout(function() {
+                delay = setTimeout(() => {
                     gantt.render();
                     $("#search").focus();
                 }, 500);
@@ -524,7 +524,7 @@ const GlpiGantt = (function() {
                 url,
                 type: 'POST',
                 data: { getData: 1, id: $ID },
-                success: function(json) {
+                success: (json) =>{
                     if (json.data) {
                         gantt.parse(json);
                         gantt.render();
@@ -544,7 +544,7 @@ const GlpiGantt = (function() {
                         gantt.alert(json.error);
                     }
                 },
-                error: function(resp) {
+                error: (resp) => {
                     gantt.alert(resp.responseText);
                 }
             });
@@ -558,7 +558,7 @@ const GlpiGantt = (function() {
      * @param id
      */
     function parentProgress(id) {
-        gantt.eachParent(function(task) {
+        gantt.eachParent((task) => {
             const children = gantt.getChildren(task.id);
             let childProgress = 0;
             for (let i = 0; i < children.length; i++) {
@@ -574,7 +574,7 @@ const GlpiGantt = (function() {
      * Calculate progress
      */
     function calculateProgress() {
-        gantt.eachTask(function(item) {
+        gantt.eachTask((item) => {
             if (item.progress > 0) {
                 parentProgress(item.id);
             }
@@ -633,7 +633,7 @@ const GlpiGantt = (function() {
                     end_date: formatFunc(item.end_date)
                 }
             },
-            success: function(json) {
+            success: (json) => {
                 if (json.ok) {
                     gantt.addTask(json.item);
                     gantt.hideLightbox();
@@ -643,7 +643,7 @@ const GlpiGantt = (function() {
                     gantt.alert(__('Could not create task: ', 'gantt') + json.error);
                 }
             },
-            error: function(resp) {
+            error: (resp) => {
                 gantt.alert(resp.responseText);
             }
         });
@@ -668,7 +668,7 @@ const GlpiGantt = (function() {
                     end_date: formatFunc(item.end_date)
                 }
             },
-            success: function(json) {
+            success: (json) => {
                 if (json.ok) {
                     const task = gantt.getTask(id);
                     task.text = item.text;
@@ -681,7 +681,7 @@ const GlpiGantt = (function() {
                 } else
                     gantt.alert(__('Could not update Task[%s]: ', 'gantt').replace('%s', item.text) + json.error);
             },
-            error: function(resp) {
+            error: (resp) => {
                 gantt.alert(resp.responseText);
             }
         });
@@ -706,7 +706,7 @@ const GlpiGantt = (function() {
                     progress
                 }
             },
-            success: function(json) {
+            success: (json) => {
                 if (json.ok) {
                     task.progress = progress;
                     gantt.updateTask(task.id);
@@ -729,7 +729,7 @@ const GlpiGantt = (function() {
             url,
             type: 'POST',
             data: { changeItemParent: 1, item, target },
-            success: function(json) {
+            success: (json) => {
                 if (!json.ok) {
                     gantt.alert(json.error);
                     item.parent = $('#hf_gantt_item_state').val().split('|')[1];
@@ -743,7 +743,7 @@ const GlpiGantt = (function() {
                     displayAjaxMessageAfterRedirect();
                 }
             },
-            error: function(resp) {
+            error: (resp) => {
                 gantt.alert(resp.responseText);
             }
         });
@@ -758,7 +758,7 @@ const GlpiGantt = (function() {
             url,
             type: 'POST',
             data: { makeRootProject: 1, item },
-            success: function(json) {
+            success: (json) => {
                 if (!json.ok) {
                     gantt.alert(json.error);
                     item.parent = $('#hf_gantt_item_state').val().split('|')[1];
@@ -772,7 +772,7 @@ const GlpiGantt = (function() {
                     displayAjaxMessageAfterRedirect();
                 }
             },
-            error: function(resp) {
+            error: (resp) => {
                 gantt.alert(resp.responseText);
             }
         });
@@ -797,7 +797,7 @@ const GlpiGantt = (function() {
                     end_date: formatFunc(item.end_date)
                 }
             },
-            success: function(json) {
+            success: (json) => {
                 if (json.ok) {
                     gantt.addTask(json.item);
                     gantt.hideLightbox();
@@ -807,7 +807,7 @@ const GlpiGantt = (function() {
                     gantt.alert(__('Could not create project: ', 'gantt') + json.error);
                 }
             },
-            error: function(resp) {
+            error: (resp) => {
                 gantt.alert(resp.responseText);
             }
         });
@@ -829,7 +829,7 @@ const GlpiGantt = (function() {
                     name: item.text
                 }
             },
-            success: function(json) {
+            success: (json) => {
                 if (json.ok) {
                     const project = gantt.getTask(id);
                     project.text = item.text;
@@ -840,7 +840,7 @@ const GlpiGantt = (function() {
                     gantt.alert(__('Could not update Project[%s]: ', 'gantt').replace('%s', item.text) + json.error);
                 }
             },
-            error: function(resp) {
+            error: (resp) => {
                 gantt.alert(resp.responseText);
             }
         });
@@ -869,7 +869,7 @@ const GlpiGantt = (function() {
                     lead: link.lead
                 }
             },
-            success: function(json) {
+            success: (json) => {
                 if (json.ok) {
                     const tempId = link.id;
                     gantt.changeLinkId(tempId, json.id);
@@ -878,7 +878,7 @@ const GlpiGantt = (function() {
                     gantt.deleteLink(id);
                 }
             },
-            error: function(resp) {
+            error: (resp) => {
                 gantt.alert(resp.responseText);
                 gantt.deleteLink(id);
             }
@@ -901,14 +901,14 @@ const GlpiGantt = (function() {
                     lag: link.lag
                 }
             },
-            success: function(json) {
+            success: (json) => {
                 if (json.ok) {
                     callback(); // close popup
                 } else {
                     gantt.alert(json.error);
                 }
             },
-            error: function(resp) {
+            error: (resp) => {
                 gantt.alert(resp.responseText);
             }
         });
@@ -928,7 +928,7 @@ const GlpiGantt = (function() {
                 deleteTaskLink: 1,
                 id: linkId
             },
-            success: function(json) {
+            success: (json) => {
                 if (json.ok) {
                     gantt.deleteLink(linkId);
                     callback(); // close popup
@@ -936,7 +936,7 @@ const GlpiGantt = (function() {
                     gantt.alert(json.error);
                 }
             },
-            error: function(resp) {
+            error: (resp) => {
                 gantt.alert(resp.responseText);
             }
         });
@@ -955,14 +955,14 @@ const GlpiGantt = (function() {
                 openEditForm: 1,
                 item
             },
-            success: function(json) {
+            success: (json) => {
                 if (json.ok) {
                     window.location = json.url;
                 } else {
                     gantt.alert(json.error);
                 }
             },
-            error: function(resp) {
+            error: (resp) => {
                 gantt.alert(resp.responseText);
             }
         });
@@ -974,7 +974,7 @@ const GlpiGantt = (function() {
      */
     function expandCollapse(level) {
         const collapse = $('#collapse').is(':checked');
-        gantt.eachTask(function(item) {
+        gantt.eachTask((item) => {
             const itemLevel = gantt.calculateTaskLevel(item);
             item.$open = false;
             if (collapse) {
