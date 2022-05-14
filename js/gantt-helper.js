@@ -29,13 +29,14 @@
 /* global gantt */
 /* global displayAjaxMessageAfterRedirect */
 
-var GlpiGantt = (function() {
+const GlpiGantt = (function() {
 
-    var readonly = false;
-    var plugin_path = CFG_GLPI.root_doc + '/' + (GLPI_PLUGINS_PATH['gantt'] ?? "");
-    var url = plugin_path +  '/ajax/gantt.php';
-    var parseDateFormat = "%Y-%m-%d %H:%i";
-    var uiDateFormat = null;
+    //TODO: Why is this always false?
+    const readonly = false;
+    const plugin_path = CFG_GLPI.root_doc + '/' + (GLPI_PLUGINS_PATH['gantt'] ?? "");
+    const url = plugin_path +  '/ajax/gantt.php';
+    const parseDateFormat = "%Y-%m-%d %H:%i";
+    let uiDateFormat = null;
     switch (CFG_GLPI.date_format) {
         case 1:
             uiDateFormat = '%d-%m-%Y';
@@ -51,41 +52,41 @@ var GlpiGantt = (function() {
 
     gantt.i18n.setLocale(CFG_GLPI.language.substr(0, 2));
 
-    var formatFunc = gantt.date.date_to_str(parseDateFormat);
+    const formatFunc = gantt.date.date_to_str(parseDateFormat);
 
     return {
         init: function($ID) {
 
-            var project_subtypes = [
+            const project_subtypes = [
                 { key: gantt.config.types.project, label: _n("Project", "Projects", 1, 'gantt') },
                 { key: gantt.config.types.task, label: _n("Task", "Tasks", 1, 'gantt') },
                 { key: gantt.config.types.milestone, label: __("Milestone", 'gantt') }
             ];
 
-            var task_subtypes = [
+            const task_subtypes = [
                 { key: gantt.config.types.task, label:  _n("Task", "Tasks", 1, 'gantt') },
                 { key: gantt.config.types.milestone, label: __("Milestone", 'gantt') }
             ];
 
-            var default_section = [
+            const default_section = [
                 { name: "description", height: 70, map_to: "text", type: "textarea", focus: true, default_value: __("New project", 'gantt') },
                 { name: "time", type: "duration", map_to: "auto" }
             ];
 
-            var new_project_section = [
+            const new_project_section = [
                 { name: "description", height: 70, map_to: "text", type: "textarea", focus: true, default_value: __("New project", 'gantt') },
                 { name: "time", type: "duration", map_to: "auto" },
                 { name: "type", type: "radio", map_to: "type", options: project_subtypes, default_value: gantt.config.types.project }
             ];
 
-            var new_item_section = [
+            const new_item_section = [
                 { name: "description", height: 70, map_to: "text", type: "textarea", focus: true },
                 { name: "time", type: "duration", map_to: "auto" },
                 { name: "type", type: "radio", map_to: "type", options: task_subtypes, default_value: gantt.config.types.task }
             ];
 
-            var filterValue = "";
-            var delay;
+            let filterValue = "";
+            let delay;
 
             // >>>>> Configs
             gantt.config.grid_width = 600;
@@ -118,7 +119,7 @@ var GlpiGantt = (function() {
 
             // disable task specific controls on projects
             gantt.templates.task_class = function(start, end, task) {
-                var css = [];
+                const css = [];
                 if (task.type == "project") {
                     css.push("no_progress_drag");
                     css.push("no_link_drag");
@@ -146,7 +147,7 @@ var GlpiGantt = (function() {
             });
 
             gantt.templates.tooltip_text = function(start, end, task) {
-                var text = "<b><span class=\"capitalize\">" +
+               let text = "<b><span class=\"capitalize\">" +
                task.type + ":</span></b> " + task.text + "<br/><b>" + __("Start date:", 'gantt') + "</b> " +
                gantt.templates.tooltip_date_format(start) +
                "<br/><b>" + __("End date:", 'gantt') + "</b> " + gantt.templates.tooltip_date_format(end) +
@@ -173,7 +174,7 @@ var GlpiGantt = (function() {
                 return document.getElementById("gantt-container");
             };
 
-            var zoomConfig = {
+            const zoomConfig = {
                 levels: [
                     {
                         name: "day",
@@ -192,9 +193,9 @@ var GlpiGantt = (function() {
                                 unit: "week",
                                 step: 1,
                                 format: function(date) {
-                                    var dateToStr = gantt.date.date_to_str("%d %M");
-                                    var endDate = gantt.date.add(date, 6, "day");
-                                    var weekNum = gantt.date.date_to_str("%W")(date);
+                                    const dateToStr = gantt.date.date_to_str("%d %M");
+                                    const endDate = gantt.date.add(date, 6, "day");
+                                    const weekNum = gantt.date.date_to_str("%W")(date);
                                     return "#" + weekNum + ", " + dateToStr(date) + " - " + dateToStr(endDate);
                                 }
                             },
@@ -226,8 +227,8 @@ var GlpiGantt = (function() {
                                 unit: "quarter",
                                 step: 1,
                                 format: function(date) {
-                                    var dateToStr = gantt.date.date_to_str("%M");
-                                    var endDate = gantt.date.add(gantt.date.add(date, 3, "month"), -1, "day");
+                                    const dateToStr = gantt.date.date_to_str("%M");
+                                    const endDate = gantt.date.add(gantt.date.add(date, 3, "month"), -1, "day");
                                     return dateToStr(date) + " - " + dateToStr(endDate);
                                 }
                             }
@@ -265,9 +266,9 @@ var GlpiGantt = (function() {
             });
 
             gantt.attachEvent("onBeforeRowDragEnd", function(id, target) {
-                var item = gantt.getTask(id);
-                var parent = null;
-                var retval = true;
+                const item = gantt.getTask(id);
+                let parent = null;
+                let retval = true;
                 if (target == 0) {
                     if (item.type == gantt.config.types.project && item.parent != target) {
                         item.parent = target;
@@ -289,8 +290,8 @@ var GlpiGantt = (function() {
             if (!readonly) {
             // catch task drag event to update db
                 gantt.attachEvent("onAfterTaskDrag", function(id) {
-                    var task = gantt.getTask(id);
-                    var progress = (Math.round(task.progress * 100 / 5) * 5) / 100; // prevent server side exception for wrong stepping
+                    const task = gantt.getTask(id);
+                    const progress = (Math.round(task.progress * 100 / 5) * 5) / 100; // prevent server side exception for wrong stepping
                     onTaskDrag(id, task, progress);
                 });
 
@@ -303,7 +304,7 @@ var GlpiGantt = (function() {
                 });
 
                 gantt.attachEvent("onBeforeLightbox", function(id) {
-                    var task = gantt.getTask(id);
+                    const task = gantt.getTask(id);
                     if (task.$new) {
                         if (task.parent && !isNaN(task.parent)) {
                             gantt.config.lightbox.sections = new_project_section;
@@ -319,7 +320,7 @@ var GlpiGantt = (function() {
                 });
 
                 gantt.attachEvent("onLightbox", function(id) {
-                    var task = gantt.getTask(id);
+                    const task = gantt.getTask(id);
                     if (task.$new) {
                         gantt.getLightboxSection("time").setValue(new Date());
                         if (!isNaN(task.parent)) {
@@ -350,8 +351,8 @@ var GlpiGantt = (function() {
 
                 gantt.attachEvent("onBeforeLinkAdd", function(id, link) {
 
-                    var sourceTask = gantt.getTask(link.source);
-                    var targetTask = gantt.getTask(link.target);
+                    const sourceTask = gantt.getTask(link.source);
+                    const targetTask = gantt.getTask(link.target);
 
                     if (validateLink(sourceTask, targetTask, link.type)) {
                         addTaskLink(id, sourceTask, targetTask, link);
@@ -362,13 +363,13 @@ var GlpiGantt = (function() {
                 // >>>>> link double click event to handle edit/save/delete actions
                 (function() {
 
-                    var modal;
-                    var editLinkId;
+                    let modal;
+                    let editLinkId;
                     gantt.attachEvent("onLinkDblClick", function(id) {
 
                         editLinkId = id;
-                        var link = gantt.getLink(id);
-                        var linkTitle;
+                        const link = gantt.getLink(id);
+                        let linkTitle;
 
                         switch (parseInt(link.type)) {
                             case parseInt(gantt.config.links.finish_to_start):
@@ -431,8 +432,8 @@ var GlpiGantt = (function() {
                     }
 
                     function saveLink() {
-                        var link = gantt.getLink(editLinkId);
-                        var lagValue = modal.querySelector(".lag-input").value;
+                        const link = gantt.getLink(editLinkId);
+                        const lagValue = modal.querySelector(".lag-input").value;
 
                         if (!isNaN(parseInt(lagValue, 10))) {
                             link.lag = parseInt(lagValue, 10);
@@ -476,8 +477,8 @@ var GlpiGantt = (function() {
                 if (!filterValue || !$('#rb-find').is(':checked')) {
                     return "";
                 }
-                var normalizedText = task.text.toLowerCase();
-                var normalizedValue = filterValue.toLowerCase();
+                const normalizedText = task.text.toLowerCase();
+                const normalizedValue = filterValue.toLowerCase();
                 return (normalizedText.indexOf(normalizedValue) > -1) ? "highlight" : "";
             };
 
@@ -485,8 +486,8 @@ var GlpiGantt = (function() {
                 if (!filterValue || !$('#rb-filter').is(':checked')) {
                     return true;
                 }
-                var normalizedText = task.text.toLowerCase();
-                var normalizedValue = filterValue.toLowerCase();
+                const normalizedText = task.text.toLowerCase();
+                const normalizedValue = filterValue.toLowerCase();
                 return (normalizedText.indexOf(normalizedValue) > -1);
             });
 
@@ -550,10 +551,10 @@ var GlpiGantt = (function() {
     // update parent item progress
     function parentProgress(id) {
         gantt.eachParent(function(task) {
-            var children = gantt.getChildren(task.id);
-            var childProgress = 0;
-            for (var i = 0; i < children.length; i++) {
-                var child = gantt.getTask(children[i]);
+            const children = gantt.getChildren(task.id);
+            let childProgress = 0;
+            for (let i = 0; i < children.length; i++) {
+                const child = gantt.getTask(children[i]);
                 childProgress += (child.progress * 100);
             }
             task.progress = childProgress / children.length / 100;
@@ -570,7 +571,7 @@ var GlpiGantt = (function() {
     }
 
     function validateLink(source, target, type) {
-        var valid = true;
+        let valid = true;
 
         if (source.type == 'project' && target.type == 'project') {
             gantt.alert(__("Links between projects cannot be created.", 'gantt'));
@@ -641,7 +642,7 @@ var GlpiGantt = (function() {
             },
             success: function(json) {
                 if (json.ok) {
-                    var task = gantt.getTask(id);
+                    const task = gantt.getTask(id);
                     task.text = item.text;
                     task.type = item.type;
                     task.start_date = item.start_date;
@@ -777,7 +778,7 @@ var GlpiGantt = (function() {
             },
             success: function(json) {
                 if (json.ok) {
-                    var project = gantt.getTask(id);
+                    const project = gantt.getTask(id);
                     project.text = item.text;
                     gantt.updateTask(id);
                     gantt.hideLightbox();
@@ -810,7 +811,7 @@ var GlpiGantt = (function() {
             },
             success: function(json) {
                 if (json.ok) {
-                    var tempId = link.id;
+                    const tempId = link.id;
                     gantt.changeLinkId(tempId, json.id);
                 } else {
                     gantt.alert(json.error);
@@ -892,9 +893,9 @@ var GlpiGantt = (function() {
     }
 
     function expandCollapse(level) {
-        var collapse = $('#collapse').is(':checked');
+        const collapse = $('#collapse').is(':checked');
         gantt.eachTask(function(item) {
-            var itemLevel = gantt.calculateTaskLevel(item);
+            const itemLevel = gantt.calculateTaskLevel(item);
             item.$open = false;
             if (collapse) {
                 item.$open = (itemLevel < level && item.type == gantt.config.types.project);
