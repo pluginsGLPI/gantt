@@ -29,6 +29,7 @@
 /* global gantt */
 /* global displayAjaxMessageAfterRedirect */
 
+//TODO: This should be a class
 const GlpiGantt = (function() {
 
     //TODO: Why is this always false?
@@ -55,6 +56,10 @@ const GlpiGantt = (function() {
     const formatFunc = gantt.date.date_to_str(parseDateFormat);
 
     return {
+        /**
+         * Initialize the Gantt chart
+         * @param {number} $ID The project ID
+         */
         init: function($ID) {
 
             const project_subtypes = [
@@ -548,7 +553,10 @@ const GlpiGantt = (function() {
 
     // >>>>> Functions
 
-    // update parent item progress
+    /**
+     * Update parent item progress
+     * @param id
+     */
     function parentProgress(id) {
         gantt.eachParent(function(task) {
             const children = gantt.getChildren(task.id);
@@ -562,6 +570,9 @@ const GlpiGantt = (function() {
         gantt.render();
     }
 
+    /**
+     * Calculate progress
+     */
     function calculateProgress() {
         gantt.eachTask(function(item) {
             if (item.progress > 0) {
@@ -570,6 +581,13 @@ const GlpiGantt = (function() {
         });
     }
 
+    /**
+     * Validate link between two items
+     * @param source
+     * @param target
+     * @param type
+     * @returns {boolean}
+     */
     function validateLink(source, target, type) {
         let valid = true;
 
@@ -595,6 +613,11 @@ const GlpiGantt = (function() {
         return valid;
     }
 
+    /**
+     * Add a new task
+     * @param id
+     * @param item
+     */
     function addTask(id, item) {
         $.ajax({
             url,
@@ -626,6 +649,11 @@ const GlpiGantt = (function() {
         });
     }
 
+    /**
+     * Update a task
+     * @param id
+     * @param item
+     */
     function updateTask(id, item) {
         $.ajax({
             url,
@@ -659,6 +687,12 @@ const GlpiGantt = (function() {
         });
     }
 
+    /**
+     * Handle dragging of a task
+     * @param id
+     * @param task
+     * @param progress
+     */
     function onTaskDrag(id, task, progress) {
         $.ajax({
             url,
@@ -685,6 +719,11 @@ const GlpiGantt = (function() {
         });
     }
 
+    /**
+     * Change the parent of an item
+     * @param item
+     * @param target
+     */
     function changeParent(item, target) {
         $.ajax({
             url,
@@ -710,6 +749,10 @@ const GlpiGantt = (function() {
         });
     }
 
+    /**
+     * Moves a project to the root (no parent)
+     * @param item
+     */
     function makeRootProject(item) {
         $.ajax({
             url,
@@ -735,6 +778,11 @@ const GlpiGantt = (function() {
         });
     }
 
+    /**
+     * Add a new project
+     * @param id
+     * @param item
+     */
     function addProject(id, item) {
         $.ajax({
             url,
@@ -765,6 +813,11 @@ const GlpiGantt = (function() {
         });
     }
 
+    /**
+     * Update a project
+     * @param id
+     * @param item
+     */
     function updateProject(id, item) {
         $.ajax({
             url,
@@ -793,6 +846,13 @@ const GlpiGantt = (function() {
         });
     }
 
+    /**
+     * Link two tasks
+     * @param id
+     * @param sourceTask
+     * @param targetTask
+     * @param link
+     */
     function addTaskLink(id, sourceTask, targetTask, link) {
         $.ajax({
             url,
@@ -825,6 +885,11 @@ const GlpiGantt = (function() {
         });
     }
 
+    /**
+     * Update the link between two tasks
+     * @param link The link to update on the server
+     * @param {function} callback Callback function to execute after the update if it was successful
+     */
     function updateTaskLink(link, callback) {
         $.ajax({
             url,
@@ -849,6 +914,12 @@ const GlpiGantt = (function() {
         });
     }
 
+    /**
+     * Delete a link between two tasks
+     *
+     * @param linkId
+     * @param {function} callback Callback function to execute after the deletion if it was successful
+     */
     function deleteTaskLink(linkId, callback) {
         $.ajax({
             url,
@@ -871,6 +942,11 @@ const GlpiGantt = (function() {
         });
     }
 
+    /**
+     * Gets the edit form URL for an item from the server and then redirects to it
+     *
+     * @param item
+     */
     function openEditForm(item) {
         $.ajax({
             url,
@@ -892,6 +968,10 @@ const GlpiGantt = (function() {
         });
     }
 
+    /**
+     * Expands or collapses and item tree level
+     * @param level
+     */
     function expandCollapse(level) {
         const collapse = $('#collapse').is(':checked');
         gantt.eachTask(function(item) {
