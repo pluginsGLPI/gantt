@@ -49,11 +49,7 @@ function plugin_init_gantt()
 
     $PLUGIN_HOOKS['csrf_compliant']['gantt'] = true;
 
-    $plugin = new Plugin();
-    if (
-        !$plugin->isInstalled('gantt')
-        || !$plugin->isActivated('gantt')
-    ) {
+    if (!Plugin::isPluginActive('gantt')) {
         return false;
     }
 
