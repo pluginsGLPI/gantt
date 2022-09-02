@@ -30,6 +30,8 @@
 
 namespace GlpiPlugin\Gantt;
 
+use Session;
+
 /**
  * DAO class for handling project records
  */
@@ -52,7 +54,8 @@ class ProjectDAO
             'priority' => 3,  //medium
             'projectstates_id' => 1,
             'users_id' => \Session::getLoginUserID(),
-            'show_on_global_gantt' => 1
+            'show_on_global_gantt' => 1,
+            'entities_id' => Session::getActiveEntity(),
         ];
         $proj = new \Project();
         $proj->add($input);
