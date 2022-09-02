@@ -30,6 +30,9 @@
 
 namespace GlpiPlugin\Gantt;
 
+use Project;
+use Session;
+
 /**
  * DAO class for handling project records
  */
@@ -42,6 +45,16 @@ class ProjectDAO
             throw new \Exception(__('Not enough rights', 'gantt'));
         }
 
+        // Default values for a "main" project
+        $entities_id = Session::getActiveEntity();
+        $is_recursive = false;
+
+        // Fallback values for a sub-project
+        if ($project->parent && $parent = Project::getById($project->parent)) {
+            $entities_id = $parent->fields['entities_id'];
+            $is_recursive = $parent->fields['is_recursive'];
+        }
+
         $input = [
             'name' => $project->text,
             'comment' => $project->comment,
@@ -52,7 +65,9 @@ class ProjectDAO
             'priority' => 3,  //medium
             'projectstates_id' => 1,
             'users_id' => \Session::getLoginUserID(),
-            'show_on_global_gantt' => 1
+            'show_on_global_gantt' => 1,
+            'entities_id' => $entities_id,
+            'is_recursive' => $is_recursive,
         ];
         $proj = new \Project();
         $proj->add($input);
