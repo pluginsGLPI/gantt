@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-06 15:07+0000\n"
+"POT-Creation-Date: 2022-09-02 13:54+0000\n"
 "PO-Revision-Date: 2022-05-06 13:53+0000\n"
 "Last-Translator: Cédric Anne, 2022\n"
 "Language-Team: Hindi (India) (https://www.transifex.com/teclib/teams/28042/hi_IN/)\n"
@@ -21,28 +21,28 @@ msgstr ""
 "Language: hi_IN\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: js/gantt-helper.js:395
+#: js/gantt-helper.js:397
 msgid "Cancel"
 msgstr "रद्द करें"
 
-#: js/gantt-helper.js:156
+#: js/gantt-helper.js:158
 msgid "Comment:"
 msgstr ""
 
-#: js/gantt-helper.js:746
+#: js/gantt-helper.js:748
 msgid "Could not create project: "
 msgstr ""
 
-#: js/gantt-helper.js:607
+#: js/gantt-helper.js:609
 msgid "Could not create task: "
 msgstr ""
 
-#: js/gantt-helper.js:774
+#: js/gantt-helper.js:776
 #, javascript-format
 msgid "Could not update Project[%s]: "
 msgstr ""
 
-#: js/gantt-helper.js:641 js/gantt-helper.js:668
+#: js/gantt-helper.js:643 js/gantt-helper.js:670
 #, javascript-format
 msgid "Could not update Task[%s]: "
 msgstr ""
@@ -51,19 +51,19 @@ msgstr ""
 msgid "Days"
 msgstr "दिन"
 
-#: js/gantt-helper.js:396
+#: js/gantt-helper.js:398
 msgid "Delete"
 msgstr "विलोपन"
 
-#: js/gantt-helper.js:153
+#: js/gantt-helper.js:155
 msgid "Description:"
 msgstr ""
 
-#: js/gantt-helper.js:165
+#: js/gantt-helper.js:167
 msgid "Duration"
 msgstr "अवधि"
 
-#: js/gantt-helper.js:150
+#: js/gantt-helper.js:152
 msgid "End date:"
 msgstr ""
 
@@ -75,11 +75,11 @@ msgstr ""
 msgid "Find"
 msgstr ""
 
-#: js/gantt-helper.js:376
+#: js/gantt-helper.js:378
 msgid "Finish to Finish: "
 msgstr ""
 
-#: js/gantt-helper.js:373
+#: js/gantt-helper.js:375
 msgid "Finish to Start: "
 msgstr ""
 
@@ -91,7 +91,7 @@ msgstr ""
 msgid "Gantt"
 msgstr ""
 
-#: js/gantt-helper.js:518
+#: js/gantt-helper.js:520
 msgid "Gantt mode: 'Readonly'"
 msgstr ""
 
@@ -103,7 +103,7 @@ msgstr ""
 msgid "Item must be of project type"
 msgstr ""
 
-#: js/gantt-helper.js:391
+#: js/gantt-helper.js:393
 msgid "Lag"
 msgstr ""
 
@@ -111,15 +111,15 @@ msgstr ""
 msgid "Link already exist!"
 msgstr ""
 
-#: js/gantt-helper.js:567
+#: js/gantt-helper.js:569
 msgid "Links between projects and tasks cannot be created."
 msgstr ""
 
-#: js/gantt-helper.js:564
+#: js/gantt-helper.js:566
 msgid "Links between projects cannot be created."
 msgstr ""
 
-#: js/gantt-helper.js:60 js/gantt-helper.js:65
+#: js/gantt-helper.js:62 js/gantt-helper.js:67
 msgid "Milestone"
 msgstr "मील का पत्थर"
 
@@ -127,26 +127,26 @@ msgstr "मील का पत्थर"
 msgid "Months"
 msgstr ""
 
-#: js/gantt-helper.js:69 js/gantt-helper.js:74 js/gantt-helper.js:324
+#: js/gantt-helper.js:71 js/gantt-helper.js:76 js/gantt-helper.js:326
 msgid "New project"
 msgstr "नई परियोजना"
 
 #: src/TaskDAO.php:42 src/TaskDAO.php:77 src/TaskDAO.php:97
-#: src/ProjectDAO.php:42 src/ProjectDAO.php:68 src/ProjectDAO.php:85
+#: src/ProjectDAO.php:45 src/ProjectDAO.php:83 src/ProjectDAO.php:100
 msgid "Not enough rights"
 msgstr "पर्याप्त अधिकार नहीं"
 
-#: js/gantt-helper.js:151
+#: js/gantt-helper.js:153
 msgid "Progress:"
 msgstr ""
 
-#: js/gantt-helper.js:58
+#: js/gantt-helper.js:60
 msgid "Project"
 msgid_plural "Projects"
 msgstr[0] "परियोजनाओं"
 msgstr[1] "परियोजनाओं"
 
-#: js/gantt-helper.js:163
+#: js/gantt-helper.js:165
 msgid "Project / Task"
 msgstr ""
 
@@ -154,23 +154,23 @@ msgstr ""
 msgid "Quarters"
 msgstr ""
 
-#: js/gantt-helper.js:394
+#: js/gantt-helper.js:396
 msgid "Save"
 msgstr "सहेजें"
 
-#: js/gantt-helper.js:164
+#: js/gantt-helper.js:166
 msgid "Start date"
 msgstr "आरंभ करने की तिथि"
 
-#: js/gantt-helper.js:148
+#: js/gantt-helper.js:150
 msgid "Start date:"
 msgstr ""
 
-#: js/gantt-helper.js:382
+#: js/gantt-helper.js:384
 msgid "Start to Finish: "
 msgstr ""
 
-#: js/gantt-helper.js:379
+#: js/gantt-helper.js:381
 msgid "Start to Start: "
 msgstr ""
 
@@ -178,29 +178,29 @@ msgstr ""
 msgid "Target item must be of project type"
 msgstr ""
 
-#: js/gantt-helper.js:576
+#: js/gantt-helper.js:578
 msgid "Target task can't end before source task ends."
 msgstr ""
 
-#: js/gantt-helper.js:579
+#: js/gantt-helper.js:581
 msgid "Target task can't end before the source task starts."
 msgstr ""
 
-#: js/gantt-helper.js:570
+#: js/gantt-helper.js:572
 msgid "Target task can't start before source task ends."
 msgstr ""
 
-#: js/gantt-helper.js:573
+#: js/gantt-helper.js:575
 msgid "Target task can't start before source task starts."
 msgstr ""
 
-#: js/gantt-helper.js:59 js/gantt-helper.js:64
+#: js/gantt-helper.js:61 js/gantt-helper.js:66
 msgid "Task"
 msgid_plural "Tasks"
 msgstr[0] "कार्य"
 msgstr[1] "कार्य"
 
-#: js/gantt-helper.js:213
+#: js/gantt-helper.js:215
 #, javascript-format
 msgid "Week #%s"
 msgstr ""

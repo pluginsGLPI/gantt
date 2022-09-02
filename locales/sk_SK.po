@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-06 15:07+0000\n"
+"POT-Creation-Date: 2022-09-02 13:54+0000\n"
 "PO-Revision-Date: 2022-05-06 13:53+0000\n"
 "Last-Translator: Cédric Anne, 2022\n"
 "Language-Team: Slovak (Slovakia) (https://www.transifex.com/teclib/teams/28042/sk_SK/)\n"
@@ -21,28 +21,28 @@ msgstr ""
 "Language: sk_SK\n"
 "Plural-Forms: nplurals=4; plural=(n % 1 == 0 && n == 1 ? 0 : n % 1 == 0 && n >= 2 && n <= 4 ? 1 : n % 1 != 0 ? 2: 3);\n"
 
-#: js/gantt-helper.js:395
+#: js/gantt-helper.js:397
 msgid "Cancel"
 msgstr "Zrušiť"
 
-#: js/gantt-helper.js:156
+#: js/gantt-helper.js:158
 msgid "Comment:"
 msgstr "Poznámka:"
 
-#: js/gantt-helper.js:746
+#: js/gantt-helper.js:748
 msgid "Could not create project: "
 msgstr "Nepodarilo sa vytvoriť projekt:"
 
-#: js/gantt-helper.js:607
+#: js/gantt-helper.js:609
 msgid "Could not create task: "
 msgstr "Nepodarilo sa vytvoriť úlohu:"
 
-#: js/gantt-helper.js:774
+#: js/gantt-helper.js:776
 #, javascript-format
 msgid "Could not update Project[%s]: "
 msgstr "Nepodarilo sa aktualizovať projekt[%s]:"
 
-#: js/gantt-helper.js:641 js/gantt-helper.js:668
+#: js/gantt-helper.js:643 js/gantt-helper.js:670
 #, javascript-format
 msgid "Could not update Task[%s]: "
 msgstr "Nepodarilo sa aktualizovať úlohu[%s]:"
@@ -51,19 +51,19 @@ msgstr "Nepodarilo sa aktualizovať úlohu[%s]:"
 msgid "Days"
 msgstr "Dni"
 
-#: js/gantt-helper.js:396
+#: js/gantt-helper.js:398
 msgid "Delete"
 msgstr "Zmazať"
 
-#: js/gantt-helper.js:153
+#: js/gantt-helper.js:155
 msgid "Description:"
 msgstr "Opis:"
 
-#: js/gantt-helper.js:165
+#: js/gantt-helper.js:167
 msgid "Duration"
 msgstr "Trvanie"
 
-#: js/gantt-helper.js:150
+#: js/gantt-helper.js:152
 msgid "End date:"
 msgstr "Dátum skončenia:"
 
@@ -75,11 +75,11 @@ msgstr "Filter"
 msgid "Find"
 msgstr "Hľadať"
 
-#: js/gantt-helper.js:376
+#: js/gantt-helper.js:378
 msgid "Finish to Finish: "
 msgstr "Od konca na koniec:"
 
-#: js/gantt-helper.js:373
+#: js/gantt-helper.js:375
 msgid "Finish to Start: "
 msgstr "Od konca na začiatok:"
 
@@ -91,7 +91,7 @@ msgstr "Na celú obrazovku"
 msgid "Gantt"
 msgstr ""
 
-#: js/gantt-helper.js:518
+#: js/gantt-helper.js:520
 msgid "Gantt mode: 'Readonly'"
 msgstr "Režim Gantt: 'Iba na čítanie' "
 
@@ -103,7 +103,7 @@ msgstr "Globálny GANTT"
 msgid "Item must be of project type"
 msgstr "Položka musí byť typu projekt"
 
-#: js/gantt-helper.js:391
+#: js/gantt-helper.js:393
 msgid "Lag"
 msgstr "Oneskorenie"
 
@@ -111,15 +111,15 @@ msgstr "Oneskorenie"
 msgid "Link already exist!"
 msgstr "Prepojenie už existuje"
 
-#: js/gantt-helper.js:567
+#: js/gantt-helper.js:569
 msgid "Links between projects and tasks cannot be created."
 msgstr "Odkazy medzi projektami a úlohami sa nedajú vytvoriť."
 
-#: js/gantt-helper.js:564
+#: js/gantt-helper.js:566
 msgid "Links between projects cannot be created."
 msgstr "Odkazy medzi projektami sa nedajú vytvoriť."
 
-#: js/gantt-helper.js:60 js/gantt-helper.js:65
+#: js/gantt-helper.js:62 js/gantt-helper.js:67
 msgid "Milestone"
 msgstr "Míľnik"
 
@@ -127,20 +127,20 @@ msgstr "Míľnik"
 msgid "Months"
 msgstr "Mesiace"
 
-#: js/gantt-helper.js:69 js/gantt-helper.js:74 js/gantt-helper.js:324
+#: js/gantt-helper.js:71 js/gantt-helper.js:76 js/gantt-helper.js:326
 msgid "New project"
 msgstr "Nový projekt"
 
 #: src/TaskDAO.php:42 src/TaskDAO.php:77 src/TaskDAO.php:97
-#: src/ProjectDAO.php:42 src/ProjectDAO.php:68 src/ProjectDAO.php:85
+#: src/ProjectDAO.php:45 src/ProjectDAO.php:83 src/ProjectDAO.php:100
 msgid "Not enough rights"
 msgstr "Nedostatočné oprávnenia"
 
-#: js/gantt-helper.js:151
+#: js/gantt-helper.js:153
 msgid "Progress:"
 msgstr "Stav vybavenia:"
 
-#: js/gantt-helper.js:58
+#: js/gantt-helper.js:60
 msgid "Project"
 msgid_plural "Projects"
 msgstr[0] "Projekt"
@@ -148,7 +148,7 @@ msgstr[1] "Projekty"
 msgstr[2] "Projekty"
 msgstr[3] "Projekty"
 
-#: js/gantt-helper.js:163
+#: js/gantt-helper.js:165
 msgid "Project / Task"
 msgstr "Projekt / Úloha"
 
@@ -156,23 +156,23 @@ msgstr "Projekt / Úloha"
 msgid "Quarters"
 msgstr "Štvrťroky"
 
-#: js/gantt-helper.js:394
+#: js/gantt-helper.js:396
 msgid "Save"
 msgstr "Uložiť"
 
-#: js/gantt-helper.js:164
+#: js/gantt-helper.js:166
 msgid "Start date"
 msgstr "Počiatočný dátum"
 
-#: js/gantt-helper.js:148
+#: js/gantt-helper.js:150
 msgid "Start date:"
 msgstr "Dátum začatia:"
 
-#: js/gantt-helper.js:382
+#: js/gantt-helper.js:384
 msgid "Start to Finish: "
 msgstr "Od začiatku na koniec:"
 
-#: js/gantt-helper.js:379
+#: js/gantt-helper.js:381
 msgid "Start to Start: "
 msgstr "Od začiatku na začiatok:"
 
@@ -180,23 +180,23 @@ msgstr "Od začiatku na začiatok:"
 msgid "Target item must be of project type"
 msgstr "Cieľová položka musí byť typu projekt"
 
-#: js/gantt-helper.js:576
+#: js/gantt-helper.js:578
 msgid "Target task can't end before source task ends."
 msgstr "Cieľová úloha nemôže skončiť skôr, než skončí zdrojová úloha."
 
-#: js/gantt-helper.js:579
+#: js/gantt-helper.js:581
 msgid "Target task can't end before the source task starts."
 msgstr "Cieľová úloha nemôže skončiť skôr, než začne zdrojová úloha."
 
-#: js/gantt-helper.js:570
+#: js/gantt-helper.js:572
 msgid "Target task can't start before source task ends."
 msgstr "Cieľová úloha nemôže začať skôr, než skončí zdrojová úloha."
 
-#: js/gantt-helper.js:573
+#: js/gantt-helper.js:575
 msgid "Target task can't start before source task starts."
 msgstr "Cieľová úloha nemôže začať skôr, než začne zdrojová úloha."
 
-#: js/gantt-helper.js:59 js/gantt-helper.js:64
+#: js/gantt-helper.js:61 js/gantt-helper.js:66
 msgid "Task"
 msgid_plural "Tasks"
 msgstr[0] "Úloha"
@@ -204,7 +204,7 @@ msgstr[1] "Úlohy"
 msgstr[2] "Úlohy"
 msgstr[3] "Úlohy"
 
-#: js/gantt-helper.js:213
+#: js/gantt-helper.js:215
 #, javascript-format
 msgid "Week #%s"
 msgstr "Týždeň #%s"
