@@ -451,6 +451,11 @@ var GlpiGantt = (function() {
                     'bottom': '18px',
                     'right': '10px'
                 });
+                $('header.navbar').hide();
+                $('aside.navbar').hide();
+                $('#tabspanel').css({
+                    'visibility': 'hidden'
+                });
                 return true;
             });
 
@@ -458,6 +463,11 @@ var GlpiGantt = (function() {
                 $('.gantt-block__features').css({
                     'position': 'initial',
                     'bottom': '10px'
+                });
+                $('header.navbar').show();
+                $('aside.navbar').show();
+                $('#tabspanel').css({
+                    'visibility': 'initial'
                 });
                 return true;
             });
