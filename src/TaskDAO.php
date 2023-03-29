@@ -63,6 +63,16 @@ class TaskDAO
             'is_milestone' => ($task->type == "milestone") ? 1 : 0
         ];
 
+        if ($parentTask != null) {
+            $input['entities_id'] = $parentTask->fields["entities_id"];
+            $input['is_recursive'] = $parentTask->fields["is_recursive"];
+        } else {
+            $p = new \Project();
+            $p->getFromDB($projectId);
+            $input['entities_id'] = $p->fields["entities_id"];
+            $input['is_recursive'] = $p->fields["is_recursive"];
+        }
+
         $newTask = new \ProjectTask();
         $newTask->add($input);
         return $newTask;
