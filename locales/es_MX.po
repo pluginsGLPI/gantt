@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-09-02 13:54+0000\n"
+"POT-Creation-Date: 2023-03-30 12:37+0000\n"
 "PO-Revision-Date: 2022-05-06 13:53+0000\n"
 "Last-Translator: Carlos Moreno Rodríguez <carlosm.rodriguez@prodigy.net.mx>, 2022\n"
 "Language-Team: Spanish (Mexico) (https://www.transifex.com/teclib/teams/28042/es_MX/)\n"
@@ -22,28 +22,28 @@ msgstr ""
 "Language: es_MX\n"
 "Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
-#: js/gantt-helper.js:397
+#: js/gantt-helper.js:403
 msgid "Cancel"
 msgstr "Cancelar"
 
-#: js/gantt-helper.js:158
+#: js/gantt-helper.js:164
 msgid "Comment:"
 msgstr "Comentario:"
 
-#: js/gantt-helper.js:748
+#: js/gantt-helper.js:807
 msgid "Could not create project: "
 msgstr "No se generó el proyecto:"
 
-#: js/gantt-helper.js:609
+#: js/gantt-helper.js:643
 msgid "Could not create task: "
 msgstr "No se creó la tarea:"
 
-#: js/gantt-helper.js:776
+#: js/gantt-helper.js:840
 #, javascript-format
 msgid "Could not update Project[%s]: "
 msgstr "No se actualizó el Proyecto[%s]:"
 
-#: js/gantt-helper.js:643 js/gantt-helper.js:670
+#: js/gantt-helper.js:682 js/gantt-helper.js:715
 #, javascript-format
 msgid "Could not update Task[%s]: "
 msgstr "No se actualizó la Tarea[%s]:"
@@ -52,19 +52,19 @@ msgstr "No se actualizó la Tarea[%s]:"
 msgid "Days"
 msgstr "Días"
 
-#: js/gantt-helper.js:398
+#: js/gantt-helper.js:404
 msgid "Delete"
 msgstr "Borrar"
 
-#: js/gantt-helper.js:155
+#: js/gantt-helper.js:161
 msgid "Description:"
 msgstr "Descripción:"
 
-#: js/gantt-helper.js:167
+#: js/gantt-helper.js:173
 msgid "Duration"
 msgstr "Duración"
 
-#: js/gantt-helper.js:152
+#: js/gantt-helper.js:158
 msgid "End date:"
 msgstr "Fecha fin:"
 
@@ -76,11 +76,11 @@ msgstr "Filtrar"
 msgid "Find"
 msgstr "Buscar"
 
-#: js/gantt-helper.js:378
+#: js/gantt-helper.js:384
 msgid "Finish to Finish: "
 msgstr "Finalizar para terminar:"
 
-#: js/gantt-helper.js:375
+#: js/gantt-helper.js:381
 msgid "Finish to Start: "
 msgstr "Finalizar para iniciar:"
 
@@ -92,7 +92,7 @@ msgstr "Pantalla completa"
 msgid "Gantt"
 msgstr "GANTT"
 
-#: js/gantt-helper.js:520
+#: js/gantt-helper.js:536
 msgid "Gantt mode: 'Readonly'"
 msgstr "Modo: 'Sólo lectura'"
 
@@ -104,7 +104,7 @@ msgstr "GANTT global"
 msgid "Item must be of project type"
 msgstr "El elemento debe ser del tipo de proyecto"
 
-#: js/gantt-helper.js:393
+#: js/gantt-helper.js:399
 msgid "Lag"
 msgstr "Retraso"
 
@@ -112,15 +112,15 @@ msgstr "Retraso"
 msgid "Link already exist!"
 msgstr "¡El enlace ya existe!"
 
-#: js/gantt-helper.js:569
+#: js/gantt-helper.js:598
 msgid "Links between projects and tasks cannot be created."
 msgstr "No se pueden crear vínculos entre proyectos y tareas. "
 
-#: js/gantt-helper.js:566
+#: js/gantt-helper.js:595
 msgid "Links between projects cannot be created."
 msgstr "No se pueden crear vínculos entre proyectos. "
 
-#: js/gantt-helper.js:62 js/gantt-helper.js:67
+#: js/gantt-helper.js:68 js/gantt-helper.js:73
 msgid "Milestone"
 msgstr "Hito"
 
@@ -128,27 +128,27 @@ msgstr "Hito"
 msgid "Months"
 msgstr "Meses"
 
-#: js/gantt-helper.js:71 js/gantt-helper.js:76 js/gantt-helper.js:326
+#: js/gantt-helper.js:77 js/gantt-helper.js:82 js/gantt-helper.js:332
 msgid "New project"
 msgstr "Nuevo proyecto"
 
-#: src/TaskDAO.php:42 src/TaskDAO.php:77 src/TaskDAO.php:97
 #: src/ProjectDAO.php:45 src/ProjectDAO.php:83 src/ProjectDAO.php:100
+#: src/TaskDAO.php:42 src/TaskDAO.php:87 src/TaskDAO.php:107
 msgid "Not enough rights"
 msgstr "Sin permisos suficientes"
 
-#: js/gantt-helper.js:153
+#: js/gantt-helper.js:159
 msgid "Progress:"
 msgstr "Progreso:"
 
-#: js/gantt-helper.js:60
+#: js/gantt-helper.js:66
 msgid "Project"
 msgid_plural "Projects"
 msgstr[0] "Proyecto"
 msgstr[1] "Proyectos"
 msgstr[2] "Proyectos"
 
-#: js/gantt-helper.js:165
+#: js/gantt-helper.js:171
 msgid "Project / Task"
 msgstr "Proyecto / Tarea"
 
@@ -156,23 +156,23 @@ msgstr "Proyecto / Tarea"
 msgid "Quarters"
 msgstr "Cuatrimestre"
 
-#: js/gantt-helper.js:396
+#: js/gantt-helper.js:402
 msgid "Save"
 msgstr "Registrar"
 
-#: js/gantt-helper.js:166
+#: js/gantt-helper.js:172
 msgid "Start date"
 msgstr "Fecha de inicio"
 
-#: js/gantt-helper.js:150
+#: js/gantt-helper.js:156
 msgid "Start date:"
 msgstr "Fecha de inicio:"
 
-#: js/gantt-helper.js:384
+#: js/gantt-helper.js:390
 msgid "Start to Finish: "
 msgstr "Iniciar para terminar"
 
-#: js/gantt-helper.js:381
+#: js/gantt-helper.js:387
 msgid "Start to Start: "
 msgstr "Iniciar para comenzar"
 
@@ -180,31 +180,31 @@ msgstr "Iniciar para comenzar"
 msgid "Target item must be of project type"
 msgstr "El elemento destino debe ser del tipo proyecto"
 
-#: js/gantt-helper.js:578
+#: js/gantt-helper.js:607
 msgid "Target task can't end before source task ends."
 msgstr "La tarea destino no puede finalizar antes que la tarea origen"
 
-#: js/gantt-helper.js:581
+#: js/gantt-helper.js:610
 msgid "Target task can't end before the source task starts."
 msgstr ""
 "La tarea destino no puede finalizar antes que comience la tarea principal"
 
-#: js/gantt-helper.js:572
+#: js/gantt-helper.js:601
 msgid "Target task can't start before source task ends."
 msgstr "La tarea destino no puede comenzar antes que finalice la tarea origen"
 
-#: js/gantt-helper.js:575
+#: js/gantt-helper.js:604
 msgid "Target task can't start before source task starts."
 msgstr "La tarea destino no puede inciar antes de comenzar la tarea origen"
 
-#: js/gantt-helper.js:61 js/gantt-helper.js:66
+#: js/gantt-helper.js:67 js/gantt-helper.js:72
 msgid "Task"
 msgid_plural "Tasks"
 msgstr[0] "Tarea"
 msgstr[1] "Tareas"
 msgstr[2] "Tareas"
 
-#: js/gantt-helper.js:215
+#: js/gantt-helper.js:221
 #, javascript-format
 msgid "Week #%s"
 msgstr "Semana #%s"

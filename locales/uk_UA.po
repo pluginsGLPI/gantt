@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-09-02 13:54+0000\n"
+"POT-Creation-Date: 2023-03-30 12:37+0000\n"
 "PO-Revision-Date: 2022-05-06 13:53+0000\n"
 "Last-Translator: Cédric Anne, 2022\n"
 "Language-Team: Ukrainian (Ukraine) (https://www.transifex.com/teclib/teams/28042/uk_UA/)\n"
@@ -21,28 +21,28 @@ msgstr ""
 "Language: uk_UA\n"
 "Plural-Forms: nplurals=4; plural=(n % 1 == 0 && n % 10 == 1 && n % 100 != 11 ? 0 : n % 1 == 0 && n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || (n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
 
-#: js/gantt-helper.js:397
+#: js/gantt-helper.js:403
 msgid "Cancel"
 msgstr "Відміна"
 
-#: js/gantt-helper.js:158
+#: js/gantt-helper.js:164
 msgid "Comment:"
 msgstr "Примітка:"
 
-#: js/gantt-helper.js:748
+#: js/gantt-helper.js:807
 msgid "Could not create project: "
 msgstr "Не можу створити проект:"
 
-#: js/gantt-helper.js:609
+#: js/gantt-helper.js:643
 msgid "Could not create task: "
 msgstr "Не можу створити завдання:"
 
-#: js/gantt-helper.js:776
+#: js/gantt-helper.js:840
 #, javascript-format
 msgid "Could not update Project[%s]: "
 msgstr "Не можу змінити Проект[%s]: "
 
-#: js/gantt-helper.js:643 js/gantt-helper.js:670
+#: js/gantt-helper.js:682 js/gantt-helper.js:715
 #, javascript-format
 msgid "Could not update Task[%s]: "
 msgstr "Не можу змінити Завдання[%s]: "
@@ -51,19 +51,19 @@ msgstr "Не можу змінити Завдання[%s]: "
 msgid "Days"
 msgstr "Дні"
 
-#: js/gantt-helper.js:398
+#: js/gantt-helper.js:404
 msgid "Delete"
 msgstr "Видалити"
 
-#: js/gantt-helper.js:155
+#: js/gantt-helper.js:161
 msgid "Description:"
 msgstr "Опис:"
 
-#: js/gantt-helper.js:167
+#: js/gantt-helper.js:173
 msgid "Duration"
 msgstr "Тривалість"
 
-#: js/gantt-helper.js:152
+#: js/gantt-helper.js:158
 msgid "End date:"
 msgstr "Кінцева дата:"
 
@@ -75,11 +75,11 @@ msgstr "Фільтр"
 msgid "Find"
 msgstr "Шукати"
 
-#: js/gantt-helper.js:378
+#: js/gantt-helper.js:384
 msgid "Finish to Finish: "
 msgstr "Завершити, щоб завершити: "
 
-#: js/gantt-helper.js:375
+#: js/gantt-helper.js:381
 msgid "Finish to Start: "
 msgstr "Завершити, щоб почати: "
 
@@ -91,7 +91,7 @@ msgstr "Повний екран"
 msgid "Gantt"
 msgstr ""
 
-#: js/gantt-helper.js:520
+#: js/gantt-helper.js:536
 msgid "Gantt mode: 'Readonly'"
 msgstr "Режим Ганта: 'Тільки читання'"
 
@@ -103,7 +103,7 @@ msgstr "Глобальний GANTT"
 msgid "Item must be of project type"
 msgstr "Елемент повинен мати тип проекту"
 
-#: js/gantt-helper.js:393
+#: js/gantt-helper.js:399
 msgid "Lag"
 msgstr "Відставання"
 
@@ -111,15 +111,15 @@ msgstr "Відставання"
 msgid "Link already exist!"
 msgstr "Зв'язок вже існує!"
 
-#: js/gantt-helper.js:569
+#: js/gantt-helper.js:598
 msgid "Links between projects and tasks cannot be created."
 msgstr "Не можна створити зв'язки між проектами та завданнями."
 
-#: js/gantt-helper.js:566
+#: js/gantt-helper.js:595
 msgid "Links between projects cannot be created."
 msgstr "Не можна створити зв'язки між проектами."
 
-#: js/gantt-helper.js:62 js/gantt-helper.js:67
+#: js/gantt-helper.js:68 js/gantt-helper.js:73
 msgid "Milestone"
 msgstr "Віха"
 
@@ -127,20 +127,20 @@ msgstr "Віха"
 msgid "Months"
 msgstr "Місяці"
 
-#: js/gantt-helper.js:71 js/gantt-helper.js:76 js/gantt-helper.js:326
+#: js/gantt-helper.js:77 js/gantt-helper.js:82 js/gantt-helper.js:332
 msgid "New project"
 msgstr "Новий проект"
 
-#: src/TaskDAO.php:42 src/TaskDAO.php:77 src/TaskDAO.php:97
 #: src/ProjectDAO.php:45 src/ProjectDAO.php:83 src/ProjectDAO.php:100
+#: src/TaskDAO.php:42 src/TaskDAO.php:87 src/TaskDAO.php:107
 msgid "Not enough rights"
 msgstr "Недостатньо прав"
 
-#: js/gantt-helper.js:153
+#: js/gantt-helper.js:159
 msgid "Progress:"
 msgstr "Прогрес:"
 
-#: js/gantt-helper.js:60
+#: js/gantt-helper.js:66
 msgid "Project"
 msgid_plural "Projects"
 msgstr[0] "Проект"
@@ -148,7 +148,7 @@ msgstr[1] "Проекти"
 msgstr[2] "Проекти"
 msgstr[3] "Проекти"
 
-#: js/gantt-helper.js:165
+#: js/gantt-helper.js:171
 msgid "Project / Task"
 msgstr "Проект / завдання"
 
@@ -156,23 +156,23 @@ msgstr "Проект / завдання"
 msgid "Quarters"
 msgstr "Квартали"
 
-#: js/gantt-helper.js:396
+#: js/gantt-helper.js:402
 msgid "Save"
 msgstr "Зберегти"
 
-#: js/gantt-helper.js:166
+#: js/gantt-helper.js:172
 msgid "Start date"
 msgstr "Початкова дата"
 
-#: js/gantt-helper.js:150
+#: js/gantt-helper.js:156
 msgid "Start date:"
 msgstr "Початкова дата:"
 
-#: js/gantt-helper.js:384
+#: js/gantt-helper.js:390
 msgid "Start to Finish: "
 msgstr "Почати, щоб завершити:"
 
-#: js/gantt-helper.js:381
+#: js/gantt-helper.js:387
 msgid "Start to Start: "
 msgstr "Почати, щоб почати:"
 
@@ -180,24 +180,24 @@ msgstr "Почати, щоб почати:"
 msgid "Target item must be of project type"
 msgstr "Цільовий елемент повинен мати тип проекту"
 
-#: js/gantt-helper.js:578
+#: js/gantt-helper.js:607
 msgid "Target task can't end before source task ends."
 msgstr ""
 "Цільове завдання не може закінчуватись до завершення вихідного завдання."
 
-#: js/gantt-helper.js:581
+#: js/gantt-helper.js:610
 msgid "Target task can't end before the source task starts."
 msgstr "Цільове завдання не може закінчуватись до початку вихідного завдання."
 
-#: js/gantt-helper.js:572
+#: js/gantt-helper.js:601
 msgid "Target task can't start before source task ends."
 msgstr "Цільове завдання не може починатись до завершення вихідного завдання."
 
-#: js/gantt-helper.js:575
+#: js/gantt-helper.js:604
 msgid "Target task can't start before source task starts."
 msgstr "Цільове завдання не може починатись до початку вихідного завдання."
 
-#: js/gantt-helper.js:61 js/gantt-helper.js:66
+#: js/gantt-helper.js:67 js/gantt-helper.js:72
 msgid "Task"
 msgid_plural "Tasks"
 msgstr[0] "Завдання"
@@ -205,7 +205,7 @@ msgstr[1] "Завдання"
 msgstr[2] "Завдання"
 msgstr[3] "Завдання"
 
-#: js/gantt-helper.js:215
+#: js/gantt-helper.js:221
 #, javascript-format
 msgid "Week #%s"
 msgstr "Тиждень №%s"
