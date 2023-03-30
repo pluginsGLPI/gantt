@@ -29,13 +29,15 @@
 /* global gantt */
 /* global displayAjaxMessageAfterRedirect */
 
-var GlpiGantt = (function() {
+//TODO: This should be a class
+const GlpiGantt = (function() {
 
-    var readonly = false;
-    var plugin_path = CFG_GLPI.root_doc + '/' + (GLPI_PLUGINS_PATH['gantt'] ?? "");
-    var url = plugin_path +  '/ajax/gantt.php';
-    var parseDateFormat = "%Y-%m-%d %H:%i";
-    var uiDateFormat = null;
+    //TODO: Why is this always false?
+    const readonly = false;
+    const plugin_path = CFG_GLPI.root_doc + '/' + (GLPI_PLUGINS_PATH['gantt'] ?? "");
+    const url = plugin_path +  '/ajax/gantt.php';
+    const parseDateFormat = "%Y-%m-%d %H:%i";
+    let uiDateFormat = null;
     switch (CFG_GLPI.date_format) {
         case 1:
             uiDateFormat = '%d-%m-%Y';
@@ -51,41 +53,45 @@ var GlpiGantt = (function() {
 
     gantt.i18n.setLocale(CFG_GLPI.language.substr(0, 2));
 
-    var formatFunc = gantt.date.date_to_str(parseDateFormat);
+    const formatFunc = gantt.date.date_to_str(parseDateFormat);
 
     return {
+        /**
+         * Initialize the Gantt chart
+         * @param {number} $ID The project ID
+         */
         init: function($ID) {
 
-            var project_subtypes = [
+            const project_subtypes = [
                 { key: gantt.config.types.project, label: _n("Project", "Projects", 1, 'gantt') },
                 { key: gantt.config.types.task, label: _n("Task", "Tasks", 1, 'gantt') },
                 { key: gantt.config.types.milestone, label: __("Milestone", 'gantt') }
             ];
 
-            var task_subtypes = [
+            const task_subtypes = [
                 { key: gantt.config.types.task, label:  _n("Task", "Tasks", 1, 'gantt') },
                 { key: gantt.config.types.milestone, label: __("Milestone", 'gantt') }
             ];
 
-            var default_section = [
+            const default_section = [
                 { name: "description", height: 70, map_to: "text", type: "textarea", focus: true, default_value: __("New project", 'gantt') },
                 { name: "time", type: "duration", map_to: "auto" }
             ];
 
-            var new_project_section = [
+            const new_project_section = [
                 { name: "description", height: 70, map_to: "text", type: "textarea", focus: true, default_value: __("New project", 'gantt') },
                 { name: "time", type: "duration", map_to: "auto" },
                 { name: "type", type: "radio", map_to: "type", options: project_subtypes, default_value: gantt.config.types.project }
             ];
 
-            var new_item_section = [
+            const new_item_section = [
                 { name: "description", height: 70, map_to: "text", type: "textarea", focus: true },
                 { name: "time", type: "duration", map_to: "auto" },
                 { name: "type", type: "radio", map_to: "type", options: task_subtypes, default_value: gantt.config.types.task }
             ];
 
-            var filterValue = "";
-            var delay;
+            let filterValue = "";
+            let delay;
 
             // >>>>> Configs
             gantt.config.grid_width = 600;
@@ -117,8 +123,8 @@ var GlpiGantt = (function() {
             ];
 
             // disable task specific controls on projects
-            gantt.templates.task_class = function(start, end, task) {
-                var css = [];
+            gantt.templates.task_class = (start, end, task) =>{
+                const css = [];
                 if (task.type == "project") {
                     css.push("no_progress_drag");
                     css.push("no_link_drag");
@@ -127,14 +133,14 @@ var GlpiGantt = (function() {
             };
 
             // set text labels for milestones
-            gantt.templates.rightside_text = function(start, end, task) {
+            gantt.templates.rightside_text = (start, end, task) => {
                 if (task.type == gantt.config.types.milestone) {
                     return task.text;
                 }
                 return "";
             };
 
-            gantt.templates.progress_text = function(start, end, task) {
+            gantt.templates.progress_text = (start, end, task) => {
                 return "<span style='text-align:left; color: #fff;'>" + Math.round(task.progress * 100) + "% </span>";
             };
 
@@ -145,8 +151,8 @@ var GlpiGantt = (function() {
                 undo: true
             });
 
-            gantt.templates.tooltip_text = function(start, end, task) {
-                var text = "<b><span class=\"capitalize\">" +
+            gantt.templates.tooltip_text = (start, end, task) => {
+               let text = "<b><span class=\"capitalize\">" +
                task.type + ":</span></b> " + task.text + "<br/><b>" + __("Start date:", 'gantt') + "</b> " +
                gantt.templates.tooltip_date_format(start) +
                "<br/><b>" + __("End date:", 'gantt') + "</b> " + gantt.templates.tooltip_date_format(end) +
@@ -169,11 +175,11 @@ var GlpiGantt = (function() {
             ];
 
             // specify fullscreen root element
-            gantt.ext.fullscreen.getFullscreenElement = function() {
+            gantt.ext.fullscreen.getFullscreenElement = () => {
                 return document.getElementById("gantt-container");
             };
 
-            var zoomConfig = {
+            const zoomConfig = {
                 levels: [
                     {
                         name: "day",
@@ -191,10 +197,10 @@ var GlpiGantt = (function() {
                             {
                                 unit: "week",
                                 step: 1,
-                                format: function(date) {
-                                    var dateToStr = gantt.date.date_to_str("%d %M");
-                                    var endDate = gantt.date.add(date, 6, "day");
-                                    var weekNum = gantt.date.date_to_str("%W")(date);
+                                format: (date) => {
+                                    const dateToStr = gantt.date.date_to_str("%d %M");
+                                    const endDate = gantt.date.add(date, 6, "day");
+                                    const weekNum = gantt.date.date_to_str("%W")(date);
                                     return "#" + weekNum + ", " + dateToStr(date) + " - " + dateToStr(endDate);
                                 }
                             },
@@ -225,9 +231,9 @@ var GlpiGantt = (function() {
                             {
                                 unit: "quarter",
                                 step: 1,
-                                format: function(date) {
-                                    var dateToStr = gantt.date.date_to_str("%M");
-                                    var endDate = gantt.date.add(gantt.date.add(date, 3, "month"), -1, "day");
+                                format: (date) => {
+                                    const dateToStr = gantt.date.date_to_str("%M");
+                                    const endDate = gantt.date.add(gantt.date.add(date, 3, "month"), -1, "day");
                                     return dateToStr(date) + " - " + dateToStr(endDate);
                                 }
                             }
@@ -252,22 +258,22 @@ var GlpiGantt = (function() {
 
             // >>>>> Event handlers
 
-            gantt.ext.zoom.attachEvent("onAfterZoom", function(level, config) {
+            gantt.ext.zoom.attachEvent("onAfterZoom", (level, config) => {
                 document.querySelector(".gantt_radio[value='" + config.name + "']").checked = true;
             });
 
-            $("input[name='scale']").on('click', function(event) {
+            $("input[name='scale']").on('click', (event) => {
                 gantt.ext.zoom.setLevel(event.target.value);
             });
 
-            gantt.attachEvent("onBeforeRowDragMove", function(id) {
+            gantt.attachEvent("onBeforeRowDragMove", (id) => {
                 $('#hf_gantt_item_state').val(id + "|" + gantt.getTask(id).parent);
             });
 
-            gantt.attachEvent("onBeforeRowDragEnd", function(id, target) {
-                var item = gantt.getTask(id);
-                var parent = null;
-                var retval = true;
+            gantt.attachEvent("onBeforeRowDragEnd", (id, target) => {
+                const item = gantt.getTask(id);
+                let parent = null;
+                let retval = true;
                 if (target == 0) {
                     if (item.type == gantt.config.types.project && item.parent != target) {
                         item.parent = target;
@@ -288,22 +294,22 @@ var GlpiGantt = (function() {
 
             if (!readonly) {
             // catch task drag event to update db
-                gantt.attachEvent("onAfterTaskDrag", function(id) {
-                    var task = gantt.getTask(id);
-                    var progress = (Math.round(task.progress * 100 / 5) * 5) / 100; // prevent server side exception for wrong stepping
+                gantt.attachEvent("onAfterTaskDrag", (id) => {
+                    const task = gantt.getTask(id);
+                    const progress = (Math.round(task.progress * 100 / 5) * 5) / 100; // prevent server side exception for wrong stepping
                     onTaskDrag(id, task, progress);
                 });
 
-                gantt.attachEvent("onAfterTaskUpdate", function(id) {
+                gantt.attachEvent("onAfterTaskUpdate", (id) => {
                     parentProgress(id);
                 });
 
-                gantt.attachEvent("onTaskDblClick", function(id) {
+                gantt.attachEvent("onTaskDblClick", (id) => {
                     openEditForm(gantt.getTask(id));
                 });
 
-                gantt.attachEvent("onBeforeLightbox", function(id) {
-                    var task = gantt.getTask(id);
+                gantt.attachEvent("onBeforeLightbox", (id) => {
+                    const task = gantt.getTask(id);
                     if (task.$new) {
                         if (task.parent && !isNaN(task.parent)) {
                             gantt.config.lightbox.sections = new_project_section;
@@ -318,8 +324,8 @@ var GlpiGantt = (function() {
                     return true;
                 });
 
-                gantt.attachEvent("onLightbox", function(id) {
-                    var task = gantt.getTask(id);
+                gantt.attachEvent("onLightbox", (id) => {
+                    const task = gantt.getTask(id);
                     if (task.$new) {
                         gantt.getLightboxSection("time").setValue(new Date());
                         if (!isNaN(task.parent)) {
@@ -333,7 +339,7 @@ var GlpiGantt = (function() {
                 });
 
                 // handle lightbox Save action
-                gantt.attachEvent("onLightboxSave", function(id, item, is_new) {
+                gantt.attachEvent("onLightboxSave", (id, item, is_new) => {
                     if (is_new) {
                         if (item.parent == 0 || (gantt.getLightboxSection("type") && gantt.getLightboxSection("type").getValue() == gantt.config.types.project)) {
                             addProject(id, item);
@@ -348,10 +354,10 @@ var GlpiGantt = (function() {
                     return false;
                 });
 
-                gantt.attachEvent("onBeforeLinkAdd", function(id, link) {
+                gantt.attachEvent("onBeforeLinkAdd", (id, link) => {
 
-                    var sourceTask = gantt.getTask(link.source);
-                    var targetTask = gantt.getTask(link.target);
+                    const sourceTask = gantt.getTask(link.source);
+                    const targetTask = gantt.getTask(link.target);
 
                     if (validateLink(sourceTask, targetTask, link.type)) {
                         addTaskLink(id, sourceTask, targetTask, link);
@@ -362,13 +368,13 @@ var GlpiGantt = (function() {
                 // >>>>> link double click event to handle edit/save/delete actions
                 (function() {
 
-                    var modal;
-                    var editLinkId;
-                    gantt.attachEvent("onLinkDblClick", function(id) {
+                    let modal;
+                    let editLinkId;
+                    gantt.attachEvent("onLinkDblClick", (id) => {
 
                         editLinkId = id;
-                        var link = gantt.getLink(id);
-                        var linkTitle;
+                        const link = gantt.getLink(id);
+                        let linkTitle;
 
                         switch (parseInt(link.type)) {
                             case parseInt(gantt.config.links.finish_to_start):
@@ -398,7 +404,7 @@ var GlpiGantt = (function() {
                                 { label: __("Delete", 'gantt'), css: "gantt_delete_btn", value: "delete" }
                             ],
                             width: "500px",
-                            callback: function(result) {
+                            callback: (result) => {
                                 switch (result) {
                                     case "save":
                                         saveLink();
@@ -431,8 +437,8 @@ var GlpiGantt = (function() {
                     }
 
                     function saveLink() {
-                        var link = gantt.getLink(editLinkId);
-                        var lagValue = modal.querySelector(".lag-input").value;
+                        const link = gantt.getLink(editLinkId);
+                        const lagValue = modal.querySelector(".lag-input").value;
 
                         if (!isNaN(parseInt(lagValue, 10))) {
                             link.lag = parseInt(lagValue, 10);
@@ -445,7 +451,7 @@ var GlpiGantt = (function() {
             }
 
             // adjust elements visibility on Fullscreen expand/collapse
-            gantt.attachEvent("onBeforeExpand", function() {
+            gantt.attachEvent("onBeforeExpand", () => {
                 $('.gantt-block__features').css({
                     'position': 'absolute',
                     'bottom': '18px',
@@ -459,7 +465,7 @@ var GlpiGantt = (function() {
                 return true;
             });
 
-            gantt.attachEvent("onCollapse", function() {
+            gantt.attachEvent("onCollapse", () => {
                 $('.gantt-block__features').css({
                     'position': 'initial',
                     'bottom': '10px'
@@ -472,36 +478,36 @@ var GlpiGantt = (function() {
                 return true;
             });
 
-            gantt.templates.grid_row_class = function(start, end, task) {
+            gantt.templates.grid_row_class = (start, end, task) => {
                 if (!filterValue || !$('#rb-find').is(':checked')) {
                     return "";
                 }
-                var normalizedText = task.text.toLowerCase();
-                var normalizedValue = filterValue.toLowerCase();
+                const normalizedText = task.text.toLowerCase();
+                const normalizedValue = filterValue.toLowerCase();
                 return (normalizedText.indexOf(normalizedValue) > -1) ? "highlight" : "";
             };
 
-            gantt.attachEvent("onBeforeTaskDisplay", function(id, task) {
+            gantt.attachEvent("onBeforeTaskDisplay", (id, task) => {
                 if (!filterValue || !$('#rb-filter').is(':checked')) {
                     return true;
                 }
-                var normalizedText = task.text.toLowerCase();
-                var normalizedValue = filterValue.toLowerCase();
+                const normalizedText = task.text.toLowerCase();
+                const normalizedValue = filterValue.toLowerCase();
                 return (normalizedText.indexOf(normalizedValue) > -1);
             });
 
-            $('.gantt_radio[name=rb-optype]').on('change', function() {
+            $('.gantt_radio[name=rb-optype]').on('change', () => {
                 gantt.render();
             });
 
-            gantt.attachEvent("onGanttRender", function() {
+            gantt.attachEvent("onGanttRender", () => {
                 $("#search").val(filterValue);
             });
 
-            gantt.$doFilter = function(value) {
+            gantt.$doFilter = (value) => {
                 filterValue = value;
                 clearTimeout(delay);
-                delay = setTimeout(function() {
+                delay = setTimeout(() => {
                     gantt.render();
                     $("#search").focus();
                 }, 500);
@@ -518,7 +524,7 @@ var GlpiGantt = (function() {
                 url,
                 type: 'POST',
                 data: { getData: 1, id: $ID },
-                success: function(json) {
+                success: (json) =>{
                     if (json.data) {
                         gantt.parse(json);
                         gantt.render();
@@ -538,7 +544,7 @@ var GlpiGantt = (function() {
                         gantt.alert(json.error);
                     }
                 },
-                error: function(resp) {
+                error: (resp) => {
                     gantt.alert(resp.responseText);
                 }
             });
@@ -547,13 +553,16 @@ var GlpiGantt = (function() {
 
     // >>>>> Functions
 
-    // update parent item progress
+    /**
+     * Update parent item progress
+     * @param id
+     */
     function parentProgress(id) {
-        gantt.eachParent(function(task) {
-            var children = gantt.getChildren(task.id);
-            var childProgress = 0;
-            for (var i = 0; i < children.length; i++) {
-                var child = gantt.getTask(children[i]);
+        gantt.eachParent((task) => {
+            const children = gantt.getChildren(task.id);
+            let childProgress = 0;
+            for (let i = 0; i < children.length; i++) {
+                const child = gantt.getTask(children[i]);
                 childProgress += (child.progress * 100);
             }
             task.progress = childProgress / children.length / 100;
@@ -561,16 +570,26 @@ var GlpiGantt = (function() {
         gantt.render();
     }
 
+    /**
+     * Calculate progress
+     */
     function calculateProgress() {
-        gantt.eachTask(function(item) {
+        gantt.eachTask((item) => {
             if (item.progress > 0) {
                 parentProgress(item.id);
             }
         });
     }
 
+    /**
+     * Validate link between two items
+     * @param source
+     * @param target
+     * @param type
+     * @returns {boolean}
+     */
     function validateLink(source, target, type) {
-        var valid = true;
+        let valid = true;
 
         if (source.type == 'project' && target.type == 'project') {
             gantt.alert(__("Links between projects cannot be created.", 'gantt'));
@@ -594,6 +613,11 @@ var GlpiGantt = (function() {
         return valid;
     }
 
+    /**
+     * Add a new task
+     * @param id
+     * @param item
+     */
     function addTask(id, item) {
         $.ajax({
             url,
@@ -609,7 +633,7 @@ var GlpiGantt = (function() {
                     end_date: formatFunc(item.end_date)
                 }
             },
-            success: function(json) {
+            success: (json) => {
                 if (json.ok) {
                     gantt.addTask(json.item);
                     gantt.hideLightbox();
@@ -619,12 +643,17 @@ var GlpiGantt = (function() {
                     gantt.alert(__('Could not create task: ', 'gantt') + json.error);
                 }
             },
-            error: function(resp) {
+            error: (resp) => {
                 gantt.alert(resp.responseText);
             }
         });
     }
 
+    /**
+     * Update a task
+     * @param id
+     * @param item
+     */
     function updateTask(id, item) {
         $.ajax({
             url,
@@ -639,9 +668,9 @@ var GlpiGantt = (function() {
                     end_date: formatFunc(item.end_date)
                 }
             },
-            success: function(json) {
+            success: (json) => {
                 if (json.ok) {
-                    var task = gantt.getTask(id);
+                    const task = gantt.getTask(id);
                     task.text = item.text;
                     task.type = item.type;
                     task.start_date = item.start_date;
@@ -652,12 +681,18 @@ var GlpiGantt = (function() {
                 } else
                     gantt.alert(__('Could not update Task[%s]: ', 'gantt').replace('%s', item.text) + json.error);
             },
-            error: function(resp) {
+            error: (resp) => {
                 gantt.alert(resp.responseText);
             }
         });
     }
 
+    /**
+     * Handle dragging of a task
+     * @param id
+     * @param task
+     * @param progress
+     */
     function onTaskDrag(id, task, progress) {
         $.ajax({
             url,
@@ -671,7 +706,7 @@ var GlpiGantt = (function() {
                     progress
                 }
             },
-            success: function(json) {
+            success: (json) => {
                 if (json.ok) {
                     task.progress = progress;
                     gantt.updateTask(task.id);
@@ -684,12 +719,17 @@ var GlpiGantt = (function() {
         });
     }
 
+    /**
+     * Change the parent of an item
+     * @param item
+     * @param target
+     */
     function changeParent(item, target) {
         $.ajax({
             url,
             type: 'POST',
             data: { changeItemParent: 1, item, target },
-            success: function(json) {
+            success: (json) => {
                 if (!json.ok) {
                     gantt.alert(json.error);
                     item.parent = $('#hf_gantt_item_state').val().split('|')[1];
@@ -703,18 +743,22 @@ var GlpiGantt = (function() {
                     displayAjaxMessageAfterRedirect();
                 }
             },
-            error: function(resp) {
+            error: (resp) => {
                 gantt.alert(resp.responseText);
             }
         });
     }
 
+    /**
+     * Moves a project to the root (no parent)
+     * @param item
+     */
     function makeRootProject(item) {
         $.ajax({
             url,
             type: 'POST',
             data: { makeRootProject: 1, item },
-            success: function(json) {
+            success: (json) => {
                 if (!json.ok) {
                     gantt.alert(json.error);
                     item.parent = $('#hf_gantt_item_state').val().split('|')[1];
@@ -728,12 +772,17 @@ var GlpiGantt = (function() {
                     displayAjaxMessageAfterRedirect();
                 }
             },
-            error: function(resp) {
+            error: (resp) => {
                 gantt.alert(resp.responseText);
             }
         });
     }
 
+    /**
+     * Add a new project
+     * @param id
+     * @param item
+     */
     function addProject(id, item) {
         $.ajax({
             url,
@@ -748,7 +797,7 @@ var GlpiGantt = (function() {
                     end_date: formatFunc(item.end_date)
                 }
             },
-            success: function(json) {
+            success: (json) => {
                 if (json.ok) {
                     gantt.addTask(json.item);
                     gantt.hideLightbox();
@@ -758,12 +807,17 @@ var GlpiGantt = (function() {
                     gantt.alert(__('Could not create project: ', 'gantt') + json.error);
                 }
             },
-            error: function(resp) {
+            error: (resp) => {
                 gantt.alert(resp.responseText);
             }
         });
     }
 
+    /**
+     * Update a project
+     * @param id
+     * @param item
+     */
     function updateProject(id, item) {
         $.ajax({
             url,
@@ -775,9 +829,9 @@ var GlpiGantt = (function() {
                     name: item.text
                 }
             },
-            success: function(json) {
+            success: (json) => {
                 if (json.ok) {
-                    var project = gantt.getTask(id);
+                    const project = gantt.getTask(id);
                     project.text = item.text;
                     gantt.updateTask(id);
                     gantt.hideLightbox();
@@ -786,12 +840,19 @@ var GlpiGantt = (function() {
                     gantt.alert(__('Could not update Project[%s]: ', 'gantt').replace('%s', item.text) + json.error);
                 }
             },
-            error: function(resp) {
+            error: (resp) => {
                 gantt.alert(resp.responseText);
             }
         });
     }
 
+    /**
+     * Link two tasks
+     * @param id
+     * @param sourceTask
+     * @param targetTask
+     * @param link
+     */
     function addTaskLink(id, sourceTask, targetTask, link) {
         $.ajax({
             url,
@@ -808,22 +869,27 @@ var GlpiGantt = (function() {
                     lead: link.lead
                 }
             },
-            success: function(json) {
+            success: (json) => {
                 if (json.ok) {
-                    var tempId = link.id;
+                    const tempId = link.id;
                     gantt.changeLinkId(tempId, json.id);
                 } else {
                     gantt.alert(json.error);
                     gantt.deleteLink(id);
                 }
             },
-            error: function(resp) {
+            error: (resp) => {
                 gantt.alert(resp.responseText);
                 gantt.deleteLink(id);
             }
         });
     }
 
+    /**
+     * Update the link between two tasks
+     * @param link The link to update on the server
+     * @param {function} callback Callback function to execute after the update if it was successful
+     */
     function updateTaskLink(link, callback) {
         $.ajax({
             url,
@@ -835,19 +901,25 @@ var GlpiGantt = (function() {
                     lag: link.lag
                 }
             },
-            success: function(json) {
+            success: (json) => {
                 if (json.ok) {
                     callback(); // close popup
                 } else {
                     gantt.alert(json.error);
                 }
             },
-            error: function(resp) {
+            error: (resp) => {
                 gantt.alert(resp.responseText);
             }
         });
     }
 
+    /**
+     * Delete a link between two tasks
+     *
+     * @param linkId
+     * @param {function} callback Callback function to execute after the deletion if it was successful
+     */
     function deleteTaskLink(linkId, callback) {
         $.ajax({
             url,
@@ -856,7 +928,7 @@ var GlpiGantt = (function() {
                 deleteTaskLink: 1,
                 id: linkId
             },
-            success: function(json) {
+            success: (json) => {
                 if (json.ok) {
                     gantt.deleteLink(linkId);
                     callback(); // close popup
@@ -864,12 +936,17 @@ var GlpiGantt = (function() {
                     gantt.alert(json.error);
                 }
             },
-            error: function(resp) {
+            error: (resp) => {
                 gantt.alert(resp.responseText);
             }
         });
     }
 
+    /**
+     * Gets the edit form URL for an item from the server and then redirects to it
+     *
+     * @param item
+     */
     function openEditForm(item) {
         $.ajax({
             url,
@@ -878,23 +955,27 @@ var GlpiGantt = (function() {
                 openEditForm: 1,
                 item
             },
-            success: function(json) {
+            success: (json) => {
                 if (json.ok) {
                     window.location = json.url;
                 } else {
                     gantt.alert(json.error);
                 }
             },
-            error: function(resp) {
+            error: (resp) => {
                 gantt.alert(resp.responseText);
             }
         });
     }
 
+    /**
+     * Expands or collapses and item tree level
+     * @param level
+     */
     function expandCollapse(level) {
-        var collapse = $('#collapse').is(':checked');
-        gantt.eachTask(function(item) {
-            var itemLevel = gantt.calculateTaskLevel(item);
+        const collapse = $('#collapse').is(':checked');
+        gantt.eachTask((item) => {
+            const itemLevel = gantt.calculateTaskLevel(item);
             item.$open = false;
             if (collapse) {
                 item.$open = (itemLevel < level && item.type == gantt.config.types.project);
