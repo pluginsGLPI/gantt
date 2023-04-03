@@ -87,14 +87,19 @@ class TaskDAO
             throw new \Exception(__('Not enough rights', 'gantt'));
         }
 
-        $t->update([
+        $update = [
             'id' => $task->id,
             'plan_start_date' => $task->start_date,
             'plan_end_date' => $task->end_date,
             'percent_done' => ($task->progress * 100),
-            'name' => $task->text ?? $t->fields['name'],
-            'is_milestone' => ($task->type == "milestone") ? 1 : 0
-        ]);
+            'name' => $task->text ?? $t->fields['name']
+        ];
+
+        if (isset($task->type)) {
+            $update['is_milestone'] = ($task->type == "milestone") ? 1 : 0;
+        }
+
+        $t->update($update);
         return true;
     }
 
