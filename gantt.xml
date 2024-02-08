@@ -2,7 +2,7 @@
    <name>gantt</name>
    <key>gantt</key>
    <state>stable</state>
-   <logo>https://raw.githubusercontent.com/pluginsGLPI/gantt/master/gantt.png</logo>
+   <logo>https://raw.githubusercontent.com/pluginsGLPI/gantt/main/gantt.png</logo>
    <description>
       <short>
          <en>gantt GLPI plugin.</en>
