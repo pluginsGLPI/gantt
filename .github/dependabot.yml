@@ -6,18 +6,7 @@ updates:
     schedule:
       interval: "monthly"
 
-  # Strategy for npm dependencies on develop branch.
-  - package-ecosystem: "npm"
-    directory: "/"
-    schedule:
-      interval: "monthly"
-    allow:
-      - dependency-type: "direct"
-    open-pull-requests-limit: 100
-    target-branch: "develop"
-    versioning-strategy: "increase"
-
-  # Strategy for composer dependencies on develop branch.
+  # Strategy for composer dependencies
   - package-ecosystem: "composer"
     directory: "/"
     schedule:
@@ -25,5 +14,20 @@ updates:
     allow:
       - dependency-type: "direct"
     open-pull-requests-limit: 100
-    target-branch: "develop"
     versioning-strategy: "increase"
+    groups:
+      dev-dependencies:
+        dependency-type: "development"
+
+  # Strategy for npm dependencies
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "monthly"
+    allow:
+      - dependency-type: "direct"
+    open-pull-requests-limit: 100
+    versioning-strategy: "increase"
+    groups:
+      dev-dependencies:
+        dependency-type: "development"
