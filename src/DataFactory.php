@@ -56,7 +56,8 @@ class Datafactory
                     'show_on_global_gantt' => 1,
                     'is_template' => 0,
                     'is_deleted' => 0
-                ] + getEntitiesRestrictCriteria('glpi_projects', '', '', true)
+                ] + getEntitiesRestrictCriteria('glpi_projects', '', '', true),
+                'ORDERBY' => 'glpi_projects.plan_start_date'
             ]);
             foreach ($iterator as $data) {
                  $this->getItemsForProject($itemArray, $data['id']);
