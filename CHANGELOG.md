@@ -10,3 +10,4 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 
 - Added the ability to export gantt view data in JSON format
+- Use real dates as priority over planned dates for tasks and projects
