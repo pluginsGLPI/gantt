@@ -107,12 +107,6 @@ final class ProjectsExport
 
     public function json(): string
     {
-        header_remove('Content-Type');
-        header_remove('Content-Disposition');
-
-        header('Content-Type: application/json');
-        header('Content-Disposition: attachment; filename="gantt-data.json"');
-
         return json_encode($this->loadProjectsData());
     }
 }

@@ -42,4 +42,7 @@ $project_id = $_GET['project_id'] ?? -1;
 // Check right
 Session::checkRightsOr(Project::$rightname, [Project::READALL, Project::READMY]);
 
+header('Content-Type: application/json');
+header('Content-Disposition: attachment; filename="gantt-data.json"');
+
 echo (new ProjectsExport($project_id))->json();
