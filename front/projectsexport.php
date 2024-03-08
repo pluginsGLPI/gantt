@@ -42,7 +42,13 @@ $project_id = $_GET['project_id'] ?? -1;
 // Check right
 Session::checkRightsOr(Project::$rightname, [Project::READALL, Project::READMY]);
 
+// Get the project name
+$project = new Project();
+$project->getFromDB($project_id);
+$project_name = $project->fields['name'] ?? 'projects';
+$project_name = preg_replace('/[^a-zA-Z0-9_\-]/', '', $project_name); // Remove special characters
+
 header('Content-Type: application/json');
-header('Content-Disposition: attachment; filename="gantt-data.json"');
+header('Content-Disposition: attachment; filename="gantt-data-' . $project_name . '.json"');
 
 echo (new ProjectsExport($project_id))->json();
