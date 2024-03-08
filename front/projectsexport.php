@@ -40,6 +40,6 @@ include('../../../inc/includes.php');
 $project_id = $_GET['project_id'] ?? -1;
 
 // Check right
-Session::checkRight(Project::$rightname, Project::READMY);
+Session::checkRightsOr(Project::$rightname, [Project::READALL, Project::READMY]);
 
 echo (new ProjectsExport($project_id))->json();

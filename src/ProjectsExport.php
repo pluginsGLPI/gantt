@@ -35,7 +35,7 @@
 
 namespace GlpiPlugin\Gantt;
 
-class ProjectsExport
+final class ProjectsExport
 {
     private int $project_id;
 
