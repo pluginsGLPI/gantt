@@ -40,6 +40,18 @@
       <li class="gantt-menu-item gantt-menu-item-right">
          <div class="btn-group flex-wrap" role="group">
             <span class="btn bg-blue-lt pe-none" aria-disabled="true">
+               <i class="ti ti-file-export"></i>
+               <span>{{ __('Export', 'gantt') }}</span>
+            </span>
+
+            <a href="{{ get_plugin_web_dir('gantt') ~ '/front/projectsexport.php?project_id=' ~ id }}" target="_blank" class="btn btn-outline-secondary">{{ __('JSON', 'gantt') }}</a>
+         </div>
+
+      </li>
+
+      <li class="gantt-menu-item gantt-menu-item-right">
+         <div class="btn-group flex-wrap" role="group">
+            <span class="btn bg-blue-lt pe-none" aria-disabled="true">
                <i class="fas fa-search-plus"></i>
                <span>{{ __('Zoom', 'gantt') }}</span>
             </span>
