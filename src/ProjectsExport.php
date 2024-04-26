@@ -39,7 +39,8 @@ final class ProjectsExport
 {
     private int $project_id;
 
-    public function __construct(int $project_id) {
+    public function __construct(int $project_id)
+    {
         $this->project_id = $project_id;
     }
 

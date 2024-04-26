@@ -30,7 +30,7 @@
 
 namespace GlpiPlugin\Gantt;
 
-use \ProjectTaskLink;
+use ProjectTaskLink;
 
 /**
  * DAO class for handling project task links
