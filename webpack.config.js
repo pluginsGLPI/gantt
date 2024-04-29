@@ -39,7 +39,7 @@ module.exports = [
       },
       output: {
          filename: 'libs.js',
-         path: path.resolve(__dirname, 'public/build'),
+         path: path.resolve(__dirname, 'public/lib'),
       },
       module: {
          rules: [
