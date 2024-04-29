@@ -45,6 +45,7 @@ use Glpi\Plugin\Hooks;
  */
 function plugin_init_gantt()
 {
+    /** @var array $PLUGIN_HOOKS */
     global $PLUGIN_HOOKS;
 
     $PLUGIN_HOOKS['csrf_compliant']['gantt'] = true;

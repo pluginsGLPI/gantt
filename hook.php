@@ -28,8 +28,9 @@
  * -------------------------------------------------------------------------
  */
 
-function plugin_gantt_install() {
-   return true;
+function plugin_gantt_install()
+{
+    return true;
 }
 
 /**
@@ -37,6 +38,7 @@ function plugin_gantt_install() {
  *
  * @return boolean
  */
-function plugin_gantt_uninstall() {
-   return true;
+function plugin_gantt_uninstall()
+{
+    return true;
 }

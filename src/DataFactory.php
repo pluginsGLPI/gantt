@@ -35,7 +35,7 @@ use Glpi\RichText\RichText;
 /**
  * Class used to prepare data for Gantt
  */
-class Datafactory
+class DataFactory
 {
     /**
      * Recursive function used to get all subitems of a project, when $id > 0.
@@ -46,6 +46,7 @@ class Datafactory
      */
     public function getItemsForProject(&$itemArray, $id)
     {
+        /** @var DBmysql $DB */
         global $DB;
         $project = new \Project();
         if ($id == -1) {
@@ -106,6 +107,7 @@ class Datafactory
      */
     public function getSubprojects(&$itemArray, $projectId)
     {
+        /** @var DBmysql $DB */
         global $DB;
         $iterator = $DB->request('glpi_projects', ['projects_id' => $projectId, 'is_template' => 0, 'is_deleted' => 0]);
 
