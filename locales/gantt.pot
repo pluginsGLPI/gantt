@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-24 12:40+0000\n"
+"POT-Creation-Date: 2024-09-11 07:27+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -65,6 +65,10 @@ msgid "End date:"
 msgstr ""
 
 #: templates/view.html.twig
+msgid "Export"
+msgstr ""
+
+#: templates/view.html.twig
 msgid "Filter"
 msgstr ""
 
@@ -84,7 +88,7 @@ msgstr ""
 msgid "Fullscreen"
 msgstr ""
 
-#: src/ProjectTab.php:45
+#: src/ProjectTab.php:44
 msgid "Gantt"
 msgstr ""
 
@@ -92,12 +96,16 @@ msgstr ""
 msgid "Gantt mode: 'Readonly'"
 msgstr ""
 
-#: src/ProjectTab.php:73 src/ProjectTab.php:75
+#: src/ProjectTab.php:75 src/ProjectTab.php:77
 msgid "Global GANTT"
 msgstr ""
 
 #: ajax/gantt.php:140
 msgid "Item must be of project type"
+msgstr ""
+
+#: templates/view.html.twig
+msgid "JSON"
 msgstr ""
 
 #: js/gantt-helper.js:399
@@ -128,8 +136,8 @@ msgstr ""
 msgid "New project"
 msgstr ""
 
-#: src/ProjectDAO.php:45 src/ProjectDAO.php:83 src/ProjectDAO.php:100
 #: src/TaskDAO.php:42 src/TaskDAO.php:87 src/TaskDAO.php:112
+#: src/ProjectDAO.php:45 src/ProjectDAO.php:83 src/ProjectDAO.php:100
 msgid "Not enough rights"
 msgstr ""
 

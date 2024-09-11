@@ -1,14 +1,14 @@
 # English translations for PACKAGE package.
-# Copyright (C) 2023 THE PACKAGE'S COPYRIGHT HOLDER
+# Copyright (C) 2024 THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# Automatically generated, 2023.
+# Automatically generated, 2024.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-24 12:40+0000\n"
-"PO-Revision-Date: 2023-04-24 12:40+0000\n"
+"POT-Creation-Date: 2024-09-11 07:27+0000\n"
+"PO-Revision-Date: 2024-09-11 07:27+0000\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: en_GB\n"
@@ -64,6 +64,10 @@ msgid "End date:"
 msgstr "End date:"
 
 #: templates/view.html.twig
+msgid "Export"
+msgstr "Export"
+
+#: templates/view.html.twig
 msgid "Filter"
 msgstr "Filter"
 
@@ -83,7 +87,7 @@ msgstr "Finish to Start: "
 msgid "Fullscreen"
 msgstr "Fullscreen"
 
-#: src/ProjectTab.php:45
+#: src/ProjectTab.php:44
 msgid "Gantt"
 msgstr "Gantt"
 
@@ -91,13 +95,17 @@ msgstr "Gantt"
 msgid "Gantt mode: 'Readonly'"
 msgstr "Gantt mode: 'Readonly'"
 
-#: src/ProjectTab.php:73 src/ProjectTab.php:75
+#: src/ProjectTab.php:75 src/ProjectTab.php:77
 msgid "Global GANTT"
 msgstr "Global GANTT"
 
 #: ajax/gantt.php:140
 msgid "Item must be of project type"
 msgstr "Item must be of project type"
+
+#: templates/view.html.twig
+msgid "JSON"
+msgstr "JSON"
 
 #: js/gantt-helper.js:399
 msgid "Lag"
@@ -127,8 +135,8 @@ msgstr "Months"
 msgid "New project"
 msgstr "New project"
 
-#: src/ProjectDAO.php:45 src/ProjectDAO.php:83 src/ProjectDAO.php:100
 #: src/TaskDAO.php:42 src/TaskDAO.php:87 src/TaskDAO.php:112
+#: src/ProjectDAO.php:45 src/ProjectDAO.php:83 src/ProjectDAO.php:100
 msgid "Not enough rights"
 msgstr "Not enough rights"
 

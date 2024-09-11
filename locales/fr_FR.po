@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-24 12:40+0000\n"
+"POT-Creation-Date: 2024-09-11 07:27+0000\n"
 "PO-Revision-Date: 2022-05-06 13:53+0000\n"
 "Last-Translator: Cédric Anne, 2022\n"
 "Language-Team: French (France) (https://app.transifex.com/teclib/teams/28042/fr_FR/)\n"
@@ -68,6 +68,10 @@ msgid "End date:"
 msgstr "Date de fin"
 
 #: templates/view.html.twig
+msgid "Export"
+msgstr ""
+
+#: templates/view.html.twig
 msgid "Filter"
 msgstr "Filtrer"
 
@@ -87,7 +91,7 @@ msgstr "Fin-Début :"
 msgid "Fullscreen"
 msgstr "Plein écran"
 
-#: src/ProjectTab.php:45
+#: src/ProjectTab.php:44
 msgid "Gantt"
 msgstr ""
 
@@ -95,13 +99,17 @@ msgstr ""
 msgid "Gantt mode: 'Readonly'"
 msgstr "Mode Gantt : 'Lecture seule\""
 
-#: src/ProjectTab.php:73 src/ProjectTab.php:75
+#: src/ProjectTab.php:75 src/ProjectTab.php:77
 msgid "Global GANTT"
 msgstr "GANTT Global"
 
 #: ajax/gantt.php:140
 msgid "Item must be of project type"
 msgstr "L'item doit être de type projet."
+
+#: templates/view.html.twig
+msgid "JSON"
+msgstr ""
 
 #: js/gantt-helper.js:399
 msgid "Lag"
@@ -131,8 +139,8 @@ msgstr "Mois"
 msgid "New project"
 msgstr "Nouveau projet"
 
-#: src/ProjectDAO.php:45 src/ProjectDAO.php:83 src/ProjectDAO.php:100
 #: src/TaskDAO.php:42 src/TaskDAO.php:87 src/TaskDAO.php:112
+#: src/ProjectDAO.php:45 src/ProjectDAO.php:83 src/ProjectDAO.php:100
 msgid "Not enough rights"
 msgstr "Autorisations insuffisantes"
 

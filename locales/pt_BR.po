@@ -5,16 +5,16 @@
 # 
 # Translators:
 # Cédric Anne, 2022
-# Eduardo de Oliveira <eduardomozart182@gmail.com>, 2022
+# Eduardo Mozart de Oliveira <eduardomozart182@gmail.com>, 2022
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-24 12:40+0000\n"
+"POT-Creation-Date: 2024-09-11 07:27+0000\n"
 "PO-Revision-Date: 2022-05-06 13:53+0000\n"
-"Last-Translator: Eduardo de Oliveira <eduardomozart182@gmail.com>, 2022\n"
+"Last-Translator: Eduardo Mozart de Oliveira <eduardomozart182@gmail.com>, 2022\n"
 "Language-Team: Portuguese (Brazil) (https://app.transifex.com/teclib/teams/28042/pt_BR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -69,6 +69,10 @@ msgid "End date:"
 msgstr "Data final:"
 
 #: templates/view.html.twig
+msgid "Export"
+msgstr ""
+
+#: templates/view.html.twig
 msgid "Filter"
 msgstr "Filtro"
 
@@ -88,7 +92,7 @@ msgstr "Terminar para Iniciar: "
 msgid "Fullscreen"
 msgstr "Tela cheia"
 
-#: src/ProjectTab.php:45
+#: src/ProjectTab.php:44
 msgid "Gantt"
 msgstr "Gantt"
 
@@ -96,13 +100,17 @@ msgstr "Gantt"
 msgid "Gantt mode: 'Readonly'"
 msgstr "Modo Gantt: 'Somente leitura'"
 
-#: src/ProjectTab.php:73 src/ProjectTab.php:75
+#: src/ProjectTab.php:75 src/ProjectTab.php:77
 msgid "Global GANTT"
 msgstr "Gantt global"
 
 #: ajax/gantt.php:140
 msgid "Item must be of project type"
 msgstr "Item deve ser um tipo de projeto"
+
+#: templates/view.html.twig
+msgid "JSON"
+msgstr ""
 
 #: js/gantt-helper.js:399
 msgid "Lag"
@@ -132,8 +140,8 @@ msgstr "Meses"
 msgid "New project"
 msgstr "Novo projeto"
 
-#: src/ProjectDAO.php:45 src/ProjectDAO.php:83 src/ProjectDAO.php:100
 #: src/TaskDAO.php:42 src/TaskDAO.php:87 src/TaskDAO.php:112
+#: src/ProjectDAO.php:45 src/ProjectDAO.php:83 src/ProjectDAO.php:100
 msgid "Not enough rights"
 msgstr "Não tem permissão suficiente"
 
