@@ -40,37 +40,37 @@ class ProjectDAO
 {
     public function addProject($project)
     {
-
         if (!\Project::canCreate()) {
             throw new \Exception(__('Not enough rights', 'gantt'));
         }
 
         // Default values for a "main" project
-        $entities_id = Session::getActiveEntity();
+        $entities_id  = Session::getActiveEntity();
         $is_recursive = false;
 
         // Fallback values for a sub-project
         if ($project->parent && $parent = Project::getById($project->parent)) {
-            $entities_id = $parent->fields['entities_id'];
+            $entities_id  = $parent->fields['entities_id'];
             $is_recursive = $parent->fields['is_recursive'];
         }
 
         $input = [
-            'name' => $project->text,
-            'comment' => $project->comment,
-            'projects_id' => $project->parent,
-            'date' => $_SESSION['glpi_currenttime'],
-            'plan_start_date' => $project->start_date,
-            'plan_end_date' => $project->end_date,
-            'priority' => 3,  //medium
-            'projectstates_id' => 1,
-            'users_id' => \Session::getLoginUserID(),
+            'name'                 => $project->text,
+            'comment'              => $project->comment,
+            'projects_id'          => $project->parent,
+            'date'                 => $_SESSION['glpi_currenttime'],
+            'plan_start_date'      => $project->start_date,
+            'plan_end_date'        => $project->end_date,
+            'priority'             => 3,  //medium
+            'projectstates_id'     => 1,
+            'users_id'             => \Session::getLoginUserID(),
             'show_on_global_gantt' => 1,
-            'entities_id' => $entities_id,
-            'is_recursive' => $is_recursive,
+            'entities_id'          => $entities_id,
+            'is_recursive'         => $is_recursive,
         ];
         $proj = new \Project();
         $proj->add($input);
+
         return $proj;
     }
 
@@ -84,10 +84,11 @@ class ProjectDAO
         }
 
         $p->update([
-            'id' => $project->id,
+            'id'           => $project->id,
             'percent_done' => ($project->progress * 100),
-            'name' => $project->text
+            'name'         => $project->text,
         ]);
+
         return true;
     }
 
@@ -101,8 +102,8 @@ class ProjectDAO
         }
 
         $input = [
-            'id' => $project->id,
-            'projects_id' => $project->parent
+            'id'          => $project->id,
+            'projects_id' => $project->parent,
         ];
         $p->update($input);
     }

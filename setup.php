@@ -31,9 +31,9 @@
 define('PLUGIN_GANTT_VERSION', '1.1.0');
 
 // Minimal GLPI version, inclusive
-define("PLUGIN_GANTT_MIN_GLPI_VERSION", "10.0.1");
+define('PLUGIN_GANTT_MIN_GLPI_VERSION', '10.0.1');
 // Maximum GLPI version, exclusive
-define("PLUGIN_GANTT_MAX_GLPI_VERSION", "10.0.99");
+define('PLUGIN_GANTT_MAX_GLPI_VERSION', '10.0.99');
 
 use Glpi\Plugin\Hooks;
 
@@ -55,7 +55,7 @@ function plugin_init_gantt()
     }
 
     Plugin::registerClass('GlpiPlugin\Gantt\ProjectTab', [
-        'addtabon' => 'Project'
+        'addtabon' => 'Project',
     ]);
 
     $PLUGIN_HOOKS[Hooks::ADD_JAVASCRIPT]['gantt'][] = 'public/lib/libs.js';
@@ -65,7 +65,7 @@ function plugin_init_gantt()
 
     $PLUGIN_HOOKS[Hooks::REDEFINE_MENUS]['gantt'] = [
         'GlpiPlugin\Gantt\ProjectTab',
-        'addGlobalGanttToMenu'
+        'addGlobalGanttToMenu',
     ];
 }
 
@@ -79,16 +79,16 @@ function plugin_init_gantt()
 function plugin_version_gantt()
 {
     return [
-        'name'           => 'gantt',
-        'version'        => PLUGIN_GANTT_VERSION,
-        'author'         => '<a href="http://www.teclib.com">Teclib\'</a>',
-        'license'        => 'GPL-2.0-or-later',
-        'homepage'       => '',
-        'requirements'   => [
+        'name'         => 'gantt',
+        'version'      => PLUGIN_GANTT_VERSION,
+        'author'       => '<a href="http://www.teclib.com">Teclib\'</a>',
+        'license'      => 'GPL-2.0-or-later',
+        'homepage'     => '',
+        'requirements' => [
             'glpi' => [
                 'min' => PLUGIN_GANTT_MIN_GLPI_VERSION,
                 'max' => PLUGIN_GANTT_MAX_GLPI_VERSION,
-            ]
-        ]
+            ],
+        ],
     ];
 }

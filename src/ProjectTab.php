@@ -44,7 +44,6 @@ class ProjectTab extends \CommonGLPI
         return __('Gantt', 'gantt');
     }
 
-
     public function getTabNameForItem(\CommonGLPI $item, $withtemplate = 0)
     {
         // @phpstan-ignore-next-line

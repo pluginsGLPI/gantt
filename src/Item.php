@@ -52,11 +52,11 @@ class Item implements \JsonSerializable
 
     public function __construct()
     {
-        $this->id = 0;
-        $this->start_date = date("Y-m-d H:i:s");
-        $this->progress = 0.0;
-        $this->parent = "";
-        $this->open = 1;
+        $this->id         = 0;
+        $this->start_date = date('Y-m-d H:i:s');
+        $this->progress   = 0.0;
+        $this->parent     = '';
+        $this->open       = 1;
     }
 
     /**
@@ -66,26 +66,26 @@ class Item implements \JsonSerializable
      */
     public function populateFrom($json)
     {
-        if (isset($json["id"])) {
-            $this->id = $json["id"];
+        if (isset($json['id'])) {
+            $this->id = $json['id'];
         }
-        if (isset($json["parent"])) {
-            $this->parent = $json["parent"];
+        if (isset($json['parent'])) {
+            $this->parent = $json['parent'];
         }
-        if (isset($json["start_date"])) {
-            $this->start_date = $json["start_date"];
+        if (isset($json['start_date'])) {
+            $this->start_date = $json['start_date'];
         }
-        if (isset($json["end_date"])) {
-            $this->end_date = $json["end_date"];
+        if (isset($json['end_date'])) {
+            $this->end_date = $json['end_date'];
         }
-        if (isset($json["progress"])) {
-            $this->progress = $json["progress"];
+        if (isset($json['progress'])) {
+            $this->progress = $json['progress'];
         }
-        if (isset($json["name"])) {
-            $this->text = $json["name"];
+        if (isset($json['name'])) {
+            $this->text = $json['name'];
         }
-        if (isset($json["type"])) {
-            $this->type = $json["type"];
+        if (isset($json['type'])) {
+            $this->type = $json['type'];
         }
     }
 
@@ -95,6 +95,6 @@ class Item implements \JsonSerializable
     #[ReturnTypeWillChange]
     public function jsonSerialize()
     {
-        return (array)$this;
+        return (array) $this;
     }
 }
