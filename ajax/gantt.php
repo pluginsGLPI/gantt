@@ -30,7 +30,7 @@
 
 include('../../../inc/includes.php');
 
-header("Content-Type: application/json; charset=UTF-8");
+header('Content-Type: application/json; charset=UTF-8');
 Html::header_nocache();
 
 Session::checkLoginUser();
@@ -43,7 +43,7 @@ if (isset($_REQUEST['id'])) {
 
 if (isset($_REQUEST['getData'])) {
     $itemArray = [];
-    $factory = new \GlpiPlugin\Gantt\DataFactory();
+    $factory   = new \GlpiPlugin\Gantt\DataFactory();
     $factory->getItemsForProject($itemArray, $id);
     $links = $factory->getProjectTaskLinks($itemArray);
 
@@ -52,59 +52,59 @@ if (isset($_REQUEST['getData'])) {
     });
 
     $result = [
-        'data' => $itemArray,
-        'links' => $links
+        'data'  => $itemArray,
+        'links' => $links,
     ];
     echo json_encode($result);
-} else if (isset($_POST["addTask"])) {
+} elseif (isset($_POST['addTask'])) {
     $result;
     try {
         $item = new \GlpiPlugin\Gantt\Item();
-        $task = $_POST["task"];
+        $task = $_POST['task'];
         $item->populateFrom($task);
-        $taskDAO = new \GlpiPlugin\Gantt\TaskDAO();
-        $newTask = $taskDAO->addTask($item);
-        $factory = new \GlpiPlugin\Gantt\DataFactory();
-        $ganttItem = $factory->populateGanttItem($newTask->fields, "task");
+        $taskDAO   = new \GlpiPlugin\Gantt\TaskDAO();
+        $newTask   = $taskDAO->addTask($item);
+        $factory   = new \GlpiPlugin\Gantt\DataFactory();
+        $ganttItem = $factory->populateGanttItem($newTask->fields, 'task');
 
         $result = [
-            'ok' => true,
-            'item' => $ganttItem
+            'ok'   => true,
+            'item' => $ganttItem,
         ];
     } catch (\Exception $ex) {
         $result = [
-            'ok' => false,
-            'error' => $ex->getMessage()
+            'ok'    => false,
+            'error' => $ex->getMessage(),
         ];
     }
     echo json_encode($result);
-} else if (isset($_POST["updateTask"])) {
+} elseif (isset($_POST['updateTask'])) {
     $result;
     try {
         $updated = false;
-        $item = new \GlpiPlugin\Gantt\Item();
-        $task = $_POST["task"];
+        $item    = new \GlpiPlugin\Gantt\Item();
+        $task    = $_POST['task'];
         $item->populateFrom($task);
         $taskDAO = new \GlpiPlugin\Gantt\TaskDAO();
         $updated = $taskDAO->updateTask($item);
-        $result = [
-            'ok' => $updated
+        $result  = [
+            'ok' => $updated,
         ];
     } catch (\Exception $ex) {
         $result = [
-            'ok' => false,
-            'error' => $ex->getMessage()
+            'ok'    => false,
+            'error' => $ex->getMessage(),
         ];
     }
     echo json_encode($result);
-} else if (isset($_POST["changeItemParent"])) {
+} elseif (isset($_POST['changeItemParent'])) {
     $result;
     try {
-        $p_item = $_POST["item"];
-        $p_target = $_POST["target"];
+        $p_item   = $_POST['item'];
+        $p_target = $_POST['target'];
 
-        if ($p_item["type"] == "project" && $p_target["type"] != "project") {
-            throw new \Exception(__("Target item must be of project type", 'gantt'));
+        if ($p_item['type'] == 'project' && $p_target['type'] != 'project') {
+            throw new \Exception(__('Target item must be of project type', 'gantt'));
         }
 
         $item = new \GlpiPlugin\Gantt\Item();
@@ -113,7 +113,7 @@ if (isset($_REQUEST['getData'])) {
         $target->populateFrom($p_target);
 
         $item->parent = $target->id;
-        if ($p_item["type"] == "project") {
+        if ($p_item['type'] == 'project') {
             $dao = new \GlpiPlugin\Gantt\ProjectDAO();
         } else {
             $dao = new \GlpiPlugin\Gantt\TaskDAO();
@@ -121,23 +121,23 @@ if (isset($_REQUEST['getData'])) {
         $dao->updateParent($item);
 
         $result = [
-            'ok' => true
+            'ok' => true,
         ];
     } catch (\Exception $ex) {
         $result = [
-            'ok' => false,
-            'error' => $ex->getMessage()
+            'ok'    => false,
+            'error' => $ex->getMessage(),
         ];
     }
     echo json_encode($result);
-} else if (isset($_POST["makeRootProject"])) {
+} elseif (isset($_POST['makeRootProject'])) {
     $result;
     try {
-        $p_item = $_POST["item"];
+        $p_item = $_POST['item'];
 
-       // double check for safety..
-        if ($p_item["type"] != "project") {
-            throw new \Exception(__("Item must be of project type", 'gantt'));
+        // double check for safety..
+        if ($p_item['type'] != 'project') {
+            throw new \Exception(__('Item must be of project type', 'gantt'));
         }
 
         $item = new \GlpiPlugin\Gantt\Item();
@@ -146,120 +146,120 @@ if (isset($_REQUEST['getData'])) {
         $dao->updateParent($item);
 
         $result = [
-            'ok' => true
+            'ok' => true,
         ];
     } catch (\Exception $ex) {
         $result = [
-            'ok' => false,
-            'error' => $ex->getMessage()
+            'ok'    => false,
+            'error' => $ex->getMessage(),
         ];
     }
     echo json_encode($result);
-} else if (isset($_POST["addProject"])) {
+} elseif (isset($_POST['addProject'])) {
     $result;
     try {
-        $item = new \GlpiPlugin\Gantt\Item();
-        $project = $_POST["project"];
+        $item    = new \GlpiPlugin\Gantt\Item();
+        $project = $_POST['project'];
         $item->populateFrom($project);
-        $dao = new \GlpiPlugin\Gantt\ProjectDAO();
-        $newProj = $dao->addProject($item);
-        $factory = new \GlpiPlugin\Gantt\DataFactory();
-        $ganttItem = $factory->populateGanttItem($newProj->fields, "project");
+        $dao       = new \GlpiPlugin\Gantt\ProjectDAO();
+        $newProj   = $dao->addProject($item);
+        $factory   = new \GlpiPlugin\Gantt\DataFactory();
+        $ganttItem = $factory->populateGanttItem($newProj->fields, 'project');
 
         $result = [
-            'ok' => true,
-            'item' => $ganttItem
+            'ok'   => true,
+            'item' => $ganttItem,
         ];
     } catch (\Exception $ex) {
         $result = [
-            'ok' => false,
-            'error' => $ex->getMessage()
+            'ok'    => false,
+            'error' => $ex->getMessage(),
         ];
     }
     echo json_encode($result);
-} else if (isset($_POST["updateProject"])) {
+} elseif (isset($_POST['updateProject'])) {
     $result;
     try {
         $updated = false;
-        $item = new \GlpiPlugin\Gantt\Item();
-        $project = $_POST["project"];
+        $item    = new \GlpiPlugin\Gantt\Item();
+        $project = $_POST['project'];
         $item->populateFrom($project);
         $projectDAO = new \GlpiPlugin\Gantt\ProjectDAO();
-        $updated = $projectDAO->updateProject($item);
-        $result = [
-            'ok' => $updated
+        $updated    = $projectDAO->updateProject($item);
+        $result     = [
+            'ok' => $updated,
         ];
     } catch (\Exception $ex) {
         $result = [
-            'ok' => false,
-            'error' => $ex->getMessage()
+            'ok'    => false,
+            'error' => $ex->getMessage(),
         ];
     }
     echo json_encode($result);
-} else if (isset($_POST["addTaskLink"])) {
+} elseif (isset($_POST['addTaskLink'])) {
     $result;
     try {
         $taskLink = new \ProjectTaskLink();
 
-        if ($taskLink->checkIfExist($_POST["taskLink"])) {
-            throw new \Exception(__("Link already exist!", 'gantt'));
+        if ($taskLink->checkIfExist($_POST['taskLink'])) {
+            throw new \Exception(__('Link already exist!', 'gantt'));
         }
 
-        $id = $taskLink->add($_POST["taskLink"]);
+        $id     = $taskLink->add($_POST['taskLink']);
         $result = [
             'ok' => true,
-            'id' => $id
+            'id' => $id,
         ];
     } catch (\Exception $ex) {
         $result = [
-            'ok' => false,
-            'error' => $ex->getMessage()
+            'ok'    => false,
+            'error' => $ex->getMessage(),
         ];
     }
     echo json_encode($result);
-} else if (isset($_POST["updateTaskLink"])) {
+} elseif (isset($_POST['updateTaskLink'])) {
     $result;
     try {
         $taskLink = new \ProjectTaskLink();
-        $taskLink->update($_POST["taskLink"]);
+        $taskLink->update($_POST['taskLink']);
         $result = [
-            'ok' => true
+            'ok' => true,
         ];
     } catch (\Exception $ex) {
         $result = [
-            'ok' => false,
-            'error' => $ex->getMessage()
+            'ok'    => false,
+            'error' => $ex->getMessage(),
         ];
     }
     echo json_encode($result);
-} else if (isset($_POST["deleteTaskLink"])) {
+} elseif (isset($_POST['deleteTaskLink'])) {
     $result;
     try {
         $taskLink = new \ProjectTaskLink();
         $taskLink->delete($_POST);
         $result = [
-            'ok' => true
+            'ok' => true,
         ];
     } catch (\Exception $ex) {
         $result = [
-            'ok' => false,
-            'error' => $ex->getMessage()
+            'ok'    => false,
+            'error' => $ex->getMessage(),
         ];
     }
     echo json_encode($result);
-} else if (isset($_REQUEST["openEditForm"])) {
-    $result = [];
-    $result["ok"] = true;
+} elseif (isset($_REQUEST['openEditForm'])) {
+    $result       = [];
+    $result['ok'] = true;
     try {
-        if ($_POST["item"]["type"] == "project") {
-            $result["url"] = $CFG_GLPI["root_doc"] . "/front/project.form.php?id=" . $_POST["item"]["id"] . "&forcetab=Project";
+        if ($_POST['item']['type'] == 'project') {
+            $result['url'] = $CFG_GLPI['root_doc'] . '/front/project.form.php?id=' . $_POST['item']['id'] . '&forcetab=Project';
         } else {
-            $result["url"] = $CFG_GLPI["root_doc"] . "/front/projecttask.form.php?id=" . $_POST["item"]["linktask_id"] . "&forcetab=ProjectTask";
+            $result['url'] = $CFG_GLPI['root_doc'] . '/front/projecttask.form.php?id=' . $_POST['item']['linktask_id'] . '&forcetab=ProjectTask';
         }
     } catch (\Exception $ex) {
         $result = [
-            'ok' => false,
-            'error' => $ex->getMessage()
+            'ok'    => false,
+            'error' => $ex->getMessage(),
         ];
     }
     echo json_encode($result);

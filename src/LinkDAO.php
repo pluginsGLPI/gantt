@@ -39,10 +39,10 @@ class LinkDAO
 {
     public function getLinksForItemIDs($ids)
     {
-        $links = [];
+        $links    = [];
         $tasklink = new ProjectTaskLink();
 
-        $ids = implode(',', $ids);
+        $ids      = implode(',', $ids);
         $iterator = $tasklink->getFromDBForItemIDs($ids);
         foreach ($iterator as $data) {
             array_push($links, $this->populateFromDB($data));
@@ -60,13 +60,14 @@ class LinkDAO
      */
     public function populateFromDB($data)
     {
-        $link = new Link();
-        $link->id = $data["id"];
-        $link->source = $data["source_uuid"];
-        $link->target = $data["target_uuid"];
-        $link->type = $data["type"];
-        $link->lag = $data["lag"];
-        $link->lead = $data["lead"];
+        $link         = new Link();
+        $link->id     = $data['id'];
+        $link->source = $data['source_uuid'];
+        $link->target = $data['target_uuid'];
+        $link->type   = $data['type'];
+        $link->lag    = $data['lag'];
+        $link->lead   = $data['lead'];
+
         return $link;
     }
 }

@@ -46,14 +46,14 @@ class Link
 
     public function __construct()
     {
-        $this->id = 0;
-        $this->source = 0;
-        $this->target = 0;
-        $this->source_uuid = "";
-        $this->target_uuid = "";
-        $this->type = 0;
-        $this->lag = 0;
-        $this->lead = 0;
+        $this->id          = 0;
+        $this->source      = 0;
+        $this->target      = 0;
+        $this->source_uuid = '';
+        $this->target_uuid = '';
+        $this->type        = 0;
+        $this->lag         = 0;
+        $this->lead        = 0;
     }
 
     /**
@@ -61,6 +61,6 @@ class Link
      */
     public function jsonSerialize()
     {
-        return (array)$this;
+        return (array) $this;
     }
 }

@@ -44,25 +44,25 @@ final class ProjectsExport
 
     private function loadProjectsData(): array
     {
-        $items = [];
+        $items   = [];
         $factory = new DataFactory();
         $factory->getItemsForProject($items, $this->project_id);
 
-        $id_refs = [];
+        $id_refs   = [];
         $to_export = [];
         foreach ($items as $item) {
             switch ($item->type) {
                 case 'project':
                     $project = [
-                        'id' => $item->id,
-                        'name' => $item->text,
+                        'id'         => $item->id,
+                        'name'       => $item->text,
                         'start_date' => $item->start_date,
-                        'end_date' => $item->end_date,
+                        'end_date'   => $item->end_date,
                     ];
 
                     $id_refs[$item->id] = array_merge(
                         $id_refs[$item->id] ?? [],
-                        $project
+                        $project,
                     );
                     if ($item->parent == 0) {
                         $to_export[] = &$id_refs[$item->id];
@@ -72,29 +72,29 @@ final class ProjectsExport
                     break;
                 case 'task':
                     $task = [
-                        'id' => $item->linktask_id,
-                        'name' => $item->text,
+                        'id'         => $item->linktask_id,
+                        'name'       => $item->text,
                         'start_date' => $item->start_date,
-                        'end_date' => $item->end_date,
-                        'progress' => $item->progress,
+                        'end_date'   => $item->end_date,
+                        'progress'   => $item->progress,
                     ];
 
                     $id_refs[$item->id] = array_merge(
                         $id_refs[$item->id] ?? [],
-                        $task
+                        $task,
                     );
                     $id_refs[$item->parent]['tasks'][] = &$id_refs[$item->id];
                     break;
                 case 'milestone':
                     $milestone = [
-                        'id' => $item->linktask_id,
+                        'id'   => $item->linktask_id,
                         'name' => $item->text,
                         'date' => $item->start_date,
                     ];
 
                     $id_refs[$item->id] = array_merge(
                         $id_refs[$item->id] ?? [],
-                        $milestone
+                        $milestone,
                     );
                     $id_refs[$item->parent]['milestones'][] = &$id_refs[$item->id];
                     break;

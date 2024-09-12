@@ -34,6 +34,6 @@ Session::checkLoginUser();
 
 $projecttab = new \GlpiPlugin\Gantt\ProjectTab();
 
-Html::header(Project::getTypeName(Session::getPluralNumber()), $_SERVER['PHP_SELF'], "tools", "project");
+Html::header(Project::getTypeName(Session::getPluralNumber()), $_SERVER['PHP_SELF'], 'tools', 'project');
 $projecttab->showForProject();
 Html::footer();

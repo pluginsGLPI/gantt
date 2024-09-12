@@ -51,21 +51,21 @@ class DataFactory
         $project = new \Project();
         if ($id == -1) {
             $iterator = $DB->request([
-                'FROM' => 'glpi_projects',
+                'FROM'  => 'glpi_projects',
                 'WHERE' => [
-                    'projects_id' => 0,
+                    'projects_id'          => 0,
                     'show_on_global_gantt' => 1,
-                    'is_template' => 0,
-                    'is_deleted' => 0
+                    'is_template'          => 0,
+                    'is_deleted'           => 0,
                 ] + getEntitiesRestrictCriteria('glpi_projects', '', '', true),
-                'ORDERBY' => 'glpi_projects.plan_start_date'
+                'ORDERBY' => 'glpi_projects.plan_start_date',
             ]);
             foreach ($iterator as $data) {
-                 $this->getItemsForProject($itemArray, $data['id']);
+                $this->getItemsForProject($itemArray, $data['id']);
             }
-        } else if ($project->getFromDB($id)) {
+        } elseif ($project->getFromDB($id)) {
             if ($project->canViewItem()) {
-                array_push($itemArray, $this->populateGanttItem($project->fields, "root-project"));
+                array_push($itemArray, $this->populateGanttItem($project->fields, 'root-project'));
                 $this->getProjectTasks($itemArray, $id);
                 $this->getSubprojects($itemArray, $id); // subproject tasks included
             }
@@ -92,9 +92,10 @@ class DataFactory
 
             if (count($ids) > 0) {
                 $linkDao = new LinkDAO();
-                $links = $linkDao->getLinksForItemIDs($ids);
+                $links   = $linkDao->getLinksForItemIDs($ids);
             }
         }
+
         return $links;
     }
 
@@ -113,10 +114,10 @@ class DataFactory
 
         foreach ($iterator as $record) {
             $proj = new \Project();
-            $proj->getFromDB($record["id"]);
+            $proj->getFromDB($record['id']);
 
             if ($proj->canViewItem()) {
-                array_push($itemArray, $this->populateGanttItem($record, "project"));
+                array_push($itemArray, $this->populateGanttItem($record, 'project'));
                 $this->getSubprojects($itemArray, $record['id']);
                 $this->getProjectTasks($itemArray, $record['id']);
             }
@@ -134,11 +135,11 @@ class DataFactory
         $taskRecords[] = \ProjectTask::getAllForProject($projectId);
         foreach ($taskRecords[0] as $record) {
             $task = new \ProjectTask();
-            $task->getFromDB($record["id"]);
+            $task->getFromDB($record['id']);
             if (!$task->canViewItem() || $record['is_template'] == 1) {
                 continue;
             }
-            array_push($itemArray, $this->populateGanttItem($record, "task"));
+            array_push($itemArray, $this->populateGanttItem($record, 'task'));
         }
     }
 
@@ -152,14 +153,14 @@ class DataFactory
     {
         $taskRecords[] = \ProjectTask::getAllForProjectTask($taskId);
         foreach ($taskRecords[0] as $record) {
-            $this->getSubtasks($itemArray, $record["id"]);
+            $this->getSubtasks($itemArray, $record['id']);
 
             $task = new \ProjectTask();
-            $task->getFromDB($record["id"]);
+            $task->getFromDB($record['id']);
             if (!$task->canViewItem() || $record['is_template'] == 1) {
                 continue;
             }
-            array_push($itemArray, $this->populateGanttItem($record, "task"));
+            array_push($itemArray, $this->populateGanttItem($record, 'task'));
         }
     }
 
@@ -177,24 +178,24 @@ class DataFactory
             $type = 'milestone';
         }
 
-        $parentTaskUid = "";
-        if (($type == 'task' || $type == 'milestone') && $record["projecttasks_id"] > 0) {
+        $parentTaskUid = '';
+        if (($type == 'task' || $type == 'milestone') && $record['projecttasks_id'] > 0) {
             $parentTask = new \ProjectTask();
-            $parentTask->getFromDB($record["projecttasks_id"]);
-            $parentTaskUid = $parentTask->fields["uuid"];
+            $parentTask->getFromDB($record['projecttasks_id']);
+            $parentTaskUid = $parentTask->fields['uuid'];
         }
 
-        $item = new Item();
-        $item->id = ($type == "project" || $type == "root-project") ? $record['id'] : $record['uuid'];
-        $item->type = ($type == "root-project") ? "project" : $type;
-        $item->parent = ($type == "root-project") ? 0 : (($type == "project") ? $record['projects_id'] : ($record["projecttasks_id"] > 0 ? $parentTaskUid : $record['projects_id']));
-        $item->linktask_id = ($item->type != "project") ? $record["id"] : 0;
-        $item->start_date = $record['real_start_date'] ?? $record['plan_start_date'] ?? $_SESSION['glpi_currenttime'];
-        $item->end_date = $record['real_end_date'] ?? $record['plan_end_date'] ?? date('Y-m-d H:i:s', strtotime($item->start_date . ' + 1 day'));
-        $item->text = $record['name'];
-        $item->content = isset($record['content']) ? RichText::getSafeHtml($record['content']) : "";
-        $item->comment = $record['comment'] ?? "";
-        $item->progress = $record['percent_done'] / 100;
+        $item              = new Item();
+        $item->id          = ($type == 'project' || $type == 'root-project') ? $record['id'] : $record['uuid'];
+        $item->type        = ($type == 'root-project') ? 'project' : $type;
+        $item->parent      = ($type == 'root-project') ? 0 : (($type == 'project') ? $record['projects_id'] : ($record['projecttasks_id'] > 0 ? $parentTaskUid : $record['projects_id']));
+        $item->linktask_id = ($item->type != 'project') ? $record['id'] : 0;
+        $item->start_date  = $record['real_start_date'] ?? $record['plan_start_date'] ?? $_SESSION['glpi_currenttime'];
+        $item->end_date    = $record['real_end_date']   ?? $record['plan_end_date'] ?? date('Y-m-d H:i:s', strtotime($item->start_date . ' + 1 day'));
+        $item->text        = $record['name'];
+        $item->content     = isset($record['content']) ? RichText::getSafeHtml($record['content']) : '';
+        $item->comment     = $record['comment'] ?? '';
+        $item->progress    = $record['percent_done'] / 100;
 
         return $item;
     }
