@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-24 12:40+0000\n"
+"POT-Creation-Date: 2024-09-11 07:27+0000\n"
 "PO-Revision-Date: 2022-05-06 13:53+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>, 2022\n"
 "Language-Team: Croatian (Croatia) (https://app.transifex.com/teclib/teams/28042/hr_HR/)\n"
@@ -69,6 +69,10 @@ msgid "End date:"
 msgstr "Datum završetka:"
 
 #: templates/view.html.twig
+msgid "Export"
+msgstr ""
+
+#: templates/view.html.twig
 msgid "Filter"
 msgstr "Filtar"
 
@@ -88,7 +92,7 @@ msgstr "Od završetka do početka: "
 msgid "Fullscreen"
 msgstr "Cjeloekranski prikaz"
 
-#: src/ProjectTab.php:45
+#: src/ProjectTab.php:44
 msgid "Gantt"
 msgstr "Gantt"
 
@@ -96,13 +100,17 @@ msgstr "Gantt"
 msgid "Gantt mode: 'Readonly'"
 msgstr "Gantt modus: „Samo-za-čitanje”"
 
-#: src/ProjectTab.php:73 src/ProjectTab.php:75
+#: src/ProjectTab.php:75 src/ProjectTab.php:77
 msgid "Global GANTT"
 msgstr "Globalni GANTT"
 
 #: ajax/gantt.php:140
 msgid "Item must be of project type"
 msgstr "Predmet mora predstavljati vrstu projekta"
+
+#: templates/view.html.twig
+msgid "JSON"
+msgstr ""
 
 #: js/gantt-helper.js:399
 msgid "Lag"
@@ -132,8 +140,8 @@ msgstr "Mjeseci"
 msgid "New project"
 msgstr "Novi projekt"
 
-#: src/ProjectDAO.php:45 src/ProjectDAO.php:83 src/ProjectDAO.php:100
 #: src/TaskDAO.php:42 src/TaskDAO.php:87 src/TaskDAO.php:112
+#: src/ProjectDAO.php:45 src/ProjectDAO.php:83 src/ProjectDAO.php:100
 msgid "Not enough rights"
 msgstr "Nema dovoljno prava"
 
