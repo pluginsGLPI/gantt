@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-11 07:27+0000\n"
+"POT-Creation-Date: 2024-10-30 01:42+0000\n"
 "PO-Revision-Date: 2022-05-06 13:53+0000\n"
 "Last-Translator: Cédric Anne, 2022\n"
 "Language-Team: Ukrainian (Ukraine) (https://app.transifex.com/teclib/teams/28042/uk_UA/)\n"
@@ -99,7 +99,7 @@ msgstr ""
 msgid "Gantt mode: 'Readonly'"
 msgstr "Режим Ганта: 'Тільки читання'"
 
-#: src/ProjectTab.php:75 src/ProjectTab.php:77
+#: src/ProjectTab.php:74 src/ProjectTab.php:76
 msgid "Global GANTT"
 msgstr "Глобальний GANTT"
 
@@ -139,8 +139,8 @@ msgstr "Місяці"
 msgid "New project"
 msgstr "Новий проект"
 
-#: src/TaskDAO.php:42 src/TaskDAO.php:87 src/TaskDAO.php:112
-#: src/ProjectDAO.php:45 src/ProjectDAO.php:83 src/ProjectDAO.php:100
+#: src/ProjectDAO.php:44 src/ProjectDAO.php:83 src/ProjectDAO.php:101
+#: src/TaskDAO.php:41 src/TaskDAO.php:87 src/TaskDAO.php:113
 msgid "Not enough rights"
 msgstr "Недостатньо прав"
 
