@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-11 07:27+0000\n"
+"POT-Creation-Date: 2024-10-30 01:42+0000\n"
 "PO-Revision-Date: 2022-05-06 13:53+0000\n"
 "Last-Translator: Cédric Anne, 2022\n"
 "Language-Team: Spanish (Colombia) (https://app.transifex.com/teclib/teams/28042/es_CO/)\n"
@@ -99,7 +99,7 @@ msgstr ""
 msgid "Gantt mode: 'Readonly'"
 msgstr "Modo Gantt: 'Solo lectura' "
 
-#: src/ProjectTab.php:75 src/ProjectTab.php:77
+#: src/ProjectTab.php:74 src/ProjectTab.php:76
 msgid "Global GANTT"
 msgstr "GANTT global"
 
@@ -139,8 +139,8 @@ msgstr "Meses"
 msgid "New project"
 msgstr "Nuevo proyecto"
 
-#: src/TaskDAO.php:42 src/TaskDAO.php:87 src/TaskDAO.php:112
-#: src/ProjectDAO.php:45 src/ProjectDAO.php:83 src/ProjectDAO.php:100
+#: src/ProjectDAO.php:44 src/ProjectDAO.php:83 src/ProjectDAO.php:101
+#: src/TaskDAO.php:41 src/TaskDAO.php:87 src/TaskDAO.php:113
 msgid "Not enough rights"
 msgstr "No hay suficientes derechos"
 

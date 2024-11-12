@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-11 07:27+0000\n"
+"POT-Creation-Date: 2024-10-30 01:42+0000\n"
 "PO-Revision-Date: 2022-05-06 13:53+0000\n"
 "Last-Translator: 조성현 (jaymz9634) <jaymz9634@gmail.com>, 2024\n"
 "Language-Team: Korean (Korea) (https://app.transifex.com/teclib/teams/28042/ko_KR/)\n"
@@ -100,7 +100,7 @@ msgstr "간트"
 msgid "Gantt mode: 'Readonly'"
 msgstr "간트 모델: '읽기전용'"
 
-#: src/ProjectTab.php:75 src/ProjectTab.php:77
+#: src/ProjectTab.php:74 src/ProjectTab.php:76
 msgid "Global GANTT"
 msgstr "전역 GANTT"
 
@@ -140,8 +140,8 @@ msgstr "월"
 msgid "New project"
 msgstr "새 프로젝트"
 
-#: src/TaskDAO.php:42 src/TaskDAO.php:87 src/TaskDAO.php:112
-#: src/ProjectDAO.php:45 src/ProjectDAO.php:83 src/ProjectDAO.php:100
+#: src/ProjectDAO.php:44 src/ProjectDAO.php:83 src/ProjectDAO.php:101
+#: src/TaskDAO.php:41 src/TaskDAO.php:87 src/TaskDAO.php:113
 msgid "Not enough rights"
 msgstr "권한이 부족합니다"
 

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-12 01:35+0000\n"
+"POT-Creation-Date: 2024-11-12 01:38+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -96,7 +96,7 @@ msgstr ""
 msgid "Gantt mode: 'Readonly'"
 msgstr ""
 
-#: src/ProjectTab.php:75 src/ProjectTab.php:77
+#: src/ProjectTab.php:74 src/ProjectTab.php:76
 msgid "Global GANTT"
 msgstr ""
 
@@ -136,8 +136,8 @@ msgstr ""
 msgid "New project"
 msgstr ""
 
-#: src/TaskDAO.php:42 src/TaskDAO.php:87 src/TaskDAO.php:112
-#: src/ProjectDAO.php:45 src/ProjectDAO.php:83 src/ProjectDAO.php:100
+#: src/ProjectDAO.php:44 src/ProjectDAO.php:83 src/ProjectDAO.php:101
+#: src/TaskDAO.php:41 src/TaskDAO.php:87 src/TaskDAO.php:113
 msgid "Not enough rights"
 msgstr ""
 
