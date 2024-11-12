@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-11 07:27+0000\n"
+"POT-Creation-Date: 2024-10-30 01:42+0000\n"
 "PO-Revision-Date: 2022-05-06 13:53+0000\n"
 "Last-Translator: Kaya Zeren <kayazeren@gmail.com>, 2022\n"
 "Language-Team: Turkish (Turkey) (https://app.transifex.com/teclib/teams/28042/tr_TR/)\n"
@@ -100,7 +100,7 @@ msgstr "Gantt"
 msgid "Gantt mode: 'Readonly'"
 msgstr "Gantt kipi: 'Salt okunur'"
 
-#: src/ProjectTab.php:75 src/ProjectTab.php:77
+#: src/ProjectTab.php:74 src/ProjectTab.php:76
 msgid "Global GANTT"
 msgstr "Genel GANTT"
 
@@ -140,8 +140,8 @@ msgstr "Ay"
 msgid "New project"
 msgstr "Proje eklendiğinde"
 
-#: src/TaskDAO.php:42 src/TaskDAO.php:87 src/TaskDAO.php:112
-#: src/ProjectDAO.php:45 src/ProjectDAO.php:83 src/ProjectDAO.php:100
+#: src/ProjectDAO.php:44 src/ProjectDAO.php:83 src/ProjectDAO.php:101
+#: src/TaskDAO.php:41 src/TaskDAO.php:87 src/TaskDAO.php:113
 msgid "Not enough rights"
 msgstr "İzinler yetersiz"
 
