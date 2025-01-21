@@ -54,10 +54,11 @@ class ProjectTab extends \CommonGLPI
 
     public static function displayTabContentForItem(\CommonGLPI $item, $tabnum = 1, $withtemplate = 0)
     {
-        // @phpstan-ignore-next-line
         if ($item instanceof \Project) {
             self::showForProject($item->getId());
         }
+
+        return true;
     }
 
     public static function showForProject(int $project_id = -1)
