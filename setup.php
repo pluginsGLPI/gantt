@@ -50,6 +50,10 @@ function plugin_init_gantt()
 
     $PLUGIN_HOOKS['csrf_compliant']['gantt'] = true;
 
+    if (!Plugin::isPluginActive('gantt')) {
+        return;
+    }
+
     Plugin::registerClass('GlpiPlugin\Gantt\ProjectTab', [
         'addtabon' => 'Project',
     ]);
