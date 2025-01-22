@@ -30,6 +30,7 @@
 
 namespace GlpiPlugin\Gantt;
 
+use DBmysql;
 use Glpi\RichText\RichText;
 
 /**
@@ -82,18 +83,16 @@ class DataFactory
     public function getProjectTaskLinks($itemArray)
     {
         $links = [];
-        if (isset($itemArray)) {
-            $ids = [];
-            foreach ($itemArray as $item) {
-                if ($item->type != 'project') {
-                    $ids[] = $item->linktask_id;
-                }
+        $ids = [];
+        foreach ($itemArray as $item) {
+            if ($item->type != 'project') {
+                $ids[] = $item->linktask_id;
             }
+        }
 
-            if (count($ids) > 0) {
-                $linkDao = new LinkDAO();
-                $links   = $linkDao->getLinksForItemIDs($ids);
-            }
+        if (count($ids) > 0) {
+            $linkDao = new LinkDAO();
+            $links   = $linkDao->getLinksForItemIDs($ids);
         }
 
         return $links;
@@ -127,8 +126,8 @@ class DataFactory
     /**
      * Function used to get all tasks of a project
      *
-     * @param array @itemArray Array holding the task items
-     * @param integer @projectId ID of the project
+     * @param array $itemArray Array holding the task items
+     * @param integer $projectId ID of the project
      */
     public function getProjectTasks(&$itemArray, $projectId)
     {
@@ -146,8 +145,8 @@ class DataFactory
     /**
      * Function used to get all subtasks of a task
      *
-     * @param array @itemArray Array holding the task items
-     * @param integer @taskId ID of the parent task
+     * @param array $itemArray Array holding the task items
+     * @param integer $taskId ID of the parent task
      */
     public function getSubtasks(&$itemArray, $taskId)
     {
