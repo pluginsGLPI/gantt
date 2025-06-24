@@ -31,9 +31,9 @@
 define('PLUGIN_GANTT_VERSION', '1.1.1');
 
 // Minimal GLPI version, inclusive
-define('PLUGIN_GANTT_MIN_GLPI_VERSION', '10.0.1');
+define('PLUGIN_GANTT_MIN_GLPI_VERSION', '11.0.0');
 // Maximum GLPI version, exclusive
-define('PLUGIN_GANTT_MAX_GLPI_VERSION', '10.0.99');
+define('PLUGIN_GANTT_MAX_GLPI_VERSION', '11.0.99');
 
 use Glpi\Plugin\Hooks;
 
@@ -58,10 +58,10 @@ function plugin_init_gantt()
         'addtabon' => 'Project',
     ]);
 
-    $PLUGIN_HOOKS[Hooks::ADD_JAVASCRIPT]['gantt'][] = 'public/lib/libs.js';
+    $PLUGIN_HOOKS[Hooks::ADD_JAVASCRIPT]['gantt'][] = 'lib/libs.js';
     $PLUGIN_HOOKS[Hooks::ADD_JAVASCRIPT]['gantt'][] = 'js/gantt-helper.js';
 
-    $PLUGIN_HOOKS[Hooks::ADD_CSS]['gantt'][] = 'css/gantt.scss';
+    $PLUGIN_HOOKS[Hooks::ADD_CSS]['gantt'][] = 'public/css/gantt.scss';
 
     $PLUGIN_HOOKS[Hooks::REDEFINE_MENUS]['gantt'] = [
         'GlpiPlugin\Gantt\ProjectTab',

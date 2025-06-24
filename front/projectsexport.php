@@ -33,8 +33,6 @@
 
 use GlpiPlugin\Gantt\ProjectsExport;
 
-include('../../../inc/includes.php');
-
 $project_id = $_GET['project_id'] ?? -1;
 
 // Check right
