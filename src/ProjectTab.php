@@ -30,11 +30,6 @@
 
 namespace GlpiPlugin\Gantt;
 
-if (!defined('GLPI_ROOT')) {
-    die("Sorry. You can't access directly to this file");
-}
-
-
 use Glpi\Application\View\TemplateRenderer;
 
 class ProjectTab extends \CommonGLPI
