@@ -159,7 +159,7 @@ const GlpiGantt = (function() {
             });
 
             gantt.templates.tooltip_text = (start, end, task) => {
-                let text = "<b><span class=\"capitalize\">" +
+               let text = "<b><span class=\"capitalize\">" +
                task.type + ":</span></b> " + task.text + "<br/><b>" + __("Start date:", 'gantt') + "</b> " +
                gantt.templates.tooltip_date_format(start) +
                "<br/><b>" + __("End date:", 'gantt') + "</b> " + gantt.templates.tooltip_date_format(end) +
