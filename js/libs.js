@@ -26,5 +26,5 @@
  * -------------------------------------------------------------------------
  */
 
-require('dhtmlx-gantt');
-require('dhtmlx-gantt/codebase/dhtmlxgantt.css');
+import 'dhtmlx-gantt/codebase/dhtmlxgantt.js';
+import 'dhtmlx-gantt/codebase/dhtmlxgantt.css';

@@ -1,6 +1,7 @@
 dist/
 node_modules/
 public/build/
+public/lib/
 vendor/
 .gh_token
 *.min.*
