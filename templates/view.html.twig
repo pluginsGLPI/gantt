@@ -44,7 +44,7 @@
                <span>{{ __('Export', 'gantt') }}</span>
             </span>
 
-            <a href="{{ get_plugin_web_dir('gantt') ~ '/front/projectsexport.php?project_id=' ~ id }}" target="_blank" class="btn btn-outline-secondary">{{ __('JSON', 'gantt') }}</a>
+            <a href="{{ path('/plugins/gantt/front/projectsexport.php') ~ '?project_id=' ~ id }}" target="_blank" class="btn btn-outline-secondary">{{ __('JSON', 'gantt') }}</a>
          </div>
 
       </li>

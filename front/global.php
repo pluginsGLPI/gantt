@@ -28,8 +28,6 @@
  * -------------------------------------------------------------------------
  */
 
-include('../../../inc/includes.php');
-
 Session::checkLoginUser();
 
 $projecttab = new \GlpiPlugin\Gantt\ProjectTab();
