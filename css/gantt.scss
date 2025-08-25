@@ -132,6 +132,13 @@
         margin: auto;
         z-index: 10003;
     }
+
+    .gantt_milestone .gantt_task_content {
+        height: 19px;
+        width: 19px;
+        translate: -50% 20%;
+        color: transparent;
+    }
 }
 
 .gantt_modal_box {

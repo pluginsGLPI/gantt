@@ -129,6 +129,9 @@ const GlpiGantt = (function() {
                     css.push("no_progress_drag");
                     css.push("no_link_drag");
                 }
+                if (task.type == "milestone") {
+                    css.push("gantt_milestone");
+                }
                 return css.join(" ");
             };
 
