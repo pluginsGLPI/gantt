@@ -5,6 +5,11 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [UNRELEASED]
+
+### Fixed
+
+- Milestone sticker not visible
 
 ## [1.1.1] - 2024-07-09
 
@@ -18,4 +23,3 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 - Added the ability to export gantt view data in JSON format
 - Use real dates if they exist over planned dates for tasks and projects
-
