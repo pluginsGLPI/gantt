@@ -61,7 +61,7 @@ function plugin_init_gantt()
     $PLUGIN_HOOKS[Hooks::ADD_JAVASCRIPT]['gantt'][] = 'public/lib/libs.js';
     $PLUGIN_HOOKS[Hooks::ADD_JAVASCRIPT]['gantt'][] = 'js/gantt-helper.js';
 
-    $PLUGIN_HOOKS[Hooks::ADD_CSS]['gantt'][] = 'css/gantt.scss';
+    $PLUGIN_HOOKS[Hooks::ADD_CSS]['gantt'][] = Plugin::getWebDir('gantt').'css/gantt.scss';
 
     $PLUGIN_HOOKS[Hooks::REDEFINE_MENUS]['gantt'] = [
         'GlpiPlugin\Gantt\ProjectTab',
