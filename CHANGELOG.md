@@ -10,6 +10,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Fixed
 
 - Milestone sticker not visible
+- Fix CSS since `dhtmlx-gantt` update to `9.0`
+
 
 ## [1.1.1] - 2024-07-09
 
