@@ -132,6 +132,10 @@ const GlpiGantt = (function() {
                 if (task.type == "milestone") {
                     css.push("gantt_milestone");
                 }
+                if (task.type == "project") {
+                    css.push("gantt_project");
+                }
+
                 return css.join(" ");
             };
 
