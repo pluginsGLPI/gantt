@@ -27,8 +27,8 @@
  * @link      https://github.com/pluginsGLPI/gantt
  * -------------------------------------------------------------------------
  */
-
 use Glpi\Plugin\Hooks;
+use GlpiPlugin\Gantt\ProjectTab;
 
 use function Safe\define;
 
@@ -57,7 +57,7 @@ function plugin_init_gantt()
         return;
     }
 
-    Plugin::registerClass('GlpiPlugin\Gantt\ProjectTab', [
+    Plugin::registerClass(ProjectTab::class, [
         'addtabon' => 'Project',
     ]);
 
@@ -67,7 +67,7 @@ function plugin_init_gantt()
     $PLUGIN_HOOKS[Hooks::ADD_CSS]['gantt'][] = 'css/gantt.scss';
 
     $PLUGIN_HOOKS[Hooks::REDEFINE_MENUS]['gantt'] = [
-        'GlpiPlugin\Gantt\ProjectTab',
+        ProjectTab::class,
         'addGlobalGanttToMenu',
     ];
 }
