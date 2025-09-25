@@ -41,7 +41,7 @@ class ProjectDAO
     public function addProject($project)
     {
         if (!\Project::canCreate()) {
-            throw new \Exception(__('Not enough rights', 'gantt'));
+            throw new \Exception(__s('Not enough rights', 'gantt'));
         }
 
         // Default values for a "main" project
@@ -80,7 +80,7 @@ class ProjectDAO
         $p->getFromDB($project->id);
 
         if (!$p::canUpdate() || !$p->canUpdateItem()) {
-            throw new \Exception(__('Not enough rights', 'gantt'));
+            throw new \Exception(__s('Not enough rights', 'gantt'));
         }
 
         $p->update([
@@ -98,7 +98,7 @@ class ProjectDAO
         $p->getFromDB($project->id);
 
         if (!$p::canUpdate() || !$p->canUpdateItem()) {
-            throw new \Exception(__('Not enough rights', 'gantt'));
+            throw new \Exception(__s('Not enough rights', 'gantt'));
         }
 
         $input = [

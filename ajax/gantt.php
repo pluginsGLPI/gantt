@@ -106,7 +106,7 @@ if (isset($_REQUEST['getData'])) {
         $p_target = $_POST['target'];
 
         if ($p_item['type'] == 'project' && $p_target['type'] != 'project') {
-            throw new \Exception(__('Target item must be of project type', 'gantt'));
+            throw new \Exception(__s('Target item must be of project type', 'gantt'));
         }
 
         $item = new \GlpiPlugin\Gantt\Item();
@@ -138,7 +138,7 @@ if (isset($_REQUEST['getData'])) {
 
         // double check for safety..
         if ($p_item['type'] != 'project') {
-            throw new \Exception(__('Item must be of project type', 'gantt'));
+            throw new \Exception(__s('Item must be of project type', 'gantt'));
         }
 
         $item = new \GlpiPlugin\Gantt\Item();
@@ -200,7 +200,7 @@ if (isset($_REQUEST['getData'])) {
         $taskLink = new \ProjectTaskLink();
 
         if ($taskLink->checkIfExist($_POST['taskLink'])) {
-            throw new \Exception(__('Link already exist!', 'gantt'));
+            throw new \Exception(__s('Link already exist!', 'gantt'));
         }
 
         $id     = $taskLink->add($_POST['taskLink']);
