@@ -33,6 +33,8 @@
 
 use GlpiPlugin\Gantt\ProjectsExport;
 
+use function Safe\preg_replace;
+
 $project_id = $_GET['project_id'] ?? -1;
 
 // Check right

@@ -33,6 +33,8 @@ namespace GlpiPlugin\Gantt;
 use DBmysql;
 use Glpi\RichText\RichText;
 
+use function Safe\strtotime;
+
 /**
  * Class used to prepare data for Gantt
  */
