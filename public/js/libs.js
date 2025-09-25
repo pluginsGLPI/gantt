@@ -26,5 +26,6 @@
  * -------------------------------------------------------------------------
  */
 
-import 'dhtmlx-gantt/codebase/dhtmlxgantt.js';
+import gantt from 'dhtmlx-gantt/codebase/dhtmlxgantt.js';
+window.gantt = gantt;
 import 'dhtmlx-gantt/codebase/dhtmlxgantt.css';

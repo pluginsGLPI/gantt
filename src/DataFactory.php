@@ -32,6 +32,10 @@ namespace GlpiPlugin\Gantt;
 
 use DBmysql;
 use Glpi\RichText\RichText;
+use Project;
+use ProjectTask;
+
+use function Safe\strtotime;
 
 /**
  * Class used to prepare data for Gantt
@@ -49,7 +53,7 @@ class DataFactory
     {
         /** @var DBmysql $DB */
         global $DB;
-        $project = new \Project();
+        $project = new Project();
         if ($id == -1) {
             $iterator = $DB->request([
                 'FROM'  => 'glpi_projects',
@@ -66,9 +70,10 @@ class DataFactory
             }
         } elseif ($project->getFromDB($id)) {
             if ($project->canViewItem()) {
-                array_push($itemArray, $this->populateGanttItem($project->fields, 'root-project'));
+                $itemArray[] = $this->populateGanttItem($project->fields, 'root-project');
                 $this->getProjectTasks($itemArray, $id);
-                $this->getSubprojects($itemArray, $id); // subproject tasks included
+                $this->getSubprojects($itemArray, $id);
+                // subproject tasks included
             }
         }
     }
@@ -109,14 +114,21 @@ class DataFactory
     {
         /** @var DBmysql $DB */
         global $DB;
-        $iterator = $DB->request('glpi_projects', ['projects_id' => $projectId, 'is_template' => 0, 'is_deleted' => 0]);
+        $iterator = $DB->request([
+            'FROM' => 'glpi_projects',
+            'WHERE' => [
+                'projects_id' => $projectId,
+                'is_template' => 0,
+                'is_deleted' => 0,
+            ],
+        ]);
 
         foreach ($iterator as $record) {
-            $proj = new \Project();
+            $proj = new Project();
             $proj->getFromDB($record['id']);
 
             if ($proj->canViewItem()) {
-                array_push($itemArray, $this->populateGanttItem($record, 'project'));
+                $itemArray[] = $this->populateGanttItem($record, 'project');
                 $this->getSubprojects($itemArray, $record['id']);
                 $this->getProjectTasks($itemArray, $record['id']);
             }
@@ -131,14 +143,14 @@ class DataFactory
      */
     public function getProjectTasks(&$itemArray, $projectId)
     {
-        $taskRecords[] = \ProjectTask::getAllForProject($projectId);
+        $taskRecords[] = ProjectTask::getAllForProject($projectId);
         foreach ($taskRecords[0] as $record) {
-            $task = new \ProjectTask();
+            $task = new ProjectTask();
             $task->getFromDB($record['id']);
             if (!$task->canViewItem() || $record['is_template'] == 1) {
                 continue;
             }
-            array_push($itemArray, $this->populateGanttItem($record, 'task'));
+            $itemArray[] = $this->populateGanttItem($record, 'task');
         }
     }
 
@@ -150,16 +162,16 @@ class DataFactory
      */
     public function getSubtasks(&$itemArray, $taskId)
     {
-        $taskRecords[] = \ProjectTask::getAllForProjectTask($taskId);
+        $taskRecords[] = ProjectTask::getAllForProjectTask($taskId);
         foreach ($taskRecords[0] as $record) {
             $this->getSubtasks($itemArray, $record['id']);
 
-            $task = new \ProjectTask();
+            $task = new ProjectTask();
             $task->getFromDB($record['id']);
             if (!$task->canViewItem() || $record['is_template'] == 1) {
                 continue;
             }
-            array_push($itemArray, $this->populateGanttItem($record, 'task'));
+            $itemArray[] = $this->populateGanttItem($record, 'task');
         }
     }
 
@@ -179,7 +191,7 @@ class DataFactory
 
         $parentTaskUid = '';
         if (($type == 'task' || $type == 'milestone') && $record['projecttasks_id'] > 0) {
-            $parentTask = new \ProjectTask();
+            $parentTask = new ProjectTask();
             $parentTask->getFromDB($record['projecttasks_id']);
             $parentTaskUid = $parentTask->fields['uuid'];
         }
