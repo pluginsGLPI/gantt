@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 - Milestone sticker not visible
 - Fix CSS since `dhtmlx-gantt` update to `9.0`
+- Hide breadcrumb container in fullscreen mode with horizontal layout
 
 
 ## [1.1.1] - 2024-07-09

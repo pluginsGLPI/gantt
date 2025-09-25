@@ -466,6 +466,7 @@ const GlpiGantt = (function() {
                 });
                 $('header.navbar').hide();
                 $('aside.navbar').hide();
+                $('.navbar.secondary-bar').hide();
                 $('#tabspanel').css({
                     'visibility': 'hidden'
                 });
@@ -479,6 +480,7 @@ const GlpiGantt = (function() {
                 });
                 $('header.navbar').show();
                 $('aside.navbar').show();
+                $('.navbar.secondary-bar').show();
                 $('#tabspanel').css({
                     'visibility': 'initial'
                 });
