@@ -28,6 +28,10 @@
  * -------------------------------------------------------------------------
  */
 
+use Glpi\Plugin\Hooks;
+
+use function Safe\define;
+
 define('PLUGIN_GANTT_VERSION', '1.2.0-beta2');
 
 // Minimal GLPI version, inclusive
@@ -35,7 +39,6 @@ define('PLUGIN_GANTT_MIN_GLPI_VERSION', '11.0.0');
 // Maximum GLPI version, exclusive
 define('PLUGIN_GANTT_MAX_GLPI_VERSION', '11.0.99');
 
-use Glpi\Plugin\Hooks;
 
 /**
  * Init hooks of the plugin.

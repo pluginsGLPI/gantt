@@ -28,6 +28,8 @@
  * -------------------------------------------------------------------------
  */
 
+use function Safe\json_encode;
+
 /** @var array $CFG_GLPI */
 global $CFG_GLPI;
 
