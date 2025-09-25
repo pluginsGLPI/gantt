@@ -30,6 +30,7 @@
 
 namespace GlpiPlugin\Gantt;
 
+use Exception;
 use Project;
 use Session;
 
@@ -40,8 +41,8 @@ class ProjectDAO
 {
     public function addProject($project)
     {
-        if (!\Project::canCreate()) {
-            throw new \Exception(__s('Not enough rights', 'gantt'));
+        if (!Project::canCreate()) {
+            throw new Exception(__s('Not enough rights', 'gantt'));
         }
 
         // Default values for a "main" project
@@ -63,12 +64,12 @@ class ProjectDAO
             'plan_end_date'        => $project->end_date,
             'priority'             => 3,  //medium
             'projectstates_id'     => 1,
-            'users_id'             => \Session::getLoginUserID(),
+            'users_id'             => Session::getLoginUserID(),
             'show_on_global_gantt' => 1,
             'entities_id'          => $entities_id,
             'is_recursive'         => $is_recursive,
         ];
-        $proj = new \Project();
+        $proj = new Project();
         $proj->add($input);
 
         return $proj;
@@ -76,11 +77,11 @@ class ProjectDAO
 
     public function updateProject($project)
     {
-        $p = new \Project();
+        $p = new Project();
         $p->getFromDB($project->id);
 
         if (!$p::canUpdate() || !$p->canUpdateItem()) {
-            throw new \Exception(__s('Not enough rights', 'gantt'));
+            throw new Exception(__s('Not enough rights', 'gantt'));
         }
 
         $p->update([
@@ -94,11 +95,11 @@ class ProjectDAO
 
     public function updateParent($project)
     {
-        $p = new \Project();
+        $p = new Project();
         $p->getFromDB($project->id);
 
         if (!$p::canUpdate() || !$p->canUpdateItem()) {
-            throw new \Exception(__s('Not enough rights', 'gantt'));
+            throw new Exception(__s('Not enough rights', 'gantt'));
         }
 
         $input = [
