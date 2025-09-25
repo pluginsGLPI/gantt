@@ -36,7 +36,7 @@ class ProjectTab extends \CommonGLPI
 {
     public static function getTypeName($nb = 0)
     {
-        return __('Gantt', 'gantt');
+        return __s('Gantt', 'gantt');
     }
 
     public function getTabNameForItem(\CommonGLPI $item, $withtemplate = 0)
@@ -67,9 +67,9 @@ class ProjectTab extends \CommonGLPI
     {
         if (isset($menu['tools']['content']['project']['links'])) {
             $label = '
-                <i class="fas fa-stream" title="' . __('Global GANTT', 'gantt') . '"></i>
+                <i class="fas fa-stream" title="' . __s('Global GANTT', 'gantt') . '"></i>
                 <span class="d-none d-xxl-block">
-                ' . __('Global GANTT', 'gantt') . '
+                ' . __s('Global GANTT', 'gantt') . '
                 </span>
             ';
             $menu['tools']['content']['project']['links'][$label] = \Plugin::getPhpDir('gantt', false) . '/front/global.php';

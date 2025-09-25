@@ -38,7 +38,7 @@ class TaskDAO
     public function addTask($task)
     {
         if (!\ProjectTask::canCreate()) {
-            throw new \Exception(__('Not enough rights', 'gantt'));
+            throw new \Exception(__s('Not enough rights', 'gantt'));
         }
 
         $t = new \ProjectTask();
@@ -84,7 +84,7 @@ class TaskDAO
         $t->getFromDB($task->id);
 
         if (!$t::canUpdate() || !$t->canUpdateItem()) {
-            throw new \Exception(__('Not enough rights', 'gantt'));
+            throw new \Exception(__s('Not enough rights', 'gantt'));
         }
 
         $update = [
@@ -110,7 +110,7 @@ class TaskDAO
         $t->getFromDBByCrit(['uuid' => $task->id]);
 
         if (!$t::canUpdate() || !$t->canUpdateItem()) {
-            throw new \Exception(__('Not enough rights', 'gantt'));
+            throw new \Exception(__s('Not enough rights', 'gantt'));
         }
 
         if (!is_numeric($task->parent)) {
