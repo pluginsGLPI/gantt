@@ -34,6 +34,7 @@ const path = require('path');
  */
 module.exports = [
     {
+        mode: 'production',
         entry: {
             'libs': path.resolve(__dirname, 'public/js/libs.js'),
         },
