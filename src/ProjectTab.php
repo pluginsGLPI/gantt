@@ -30,31 +30,29 @@
 
 namespace GlpiPlugin\Gantt;
 
-if (!defined('GLPI_ROOT')) {
-    die("Sorry. You can't access directly to this file");
-}
-
-
+use CommonGLPI;
 use Glpi\Application\View\TemplateRenderer;
+use Plugin;
+use Project;
 
-class ProjectTab extends \CommonGLPI
+class ProjectTab extends CommonGLPI
 {
     public static function getTypeName($nb = 0)
     {
-        return __('Gantt', 'gantt');
+        return __s('Gantt', 'gantt');
     }
 
-    public function getTabNameForItem(\CommonGLPI $item, $withtemplate = 0)
+    public function getTabNameForItem(CommonGLPI $item, $withtemplate = 0)
     {
         // @phpstan-ignore-next-line
-        if ($item instanceof \Project) {
+        if ($item instanceof Project) {
             return self::createTabEntry(self::getTypeName());
         }
     }
 
-    public static function displayTabContentForItem(\CommonGLPI $item, $tabnum = 1, $withtemplate = 0)
+    public static function displayTabContentForItem(CommonGLPI $item, $tabnum = 1, $withtemplate = 0)
     {
-        if ($item instanceof \Project) {
+        if ($item instanceof Project) {
             self::showForProject($item->getId());
         }
 
@@ -72,12 +70,12 @@ class ProjectTab extends \CommonGLPI
     {
         if (isset($menu['tools']['content']['project']['links'])) {
             $label = '
-                <i class="fas fa-stream" title="' . __('Global GANTT', 'gantt') . '"></i>
+                <i class="fas fa-stream" title="' . __s('Global GANTT', 'gantt') . '"></i>
                 <span class="d-none d-xxl-block">
-                ' . __('Global GANTT', 'gantt') . '
+                ' . __s('Global GANTT', 'gantt') . '
                 </span>
             ';
-            $menu['tools']['content']['project']['links'][$label] = \Plugin::getPhpDir('gantt', false) . '/front/global.php';
+            $menu['tools']['content']['project']['links'][$label] = Plugin::getPhpDir('gantt', false) . '/front/global.php';
         }
 
         return $menu;

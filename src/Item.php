@@ -30,13 +30,14 @@
 
 namespace GlpiPlugin\Gantt;
 
+use JsonSerializable;
 use ReturnTypeWillChange;
 
 /**
  * Generic class for holding Gantt item details.
  * Used to exchange Json data between client-server functions with Ajax calls.
  */
-class Item implements \JsonSerializable
+class Item implements JsonSerializable
 {
     public $id;
     public $linktask_id;

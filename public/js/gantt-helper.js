@@ -34,7 +34,7 @@ const GlpiGantt = (function() {
 
     //TODO: Why is this always false?
     const readonly = false;
-    const plugin_path = CFG_GLPI.root_doc + '/' + (GLPI_PLUGINS_PATH['gantt'] ?? "");
+    const plugin_path = CFG_GLPI.root_doc + '/plugins/gantt';
     const url = plugin_path +  '/ajax/gantt.php';
     const parseDateFormat = "%Y-%m-%d %H:%i";
     let uiDateFormat = null;

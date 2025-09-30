@@ -33,6 +33,8 @@
 
 namespace GlpiPlugin\Gantt;
 
+use function Safe\json_encode;
+
 final class ProjectsExport
 {
     private int $project_id;

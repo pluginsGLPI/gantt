@@ -28,11 +28,12 @@
  * -------------------------------------------------------------------------
  */
 
-include('../../../inc/includes.php');
+
+use GlpiPlugin\Gantt\ProjectTab;
 
 Session::checkLoginUser();
 
-$projecttab = new \GlpiPlugin\Gantt\ProjectTab();
+$projecttab = new ProjectTab();
 
 Html::header(Project::getTypeName(Session::getPluralNumber()), $_SERVER['PHP_SELF'], 'tools', 'project');
 $projecttab->showForProject();

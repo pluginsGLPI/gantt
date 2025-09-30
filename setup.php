@@ -27,15 +27,18 @@
  * @link      https://github.com/pluginsGLPI/gantt
  * -------------------------------------------------------------------------
  */
+use Glpi\Plugin\Hooks;
+use GlpiPlugin\Gantt\ProjectTab;
 
-define('PLUGIN_GANTT_VERSION', '1.1.2');
+use function Safe\define;
+
+define('PLUGIN_GANTT_VERSION', '1.2.0');
 
 // Minimal GLPI version, inclusive
-define('PLUGIN_GANTT_MIN_GLPI_VERSION', '10.0.1');
+define('PLUGIN_GANTT_MIN_GLPI_VERSION', '11.0.0');
 // Maximum GLPI version, exclusive
-define('PLUGIN_GANTT_MAX_GLPI_VERSION', '10.0.99');
+define('PLUGIN_GANTT_MAX_GLPI_VERSION', '11.0.99');
 
-use Glpi\Plugin\Hooks;
 
 /**
  * Init hooks of the plugin.
@@ -54,17 +57,17 @@ function plugin_init_gantt()
         return;
     }
 
-    Plugin::registerClass('GlpiPlugin\Gantt\ProjectTab', [
+    Plugin::registerClass(ProjectTab::class, [
         'addtabon' => 'Project',
     ]);
 
-    $PLUGIN_HOOKS[Hooks::ADD_JAVASCRIPT]['gantt'][] = 'public/lib/libs.js';
+    $PLUGIN_HOOKS[Hooks::ADD_JAVASCRIPT]['gantt'][] = 'lib/libs.js';
     $PLUGIN_HOOKS[Hooks::ADD_JAVASCRIPT]['gantt'][] = 'js/gantt-helper.js';
 
     $PLUGIN_HOOKS[Hooks::ADD_CSS]['gantt'][] = 'css/gantt.scss';
 
     $PLUGIN_HOOKS[Hooks::REDEFINE_MENUS]['gantt'] = [
-        'GlpiPlugin\Gantt\ProjectTab',
+        ProjectTab::class,
         'addGlobalGanttToMenu',
     ];
 }
