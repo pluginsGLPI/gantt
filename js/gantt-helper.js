@@ -129,6 +129,13 @@ const GlpiGantt = (function() {
                     css.push("no_progress_drag");
                     css.push("no_link_drag");
                 }
+                if (task.type == "milestone") {
+                    css.push("gantt_milestone");
+                }
+                if (task.type == "project") {
+                    css.push("gantt_project");
+                }
+
                 return css.join(" ");
             };
 
@@ -460,6 +467,7 @@ const GlpiGantt = (function() {
                 });
                 $('header.navbar').hide();
                 $('aside.navbar').hide();
+                $('.navbar.secondary-bar').hide();
                 $('#tabspanel').css({
                     'visibility': 'hidden'
                 });
@@ -473,6 +481,7 @@ const GlpiGantt = (function() {
                 });
                 $('header.navbar').show();
                 $('aside.navbar').show();
+                $('.navbar.secondary-bar').show();
                 $('#tabspanel').css({
                     'visibility': 'initial'
                 });

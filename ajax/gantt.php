@@ -30,6 +30,9 @@
 
 include('../../../inc/includes.php');
 
+/** @var array $CFG_GLPI */
+global $CFG_GLPI;
+
 header('Content-Type: application/json; charset=UTF-8');
 Html::header_nocache();
 
@@ -48,7 +51,9 @@ if (isset($_REQUEST['getData'])) {
     $links = $factory->getProjectTaskLinks($itemArray);
 
     usort($itemArray, function ($a, $b) {
-        return strlen($a->id) <=> strlen($b->id);
+        $lengthA = $a->id !== null ? strlen($a->id) : 0;
+        $lengthB = $b->id !== null ? strlen($b->id) : 0;
+        return $lengthA <=> $lengthB;
     });
 
     $result = [
@@ -57,7 +62,6 @@ if (isset($_REQUEST['getData'])) {
     ];
     echo json_encode($result);
 } elseif (isset($_POST['addTask'])) {
-    $result;
     try {
         $item = new \GlpiPlugin\Gantt\Item();
         $task = $_POST['task'];
@@ -79,7 +83,6 @@ if (isset($_REQUEST['getData'])) {
     }
     echo json_encode($result);
 } elseif (isset($_POST['updateTask'])) {
-    $result;
     try {
         $updated = false;
         $item    = new \GlpiPlugin\Gantt\Item();
@@ -98,7 +101,6 @@ if (isset($_REQUEST['getData'])) {
     }
     echo json_encode($result);
 } elseif (isset($_POST['changeItemParent'])) {
-    $result;
     try {
         $p_item   = $_POST['item'];
         $p_target = $_POST['target'];
@@ -131,7 +133,6 @@ if (isset($_REQUEST['getData'])) {
     }
     echo json_encode($result);
 } elseif (isset($_POST['makeRootProject'])) {
-    $result;
     try {
         $p_item = $_POST['item'];
 
@@ -156,7 +157,6 @@ if (isset($_REQUEST['getData'])) {
     }
     echo json_encode($result);
 } elseif (isset($_POST['addProject'])) {
-    $result;
     try {
         $item    = new \GlpiPlugin\Gantt\Item();
         $project = $_POST['project'];
@@ -178,7 +178,6 @@ if (isset($_REQUEST['getData'])) {
     }
     echo json_encode($result);
 } elseif (isset($_POST['updateProject'])) {
-    $result;
     try {
         $updated = false;
         $item    = new \GlpiPlugin\Gantt\Item();
@@ -197,7 +196,6 @@ if (isset($_REQUEST['getData'])) {
     }
     echo json_encode($result);
 } elseif (isset($_POST['addTaskLink'])) {
-    $result;
     try {
         $taskLink = new \ProjectTaskLink();
 
@@ -218,7 +216,6 @@ if (isset($_REQUEST['getData'])) {
     }
     echo json_encode($result);
 } elseif (isset($_POST['updateTaskLink'])) {
-    $result;
     try {
         $taskLink = new \ProjectTaskLink();
         $taskLink->update($_POST['taskLink']);
@@ -233,7 +230,6 @@ if (isset($_REQUEST['getData'])) {
     }
     echo json_encode($result);
 } elseif (isset($_POST['deleteTaskLink'])) {
-    $result;
     try {
         $taskLink = new \ProjectTaskLink();
         $taskLink->delete($_POST);
@@ -250,17 +246,10 @@ if (isset($_REQUEST['getData'])) {
 } elseif (isset($_REQUEST['openEditForm'])) {
     $result       = [];
     $result['ok'] = true;
-    try {
-        if ($_POST['item']['type'] == 'project') {
-            $result['url'] = $CFG_GLPI['root_doc'] . '/front/project.form.php?id=' . $_POST['item']['id'] . '&forcetab=Project';
-        } else {
-            $result['url'] = $CFG_GLPI['root_doc'] . '/front/projecttask.form.php?id=' . $_POST['item']['linktask_id'] . '&forcetab=ProjectTask';
-        }
-    } catch (\Exception $ex) {
-        $result = [
-            'ok'    => false,
-            'error' => $ex->getMessage(),
-        ];
+    if ($_POST['item']['type'] == 'project') {
+        $result['url'] = $CFG_GLPI['root_doc'] . '/front/project.form.php?id=' . $_POST['item']['id'] . '&forcetab=Project';
+    } else {
+        $result['url'] = $CFG_GLPI['root_doc'] . '/front/projecttask.form.php?id=' . $_POST['item']['linktask_id'] . '&forcetab=ProjectTask';
     }
     echo json_encode($result);
 }

@@ -28,7 +28,7 @@
  * -------------------------------------------------------------------------
  */
 
-define('PLUGIN_GANTT_VERSION', '1.1.0');
+define('PLUGIN_GANTT_VERSION', '1.1.1');
 
 // Minimal GLPI version, inclusive
 define('PLUGIN_GANTT_MIN_GLPI_VERSION', '10.0.1');
@@ -51,7 +51,7 @@ function plugin_init_gantt()
     $PLUGIN_HOOKS['csrf_compliant']['gantt'] = true;
 
     if (!Plugin::isPluginActive('gantt')) {
-        return false;
+        return;
     }
 
     Plugin::registerClass('GlpiPlugin\Gantt\ProjectTab', [
