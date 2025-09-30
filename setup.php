@@ -32,7 +32,7 @@ use GlpiPlugin\Gantt\ProjectTab;
 
 use function Safe\define;
 
-define('PLUGIN_GANTT_VERSION', '1.2.0-beta2');
+define('PLUGIN_GANTT_VERSION', '1.2.0');
 
 // Minimal GLPI version, inclusive
 define('PLUGIN_GANTT_MIN_GLPI_VERSION', '11.0.0');
