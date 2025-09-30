@@ -191,9 +191,10 @@ const GlpiGantt = (function() {
                     {
                         name: "day",
                         scale_height: 27,
-                        min_column_width: 80,
+                        min_column_width: 30,
                         scales: [
-                            { unit: "day", step: 1, format: "%d %M" }
+                            { unit: "day", step: 1, format: "%d %M" },
+                            { unit: "hour", step: 2, format: "%H" }
                         ]
                     },
                     {

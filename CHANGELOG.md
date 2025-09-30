@@ -5,14 +5,18 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
-## [UNRELEASED]
+
+## [Unreleased]
+
+### Added
+
+- Added hours to Days zoom level
 
 ### Fixed
 
 - Milestone sticker not visible
 - Fix CSS since `dhtmlx-gantt` update to `9.0`
 - Hide breadcrumb container in fullscreen mode with horizontal layout
-
 
 ## [1.1.1] - 2024-07-09
 
