@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-12-09 01:53+0000\n"
+"POT-Creation-Date: 2025-10-21 01:53+0000\n"
 "PO-Revision-Date: 2022-05-06 13:53+0000\n"
 "Last-Translator: Cédric Anne, 2022\n"
 "Language-Team: Czech (Czech Republic) (https://app.transifex.com/teclib/teams/28042/cs_CZ/)\n"
@@ -21,134 +21,80 @@ msgstr ""
 "Language: cs_CZ\n"
 "Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n >= 2 && n <= 4 && n % 1 == 0) ? 1: (n % 1 != 0 ) ? 2 : 3;\n"
 
-#: js/gantt-helper.js:403
-msgid "Cancel"
-msgstr "Storno"
-
-#: js/gantt-helper.js:164
-msgid "Comment:"
-msgstr "Komentář:"
-
-#: js/gantt-helper.js:807
-msgid "Could not create project: "
-msgstr "Nepodařilo se vytvořit projekt: "
-
-#: js/gantt-helper.js:643
-msgid "Could not create task: "
-msgstr "Nepodařilo se vytvořit úkol: "
-
-#: js/gantt-helper.js:840
-#, javascript-format
-msgid "Could not update Project[%s]: "
-msgstr "Nepodařilo se aktualizovat Project[%s]: "
-
-#: js/gantt-helper.js:682 js/gantt-helper.js:715
-#, javascript-format
-msgid "Could not update Task[%s]: "
-msgstr "Nepodařilo se aktualizovat Úkol[%s]: "
-
 #: templates/view.html.twig
-msgid "Days"
-msgstr "Dny"
-
-#: js/gantt-helper.js:404
-msgid "Delete"
-msgstr "Smazat"
-
-#: js/gantt-helper.js:161
-msgid "Description:"
-msgstr "Popis:"
-
-#: js/gantt-helper.js:173
-msgid "Duration"
-msgstr "Trvání"
-
-#: js/gantt-helper.js:158
-msgid "End date:"
-msgstr "Datum ukončení:"
+msgid "Fullscreen"
+msgstr "Na celou obrazovku"
 
 #: templates/view.html.twig
 msgid "Export"
 msgstr ""
 
 #: templates/view.html.twig
-msgid "Filter"
-msgstr "Filtr"
-
-#: templates/view.html.twig
-msgid "Find"
-msgstr "Nalézt"
-
-#: js/gantt-helper.js:384
-msgid "Finish to Finish: "
-msgstr ""
-
-#: js/gantt-helper.js:381
-msgid "Finish to Start: "
-msgstr ""
-
-#: templates/view.html.twig
-msgid "Fullscreen"
-msgstr "Na celou obrazovku"
-
-#: src/ProjectTab.php:44
-msgid "Gantt"
-msgstr ""
-
-#: js/gantt-helper.js:536
-msgid "Gantt mode: 'Readonly'"
-msgstr "Režim Gantt: 'Pouze pro čtení'"
-
-#: src/ProjectTab.php:74 src/ProjectTab.php:76
-msgid "Global GANTT"
-msgstr ""
-
-#: ajax/gantt.php:140
-msgid "Item must be of project type"
-msgstr "Položka musí být projektového typu"
-
-#: templates/view.html.twig
 msgid "JSON"
 msgstr ""
 
-#: js/gantt-helper.js:399
-msgid "Lag"
-msgstr ""
+#: templates/view.html.twig
+msgid "Zoom"
+msgstr "Zoom"
 
-#: ajax/gantt.php:205
-msgid "Link already exist!"
-msgstr "Odkaz již existuje!"
+#: templates/view.html.twig
+msgid "Days"
+msgstr "Dny"
 
-#: js/gantt-helper.js:598
-msgid "Links between projects and tasks cannot be created."
-msgstr "Odkazy mezi projekty a úkoly nelze vytvářet."
-
-#: js/gantt-helper.js:595
-msgid "Links between projects cannot be created."
-msgstr "Odkazy mezi projekty nelze vytvářet."
-
-#: js/gantt-helper.js:68 js/gantt-helper.js:73
-msgid "Milestone"
-msgstr "Milník"
+#: templates/view.html.twig
+msgid "Weeks"
+msgstr "Týdny"
 
 #: templates/view.html.twig
 msgid "Months"
 msgstr "Měsíců"
 
-#: js/gantt-helper.js:77 js/gantt-helper.js:82 js/gantt-helper.js:332
-msgid "New project"
-msgstr "Nový projekt"
+#: templates/view.html.twig
+msgid "Quarters"
+msgstr "Čtvrtletí"
 
-#: src/ProjectDAO.php:44 src/ProjectDAO.php:83 src/ProjectDAO.php:101
-#: src/TaskDAO.php:41 src/TaskDAO.php:87 src/TaskDAO.php:113
+#: templates/view.html.twig
+msgid "Years"
+msgstr "Roky"
+
+#: templates/view.html.twig
+msgid "Find"
+msgstr "Nalézt"
+
+#: templates/view.html.twig
+msgid "Filter"
+msgstr "Filtr"
+
+#: templates/view.html.twig
+msgid "by name"
+msgstr "podle jména"
+
+#: ajax/gantt.php:113
+msgid "Target item must be of project type"
+msgstr "Cílová položka musí být projektového typu"
+
+#: ajax/gantt.php:141
+msgid "Item must be of project type"
+msgstr "Položka musí být projektového typu"
+
+#: ajax/gantt.php:203
+msgid "Link already exist!"
+msgstr "Odkaz již existuje!"
+
+#: src/TaskDAO.php:45 src/TaskDAO.php:89 src/TaskDAO.php:115
+#: src/ProjectDAO.php:45 src/ProjectDAO.php:84 src/ProjectDAO.php:102
 msgid "Not enough rights"
 msgstr "Nedostatečná oprávnění"
 
-#: js/gantt-helper.js:159
-msgid "Progress:"
-msgstr "Postup:"
+#: src/ProjectTab.php:42
+msgid "Gantt"
+msgstr ""
 
-#: js/gantt-helper.js:66
+#: src/ProjectTab.php:73 src/ProjectTab.php:75
+msgid "Global GANTT"
+msgstr ""
+
+#: public/js/gantt-helper.js:66
 msgid "Project"
 msgid_plural "Projects"
 msgstr[0] "Projekt"
@@ -156,55 +102,7 @@ msgstr[1] "Projekty"
 msgstr[2] "Projektů"
 msgstr[3] "Projekty"
 
-#: js/gantt-helper.js:171
-msgid "Project / Task"
-msgstr "Projekt / Úkol"
-
-#: templates/view.html.twig
-msgid "Quarters"
-msgstr "Čtvrtletí"
-
-#: js/gantt-helper.js:402
-msgid "Save"
-msgstr "Uložit"
-
-#: js/gantt-helper.js:172
-msgid "Start date"
-msgstr "Datum zahájení"
-
-#: js/gantt-helper.js:156
-msgid "Start date:"
-msgstr "Datum zahájení:"
-
-#: js/gantt-helper.js:390
-msgid "Start to Finish: "
-msgstr ""
-
-#: js/gantt-helper.js:387
-msgid "Start to Start: "
-msgstr ""
-
-#: ajax/gantt.php:107
-msgid "Target item must be of project type"
-msgstr "Cílová položka musí být projektového typu"
-
-#: js/gantt-helper.js:607
-msgid "Target task can't end before source task ends."
-msgstr "Cílová úloha nemůže skončit dříve, než skončí zdrojová úloha."
-
-#: js/gantt-helper.js:610
-msgid "Target task can't end before the source task starts."
-msgstr "Cílová úloha nemůže skončit před spuštěním zdrojové úlohy."
-
-#: js/gantt-helper.js:601
-msgid "Target task can't start before source task ends."
-msgstr "Cílová úloha nemůže být spuštěna před ukončením zdrojové úlohy."
-
-#: js/gantt-helper.js:604
-msgid "Target task can't start before source task starts."
-msgstr "Cílová úloha nemůže být spuštěna před spuštěním zdrojové úlohy."
-
-#: js/gantt-helper.js:67 js/gantt-helper.js:72
+#: public/js/gantt-helper.js:67 public/js/gantt-helper.js:72
 msgid "Task"
 msgid_plural "Tasks"
 msgstr[0] "Úkol"
@@ -212,23 +110,126 @@ msgstr[1] "Úkoly"
 msgstr[2] "Úkolů"
 msgstr[3] "Úkoly"
 
-#: js/gantt-helper.js:221
+#: public/js/gantt-helper.js:68 public/js/gantt-helper.js:73
+msgid "Milestone"
+msgstr "Milník"
+
+#: public/js/gantt-helper.js:77 public/js/gantt-helper.js:82
+#: public/js/gantt-helper.js:340
+msgid "New project"
+msgstr "Nový projekt"
+
+#: public/js/gantt-helper.js:163
+msgid "Start date:"
+msgstr "Datum zahájení:"
+
+#: public/js/gantt-helper.js:165
+msgid "End date:"
+msgstr "Datum ukončení:"
+
+#: public/js/gantt-helper.js:166
+msgid "Progress:"
+msgstr "Postup:"
+
+#: public/js/gantt-helper.js:168
+msgid "Description:"
+msgstr "Popis:"
+
+#: public/js/gantt-helper.js:171
+msgid "Comment:"
+msgstr "Komentář:"
+
+#: public/js/gantt-helper.js:178
+msgid "Project / Task"
+msgstr "Projekt / Úkol"
+
+#: public/js/gantt-helper.js:179
+msgid "Start date"
+msgstr "Datum zahájení"
+
+#: public/js/gantt-helper.js:180
+msgid "Duration"
+msgstr "Trvání"
+
+#: public/js/gantt-helper.js:229
 #, javascript-format
 msgid "Week #%s"
 msgstr "Týden #%s"
 
-#: templates/view.html.twig
-msgid "Weeks"
-msgstr "Týdny"
+#: public/js/gantt-helper.js:389
+msgid "Finish to Start: "
+msgstr ""
 
-#: templates/view.html.twig
-msgid "Years"
-msgstr "Roky"
+#: public/js/gantt-helper.js:392
+msgid "Finish to Finish: "
+msgstr ""
 
-#: templates/view.html.twig
-msgid "Zoom"
-msgstr "Zoom"
+#: public/js/gantt-helper.js:395
+msgid "Start to Start: "
+msgstr ""
 
-#: templates/view.html.twig
-msgid "by name"
-msgstr "podle jména"
+#: public/js/gantt-helper.js:398
+msgid "Start to Finish: "
+msgstr ""
+
+#: public/js/gantt-helper.js:407
+msgid "Lag"
+msgstr ""
+
+#: public/js/gantt-helper.js:410
+msgid "Save"
+msgstr "Uložit"
+
+#: public/js/gantt-helper.js:411
+msgid "Cancel"
+msgstr "Storno"
+
+#: public/js/gantt-helper.js:412
+msgid "Delete"
+msgstr "Smazat"
+
+#: public/js/gantt-helper.js:546
+msgid "Gantt mode: 'Readonly'"
+msgstr "Režim Gantt: 'Pouze pro čtení'"
+
+#: public/js/gantt-helper.js:605
+msgid "Links between projects cannot be created."
+msgstr "Odkazy mezi projekty nelze vytvářet."
+
+#: public/js/gantt-helper.js:608
+msgid "Links between projects and tasks cannot be created."
+msgstr "Odkazy mezi projekty a úkoly nelze vytvářet."
+
+#: public/js/gantt-helper.js:611
+msgid "Target task can't start before source task ends."
+msgstr "Cílová úloha nemůže být spuštěna před ukončením zdrojové úlohy."
+
+#: public/js/gantt-helper.js:614
+msgid "Target task can't start before source task starts."
+msgstr "Cílová úloha nemůže být spuštěna před spuštěním zdrojové úlohy."
+
+#: public/js/gantt-helper.js:617
+msgid "Target task can't end before source task ends."
+msgstr "Cílová úloha nemůže skončit dříve, než skončí zdrojová úloha."
+
+#: public/js/gantt-helper.js:620
+msgid "Target task can't end before the source task starts."
+msgstr "Cílová úloha nemůže skončit před spuštěním zdrojové úlohy."
+
+#: public/js/gantt-helper.js:653
+msgid "Could not create task: "
+msgstr "Nepodařilo se vytvořit úkol: "
+
+#: public/js/gantt-helper.js:692 public/js/gantt-helper.js:725
+#, javascript-format
+msgid "Could not update Task[%s]: "
+msgstr "Nepodařilo se aktualizovat Úkol[%s]: "
+
+#: public/js/gantt-helper.js:817
+msgid "Could not create project: "
+msgstr "Nepodařilo se vytvořit projekt: "
+
+#: public/js/gantt-helper.js:850
+#, javascript-format
+msgid "Could not update Project[%s]: "
+msgstr "Nepodařilo se aktualizovat Project[%s]: "

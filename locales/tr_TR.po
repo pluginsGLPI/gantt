@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-12-16 01:53+0000\n"
+"POT-Creation-Date: 2025-10-21 01:53+0000\n"
 "PO-Revision-Date: 2022-05-06 13:53+0000\n"
 "Last-Translator: Kaya Zeren <kayazeren@gmail.com>, 2024\n"
 "Language-Team: Turkish (Turkey) (https://app.transifex.com/teclib/teams/28042/tr_TR/)\n"
@@ -22,210 +22,211 @@ msgstr ""
 "Language: tr_TR\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: js/gantt-helper.js:403
-msgid "Cancel"
-msgstr "İptal"
-
-#: js/gantt-helper.js:164
-msgid "Comment:"
-msgstr "Yorum:"
-
-#: js/gantt-helper.js:807
-msgid "Could not create project: "
-msgstr "Proje eklenemedi:"
-
-#: js/gantt-helper.js:643
-msgid "Could not create task: "
-msgstr "Görev eklenemedi:"
-
-#: js/gantt-helper.js:840
-#, javascript-format
-msgid "Could not update Project[%s]: "
-msgstr "Proje[%s] eklenemedi: "
-
-#: js/gantt-helper.js:682 js/gantt-helper.js:715
-#, javascript-format
-msgid "Could not update Task[%s]: "
-msgstr "Görev[%s] güncellenemedi: "
-
 #: templates/view.html.twig
-msgid "Days"
-msgstr "Gün"
-
-#: js/gantt-helper.js:404
-msgid "Delete"
-msgstr "Sil"
-
-#: js/gantt-helper.js:161
-msgid "Description:"
-msgstr "Açıklama:"
-
-#: js/gantt-helper.js:173
-msgid "Duration"
-msgstr "Süre"
-
-#: js/gantt-helper.js:158
-msgid "End date:"
-msgstr "Bitiş tarihi:"
+msgid "Fullscreen"
+msgstr "Tam ekran"
 
 #: templates/view.html.twig
 msgid "Export"
 msgstr "Dışa aktar"
 
 #: templates/view.html.twig
-msgid "Filter"
-msgstr "Süz"
-
-#: templates/view.html.twig
-msgid "Find"
-msgstr "Bul"
-
-#: js/gantt-helper.js:384
-msgid "Finish to Finish: "
-msgstr "Bitişten bitişe:"
-
-#: js/gantt-helper.js:381
-msgid "Finish to Start: "
-msgstr "Bitişten başlangıca:"
-
-#: templates/view.html.twig
-msgid "Fullscreen"
-msgstr "Tam ekran"
-
-#: src/ProjectTab.php:44
-msgid "Gantt"
-msgstr "Gantt"
-
-#: js/gantt-helper.js:536
-msgid "Gantt mode: 'Readonly'"
-msgstr "Gantt kipi: 'Salt okunur'"
-
-#: src/ProjectTab.php:74 src/ProjectTab.php:76
-msgid "Global GANTT"
-msgstr "Genel GANTT"
-
-#: ajax/gantt.php:140
-msgid "Item must be of project type"
-msgstr "Öge proje türünde olmalıdır"
-
-#: templates/view.html.twig
 msgid "JSON"
 msgstr "JSON"
-
-#: js/gantt-helper.js:399
-msgid "Lag"
-msgstr "Gecikme"
-
-#: ajax/gantt.php:205
-msgid "Link already exist!"
-msgstr "Bağlantı zaten var!"
-
-#: js/gantt-helper.js:598
-msgid "Links between projects and tasks cannot be created."
-msgstr "Projeler ve görevler arasında bağlantı kurulamadı."
-
-#: js/gantt-helper.js:595
-msgid "Links between projects cannot be created."
-msgstr "Projeler arasında bağlantı kurulamadı."
-
-#: js/gantt-helper.js:68 js/gantt-helper.js:73
-msgid "Milestone"
-msgstr "Kilometre taşı"
-
-#: templates/view.html.twig
-msgid "Months"
-msgstr "Ay"
-
-#: js/gantt-helper.js:77 js/gantt-helper.js:82 js/gantt-helper.js:332
-msgid "New project"
-msgstr "Proje eklendiğinde"
-
-#: src/ProjectDAO.php:44 src/ProjectDAO.php:83 src/ProjectDAO.php:101
-#: src/TaskDAO.php:41 src/TaskDAO.php:87 src/TaskDAO.php:113
-msgid "Not enough rights"
-msgstr "İzinler yetersiz"
-
-#: js/gantt-helper.js:159
-msgid "Progress:"
-msgstr "İlerleme:"
-
-#: js/gantt-helper.js:66
-msgid "Project"
-msgid_plural "Projects"
-msgstr[0] "Proje"
-msgstr[1] "Projeler"
-
-#: js/gantt-helper.js:171
-msgid "Project / Task"
-msgstr "Proje / görev"
-
-#: templates/view.html.twig
-msgid "Quarters"
-msgstr "Çeyrek"
-
-#: js/gantt-helper.js:402
-msgid "Save"
-msgstr "Kaydet"
-
-#: js/gantt-helper.js:172
-msgid "Start date"
-msgstr "Başlangıç tarihi"
-
-#: js/gantt-helper.js:156
-msgid "Start date:"
-msgstr "Başlangıç tarihi:"
-
-#: js/gantt-helper.js:390
-msgid "Start to Finish: "
-msgstr "Başlangıçtan bitişe:"
-
-#: js/gantt-helper.js:387
-msgid "Start to Start: "
-msgstr "Başlangıçtan başlangıca:"
-
-#: ajax/gantt.php:107
-msgid "Target item must be of project type"
-msgstr "Hedef öge proje türünde olmalıdır"
-
-#: js/gantt-helper.js:607
-msgid "Target task can't end before source task ends."
-msgstr "Hedef görev, kaynak görevin bitiş tarihinden önce bitemez."
-
-#: js/gantt-helper.js:610
-msgid "Target task can't end before the source task starts."
-msgstr "Hedef görev, kaynak görevin başlangıç tarihinden önce bitemez."
-
-#: js/gantt-helper.js:601
-msgid "Target task can't start before source task ends."
-msgstr "Hedef görev, kaynak görevin bitiş tarihinden önce başlayamaz."
-
-#: js/gantt-helper.js:604
-msgid "Target task can't start before source task starts."
-msgstr "Hedef görev, kaynak görevin başlangıç tarihinden önce başlayamaz."
-
-#: js/gantt-helper.js:67 js/gantt-helper.js:72
-msgid "Task"
-msgid_plural "Tasks"
-msgstr[0] "Görev"
-msgstr[1] "Görevler"
-
-#: js/gantt-helper.js:221
-#, javascript-format
-msgid "Week #%s"
-msgstr "%s. hafta"
-
-#: templates/view.html.twig
-msgid "Weeks"
-msgstr "Hafta"
-
-#: templates/view.html.twig
-msgid "Years"
-msgstr "Yıl"
 
 #: templates/view.html.twig
 msgid "Zoom"
 msgstr "Yakınlaştır"
 
 #: templates/view.html.twig
+msgid "Days"
+msgstr "Gün"
+
+#: templates/view.html.twig
+msgid "Weeks"
+msgstr "Hafta"
+
+#: templates/view.html.twig
+msgid "Months"
+msgstr "Ay"
+
+#: templates/view.html.twig
+msgid "Quarters"
+msgstr "Çeyrek"
+
+#: templates/view.html.twig
+msgid "Years"
+msgstr "Yıl"
+
+#: templates/view.html.twig
+msgid "Find"
+msgstr "Bul"
+
+#: templates/view.html.twig
+msgid "Filter"
+msgstr "Süz"
+
+#: templates/view.html.twig
 msgid "by name"
 msgstr "ada göre"
+
+#: ajax/gantt.php:113
+msgid "Target item must be of project type"
+msgstr "Hedef öge proje türünde olmalıdır"
+
+#: ajax/gantt.php:141
+msgid "Item must be of project type"
+msgstr "Öge proje türünde olmalıdır"
+
+#: ajax/gantt.php:203
+msgid "Link already exist!"
+msgstr "Bağlantı zaten var!"
+
+#: src/TaskDAO.php:45 src/TaskDAO.php:89 src/TaskDAO.php:115
+#: src/ProjectDAO.php:45 src/ProjectDAO.php:84 src/ProjectDAO.php:102
+msgid "Not enough rights"
+msgstr "İzinler yetersiz"
+
+#: src/ProjectTab.php:42
+msgid "Gantt"
+msgstr "Gantt"
+
+#: src/ProjectTab.php:73 src/ProjectTab.php:75
+msgid "Global GANTT"
+msgstr "Genel GANTT"
+
+#: public/js/gantt-helper.js:66
+msgid "Project"
+msgid_plural "Projects"
+msgstr[0] "Proje"
+msgstr[1] "Projeler"
+
+#: public/js/gantt-helper.js:67 public/js/gantt-helper.js:72
+msgid "Task"
+msgid_plural "Tasks"
+msgstr[0] "Görev"
+msgstr[1] "Görevler"
+
+#: public/js/gantt-helper.js:68 public/js/gantt-helper.js:73
+msgid "Milestone"
+msgstr "Kilometre taşı"
+
+#: public/js/gantt-helper.js:77 public/js/gantt-helper.js:82
+#: public/js/gantt-helper.js:340
+msgid "New project"
+msgstr "Proje eklendiğinde"
+
+#: public/js/gantt-helper.js:163
+msgid "Start date:"
+msgstr "Başlangıç tarihi:"
+
+#: public/js/gantt-helper.js:165
+msgid "End date:"
+msgstr "Bitiş tarihi:"
+
+#: public/js/gantt-helper.js:166
+msgid "Progress:"
+msgstr "İlerleme:"
+
+#: public/js/gantt-helper.js:168
+msgid "Description:"
+msgstr "Açıklama:"
+
+#: public/js/gantt-helper.js:171
+msgid "Comment:"
+msgstr "Yorum:"
+
+#: public/js/gantt-helper.js:178
+msgid "Project / Task"
+msgstr "Proje / görev"
+
+#: public/js/gantt-helper.js:179
+msgid "Start date"
+msgstr "Başlangıç tarihi"
+
+#: public/js/gantt-helper.js:180
+msgid "Duration"
+msgstr "Süre"
+
+#: public/js/gantt-helper.js:229
+#, javascript-format
+msgid "Week #%s"
+msgstr "%s. hafta"
+
+#: public/js/gantt-helper.js:389
+msgid "Finish to Start: "
+msgstr "Bitişten başlangıca:"
+
+#: public/js/gantt-helper.js:392
+msgid "Finish to Finish: "
+msgstr "Bitişten bitişe:"
+
+#: public/js/gantt-helper.js:395
+msgid "Start to Start: "
+msgstr "Başlangıçtan başlangıca:"
+
+#: public/js/gantt-helper.js:398
+msgid "Start to Finish: "
+msgstr "Başlangıçtan bitişe:"
+
+#: public/js/gantt-helper.js:407
+msgid "Lag"
+msgstr "Gecikme"
+
+#: public/js/gantt-helper.js:410
+msgid "Save"
+msgstr "Kaydet"
+
+#: public/js/gantt-helper.js:411
+msgid "Cancel"
+msgstr "İptal"
+
+#: public/js/gantt-helper.js:412
+msgid "Delete"
+msgstr "Sil"
+
+#: public/js/gantt-helper.js:546
+msgid "Gantt mode: 'Readonly'"
+msgstr "Gantt kipi: 'Salt okunur'"
+
+#: public/js/gantt-helper.js:605
+msgid "Links between projects cannot be created."
+msgstr "Projeler arasında bağlantı kurulamadı."
+
+#: public/js/gantt-helper.js:608
+msgid "Links between projects and tasks cannot be created."
+msgstr "Projeler ve görevler arasında bağlantı kurulamadı."
+
+#: public/js/gantt-helper.js:611
+msgid "Target task can't start before source task ends."
+msgstr "Hedef görev, kaynak görevin bitiş tarihinden önce başlayamaz."
+
+#: public/js/gantt-helper.js:614
+msgid "Target task can't start before source task starts."
+msgstr "Hedef görev, kaynak görevin başlangıç tarihinden önce başlayamaz."
+
+#: public/js/gantt-helper.js:617
+msgid "Target task can't end before source task ends."
+msgstr "Hedef görev, kaynak görevin bitiş tarihinden önce bitemez."
+
+#: public/js/gantt-helper.js:620
+msgid "Target task can't end before the source task starts."
+msgstr "Hedef görev, kaynak görevin başlangıç tarihinden önce bitemez."
+
+#: public/js/gantt-helper.js:653
+msgid "Could not create task: "
+msgstr "Görev eklenemedi:"
+
+#: public/js/gantt-helper.js:692 public/js/gantt-helper.js:725
+#, javascript-format
+msgid "Could not update Task[%s]: "
+msgstr "Görev[%s] güncellenemedi: "
+
+#: public/js/gantt-helper.js:817
+msgid "Could not create project: "
+msgstr "Proje eklenemedi:"
+
+#: public/js/gantt-helper.js:850
+#, javascript-format
+msgid "Could not update Project[%s]: "
+msgstr "Proje[%s] eklenemedi: "

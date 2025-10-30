@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-12-09 01:53+0000\n"
+"POT-Creation-Date: 2025-10-21 01:53+0000\n"
 "PO-Revision-Date: 2022-05-06 13:53+0000\n"
 "Last-Translator: Cédric Anne, 2022\n"
 "Language-Team: Italian (Italy) (https://app.transifex.com/teclib/teams/28042/it_IT/)\n"
@@ -21,220 +21,221 @@ msgstr ""
 "Language: it_IT\n"
 "Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
-#: js/gantt-helper.js:403
-msgid "Cancel"
-msgstr "Annulla"
-
-#: js/gantt-helper.js:164
-msgid "Comment:"
-msgstr "Commento:"
-
-#: js/gantt-helper.js:807
-msgid "Could not create project: "
-msgstr "Impossibile creare il progetto:"
-
-#: js/gantt-helper.js:643
-msgid "Could not create task: "
-msgstr "Impossibile creare l'attività:"
-
-#: js/gantt-helper.js:840
-#, javascript-format
-msgid "Could not update Project[%s]: "
-msgstr "Impossibile aggiornare il progetto [%s]:"
-
-#: js/gantt-helper.js:682 js/gantt-helper.js:715
-#, javascript-format
-msgid "Could not update Task[%s]: "
-msgstr "Impossibile aggiornare l'attività [%s]:"
-
 #: templates/view.html.twig
-msgid "Days"
-msgstr "Giorni"
-
-#: js/gantt-helper.js:404
-msgid "Delete"
-msgstr "Cancella"
-
-#: js/gantt-helper.js:161
-msgid "Description:"
-msgstr "Descrizione:"
-
-#: js/gantt-helper.js:173
-msgid "Duration"
-msgstr "Durata"
-
-#: js/gantt-helper.js:158
-msgid "End date:"
-msgstr "Data di termine:"
+msgid "Fullscreen"
+msgstr "Schermo intero"
 
 #: templates/view.html.twig
 msgid "Export"
 msgstr ""
 
 #: templates/view.html.twig
-msgid "Filter"
-msgstr "Filtro"
-
-#: templates/view.html.twig
-msgid "Find"
-msgstr "Trova"
-
-#: js/gantt-helper.js:384
-msgid "Finish to Finish: "
-msgstr "Dalla fine alla fine:"
-
-#: js/gantt-helper.js:381
-msgid "Finish to Start: "
-msgstr "Finisci per iniziare:"
-
-#: templates/view.html.twig
-msgid "Fullscreen"
-msgstr "Schermo intero"
-
-#: src/ProjectTab.php:44
-msgid "Gantt"
-msgstr ""
-
-#: js/gantt-helper.js:536
-msgid "Gantt mode: 'Readonly'"
-msgstr "Modalità Gantt: 'Sola lettura'"
-
-#: src/ProjectTab.php:74 src/ProjectTab.php:76
-msgid "Global GANTT"
-msgstr "GANTT globale"
-
-#: ajax/gantt.php:140
-msgid "Item must be of project type"
-msgstr "L'oggetto deve essere un tipo di progetto"
-
-#: templates/view.html.twig
 msgid "JSON"
 msgstr ""
-
-#: js/gantt-helper.js:399
-msgid "Lag"
-msgstr "Ritardo"
-
-#: ajax/gantt.php:205
-msgid "Link already exist!"
-msgstr "Il collegamento è già presente"
-
-#: js/gantt-helper.js:598
-msgid "Links between projects and tasks cannot be created."
-msgstr "Non è possibile creare collegamenti tra progetti e attività."
-
-#: js/gantt-helper.js:595
-msgid "Links between projects cannot be created."
-msgstr "Non è possibile creare collegamenti tra progetti."
-
-#: js/gantt-helper.js:68 js/gantt-helper.js:73
-msgid "Milestone"
-msgstr "Milestone"
-
-#: templates/view.html.twig
-msgid "Months"
-msgstr "Mesi"
-
-#: js/gantt-helper.js:77 js/gantt-helper.js:82 js/gantt-helper.js:332
-msgid "New project"
-msgstr "Nuovo progetto"
-
-#: src/ProjectDAO.php:44 src/ProjectDAO.php:83 src/ProjectDAO.php:101
-#: src/TaskDAO.php:41 src/TaskDAO.php:87 src/TaskDAO.php:113
-msgid "Not enough rights"
-msgstr "Diritti insufficienti"
-
-#: js/gantt-helper.js:159
-msgid "Progress:"
-msgstr "Avanzamento:"
-
-#: js/gantt-helper.js:66
-msgid "Project"
-msgid_plural "Projects"
-msgstr[0] "Progetto"
-msgstr[1] "Progetti"
-msgstr[2] "Progetti"
-
-#: js/gantt-helper.js:171
-msgid "Project / Task"
-msgstr "Progetto / Attività"
-
-#: templates/view.html.twig
-msgid "Quarters"
-msgstr "Trimestri"
-
-#: js/gantt-helper.js:402
-msgid "Save"
-msgstr "Salva"
-
-#: js/gantt-helper.js:172
-msgid "Start date"
-msgstr "Data di inizio"
-
-#: js/gantt-helper.js:156
-msgid "Start date:"
-msgstr "Data di inizio:"
-
-#: js/gantt-helper.js:390
-msgid "Start to Finish: "
-msgstr "Dall'inizio alla fine:"
-
-#: js/gantt-helper.js:387
-msgid "Start to Start: "
-msgstr "Inizia per iniziare:"
-
-#: ajax/gantt.php:107
-msgid "Target item must be of project type"
-msgstr "L'oggetto di destinazione deve essere un tipo di progetto"
-
-#: js/gantt-helper.js:607
-msgid "Target task can't end before source task ends."
-msgstr ""
-"L'attività di destinazione non può terminare prima della fine dell'attività "
-"di origine."
-
-#: js/gantt-helper.js:610
-msgid "Target task can't end before the source task starts."
-msgstr ""
-"L'attività di destinazione non può terminare prima dell'avvio dell'attività "
-"di origine."
-
-#: js/gantt-helper.js:601
-msgid "Target task can't start before source task ends."
-msgstr ""
-"L'attività di destinazione non può essere avviata prima del termine "
-"dell'attività di origine."
-
-#: js/gantt-helper.js:604
-msgid "Target task can't start before source task starts."
-msgstr ""
-"L'attività di destinazione non può essere avviata prima dell'avvio "
-"dell'attività di origine."
-
-#: js/gantt-helper.js:67 js/gantt-helper.js:72
-msgid "Task"
-msgid_plural "Tasks"
-msgstr[0] "Attività"
-msgstr[1] "Attività"
-msgstr[2] "Attività"
-
-#: js/gantt-helper.js:221
-#, javascript-format
-msgid "Week #%s"
-msgstr "Settimana nr %s"
-
-#: templates/view.html.twig
-msgid "Weeks"
-msgstr "Settimane"
-
-#: templates/view.html.twig
-msgid "Years"
-msgstr "Anni"
 
 #: templates/view.html.twig
 msgid "Zoom"
 msgstr "Zoom"
 
 #: templates/view.html.twig
+msgid "Days"
+msgstr "Giorni"
+
+#: templates/view.html.twig
+msgid "Weeks"
+msgstr "Settimane"
+
+#: templates/view.html.twig
+msgid "Months"
+msgstr "Mesi"
+
+#: templates/view.html.twig
+msgid "Quarters"
+msgstr "Trimestri"
+
+#: templates/view.html.twig
+msgid "Years"
+msgstr "Anni"
+
+#: templates/view.html.twig
+msgid "Find"
+msgstr "Trova"
+
+#: templates/view.html.twig
+msgid "Filter"
+msgstr "Filtro"
+
+#: templates/view.html.twig
 msgid "by name"
 msgstr "per nome"
+
+#: ajax/gantt.php:113
+msgid "Target item must be of project type"
+msgstr "L'oggetto di destinazione deve essere un tipo di progetto"
+
+#: ajax/gantt.php:141
+msgid "Item must be of project type"
+msgstr "L'oggetto deve essere un tipo di progetto"
+
+#: ajax/gantt.php:203
+msgid "Link already exist!"
+msgstr "Il collegamento è già presente"
+
+#: src/TaskDAO.php:45 src/TaskDAO.php:89 src/TaskDAO.php:115
+#: src/ProjectDAO.php:45 src/ProjectDAO.php:84 src/ProjectDAO.php:102
+msgid "Not enough rights"
+msgstr "Diritti insufficienti"
+
+#: src/ProjectTab.php:42
+msgid "Gantt"
+msgstr ""
+
+#: src/ProjectTab.php:73 src/ProjectTab.php:75
+msgid "Global GANTT"
+msgstr "GANTT globale"
+
+#: public/js/gantt-helper.js:66
+msgid "Project"
+msgid_plural "Projects"
+msgstr[0] "Progetto"
+msgstr[1] "Progetti"
+msgstr[2] "Progetti"
+
+#: public/js/gantt-helper.js:67 public/js/gantt-helper.js:72
+msgid "Task"
+msgid_plural "Tasks"
+msgstr[0] "Attività"
+msgstr[1] "Attività"
+msgstr[2] "Attività"
+
+#: public/js/gantt-helper.js:68 public/js/gantt-helper.js:73
+msgid "Milestone"
+msgstr "Milestone"
+
+#: public/js/gantt-helper.js:77 public/js/gantt-helper.js:82
+#: public/js/gantt-helper.js:340
+msgid "New project"
+msgstr "Nuovo progetto"
+
+#: public/js/gantt-helper.js:163
+msgid "Start date:"
+msgstr "Data di inizio:"
+
+#: public/js/gantt-helper.js:165
+msgid "End date:"
+msgstr "Data di termine:"
+
+#: public/js/gantt-helper.js:166
+msgid "Progress:"
+msgstr "Avanzamento:"
+
+#: public/js/gantt-helper.js:168
+msgid "Description:"
+msgstr "Descrizione:"
+
+#: public/js/gantt-helper.js:171
+msgid "Comment:"
+msgstr "Commento:"
+
+#: public/js/gantt-helper.js:178
+msgid "Project / Task"
+msgstr "Progetto / Attività"
+
+#: public/js/gantt-helper.js:179
+msgid "Start date"
+msgstr "Data di inizio"
+
+#: public/js/gantt-helper.js:180
+msgid "Duration"
+msgstr "Durata"
+
+#: public/js/gantt-helper.js:229
+#, javascript-format
+msgid "Week #%s"
+msgstr "Settimana nr %s"
+
+#: public/js/gantt-helper.js:389
+msgid "Finish to Start: "
+msgstr "Finisci per iniziare:"
+
+#: public/js/gantt-helper.js:392
+msgid "Finish to Finish: "
+msgstr "Dalla fine alla fine:"
+
+#: public/js/gantt-helper.js:395
+msgid "Start to Start: "
+msgstr "Inizia per iniziare:"
+
+#: public/js/gantt-helper.js:398
+msgid "Start to Finish: "
+msgstr "Dall'inizio alla fine:"
+
+#: public/js/gantt-helper.js:407
+msgid "Lag"
+msgstr "Ritardo"
+
+#: public/js/gantt-helper.js:410
+msgid "Save"
+msgstr "Salva"
+
+#: public/js/gantt-helper.js:411
+msgid "Cancel"
+msgstr "Annulla"
+
+#: public/js/gantt-helper.js:412
+msgid "Delete"
+msgstr "Cancella"
+
+#: public/js/gantt-helper.js:546
+msgid "Gantt mode: 'Readonly'"
+msgstr "Modalità Gantt: 'Sola lettura'"
+
+#: public/js/gantt-helper.js:605
+msgid "Links between projects cannot be created."
+msgstr "Non è possibile creare collegamenti tra progetti."
+
+#: public/js/gantt-helper.js:608
+msgid "Links between projects and tasks cannot be created."
+msgstr "Non è possibile creare collegamenti tra progetti e attività."
+
+#: public/js/gantt-helper.js:611
+msgid "Target task can't start before source task ends."
+msgstr ""
+"L'attività di destinazione non può essere avviata prima del termine "
+"dell'attività di origine."
+
+#: public/js/gantt-helper.js:614
+msgid "Target task can't start before source task starts."
+msgstr ""
+"L'attività di destinazione non può essere avviata prima dell'avvio "
+"dell'attività di origine."
+
+#: public/js/gantt-helper.js:617
+msgid "Target task can't end before source task ends."
+msgstr ""
+"L'attività di destinazione non può terminare prima della fine dell'attività "
+"di origine."
+
+#: public/js/gantt-helper.js:620
+msgid "Target task can't end before the source task starts."
+msgstr ""
+"L'attività di destinazione non può terminare prima dell'avvio dell'attività "
+"di origine."
+
+#: public/js/gantt-helper.js:653
+msgid "Could not create task: "
+msgstr "Impossibile creare l'attività:"
+
+#: public/js/gantt-helper.js:692 public/js/gantt-helper.js:725
+#, javascript-format
+msgid "Could not update Task[%s]: "
+msgstr "Impossibile aggiornare l'attività [%s]:"
+
+#: public/js/gantt-helper.js:817
+msgid "Could not create project: "
+msgstr "Impossibile creare il progetto:"
+
+#: public/js/gantt-helper.js:850
+#, javascript-format
+msgid "Could not update Project[%s]: "
+msgstr "Impossibile aggiornare il progetto [%s]:"

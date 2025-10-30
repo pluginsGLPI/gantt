@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-12-09 01:53+0000\n"
+"POT-Creation-Date: 2025-10-21 01:53+0000\n"
 "PO-Revision-Date: 2022-05-06 13:53+0000\n"
 "Last-Translator: Alexander Sokolov <a.sokolov@outlook.com>, 2022\n"
 "Language-Team: Russian (Russia) (https://app.transifex.com/teclib/teams/28042/ru_RU/)\n"
@@ -22,134 +22,80 @@ msgstr ""
 "Language: ru_RU\n"
 "Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: js/gantt-helper.js:403
-msgid "Cancel"
-msgstr "Отмена"
-
-#: js/gantt-helper.js:164
-msgid "Comment:"
-msgstr "Комментарий:"
-
-#: js/gantt-helper.js:807
-msgid "Could not create project: "
-msgstr "Не удалось создать проект:"
-
-#: js/gantt-helper.js:643
-msgid "Could not create task: "
-msgstr "Не удалось создать задачу:"
-
-#: js/gantt-helper.js:840
-#, javascript-format
-msgid "Could not update Project[%s]: "
-msgstr "Не удалось обновить Проект [%s]: "
-
-#: js/gantt-helper.js:682 js/gantt-helper.js:715
-#, javascript-format
-msgid "Could not update Task[%s]: "
-msgstr "Не удалось обновить задачу [%s]:"
-
 #: templates/view.html.twig
-msgid "Days"
-msgstr "Дни"
-
-#: js/gantt-helper.js:404
-msgid "Delete"
-msgstr "Удалить"
-
-#: js/gantt-helper.js:161
-msgid "Description:"
-msgstr "Описание:"
-
-#: js/gantt-helper.js:173
-msgid "Duration"
-msgstr "Продолжительность"
-
-#: js/gantt-helper.js:158
-msgid "End date:"
-msgstr "Дата окончания:"
+msgid "Fullscreen"
+msgstr "Полный экран"
 
 #: templates/view.html.twig
 msgid "Export"
 msgstr ""
 
 #: templates/view.html.twig
-msgid "Filter"
-msgstr "Фильтр"
-
-#: templates/view.html.twig
-msgid "Find"
-msgstr "Найти"
-
-#: js/gantt-helper.js:384
-msgid "Finish to Finish: "
-msgstr "С конца к концу:"
-
-#: js/gantt-helper.js:381
-msgid "Finish to Start: "
-msgstr "С конца к началу:"
-
-#: templates/view.html.twig
-msgid "Fullscreen"
-msgstr "Полный экран"
-
-#: src/ProjectTab.php:44
-msgid "Gantt"
-msgstr "Гант"
-
-#: js/gantt-helper.js:536
-msgid "Gantt mode: 'Readonly'"
-msgstr "Режим Гантта: Только чтение"
-
-#: src/ProjectTab.php:74 src/ProjectTab.php:76
-msgid "Global GANTT"
-msgstr "Общая GANTT-диаграмма"
-
-#: ajax/gantt.php:140
-msgid "Item must be of project type"
-msgstr "Элемент должен быть типа проекта"
-
-#: templates/view.html.twig
 msgid "JSON"
 msgstr ""
 
-#: js/gantt-helper.js:399
-msgid "Lag"
-msgstr "Лаг"
+#: templates/view.html.twig
+msgid "Zoom"
+msgstr "Масштаб"
 
-#: ajax/gantt.php:205
-msgid "Link already exist!"
-msgstr "Ссылка уже существует!"
+#: templates/view.html.twig
+msgid "Days"
+msgstr "Дни"
 
-#: js/gantt-helper.js:598
-msgid "Links between projects and tasks cannot be created."
-msgstr "Связи между проектами и задачами не могут быть созданы."
-
-#: js/gantt-helper.js:595
-msgid "Links between projects cannot be created."
-msgstr "Связи между проектами не могут быть созданы."
-
-#: js/gantt-helper.js:68 js/gantt-helper.js:73
-msgid "Milestone"
-msgstr "Этап"
+#: templates/view.html.twig
+msgid "Weeks"
+msgstr "Недели"
 
 #: templates/view.html.twig
 msgid "Months"
 msgstr "Месяцы"
 
-#: js/gantt-helper.js:77 js/gantt-helper.js:82 js/gantt-helper.js:332
-msgid "New project"
-msgstr "Новый проект"
+#: templates/view.html.twig
+msgid "Quarters"
+msgstr "Кварталы"
 
-#: src/ProjectDAO.php:44 src/ProjectDAO.php:83 src/ProjectDAO.php:101
-#: src/TaskDAO.php:41 src/TaskDAO.php:87 src/TaskDAO.php:113
+#: templates/view.html.twig
+msgid "Years"
+msgstr "Годы"
+
+#: templates/view.html.twig
+msgid "Find"
+msgstr "Найти"
+
+#: templates/view.html.twig
+msgid "Filter"
+msgstr "Фильтр"
+
+#: templates/view.html.twig
+msgid "by name"
+msgstr "по имени"
+
+#: ajax/gantt.php:113
+msgid "Target item must be of project type"
+msgstr "Целевой элемент должен быть типа проекта"
+
+#: ajax/gantt.php:141
+msgid "Item must be of project type"
+msgstr "Элемент должен быть типа проекта"
+
+#: ajax/gantt.php:203
+msgid "Link already exist!"
+msgstr "Ссылка уже существует!"
+
+#: src/TaskDAO.php:45 src/TaskDAO.php:89 src/TaskDAO.php:115
+#: src/ProjectDAO.php:45 src/ProjectDAO.php:84 src/ProjectDAO.php:102
 msgid "Not enough rights"
 msgstr "Недостаточно прав"
 
-#: js/gantt-helper.js:159
-msgid "Progress:"
-msgstr "Прогресс:"
+#: src/ProjectTab.php:42
+msgid "Gantt"
+msgstr "Гант"
 
-#: js/gantt-helper.js:66
+#: src/ProjectTab.php:73 src/ProjectTab.php:75
+msgid "Global GANTT"
+msgstr "Общая GANTT-диаграмма"
+
+#: public/js/gantt-helper.js:66
 msgid "Project"
 msgid_plural "Projects"
 msgstr[0] "Проект"
@@ -157,55 +103,7 @@ msgstr[1] "Проекты"
 msgstr[2] "Проекты"
 msgstr[3] "Проекты"
 
-#: js/gantt-helper.js:171
-msgid "Project / Task"
-msgstr "Проект / Задача"
-
-#: templates/view.html.twig
-msgid "Quarters"
-msgstr "Кварталы"
-
-#: js/gantt-helper.js:402
-msgid "Save"
-msgstr "Сохранить"
-
-#: js/gantt-helper.js:172
-msgid "Start date"
-msgstr "Начиная с даты"
-
-#: js/gantt-helper.js:156
-msgid "Start date:"
-msgstr "Начиная с даты"
-
-#: js/gantt-helper.js:390
-msgid "Start to Finish: "
-msgstr "Сначала до конца:"
-
-#: js/gantt-helper.js:387
-msgid "Start to Start: "
-msgstr "Сначала до начала:"
-
-#: ajax/gantt.php:107
-msgid "Target item must be of project type"
-msgstr "Целевой элемент должен быть типа проекта"
-
-#: js/gantt-helper.js:607
-msgid "Target task can't end before source task ends."
-msgstr "Целевая задача не может окончиться раньше завершения исходной задачи."
-
-#: js/gantt-helper.js:610
-msgid "Target task can't end before the source task starts."
-msgstr "Целевая задача не может завершиться раньше начала исходной задачи."
-
-#: js/gantt-helper.js:601
-msgid "Target task can't start before source task ends."
-msgstr "Целевая задача не может начаться раньше окончания исходной задачи."
-
-#: js/gantt-helper.js:604
-msgid "Target task can't start before source task starts."
-msgstr "Целевая задача не может начаться раньше начала исходной задачи."
-
-#: js/gantt-helper.js:67 js/gantt-helper.js:72
+#: public/js/gantt-helper.js:67 public/js/gantt-helper.js:72
 msgid "Task"
 msgid_plural "Tasks"
 msgstr[0] "Задача"
@@ -213,23 +111,126 @@ msgstr[1] "Задачи"
 msgstr[2] "Задачи"
 msgstr[3] "Задач"
 
-#: js/gantt-helper.js:221
+#: public/js/gantt-helper.js:68 public/js/gantt-helper.js:73
+msgid "Milestone"
+msgstr "Этап"
+
+#: public/js/gantt-helper.js:77 public/js/gantt-helper.js:82
+#: public/js/gantt-helper.js:340
+msgid "New project"
+msgstr "Новый проект"
+
+#: public/js/gantt-helper.js:163
+msgid "Start date:"
+msgstr "Начиная с даты"
+
+#: public/js/gantt-helper.js:165
+msgid "End date:"
+msgstr "Дата окончания:"
+
+#: public/js/gantt-helper.js:166
+msgid "Progress:"
+msgstr "Прогресс:"
+
+#: public/js/gantt-helper.js:168
+msgid "Description:"
+msgstr "Описание:"
+
+#: public/js/gantt-helper.js:171
+msgid "Comment:"
+msgstr "Комментарий:"
+
+#: public/js/gantt-helper.js:178
+msgid "Project / Task"
+msgstr "Проект / Задача"
+
+#: public/js/gantt-helper.js:179
+msgid "Start date"
+msgstr "Начиная с даты"
+
+#: public/js/gantt-helper.js:180
+msgid "Duration"
+msgstr "Продолжительность"
+
+#: public/js/gantt-helper.js:229
 #, javascript-format
 msgid "Week #%s"
 msgstr "Неделя #%s"
 
-#: templates/view.html.twig
-msgid "Weeks"
-msgstr "Недели"
+#: public/js/gantt-helper.js:389
+msgid "Finish to Start: "
+msgstr "С конца к началу:"
 
-#: templates/view.html.twig
-msgid "Years"
-msgstr "Годы"
+#: public/js/gantt-helper.js:392
+msgid "Finish to Finish: "
+msgstr "С конца к концу:"
 
-#: templates/view.html.twig
-msgid "Zoom"
-msgstr "Масштаб"
+#: public/js/gantt-helper.js:395
+msgid "Start to Start: "
+msgstr "Сначала до начала:"
 
-#: templates/view.html.twig
-msgid "by name"
-msgstr "по имени"
+#: public/js/gantt-helper.js:398
+msgid "Start to Finish: "
+msgstr "Сначала до конца:"
+
+#: public/js/gantt-helper.js:407
+msgid "Lag"
+msgstr "Лаг"
+
+#: public/js/gantt-helper.js:410
+msgid "Save"
+msgstr "Сохранить"
+
+#: public/js/gantt-helper.js:411
+msgid "Cancel"
+msgstr "Отмена"
+
+#: public/js/gantt-helper.js:412
+msgid "Delete"
+msgstr "Удалить"
+
+#: public/js/gantt-helper.js:546
+msgid "Gantt mode: 'Readonly'"
+msgstr "Режим Гантта: Только чтение"
+
+#: public/js/gantt-helper.js:605
+msgid "Links between projects cannot be created."
+msgstr "Связи между проектами не могут быть созданы."
+
+#: public/js/gantt-helper.js:608
+msgid "Links between projects and tasks cannot be created."
+msgstr "Связи между проектами и задачами не могут быть созданы."
+
+#: public/js/gantt-helper.js:611
+msgid "Target task can't start before source task ends."
+msgstr "Целевая задача не может начаться раньше окончания исходной задачи."
+
+#: public/js/gantt-helper.js:614
+msgid "Target task can't start before source task starts."
+msgstr "Целевая задача не может начаться раньше начала исходной задачи."
+
+#: public/js/gantt-helper.js:617
+msgid "Target task can't end before source task ends."
+msgstr "Целевая задача не может окончиться раньше завершения исходной задачи."
+
+#: public/js/gantt-helper.js:620
+msgid "Target task can't end before the source task starts."
+msgstr "Целевая задача не может завершиться раньше начала исходной задачи."
+
+#: public/js/gantt-helper.js:653
+msgid "Could not create task: "
+msgstr "Не удалось создать задачу:"
+
+#: public/js/gantt-helper.js:692 public/js/gantt-helper.js:725
+#, javascript-format
+msgid "Could not update Task[%s]: "
+msgstr "Не удалось обновить задачу [%s]:"
+
+#: public/js/gantt-helper.js:817
+msgid "Could not create project: "
+msgstr "Не удалось создать проект:"
+
+#: public/js/gantt-helper.js:850
+#, javascript-format
+msgid "Could not update Project[%s]: "
+msgstr "Не удалось обновить Проект [%s]: "
