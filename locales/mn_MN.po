@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-12-09 01:53+0000\n"
+"POT-Creation-Date: 2025-10-21 01:53+0000\n"
 "PO-Revision-Date: 2022-05-06 13:53+0000\n"
 "Last-Translator: Cédric Anne, 2022\n"
 "Language-Team: Mongolian (Mongolia) (https://app.transifex.com/teclib/teams/28042/mn_MN/)\n"
@@ -21,210 +21,211 @@ msgstr ""
 "Language: mn_MN\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: js/gantt-helper.js:403
-msgid "Cancel"
-msgstr "Цуцлах"
-
-#: js/gantt-helper.js:164
-msgid "Comment:"
-msgstr "Коммент:"
-
-#: js/gantt-helper.js:807
-msgid "Could not create project: "
-msgstr "Project үүсгэж чадсангүй:"
-
-#: js/gantt-helper.js:643
-msgid "Could not create task: "
-msgstr "Task-г үүсгэж чадсангүй:"
-
-#: js/gantt-helper.js:840
-#, javascript-format
-msgid "Could not update Project[%s]: "
-msgstr "Project [%s]-г шинэчилж чадсангүй:"
-
-#: js/gantt-helper.js:682 js/gantt-helper.js:715
-#, javascript-format
-msgid "Could not update Task[%s]: "
-msgstr "Task [%s] -г шинэчилж чадсангүй:"
-
 #: templates/view.html.twig
-msgid "Days"
-msgstr "Өдөр"
-
-#: js/gantt-helper.js:404
-msgid "Delete"
-msgstr "Устгах"
-
-#: js/gantt-helper.js:161
-msgid "Description:"
-msgstr "Тайлбар:"
-
-#: js/gantt-helper.js:173
-msgid "Duration"
-msgstr "Үргэлжлэх хугацаа"
-
-#: js/gantt-helper.js:158
-msgid "End date:"
-msgstr "Дуусах өдөр:"
+msgid "Fullscreen"
+msgstr "Бүтэн дэлгэцээр"
 
 #: templates/view.html.twig
 msgid "Export"
 msgstr ""
 
 #: templates/view.html.twig
-msgid "Filter"
-msgstr "Шүүлтүүр"
-
-#: templates/view.html.twig
-msgid "Find"
-msgstr "Хайх"
-
-#: js/gantt-helper.js:384
-msgid "Finish to Finish: "
-msgstr "Дуусгахаас дуусгах:"
-
-#: js/gantt-helper.js:381
-msgid "Finish to Start: "
-msgstr "Эхлэхээс дуусгах:"
-
-#: templates/view.html.twig
-msgid "Fullscreen"
-msgstr "Бүтэн дэлгэцээр"
-
-#: src/ProjectTab.php:44
-msgid "Gantt"
-msgstr ""
-
-#: js/gantt-helper.js:536
-msgid "Gantt mode: 'Readonly'"
-msgstr "Гант горим: \"Зөвхөн унших\""
-
-#: src/ProjectTab.php:74 src/ProjectTab.php:76
-msgid "Global GANTT"
-msgstr ""
-
-#: ajax/gantt.php:140
-msgid "Item must be of project type"
-msgstr "Энэ нь төслийн төрөл байх ёстой"
-
-#: templates/view.html.twig
 msgid "JSON"
 msgstr ""
-
-#: js/gantt-helper.js:399
-msgid "Lag"
-msgstr "Хоцрох"
-
-#: ajax/gantt.php:205
-msgid "Link already exist!"
-msgstr "Холбоос аль хэдийн байна!"
-
-#: js/gantt-helper.js:598
-msgid "Links between projects and tasks cannot be created."
-msgstr "Project болон task-н хооронд холбоос үүсгэх боломжгүй."
-
-#: js/gantt-helper.js:595
-msgid "Links between projects cannot be created."
-msgstr "Project хооронд холбоос үүсгэх боломжгүй."
-
-#: js/gantt-helper.js:68 js/gantt-helper.js:73
-msgid "Milestone"
-msgstr "Анхны хугацаа"
-
-#: templates/view.html.twig
-msgid "Months"
-msgstr "Сар"
-
-#: js/gantt-helper.js:77 js/gantt-helper.js:82 js/gantt-helper.js:332
-msgid "New project"
-msgstr "Шинэ төсөл"
-
-#: src/ProjectDAO.php:44 src/ProjectDAO.php:83 src/ProjectDAO.php:101
-#: src/TaskDAO.php:41 src/TaskDAO.php:87 src/TaskDAO.php:113
-msgid "Not enough rights"
-msgstr "Эрх хангалтгүй байна"
-
-#: js/gantt-helper.js:159
-msgid "Progress:"
-msgstr "Явц:"
-
-#: js/gantt-helper.js:66
-msgid "Project"
-msgid_plural "Projects"
-msgstr[0] "Төсөл"
-msgstr[1] "Төсөл"
-
-#: js/gantt-helper.js:171
-msgid "Project / Task"
-msgstr "Project / Task"
-
-#: templates/view.html.twig
-msgid "Quarters"
-msgstr "Quarters"
-
-#: js/gantt-helper.js:402
-msgid "Save"
-msgstr "Хадгалах"
-
-#: js/gantt-helper.js:172
-msgid "Start date"
-msgstr "Эхлэх огноо"
-
-#: js/gantt-helper.js:156
-msgid "Start date:"
-msgstr "Эхлэх өдөр:"
-
-#: js/gantt-helper.js:390
-msgid "Start to Finish: "
-msgstr "Эхлэхээс дуусгах:"
-
-#: js/gantt-helper.js:387
-msgid "Start to Start: "
-msgstr "Эхлэхээс эхлэх"
-
-#: ajax/gantt.php:107
-msgid "Target item must be of project type"
-msgstr "Зорилтот зүйл нь төслийн төрөл байх ёстой"
-
-#: js/gantt-helper.js:607
-msgid "Target task can't end before source task ends."
-msgstr "Зорилтот task эх сурвалж дуусахаас өмнө дуусах боломжгүй."
-
-#: js/gantt-helper.js:610
-msgid "Target task can't end before the source task starts."
-msgstr "Зорилтот task эх сурвалж эхлэхээс өмнө дуусах боломжгүй."
-
-#: js/gantt-helper.js:601
-msgid "Target task can't start before source task ends."
-msgstr "Зорилтот task-г эх сурвалж дуусахаас өмнө эхлүүлэх боломжгүй."
-
-#: js/gantt-helper.js:604
-msgid "Target task can't start before source task starts."
-msgstr "Зорилтот task-г эх сурвалж эхлэхээс өмнө эхлүүлэх боломжгүй."
-
-#: js/gantt-helper.js:67 js/gantt-helper.js:72
-msgid "Task"
-msgid_plural "Tasks"
-msgstr[0] "Task-ууд"
-msgstr[1] "Task"
-
-#: js/gantt-helper.js:221
-#, javascript-format
-msgid "Week #%s"
-msgstr "Долоо хоног #%s"
-
-#: templates/view.html.twig
-msgid "Weeks"
-msgstr "Долоо хоног"
-
-#: templates/view.html.twig
-msgid "Years"
-msgstr "Жил"
 
 #: templates/view.html.twig
 msgid "Zoom"
 msgstr "Томруулах"
 
 #: templates/view.html.twig
+msgid "Days"
+msgstr "Өдөр"
+
+#: templates/view.html.twig
+msgid "Weeks"
+msgstr "Долоо хоног"
+
+#: templates/view.html.twig
+msgid "Months"
+msgstr "Сар"
+
+#: templates/view.html.twig
+msgid "Quarters"
+msgstr "Quarters"
+
+#: templates/view.html.twig
+msgid "Years"
+msgstr "Жил"
+
+#: templates/view.html.twig
+msgid "Find"
+msgstr "Хайх"
+
+#: templates/view.html.twig
+msgid "Filter"
+msgstr "Шүүлтүүр"
+
+#: templates/view.html.twig
 msgid "by name"
 msgstr "нэрээр"
+
+#: ajax/gantt.php:113
+msgid "Target item must be of project type"
+msgstr "Зорилтот зүйл нь төслийн төрөл байх ёстой"
+
+#: ajax/gantt.php:141
+msgid "Item must be of project type"
+msgstr "Энэ нь төслийн төрөл байх ёстой"
+
+#: ajax/gantt.php:203
+msgid "Link already exist!"
+msgstr "Холбоос аль хэдийн байна!"
+
+#: src/TaskDAO.php:45 src/TaskDAO.php:89 src/TaskDAO.php:115
+#: src/ProjectDAO.php:45 src/ProjectDAO.php:84 src/ProjectDAO.php:102
+msgid "Not enough rights"
+msgstr "Эрх хангалтгүй байна"
+
+#: src/ProjectTab.php:42
+msgid "Gantt"
+msgstr ""
+
+#: src/ProjectTab.php:73 src/ProjectTab.php:75
+msgid "Global GANTT"
+msgstr ""
+
+#: public/js/gantt-helper.js:66
+msgid "Project"
+msgid_plural "Projects"
+msgstr[0] "Төсөл"
+msgstr[1] "Төсөл"
+
+#: public/js/gantt-helper.js:67 public/js/gantt-helper.js:72
+msgid "Task"
+msgid_plural "Tasks"
+msgstr[0] "Task-ууд"
+msgstr[1] "Task"
+
+#: public/js/gantt-helper.js:68 public/js/gantt-helper.js:73
+msgid "Milestone"
+msgstr "Анхны хугацаа"
+
+#: public/js/gantt-helper.js:77 public/js/gantt-helper.js:82
+#: public/js/gantt-helper.js:340
+msgid "New project"
+msgstr "Шинэ төсөл"
+
+#: public/js/gantt-helper.js:163
+msgid "Start date:"
+msgstr "Эхлэх өдөр:"
+
+#: public/js/gantt-helper.js:165
+msgid "End date:"
+msgstr "Дуусах өдөр:"
+
+#: public/js/gantt-helper.js:166
+msgid "Progress:"
+msgstr "Явц:"
+
+#: public/js/gantt-helper.js:168
+msgid "Description:"
+msgstr "Тайлбар:"
+
+#: public/js/gantt-helper.js:171
+msgid "Comment:"
+msgstr "Коммент:"
+
+#: public/js/gantt-helper.js:178
+msgid "Project / Task"
+msgstr "Project / Task"
+
+#: public/js/gantt-helper.js:179
+msgid "Start date"
+msgstr "Эхлэх огноо"
+
+#: public/js/gantt-helper.js:180
+msgid "Duration"
+msgstr "Үргэлжлэх хугацаа"
+
+#: public/js/gantt-helper.js:229
+#, javascript-format
+msgid "Week #%s"
+msgstr "Долоо хоног #%s"
+
+#: public/js/gantt-helper.js:389
+msgid "Finish to Start: "
+msgstr "Эхлэхээс дуусгах:"
+
+#: public/js/gantt-helper.js:392
+msgid "Finish to Finish: "
+msgstr "Дуусгахаас дуусгах:"
+
+#: public/js/gantt-helper.js:395
+msgid "Start to Start: "
+msgstr "Эхлэхээс эхлэх"
+
+#: public/js/gantt-helper.js:398
+msgid "Start to Finish: "
+msgstr "Эхлэхээс дуусгах:"
+
+#: public/js/gantt-helper.js:407
+msgid "Lag"
+msgstr "Хоцрох"
+
+#: public/js/gantt-helper.js:410
+msgid "Save"
+msgstr "Хадгалах"
+
+#: public/js/gantt-helper.js:411
+msgid "Cancel"
+msgstr "Цуцлах"
+
+#: public/js/gantt-helper.js:412
+msgid "Delete"
+msgstr "Устгах"
+
+#: public/js/gantt-helper.js:546
+msgid "Gantt mode: 'Readonly'"
+msgstr "Гант горим: \"Зөвхөн унших\""
+
+#: public/js/gantt-helper.js:605
+msgid "Links between projects cannot be created."
+msgstr "Project хооронд холбоос үүсгэх боломжгүй."
+
+#: public/js/gantt-helper.js:608
+msgid "Links between projects and tasks cannot be created."
+msgstr "Project болон task-н хооронд холбоос үүсгэх боломжгүй."
+
+#: public/js/gantt-helper.js:611
+msgid "Target task can't start before source task ends."
+msgstr "Зорилтот task-г эх сурвалж дуусахаас өмнө эхлүүлэх боломжгүй."
+
+#: public/js/gantt-helper.js:614
+msgid "Target task can't start before source task starts."
+msgstr "Зорилтот task-г эх сурвалж эхлэхээс өмнө эхлүүлэх боломжгүй."
+
+#: public/js/gantt-helper.js:617
+msgid "Target task can't end before source task ends."
+msgstr "Зорилтот task эх сурвалж дуусахаас өмнө дуусах боломжгүй."
+
+#: public/js/gantt-helper.js:620
+msgid "Target task can't end before the source task starts."
+msgstr "Зорилтот task эх сурвалж эхлэхээс өмнө дуусах боломжгүй."
+
+#: public/js/gantt-helper.js:653
+msgid "Could not create task: "
+msgstr "Task-г үүсгэж чадсангүй:"
+
+#: public/js/gantt-helper.js:692 public/js/gantt-helper.js:725
+#, javascript-format
+msgid "Could not update Task[%s]: "
+msgstr "Task [%s] -г шинэчилж чадсангүй:"
+
+#: public/js/gantt-helper.js:817
+msgid "Could not create project: "
+msgstr "Project үүсгэж чадсангүй:"
+
+#: public/js/gantt-helper.js:850
+#, javascript-format
+msgid "Could not update Project[%s]: "
+msgstr "Project [%s]-г шинэчилж чадсангүй:"
