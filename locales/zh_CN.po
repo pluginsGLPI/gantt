@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-04 01:55+0000\n"
+"POT-Creation-Date: 2025-11-06 01:56+0000\n"
 "PO-Revision-Date: 2022-05-06 13:53+0000\n"
 "Last-Translator: DWXXX, 2025\n"
 "Language-Team: Chinese (China) (https://app.transifex.com/teclib/teams/28042/zh_CN/)\n"
@@ -85,7 +85,7 @@ msgstr "链接已存在!"
 #: src/TaskDAO.php:45 src/TaskDAO.php:89 src/TaskDAO.php:115
 #: src/ProjectDAO.php:45 src/ProjectDAO.php:84 src/ProjectDAO.php:102
 msgid "Not enough rights"
-msgstr "无权限"
+msgstr "权限不足"
 
 #: src/ProjectTab.php:42
 msgid "Gantt"
@@ -107,7 +107,7 @@ msgstr[0] "任务"
 
 #: public/js/gantt-helper.js:68 public/js/gantt-helper.js:73
 msgid "Milestone"
-msgstr "丰碑"
+msgstr "里程碑"
 
 #: public/js/gantt-helper.js:77 public/js/gantt-helper.js:82
 #: public/js/gantt-helper.js:340
