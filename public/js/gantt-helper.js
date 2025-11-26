@@ -155,7 +155,18 @@ const GlpiGantt = (function() {
             gantt.plugins({
                 tooltip: true,
                 fullscreen: true,
-                undo: true
+                undo: true,
+                marker: true
+            });
+
+            gantt.config.show_marker = true;
+            gantt.config.current_date = new Date();
+
+            var today = new Date();
+            gantt.addMarker({
+                start_date: today,
+                css: "today",
+                text: __("Today", 'gantt')
             });
 
             gantt.templates.tooltip_text = (start, end, task) => {
