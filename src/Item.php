@@ -39,25 +39,33 @@ use ReturnTypeWillChange;
  */
 class Item implements JsonSerializable
 {
-    public $id;
+    public $id = 0;
+
     public $linktask_id;
-    public $start_date; // format 2019-09-07 04:06:15
+
+    public $start_date;
+
+    // format 2019-09-07 04:06:15
     public $end_date;
+
     public $text;
+
     public $content;
+
     public $comment;
-    public $type; // project / task / milestone
-    public $progress;
-    public $parent;
-    public $open; // 1 / 0
+
+    public $type;
+
+    // project / task / milestone
+    public $progress = 0.0;
+
+    public $parent = '';
+
+    public $open = 1; // 1 / 0
 
     public function __construct()
     {
-        $this->id         = 0;
         $this->start_date = date('Y-m-d H:i:s');
-        $this->progress   = 0.0;
-        $this->parent     = '';
-        $this->open       = 1;
     }
 
     /**
@@ -70,21 +78,27 @@ class Item implements JsonSerializable
         if (isset($json['id'])) {
             $this->id = $json['id'];
         }
+
         if (isset($json['parent'])) {
             $this->parent = $json['parent'];
         }
+
         if (isset($json['start_date'])) {
             $this->start_date = $json['start_date'];
         }
+
         if (isset($json['end_date'])) {
             $this->end_date = $json['end_date'];
         }
+
         if (isset($json['progress'])) {
             $this->progress = $json['progress'];
         }
+
         if (isset($json['name'])) {
             $this->text = $json['name'];
         }
+
         if (isset($json['type'])) {
             $this->type = $json['type'];
         }

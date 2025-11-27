@@ -55,8 +55,8 @@ if (isset($_REQUEST['getData'])) {
     $links = $factory->getProjectTaskLinks($itemArray);
 
     usort($itemArray, function ($a, $b) {
-        $lengthA = $a->id !== null ? strlen($a->id) : 0;
-        $lengthB = $b->id !== null ? strlen($b->id) : 0;
+        $lengthA = $a->id !== null ? strlen((string) $a->id) : 0;
+        $lengthB = $b->id !== null ? strlen((string) $b->id) : 0;
         return $lengthA <=> $lengthB;
     });
 
@@ -85,6 +85,7 @@ if (isset($_REQUEST['getData'])) {
             'error' => $ex->getMessage(),
         ];
     }
+
     echo json_encode($result);
 } elseif (isset($_POST['updateTask'])) {
     try {
@@ -103,6 +104,7 @@ if (isset($_REQUEST['getData'])) {
             'error' => $ex->getMessage(),
         ];
     }
+
     echo json_encode($result);
 } elseif (isset($_POST['changeItemParent'])) {
     try {
@@ -131,6 +133,7 @@ if (isset($_REQUEST['getData'])) {
             'error' => $ex->getMessage(),
         ];
     }
+
     echo json_encode($result);
 } elseif (isset($_POST['makeRootProject'])) {
     try {
@@ -155,6 +158,7 @@ if (isset($_REQUEST['getData'])) {
             'error' => $ex->getMessage(),
         ];
     }
+
     echo json_encode($result);
 } elseif (isset($_POST['addProject'])) {
     try {
@@ -176,6 +180,7 @@ if (isset($_REQUEST['getData'])) {
             'error' => $ex->getMessage(),
         ];
     }
+
     echo json_encode($result);
 } elseif (isset($_POST['updateProject'])) {
     try {
@@ -194,6 +199,7 @@ if (isset($_REQUEST['getData'])) {
             'error' => $ex->getMessage(),
         ];
     }
+
     echo json_encode($result);
 } elseif (isset($_POST['addTaskLink'])) {
     try {
@@ -214,6 +220,7 @@ if (isset($_REQUEST['getData'])) {
             'error' => $ex->getMessage(),
         ];
     }
+
     echo json_encode($result);
 } elseif (isset($_POST['updateTaskLink'])) {
     try {
@@ -228,6 +235,7 @@ if (isset($_REQUEST['getData'])) {
             'error' => $ex->getMessage(),
         ];
     }
+
     echo json_encode($result);
 } elseif (isset($_POST['deleteTaskLink'])) {
     try {
@@ -242,6 +250,7 @@ if (isset($_REQUEST['getData'])) {
             'error' => $ex->getMessage(),
         ];
     }
+
     echo json_encode($result);
 } elseif (isset($_REQUEST['openEditForm'])) {
     $result       = [];
@@ -251,5 +260,6 @@ if (isset($_REQUEST['getData'])) {
     } else {
         $result['url'] = $CFG_GLPI['root_doc'] . '/front/projecttask.form.php?id=' . $_POST['item']['linktask_id'] . '&forcetab=ProjectTask';
     }
+
     echo json_encode($result);
 }

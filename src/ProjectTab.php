@@ -48,6 +48,8 @@ class ProjectTab extends CommonGLPI
         if ($item instanceof Project) {
             return self::createTabEntry(self::getTypeName());
         }
+
+        return null;
     }
 
     public static function displayTabContentForItem(CommonGLPI $item, $tabnum = 1, $withtemplate = 0)

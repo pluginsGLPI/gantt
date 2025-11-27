@@ -66,10 +66,7 @@ function plugin_init_gantt()
 
     $PLUGIN_HOOKS[Hooks::ADD_CSS]['gantt'][] = 'css/gantt.scss';
 
-    $PLUGIN_HOOKS[Hooks::REDEFINE_MENUS]['gantt'] = [
-        ProjectTab::class,
-        'addGlobalGanttToMenu',
-    ];
+    $PLUGIN_HOOKS[Hooks::REDEFINE_MENUS]['gantt'] = ProjectTab::addGlobalGanttToMenu(...);
 }
 
 
