@@ -35,26 +35,22 @@ namespace GlpiPlugin\Gantt;
  */
 class Link
 {
-    public $id;
-    public $source;
-    public $source_uuid;
-    public $target;
-    public $target_uuid;
-    public $type; // possible values: "finish_to_start":"0", "start_to_start":"1", "finish_to_finish":"2", "start_to_finish":"3"
-    public $lag;
-    public $lead;
+    public $id = 0;
 
-    public function __construct()
-    {
-        $this->id          = 0;
-        $this->source      = 0;
-        $this->target      = 0;
-        $this->source_uuid = '';
-        $this->target_uuid = '';
-        $this->type        = 0;
-        $this->lag         = 0;
-        $this->lead        = 0;
-    }
+    public $source = 0;
+
+    public $source_uuid = '';
+
+    public $target = 0;
+
+    public $target_uuid = '';
+
+    public $type = 0;
+
+    // possible values: "finish_to_start":"0", "start_to_start":"1", "finish_to_finish":"2", "start_to_finish":"3"
+    public $lag = 0;
+
+    public $lead = 0;
 
     /**
      * Enables Json serialization of Link objects

@@ -95,7 +95,7 @@ class DataFactory
             }
         }
 
-        if (count($ids) > 0) {
+        if ($ids !== []) {
             $linkDao = new LinkDAO();
             $links   = $linkDao->getLinksForItemIDs($ids);
         }
@@ -150,6 +150,7 @@ class DataFactory
             if (!$task->canViewItem() || $record['is_template'] == 1) {
                 continue;
             }
+
             $itemArray[] = $this->populateGanttItem($record, 'task');
         }
     }
@@ -171,6 +172,7 @@ class DataFactory
             if (!$task->canViewItem() || $record['is_template'] == 1) {
                 continue;
             }
+
             $itemArray[] = $this->populateGanttItem($record, 'task');
         }
     }

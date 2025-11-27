@@ -5,3 +5,4 @@ public/lib/
 vendor/
 .gh_token
 *.min.*
+var/
