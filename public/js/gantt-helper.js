@@ -34,8 +34,8 @@ const GlpiGantt = (function() {
 
     //TODO: Why is this always false?
     const readonly = false;
-    const plugin_path = CFG_GLPI.root_doc + '/plugins/gantt';
-    const url = plugin_path +  '/ajax/gantt.php';
+    const plugin_path = `${CFG_GLPI.root_doc  }/plugins/gantt`;
+    const url = `${plugin_path   }/ajax/gantt.php`;
     const parseDateFormat = "%Y-%m-%d %H:%i";
     let uiDateFormat = null;
     switch (CFG_GLPI.date_format) {
@@ -148,7 +148,7 @@ const GlpiGantt = (function() {
             };
 
             gantt.templates.progress_text = (start, end, task) => {
-                return "<span style='text-align:left; color: #fff;'>" + Math.round(task.progress * 100) + "% </span>";
+                return `<span style='text-align:left; color: #fff;'>${  Math.round(task.progress * 100)  }% </span>`;
             };
 
             // enable tooltips and fullscreen mode
@@ -162,7 +162,7 @@ const GlpiGantt = (function() {
             gantt.config.show_marker = true;
             gantt.config.current_date = new Date();
 
-            var today = new Date();
+            const today = new Date();
             gantt.addMarker({
                 start_date: today,
                 css: "today",
@@ -170,16 +170,16 @@ const GlpiGantt = (function() {
             });
 
             gantt.templates.tooltip_text = (start, end, task) => {
-               let text = "<b><span class=\"capitalize\">" +
-               task.type + ":</span></b> " + task.text + "<br/><b>" + __("Start date:", 'gantt') + "</b> " +
-               gantt.templates.tooltip_date_format(start) +
-               "<br/><b>" + __("End date:", 'gantt') + "</b> " + gantt.templates.tooltip_date_format(end) +
-               "<br/><b>" + __("Progress:", 'gantt') + "</b> " + parseInt(task.progress * 100) + "%";
+                let text = `<b><span class="capitalize">${ 
+                    task.type  }:</span></b> ${  task.text  }<br/><b>${  __("Start date:", 'gantt')  }</b> ${ 
+                    gantt.templates.tooltip_date_format(start) 
+                }<br/><b>${  __("End date:", 'gantt')  }</b> ${  gantt.templates.tooltip_date_format(end) 
+                }<br/><b>${  __("Progress:", 'gantt')  }</b> ${  parseInt(task.progress * 100)  }%`;
                 if (task.content && task.content.length > 0) {
-                    text += "<br/><b>" + __("Description:", 'gantt') + "</b><div style=\"padding-left:25px\">" + task.content + "</div>";
+                    text += `<br/><b>${  __("Description:", 'gantt')  }</b><div style="padding-left:25px">${  task.content  }</div>`;
                 }
                 if (task.comment && task.comment.length > 0) {
-                    text += "<br/><b>" + __("Comment:", 'gantt') + "</b><div style=\"padding-left:25px\">" + task.comment + "</div>";
+                    text += `<br/><b>${  __("Comment:", 'gantt')  }</b><div style="padding-left:25px">${  task.comment  }</div>`;
                 }
                 return text;
             };
@@ -220,7 +220,7 @@ const GlpiGantt = (function() {
                                     const dateToStr = gantt.date.date_to_str("%d %M");
                                     const endDate = gantt.date.add(date, 6, "day");
                                     const weekNum = gantt.date.date_to_str("%W")(date);
-                                    return "#" + weekNum + ", " + dateToStr(date) + " - " + dateToStr(endDate);
+                                    return `#${  weekNum  }, ${  dateToStr(date)  } - ${  dateToStr(endDate)}`;
                                 }
                             },
                             { unit: "day", step: 1, format: "%j %D" }
@@ -253,7 +253,7 @@ const GlpiGantt = (function() {
                                 format: (date) => {
                                     const dateToStr = gantt.date.date_to_str("%M");
                                     const endDate = gantt.date.add(gantt.date.add(date, 3, "month"), -1, "day");
-                                    return dateToStr(date) + " - " + dateToStr(endDate);
+                                    return `${dateToStr(date)  } - ${  dateToStr(endDate)}`;
                                 }
                             }
                         ]
@@ -278,7 +278,7 @@ const GlpiGantt = (function() {
             // >>>>> Event handlers
 
             gantt.ext.zoom.attachEvent("onAfterZoom", (level, config) => {
-                document.querySelector(".gantt_radio[value='" + config.name + "']").checked = true;
+                document.querySelector(`.gantt_radio[value='${  config.name  }']`).checked = true;
             });
 
             $("input[name='scale']").on('click', (event) => {
@@ -286,7 +286,7 @@ const GlpiGantt = (function() {
             });
 
             gantt.attachEvent("onBeforeRowDragMove", (id) => {
-                $('#hf_gantt_item_state').val(id + "|" + gantt.getTask(id).parent);
+                $('#hf_gantt_item_state').val(`${id  }|${  gantt.getTask(id).parent}`);
             });
 
             gantt.attachEvent("onBeforeRowDragEnd", (id, target) => {
@@ -410,7 +410,7 @@ const GlpiGantt = (function() {
                                 break;
                         }
 
-                        linkTitle += " " + gantt.getTask(link.source).text + " -> " + gantt.getTask(link.target).text;
+                        linkTitle += ` ${  gantt.getTask(link.source).text  } -> ${  gantt.getTask(link.target).text}`;
 
                         modal = gantt.modalbox({
                             title: `<p class="gantt_cal_lsection" style="line-height:normal">${linkTitle}</p>`,

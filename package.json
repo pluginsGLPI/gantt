@@ -7,7 +7,7 @@
     "dhtmlx-gantt": "^9.0.15"
   },
   "scripts": {
-    "build": "webpack --config webpack.config.js",
+    "build": "webpack --config .webpack.config.js",
     "postinstall": "npm run-script build"
   },
   "devDependencies": {
