@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-10 02:01+0000\n"
+"POT-Creation-Date: 2025-11-28 01:55+0000\n"
 "PO-Revision-Date: 2022-05-06 13:53+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>, 2022\n"
 "Language-Team: Croatian (Croatia) (https://app.transifex.com/teclib/teams/28042/hr_HR/)\n"
@@ -70,15 +70,15 @@ msgstr "Filtar"
 msgid "by name"
 msgstr "prema imenu"
 
-#: ajax/gantt.php:113
+#: ajax/gantt.php:115
 msgid "Target item must be of project type"
 msgstr "Predmet cilja mora predstavljati vrstu projekta"
 
-#: ajax/gantt.php:141
+#: ajax/gantt.php:144
 msgid "Item must be of project type"
 msgstr "Predmet mora predstavljati vrstu projekta"
 
-#: ajax/gantt.php:203
+#: ajax/gantt.php:209
 msgid "Link already exist!"
 msgstr "Veza već postoji"
 
@@ -91,7 +91,7 @@ msgstr "Nema dovoljno prava"
 msgid "Gantt"
 msgstr "Gantt"
 
-#: src/ProjectTab.php:73 src/ProjectTab.php:75
+#: src/ProjectTab.php:74 src/ProjectTab.php:76
 msgid "Global GANTT"
 msgstr "Globalni GANTT"
 
@@ -114,121 +114,125 @@ msgid "Milestone"
 msgstr "Prekretnica"
 
 #: public/js/gantt-helper.js:77 public/js/gantt-helper.js:82
-#: public/js/gantt-helper.js:340
+#: public/js/gantt-helper.js:351
 msgid "New project"
 msgstr "Novi projekt"
 
-#: public/js/gantt-helper.js:163
+#: public/js/gantt-helper.js:169
+msgid "Today"
+msgstr ""
+
+#: public/js/gantt-helper.js:174
 msgid "Start date:"
 msgstr "Datum početka:"
 
-#: public/js/gantt-helper.js:165
+#: public/js/gantt-helper.js:176
 msgid "End date:"
 msgstr "Datum završetka:"
 
-#: public/js/gantt-helper.js:166
+#: public/js/gantt-helper.js:177
 msgid "Progress:"
 msgstr "Napredak:"
 
-#: public/js/gantt-helper.js:168
+#: public/js/gantt-helper.js:179
 msgid "Description:"
 msgstr "Opis:"
 
-#: public/js/gantt-helper.js:171
+#: public/js/gantt-helper.js:182
 msgid "Comment:"
 msgstr "Komentar:"
 
-#: public/js/gantt-helper.js:178
+#: public/js/gantt-helper.js:189
 msgid "Project / Task"
 msgstr "Projekt / Zadatak"
 
-#: public/js/gantt-helper.js:179
+#: public/js/gantt-helper.js:190
 msgid "Start date"
 msgstr "Datum početka"
 
-#: public/js/gantt-helper.js:180
+#: public/js/gantt-helper.js:191
 msgid "Duration"
 msgstr "Trajanje"
 
-#: public/js/gantt-helper.js:229
+#: public/js/gantt-helper.js:240
 #, javascript-format
 msgid "Week #%s"
 msgstr "Tjedan br. %s"
 
-#: public/js/gantt-helper.js:389
+#: public/js/gantt-helper.js:400
 msgid "Finish to Start: "
 msgstr "Od završetka do početka: "
 
-#: public/js/gantt-helper.js:392
+#: public/js/gantt-helper.js:403
 msgid "Finish to Finish: "
 msgstr "Od završetka do završetka: "
 
-#: public/js/gantt-helper.js:395
+#: public/js/gantt-helper.js:406
 msgid "Start to Start: "
 msgstr "Od početka do početka: "
 
-#: public/js/gantt-helper.js:398
+#: public/js/gantt-helper.js:409
 msgid "Start to Finish: "
 msgstr "Od početka do završetka: "
 
-#: public/js/gantt-helper.js:407
+#: public/js/gantt-helper.js:418
 msgid "Lag"
 msgstr "Kašnjenje"
 
-#: public/js/gantt-helper.js:410
+#: public/js/gantt-helper.js:421
 msgid "Save"
 msgstr "Spremi"
 
-#: public/js/gantt-helper.js:411
+#: public/js/gantt-helper.js:422
 msgid "Cancel"
 msgstr "Odustani"
 
-#: public/js/gantt-helper.js:412
+#: public/js/gantt-helper.js:423
 msgid "Delete"
 msgstr "Izbriši"
 
-#: public/js/gantt-helper.js:546
+#: public/js/gantt-helper.js:557
 msgid "Gantt mode: 'Readonly'"
 msgstr "Gantt modus: „Samo-za-čitanje”"
 
-#: public/js/gantt-helper.js:605
+#: public/js/gantt-helper.js:616
 msgid "Links between projects cannot be created."
 msgstr "Veze između projekata se ne mogu stvoriti."
 
-#: public/js/gantt-helper.js:608
+#: public/js/gantt-helper.js:619
 msgid "Links between projects and tasks cannot be created."
 msgstr "Veze između projekata i zadataka se ne mogu stvoriti."
 
-#: public/js/gantt-helper.js:611
+#: public/js/gantt-helper.js:622
 msgid "Target task can't start before source task ends."
 msgstr "Zadatak cilja ne može započeti prije završetka izvornog zadatka."
 
-#: public/js/gantt-helper.js:614
+#: public/js/gantt-helper.js:625
 msgid "Target task can't start before source task starts."
 msgstr "Zadatak cilja ne može započeti prije početka izvornog zadatka."
 
-#: public/js/gantt-helper.js:617
+#: public/js/gantt-helper.js:628
 msgid "Target task can't end before source task ends."
 msgstr "Zadatak cilja ne može završiti prije završetka izvornog zadatka."
 
-#: public/js/gantt-helper.js:620
+#: public/js/gantt-helper.js:631
 msgid "Target task can't end before the source task starts."
 msgstr "Zadatak cilja ne može završiti prije početka izvornog zadatka."
 
-#: public/js/gantt-helper.js:653
+#: public/js/gantt-helper.js:664
 msgid "Could not create task: "
 msgstr "Nije biilo moguće stvoriti zadatak: "
 
-#: public/js/gantt-helper.js:692 public/js/gantt-helper.js:725
+#: public/js/gantt-helper.js:703 public/js/gantt-helper.js:736
 #, javascript-format
 msgid "Could not update Task[%s]: "
 msgstr "Nije biilo moguće aktualizirati Task[%s]: "
 
-#: public/js/gantt-helper.js:817
+#: public/js/gantt-helper.js:828
 msgid "Could not create project: "
 msgstr "Nije biilo moguće stvoriti projekt: "
 
-#: public/js/gantt-helper.js:850
+#: public/js/gantt-helper.js:861
 #, javascript-format
 msgid "Could not update Project[%s]: "
 msgstr "Nije biilo moguće aktualizirati Project[%s]: "

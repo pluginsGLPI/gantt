@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-20 01:54+0000\n"
+"POT-Creation-Date: 2025-11-28 01:55+0000\n"
 "PO-Revision-Date: 2022-05-06 13:53+0000\n"
 "Last-Translator: INOUE Daisuke, 2025\n"
 "Language-Team: Japanese (Japan) (https://app.transifex.com/teclib/teams/28042/ja_JP/)\n"
@@ -70,15 +70,15 @@ msgstr "フィルター"
 msgid "by name"
 msgstr "名前ごと"
 
-#: ajax/gantt.php:113
+#: ajax/gantt.php:115
 msgid "Target item must be of project type"
 msgstr "対象のアイテムは、プロジェクトの型に合致していなくてはなりません"
 
-#: ajax/gantt.php:141
+#: ajax/gantt.php:144
 msgid "Item must be of project type"
 msgstr "アイテムは、プロジェクトの型に合致していなくてはなりません"
 
-#: ajax/gantt.php:203
+#: ajax/gantt.php:209
 msgid "Link already exist!"
 msgstr "リンクがすでに存在します！"
 
@@ -91,7 +91,7 @@ msgstr "十分な権利がない"
 msgid "Gantt"
 msgstr "GANTT"
 
-#: src/ProjectTab.php:73 src/ProjectTab.php:75
+#: src/ProjectTab.php:74 src/ProjectTab.php:76
 msgid "Global GANTT"
 msgstr "全体 GANTT"
 
@@ -110,121 +110,125 @@ msgid "Milestone"
 msgstr "マイルストーン"
 
 #: public/js/gantt-helper.js:77 public/js/gantt-helper.js:82
-#: public/js/gantt-helper.js:340
+#: public/js/gantt-helper.js:351
 msgid "New project"
 msgstr "新規プロジェクト"
 
-#: public/js/gantt-helper.js:163
+#: public/js/gantt-helper.js:169
+msgid "Today"
+msgstr ""
+
+#: public/js/gantt-helper.js:174
 msgid "Start date:"
 msgstr "開始日 :"
 
-#: public/js/gantt-helper.js:165
+#: public/js/gantt-helper.js:176
 msgid "End date:"
 msgstr "終了日 :"
 
-#: public/js/gantt-helper.js:166
+#: public/js/gantt-helper.js:177
 msgid "Progress:"
 msgstr "進行状況 :"
 
-#: public/js/gantt-helper.js:168
+#: public/js/gantt-helper.js:179
 msgid "Description:"
 msgstr "詳細 :"
 
-#: public/js/gantt-helper.js:171
+#: public/js/gantt-helper.js:182
 msgid "Comment:"
 msgstr "コメント :"
 
-#: public/js/gantt-helper.js:178
+#: public/js/gantt-helper.js:189
 msgid "Project / Task"
 msgstr "プロジェクト・タスク"
 
-#: public/js/gantt-helper.js:179
+#: public/js/gantt-helper.js:190
 msgid "Start date"
 msgstr "開始日"
 
-#: public/js/gantt-helper.js:180
+#: public/js/gantt-helper.js:191
 msgid "Duration"
 msgstr "期間"
 
-#: public/js/gantt-helper.js:229
+#: public/js/gantt-helper.js:240
 #, javascript-format
 msgid "Week #%s"
 msgstr "第 %s 週"
 
-#: public/js/gantt-helper.js:389
+#: public/js/gantt-helper.js:400
 msgid "Finish to Start: "
 msgstr "開始して終了 :"
 
-#: public/js/gantt-helper.js:392
+#: public/js/gantt-helper.js:403
 msgid "Finish to Finish: "
 msgstr "終了して終了 :"
 
-#: public/js/gantt-helper.js:395
+#: public/js/gantt-helper.js:406
 msgid "Start to Start: "
 msgstr "開始して開始 :"
 
-#: public/js/gantt-helper.js:398
+#: public/js/gantt-helper.js:409
 msgid "Start to Finish: "
 msgstr "終了して開始 :"
 
-#: public/js/gantt-helper.js:407
+#: public/js/gantt-helper.js:418
 msgid "Lag"
 msgstr "遅れ"
 
-#: public/js/gantt-helper.js:410
+#: public/js/gantt-helper.js:421
 msgid "Save"
 msgstr "保存"
 
-#: public/js/gantt-helper.js:411
+#: public/js/gantt-helper.js:422
 msgid "Cancel"
 msgstr "中止"
 
-#: public/js/gantt-helper.js:412
+#: public/js/gantt-helper.js:423
 msgid "Delete"
 msgstr "削除"
 
-#: public/js/gantt-helper.js:546
+#: public/js/gantt-helper.js:557
 msgid "Gantt mode: 'Readonly'"
 msgstr "GANTT モード : 「表示のみ」"
 
-#: public/js/gantt-helper.js:605
+#: public/js/gantt-helper.js:616
 msgid "Links between projects cannot be created."
 msgstr "プロジェクトとのリンクを作成できません。"
 
-#: public/js/gantt-helper.js:608
+#: public/js/gantt-helper.js:619
 msgid "Links between projects and tasks cannot be created."
 msgstr "プロジェクトとタスクのリンクを作成できません。"
 
-#: public/js/gantt-helper.js:611
+#: public/js/gantt-helper.js:622
 msgid "Target task can't start before source task ends."
 msgstr "対象のタスクは、元タスクが終了しないと開始できません。"
 
-#: public/js/gantt-helper.js:614
+#: public/js/gantt-helper.js:625
 msgid "Target task can't start before source task starts."
 msgstr "対象のタスクは、元のタスクが開始しないと開始できません。"
 
-#: public/js/gantt-helper.js:617
+#: public/js/gantt-helper.js:628
 msgid "Target task can't end before source task ends."
 msgstr "対象のタスクは、元のタスクが終了しないと終了できません。"
 
-#: public/js/gantt-helper.js:620
+#: public/js/gantt-helper.js:631
 msgid "Target task can't end before the source task starts."
 msgstr "対象のタスクは、元のタスクが開始しないと終了できません。"
 
-#: public/js/gantt-helper.js:653
+#: public/js/gantt-helper.js:664
 msgid "Could not create task: "
 msgstr "タスクを作成できませんでした :"
 
-#: public/js/gantt-helper.js:692 public/js/gantt-helper.js:725
+#: public/js/gantt-helper.js:703 public/js/gantt-helper.js:736
 #, javascript-format
 msgid "Could not update Task[%s]: "
 msgstr "%s タスクを更新できませんでした :"
 
-#: public/js/gantt-helper.js:817
+#: public/js/gantt-helper.js:828
 msgid "Could not create project: "
 msgstr "プロジェクトを作成できませんでした :"
 
-#: public/js/gantt-helper.js:850
+#: public/js/gantt-helper.js:861
 #, javascript-format
 msgid "Could not update Project[%s]: "
 msgstr "%s プロジェクトを更新できませんでした :"

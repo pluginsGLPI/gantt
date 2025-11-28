@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-10 02:01+0000\n"
+"POT-Creation-Date: 2025-11-28 01:55+0000\n"
 "PO-Revision-Date: 2022-05-06 13:53+0000\n"
 "Last-Translator: 조성현 (jaymz9634) <jaymz9634@gmail.com>, 2024\n"
 "Language-Team: Korean (Korea) (https://app.transifex.com/teclib/teams/28042/ko_KR/)\n"
@@ -70,15 +70,15 @@ msgstr "필터"
 msgid "by name"
 msgstr ""
 
-#: ajax/gantt.php:113
+#: ajax/gantt.php:115
 msgid "Target item must be of project type"
 msgstr "대상 항목은 프로젝트 유형이어야 함"
 
-#: ajax/gantt.php:141
+#: ajax/gantt.php:144
 msgid "Item must be of project type"
 msgstr "항목은 프로젝트 유형이어야 함"
 
-#: ajax/gantt.php:203
+#: ajax/gantt.php:209
 msgid "Link already exist!"
 msgstr "링크가 이미 존재합니다!"
 
@@ -91,7 +91,7 @@ msgstr "권한이 부족합니다"
 msgid "Gantt"
 msgstr "간트"
 
-#: src/ProjectTab.php:73 src/ProjectTab.php:75
+#: src/ProjectTab.php:74 src/ProjectTab.php:76
 msgid "Global GANTT"
 msgstr "전역 GANTT"
 
@@ -110,121 +110,125 @@ msgid "Milestone"
 msgstr "마일스톤"
 
 #: public/js/gantt-helper.js:77 public/js/gantt-helper.js:82
-#: public/js/gantt-helper.js:340
+#: public/js/gantt-helper.js:351
 msgid "New project"
 msgstr "새 프로젝트"
 
-#: public/js/gantt-helper.js:163
+#: public/js/gantt-helper.js:169
+msgid "Today"
+msgstr ""
+
+#: public/js/gantt-helper.js:174
 msgid "Start date:"
 msgstr "시작 날짜:"
 
-#: public/js/gantt-helper.js:165
+#: public/js/gantt-helper.js:176
 msgid "End date:"
 msgstr "마감 일자:"
 
-#: public/js/gantt-helper.js:166
+#: public/js/gantt-helper.js:177
 msgid "Progress:"
 msgstr "진척:"
 
-#: public/js/gantt-helper.js:168
+#: public/js/gantt-helper.js:179
 msgid "Description:"
 msgstr "상세내용:"
 
-#: public/js/gantt-helper.js:171
+#: public/js/gantt-helper.js:182
 msgid "Comment:"
 msgstr "댓글:"
 
-#: public/js/gantt-helper.js:178
+#: public/js/gantt-helper.js:189
 msgid "Project / Task"
 msgstr "프로젝트/업무"
 
-#: public/js/gantt-helper.js:179
+#: public/js/gantt-helper.js:190
 msgid "Start date"
 msgstr "시작 날짜"
 
-#: public/js/gantt-helper.js:180
+#: public/js/gantt-helper.js:191
 msgid "Duration"
 msgstr "기간"
 
-#: public/js/gantt-helper.js:229
+#: public/js/gantt-helper.js:240
 #, javascript-format
 msgid "Week #%s"
 msgstr "주 #%s"
 
-#: public/js/gantt-helper.js:389
+#: public/js/gantt-helper.js:400
 msgid "Finish to Start: "
 msgstr "완료부터 끝까지:"
 
-#: public/js/gantt-helper.js:392
+#: public/js/gantt-helper.js:403
 msgid "Finish to Finish: "
 msgstr "마무리부터 끝까지:"
 
-#: public/js/gantt-helper.js:395
+#: public/js/gantt-helper.js:406
 msgid "Start to Start: "
 msgstr ""
 
-#: public/js/gantt-helper.js:398
+#: public/js/gantt-helper.js:409
 msgid "Start to Finish: "
 msgstr "시작부터 끝까지:"
 
-#: public/js/gantt-helper.js:407
+#: public/js/gantt-helper.js:418
 msgid "Lag"
 msgstr "지연"
 
-#: public/js/gantt-helper.js:410
+#: public/js/gantt-helper.js:421
 msgid "Save"
 msgstr "저장"
 
-#: public/js/gantt-helper.js:411
+#: public/js/gantt-helper.js:422
 msgid "Cancel"
 msgstr "취소"
 
-#: public/js/gantt-helper.js:412
+#: public/js/gantt-helper.js:423
 msgid "Delete"
 msgstr "삭제"
 
-#: public/js/gantt-helper.js:546
+#: public/js/gantt-helper.js:557
 msgid "Gantt mode: 'Readonly'"
 msgstr "간트 모델: '읽기전용'"
 
-#: public/js/gantt-helper.js:605
+#: public/js/gantt-helper.js:616
 msgid "Links between projects cannot be created."
 msgstr "프로젝트 간의 링크를 생성할 수 없습니다."
 
-#: public/js/gantt-helper.js:608
+#: public/js/gantt-helper.js:619
 msgid "Links between projects and tasks cannot be created."
 msgstr "프로젝트와 업무 간의 링크를 생성할 수 없습니다."
 
-#: public/js/gantt-helper.js:611
+#: public/js/gantt-helper.js:622
 msgid "Target task can't start before source task ends."
 msgstr "원천 작업이 끝나기 전에는 대상 작업을 시작할 수 없습니다."
 
-#: public/js/gantt-helper.js:614
+#: public/js/gantt-helper.js:625
 msgid "Target task can't start before source task starts."
 msgstr "원천 작업이 시작되기 전에는 대상 작업을 시작할 수 없습니다."
 
-#: public/js/gantt-helper.js:617
+#: public/js/gantt-helper.js:628
 msgid "Target task can't end before source task ends."
 msgstr "원천 작업이 종료되기 전에 대상 작업을 종료할 수 없습니다."
 
-#: public/js/gantt-helper.js:620
+#: public/js/gantt-helper.js:631
 msgid "Target task can't end before the source task starts."
 msgstr "원천 작업이 시작되기 전에 대상 작업을 종료할 수 없습니다."
 
-#: public/js/gantt-helper.js:653
+#: public/js/gantt-helper.js:664
 msgid "Could not create task: "
 msgstr "업무를 생성할 수 없음:"
 
-#: public/js/gantt-helper.js:692 public/js/gantt-helper.js:725
+#: public/js/gantt-helper.js:703 public/js/gantt-helper.js:736
 #, javascript-format
 msgid "Could not update Task[%s]: "
 msgstr "업무[%s]를 수정할 수 없음: "
 
-#: public/js/gantt-helper.js:817
+#: public/js/gantt-helper.js:828
 msgid "Could not create project: "
 msgstr "프로젝트를 생성할 수 없음:"
 
-#: public/js/gantt-helper.js:850
+#: public/js/gantt-helper.js:861
 #, javascript-format
 msgid "Could not update Project[%s]: "
 msgstr "프로젝트[%s]를 수정할 수 없음: "
