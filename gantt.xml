@@ -1,5 +1,5 @@
 <root>
-   <name>gantt</name>
+   <name>Gantt</name>
    <key>gantt</key>
    <state>stable</state>
    <logo>https://raw.githubusercontent.com/pluginsGLPI/gantt/main/gantt.png</logo>
