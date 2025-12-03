@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-28 01:55+0000\n"
+"POT-Creation-Date: 2025-12-03 01:59+0000\n"
 "PO-Revision-Date: 2022-05-06 13:53+0000\n"
 "Last-Translator: Alan Ivés Lehoux, 2025\n"
 "Language-Team: Spanish (Argentina) (https://app.transifex.com/teclib/teams/28042/es_AR/)\n"
@@ -120,7 +120,7 @@ msgstr "Nuevo proyecto"
 
 #: public/js/gantt-helper.js:169
 msgid "Today"
-msgstr ""
+msgstr "Hoy"
 
 #: public/js/gantt-helper.js:174
 msgid "Start date:"
