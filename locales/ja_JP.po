@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-28 01:55+0000\n"
+"POT-Creation-Date: 2025-12-04 02:00+0000\n"
 "PO-Revision-Date: 2022-05-06 13:53+0000\n"
 "Last-Translator: INOUE Daisuke, 2025\n"
 "Language-Team: Japanese (Japan) (https://app.transifex.com/teclib/teams/28042/ja_JP/)\n"
@@ -48,7 +48,7 @@ msgstr "週"
 
 #: templates/view.html.twig
 msgid "Months"
-msgstr "カ月"
+msgstr "月"
 
 #: templates/view.html.twig
 msgid "Quarters"
@@ -116,7 +116,7 @@ msgstr "新規プロジェクト"
 
 #: public/js/gantt-helper.js:169
 msgid "Today"
-msgstr ""
+msgstr "本日"
 
 #: public/js/gantt-helper.js:174
 msgid "Start date:"
