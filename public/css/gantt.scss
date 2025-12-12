@@ -175,7 +175,7 @@
     }
 }
 
-.gantt_today, .today {
+.gantt_today, .gantt_marker.today {
     background: inherit;
     color: var(--dhx-gantt-base-colors-white);
     position: absolute;
