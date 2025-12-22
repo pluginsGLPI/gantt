@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Fixed
 
+- Fix global GANTT button link
 - Fix Today marker position on native calendar fields
 
 ## [1.3.0] - 2025-12-02
