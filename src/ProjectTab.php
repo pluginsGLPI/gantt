@@ -32,7 +32,6 @@ namespace GlpiPlugin\Gantt;
 
 use CommonGLPI;
 use Glpi\Application\View\TemplateRenderer;
-use Plugin;
 use Project;
 
 class ProjectTab extends CommonGLPI
@@ -76,7 +75,7 @@ class ProjectTab extends CommonGLPI
                 ' . __s('Global GANTT', 'gantt') . '
                 </span>
             ';
-            $menu['tools']['content']['project']['links'][$label] = Plugin::getPhpDir('gantt', false) . '/front/global.php';
+            $menu['tools']['content']['project']['links'][$label] = '/plugins/gantt/front/global.php';
         }
 
         return $menu;
