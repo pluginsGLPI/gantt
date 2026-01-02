@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-12-18 02:00+0000\n"
+"POT-Creation-Date: 2025-12-25 02:05+0000\n"
 "PO-Revision-Date: 2022-05-06 13:53+0000\n"
 "Last-Translator: SeongHyeon Cho <jaymz9634@gmail.com>, 2024\n"
 "Language-Team: Korean (Korea) (https://app.transifex.com/teclib/teams/28042/ko_KR/)\n"
@@ -87,11 +87,11 @@ msgstr "링크가 이미 존재합니다!"
 msgid "Not enough rights"
 msgstr "권한이 부족합니다"
 
-#: src/ProjectTab.php:42
+#: src/ProjectTab.php:41
 msgid "Gantt"
 msgstr "간트"
 
-#: src/ProjectTab.php:74 src/ProjectTab.php:76
+#: src/ProjectTab.php:73 src/ProjectTab.php:75
 msgid "Global GANTT"
 msgstr "전역 GANTT"
 
