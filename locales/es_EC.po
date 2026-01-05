@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-12-18 02:00+0000\n"
+"POT-Creation-Date: 2025-12-25 02:05+0000\n"
 "PO-Revision-Date: 2022-05-06 13:53+0000\n"
 "Last-Translator: Soporte Infraestructura Standby, 2023\n"
 "Language-Team: Spanish (Ecuador) (https://app.transifex.com/teclib/teams/28042/es_EC/)\n"
@@ -86,11 +86,11 @@ msgstr "¡El enlace ya existe!"
 msgid "Not enough rights"
 msgstr "Derechos insuficientes"
 
-#: src/ProjectTab.php:42
+#: src/ProjectTab.php:41
 msgid "Gantt"
 msgstr "Gantt"
 
-#: src/ProjectTab.php:74 src/ProjectTab.php:76
+#: src/ProjectTab.php:73 src/ProjectTab.php:75
 msgid "Global GANTT"
 msgstr "Global GANTT"
 
