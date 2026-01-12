@@ -39,8 +39,9 @@ module.exports = [
             'libs': path.resolve(__dirname, 'public/js/libs.js'),
         },
         output: {
-            filename: 'libs.js',
+            filename: '[name].[contenthash].js',
             path: path.resolve(__dirname, 'public/lib'),
+            clean: true,
         },
         module: {
             rules: [
@@ -64,11 +65,34 @@ module.exports = [
                 },
             ],
         },
-        plugins: [
-            new webpack.optimize.LimitChunkCountPlugin({
-                maxChunks: 1,
-            }),
+        // Exclude dhtmlx-gantt from the bundle: it will be provided at runtime as global `gantt`.
+        externals: [
+            function ({ request }, callback) {
+                if (/^dhtmlx-gantt(\/|$)/.test(request)) {
+                    return callback(null, 'gantt');
+                }
+                callback();
+            }
         ],
+        // Enable automatic splitting of vendor code
+        optimization: {
+            splitChunks: {
+                chunks: 'all',
+                cacheGroups: {
+                    vendors: {
+                        test: /[\\/]node_modules[\\/]/,
+                        name: 'vendors',
+                        enforce: true,
+                        priority: -10
+                    },
+                    default: false
+                }
+            },
+            runtimeChunk: {
+                name: 'runtime'
+            },
+            minimize: true
+        },
         resolve: {
             // Use only main file in requirement resolution as we do not yet handle modules correctly
             mainFields: [

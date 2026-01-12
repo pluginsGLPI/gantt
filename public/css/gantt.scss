@@ -176,9 +176,7 @@
 }
 
 .gantt_today, .gantt_marker.today {
-    background: inherit;
     color: var(--dhx-gantt-base-colors-white);
-    position: absolute;
     font-size: var(--dhx-gantt-caption-font-size);
     line-height: var(--dhx-gantt-caption-line-height);
     font-weight: var(--dhx-gantt-caption-line-weight);
