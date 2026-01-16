@@ -5,16 +5,16 @@
 # 
 # Translators:
 # Cédric Anne, 2022
-# Eduardo Mozart de Oliveira <eduardomozart182@gmail.com>, 2022
+# Eduardo Mozart de Oliveira <eduardomozart182@gmail.com>, 2026
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-12-25 02:05+0000\n"
+"POT-Creation-Date: 2026-01-16 02:08+0000\n"
 "PO-Revision-Date: 2022-05-06 13:53+0000\n"
-"Last-Translator: Eduardo Mozart de Oliveira <eduardomozart182@gmail.com>, 2022\n"
+"Last-Translator: Eduardo Mozart de Oliveira <eduardomozart182@gmail.com>, 2026\n"
 "Language-Team: Portuguese (Brazil) (https://app.transifex.com/teclib/teams/28042/pt_BR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -28,11 +28,11 @@ msgstr "Tela cheia"
 
 #: templates/view.html.twig
 msgid "Export"
-msgstr ""
+msgstr "Exportar"
 
 #: templates/view.html.twig
 msgid "JSON"
-msgstr ""
+msgstr "JSON"
 
 #: templates/view.html.twig
 msgid "Zoom"
@@ -120,7 +120,7 @@ msgstr "Novo projeto"
 
 #: public/js/gantt-helper.js:169
 msgid "Today"
-msgstr ""
+msgstr "Hoje"
 
 #: public/js/gantt-helper.js:174
 msgid "Start date:"
