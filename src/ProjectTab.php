@@ -44,7 +44,7 @@ class ProjectTab extends CommonGLPI
     public function getTabNameForItem(CommonGLPI $item, $withtemplate = 0)
     {
         if ($item instanceof Project) {
-            return self::createTabEntry(self::getTypeName(), 0, icon: 'fas fa-stream');
+            return self::createTabEntry(self::getTypeName());
         }
 
         return '';
@@ -70,7 +70,7 @@ class ProjectTab extends CommonGLPI
     {
         if (isset($menu['tools']['content']['project']['links'])) {
             $label = '
-                <i class="fas fa-stream" title="' . __s('Global GANTT', 'gantt') . '"></i>
+                <i class="' . self::getIcon() . '" title="' . __s('Global GANTT', 'gantt') . '"></i>
                 <span class="d-none d-xxl-block">
                 ' . __s('Global GANTT', 'gantt') . '
                 </span>
@@ -79,5 +79,10 @@ class ProjectTab extends CommonGLPI
         }
 
         return $menu;
+    }
+
+    public static function getIcon()
+    {
+        return 'fas fa-stream';
     }
 }
