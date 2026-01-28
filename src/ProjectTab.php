@@ -44,7 +44,7 @@ class ProjectTab extends CommonGLPI
     public function getTabNameForItem(CommonGLPI $item, $withtemplate = 0)
     {
         if ($item instanceof Project) {
-            return self::createTabEntry(self::getTypeName());
+            return self::createTabEntry(self::getTypeName(), 0, icon: 'fas fa-stream');;
         }
 
         return '';
