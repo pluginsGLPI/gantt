@@ -5,16 +5,16 @@
 # 
 # Translators:
 # Cédric Anne, 2022
-# Alan Ivés Lehoux, 2025
+# Alan Lehoux, 2025
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-01-14 02:12+0000\n"
+"POT-Creation-Date: 2026-02-03 02:40+0000\n"
 "PO-Revision-Date: 2022-05-06 13:53+0000\n"
-"Last-Translator: Alan Ivés Lehoux, 2025\n"
+"Last-Translator: Alan Lehoux, 2025\n"
 "Language-Team: Spanish (Argentina) (https://app.transifex.com/teclib/teams/28042/es_AR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
