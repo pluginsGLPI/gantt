@@ -54,11 +54,7 @@ if (isset($_REQUEST['getData'])) {
     $factory->getItemsForProject($itemArray, $id);
     $links = $factory->getProjectTaskLinks($itemArray);
 
-    usort($itemArray, function ($a, $b) {
-        $lengthA = $a->id !== null ? strlen((string) $a->id) : 0;
-        $lengthB = $b->id !== null ? strlen((string) $b->id) : 0;
-        return $lengthA <=> $lengthB;
-    });
+    usort($itemArray, fn($a, $b) => $a->id !== null ? strlen((string) $a->id) : 0 <=> $b->id !== null ? strlen((string) $b->id) : 0);
 
     $result = [
         'data'  => $itemArray,
