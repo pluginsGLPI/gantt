@@ -4,7 +4,7 @@
   "private": true,
   "license": "GPL-2.0-or-later",
   "dependencies": {
-    "dhtmlx-gantt": "^9.1.1"
+    "dhtmlx-gantt": "^9.1.2"
   },
   "scripts": {
     "build": "webpack --config .webpack.config.js",
