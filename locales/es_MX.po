@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-01-26 02:25+0000\n"
+"POT-Creation-Date: 2026-03-18 02:44+0000\n"
 "PO-Revision-Date: 2022-05-06 13:53+0000\n"
 "Last-Translator: Edwin Elias Alvarez <sistemas@cyalimentos.com>, 2026\n"
 "Language-Team: Spanish (Mexico) (https://app.transifex.com/teclib/teams/28042/es_MX/)\n"
@@ -71,15 +71,15 @@ msgstr "Filtrar"
 msgid "by name"
 msgstr "por nombre"
 
-#: ajax/gantt.php:115
+#: ajax/gantt.php:111
 msgid "Target item must be of project type"
 msgstr "El elemento destino debe ser del tipo proyecto"
 
-#: ajax/gantt.php:144
+#: ajax/gantt.php:140
 msgid "Item must be of project type"
 msgstr "El elemento debe ser del tipo de proyecto"
 
-#: ajax/gantt.php:209
+#: ajax/gantt.php:205
 msgid "Link already exist!"
 msgstr "¡El enlace ya existe!"
 

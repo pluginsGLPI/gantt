@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-02-03 02:40+0000\n"
+"POT-Creation-Date: 2026-03-18 02:44+0000\n"
 "PO-Revision-Date: 2022-05-06 13:53+0000\n"
 "Last-Translator: SeongHyeon Cho <jaymz9634@gmail.com>, 2024\n"
 "Language-Team: Korean (Korea) (https://app.transifex.com/teclib/teams/28042/ko_KR/)\n"
@@ -70,15 +70,15 @@ msgstr "필터"
 msgid "by name"
 msgstr ""
 
-#: ajax/gantt.php:115
+#: ajax/gantt.php:111
 msgid "Target item must be of project type"
 msgstr "대상 항목은 프로젝트 유형이어야 함"
 
-#: ajax/gantt.php:144
+#: ajax/gantt.php:140
 msgid "Item must be of project type"
 msgstr "항목은 프로젝트 유형이어야 함"
 
-#: ajax/gantt.php:209
+#: ajax/gantt.php:205
 msgid "Link already exist!"
 msgstr "링크가 이미 존재합니다!"
 
