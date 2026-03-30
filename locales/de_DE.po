@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-02-03 02:40+0000\n"
+"POT-Creation-Date: 2026-03-18 02:44+0000\n"
 "PO-Revision-Date: 2022-05-06 13:53+0000\n"
 "Last-Translator: iDazai, 2023\n"
 "Language-Team: German (Germany) (https://app.transifex.com/teclib/teams/28042/de_DE/)\n"
@@ -71,15 +71,15 @@ msgstr "Filter"
 msgid "by name"
 msgstr "nach Name"
 
-#: ajax/gantt.php:115
+#: ajax/gantt.php:111
 msgid "Target item must be of project type"
 msgstr "Das Zielelement muss vom Typ Projekt sein"
 
-#: ajax/gantt.php:144
+#: ajax/gantt.php:140
 msgid "Item must be of project type"
 msgstr "Das Objekt muss ein Projekt sein"
 
-#: ajax/gantt.php:209
+#: ajax/gantt.php:205
 msgid "Link already exist!"
 msgstr "Die Verknüpfung existiert bereits"
 
