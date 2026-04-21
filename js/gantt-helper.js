@@ -126,7 +126,6 @@ const GlpiGantt = (function() {
             gantt.templates.task_class = (start, end, task) =>{
                 const css = [];
                 if (task.type == "project") {
-                    css.push("no_progress_drag");
                     css.push("no_link_drag");
                 }
                 if (task.type == "milestone") {
@@ -134,6 +133,9 @@ const GlpiGantt = (function() {
                 }
                 if (task.type == "project") {
                     css.push("gantt_project");
+                }
+                if(task.auto_percent_done || task.type == "project"){
+                    css.push("no_progress_drag");
                 }
 
                 return css.join(" ");
@@ -569,6 +571,10 @@ const GlpiGantt = (function() {
      */
     function parentProgress(id) {
         gantt.eachParent((task) => {
+            if(!task.auto_percent_done){
+                return;
+            }
+
             const children = gantt.getChildren(task.id);
             let childProgress = 0;
             for (let i = 0; i < children.length; i++) {

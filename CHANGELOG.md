@@ -8,6 +8,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+### Fixed
+
+- Fix the progress percentage of tasks and projects in the Gantt view when it must not be calculated automatically
+
 ## [1.1.2] - 2025-09-30
 
 ### Added
