@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Fixed
 
 - Fix the progress percentage of tasks and projects in the Gantt view when it must not be calculated automatically
+- Project progress calculation now includes subtasks, aligning with core GLPI behavior.
 
 ## [1.1.2] - 2025-09-30
 
