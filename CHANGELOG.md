@@ -8,6 +8,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+### Fixed
+
+- Fixed the task tooltip display in the Gantt view when the comment or the description of the task is too big.
+
 ## [1.1.2] - 2025-09-30
 
 ### Added
