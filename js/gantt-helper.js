@@ -167,10 +167,10 @@ const GlpiGantt = (function() {
                "<br/><b>" + __("End date:", 'gantt') + "</b> " + gantt.templates.tooltip_date_format(end) +
                "<br/><b>" + __("Progress:", 'gantt') + "</b> " + parseInt(task.progress * 100) + "%";
                 if (task.content && task.content.length > 0) {
-                    text += "<br/><b>" + __("Description:", 'gantt') + "</b><div style=\"padding-left:25px\">" + task.content + "</div>";
+                    text += "<br/><b>" + __("Description:", 'gantt') + "</b><div class=\"gantt_tooltip_description\">" + task.content + "</div>";
                 }
                 if (task.comment && task.comment.length > 0) {
-                    text += "<br/><b>" + __("Comment:", 'gantt') + "</b><div style=\"padding-left:25px\">" + task.comment + "</div>";
+                    text += "<br/><b>" + __("Comment:", 'gantt') + "</b><div class=\"gantt_tooltip_description\">" + task.comment + "</div>";
                 }
                 return text;
             };
