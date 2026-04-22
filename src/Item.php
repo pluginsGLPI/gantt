@@ -63,6 +63,9 @@ class Item implements JsonSerializable
 
     public $open = 1; // 1 / 0
 
+    //(to indicate if the progess is automatically calculated based on sub-tasks)
+    public $auto_percent_done;
+
     public function __construct()
     {
         $this->start_date = date('Y-m-d H:i:s');
