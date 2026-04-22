@@ -75,6 +75,11 @@ module.exports = [
                 'main',
             ],
         },
+        performance: {
+            hints: false,
+            maxEntrypointSize: 1024000,
+            maxAssetSize: 1024000
+        },
         devtool: 'source-map', // Add sourcemap to files
         // Limit verbosity to only usefull informations
         stats: {
