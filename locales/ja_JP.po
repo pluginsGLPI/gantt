@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-18 02:44+0000\n"
+"POT-Creation-Date: 2026-04-22 03:21+0000\n"
 "PO-Revision-Date: 2022-05-06 13:53+0000\n"
 "Last-Translator: INOUE Daisuke, 2025\n"
 "Language-Team: Japanese (Japan) (https://app.transifex.com/teclib/teams/28042/ja_JP/)\n"
@@ -70,6 +70,19 @@ msgstr "フィルター"
 msgid "by name"
 msgstr "名前ごと"
 
+#: src/ProjectDAO.php:45 src/ProjectDAO.php:84 src/ProjectDAO.php:102
+#: src/TaskDAO.php:45 src/TaskDAO.php:89 src/TaskDAO.php:115
+msgid "Not enough rights"
+msgstr "十分な権利がない"
+
+#: src/ProjectTab.php:41
+msgid "Gantt"
+msgstr "GANTT"
+
+#: src/ProjectTab.php:73 src/ProjectTab.php:75
+msgid "Global GANTT"
+msgstr "全体 GANTT"
+
 #: ajax/gantt.php:111
 msgid "Target item must be of project type"
 msgstr "対象のアイテムは、プロジェクトの型に合致していなくてはなりません"
@@ -81,19 +94,6 @@ msgstr "アイテムは、プロジェクトの型に合致していなくては
 #: ajax/gantt.php:205
 msgid "Link already exist!"
 msgstr "リンクがすでに存在します！"
-
-#: src/TaskDAO.php:45 src/TaskDAO.php:89 src/TaskDAO.php:115
-#: src/ProjectDAO.php:45 src/ProjectDAO.php:84 src/ProjectDAO.php:102
-msgid "Not enough rights"
-msgstr "十分な権利がない"
-
-#: src/ProjectTab.php:41
-msgid "Gantt"
-msgstr "GANTT"
-
-#: src/ProjectTab.php:73 src/ProjectTab.php:75
-msgid "Global GANTT"
-msgstr "全体 GANTT"
 
 #: public/js/gantt-helper.js:66
 msgid "Project"
