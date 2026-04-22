@@ -575,7 +575,8 @@ const GlpiGantt = (function() {
                 return;
             }
 
-            const children = gantt.getChildren(task.id);
+            const children = getAllChildren(task.id);
+
             let childProgress = 0;
             for (let i = 0; i < children.length; i++) {
                 const child = gantt.getTask(children[i]);
@@ -584,6 +585,20 @@ const GlpiGantt = (function() {
             task.progress = childProgress / children.length / 100;
         }, id);
         gantt.render();
+    }
+
+    /**
+     * Gets all children of a task, including sub-children (recursive)
+     * @param {*} taskId
+     */
+    function getAllChildren(taskId) {
+        const children = [];
+        const directChildren = gantt.getChildren(taskId);
+        for (let i = 0; i < directChildren.length; i++) {
+            children.push(directChildren[i]);
+            children.push(...getAllChildren(directChildren[i]));
+        }
+        return children;
     }
 
     /**
