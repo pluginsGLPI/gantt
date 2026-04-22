@@ -29,9 +29,6 @@
 const webpack = require('webpack');
 const path = require('path');
 
-/*
- * External libs build configuration.
- */
 module.exports = [
     {
         mode: 'production',
@@ -39,68 +36,40 @@ module.exports = [
             'libs': path.resolve(__dirname, 'public/js/libs.js'),
         },
         output: {
-            filename: '[name].[contenthash].js',
+            filename: 'libs.js',
             path: path.resolve(__dirname, 'public/lib'),
-            clean: true,
         },
         module: {
             rules: [
-                // {
-                // // Load scripts with no compilation for packages that are directly providing "dist" files.
-                // // This prevents useless compilation pass and can also
-                // // prevents incompatibility issues with the webpack require feature.
-                //     test: /\.js$/,
-                //     include: [
-                //         path.resolve(__dirname, 'node_modules/dhtmlx-gantt'),
-                //     ],
-                //     use: ['script-loader'],
-                // },
                 {
                     test: /\.css$/,
                     use: ['style-loader', 'css-loader'],
                 },
                 {
-                    test: /\.ttf$/,
-                    use: ['file-loader']
+                    test: /\.(ttf|woff|woff2|eot)$/,
+                    type: 'asset/resource', // Plus moderne que file-loader pour Webpack 5
+                    generator: {
+                        filename: 'fonts/[name][ext]'
+                    }
                 },
             ],
         },
-        // Exclude dhtmlx-gantt from the bundle: it will be provided at runtime as global `gantt`.
-        externals: [
-            function ({ request }, callback) {
-                if (/^dhtmlx-gantt(\/|$)/.test(request)) {
-                    return callback(null, 'gantt');
-                }
-                callback();
-            }
+        plugins: [
+            // Force tout le code dans un seul fichier pour GLPI
+            new webpack.optimize.LimitChunkCountPlugin({
+                maxChunks: 1,
+            }),
         ],
-        // Enable automatic splitting of vendor code
-        optimization: {
-            splitChunks: {
-                chunks: 'all',
-                cacheGroups: {
-                    vendors: {
-                        test: /[\\/]node_modules[\\/]/,
-                        name: 'vendors',
-                        enforce: true,
-                        priority: -10
-                    },
-                    default: false
-                }
-            },
-            runtimeChunk: {
-                name: 'runtime'
-            },
-            minimize: true
-        },
         resolve: {
-            // Use only main file in requirement resolution as we do not yet handle modules correctly
-            mainFields: [
-                'main',
-            ],
+            mainFields: ['main'],
         },
-        devtool: 'source-map', // Add sourcemap to files
-        // Limit verbosity to only usefull informations
+        // Désactive les avertissements de performance (taille de libs.js)
+        performance: {
+            hints: false,
+            maxEntrypointSize: 1024000,
+            maxAssetSize: 1024000
+        },
+        devtool: 'source-map',
         stats: {
             all: false,
             errors: true,
