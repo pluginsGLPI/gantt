@@ -209,6 +209,7 @@ class DataFactory
         $item->content     = isset($record['content']) ? RichText::getSafeHtml($record['content']) : '';
         $item->comment     = $record['comment'] ?? '';
         $item->progress    = $record['percent_done'] / 100;
+        $item->auto_percent_done = $record['auto_percent_done'] ?? 0;
 
         return $item;
     }
