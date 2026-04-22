@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [UNRELEASED]
 
+### Fixed
+
+- Fixed the task tooltip display in the Gantt view when the comment or the description of the task is too big.
+
 ### Added
 
 - Add icon parameter to createTabEntry for Project tab
