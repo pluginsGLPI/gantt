@@ -126,7 +126,6 @@ const GlpiGantt = (function() {
             gantt.templates.task_class = (start, end, task) =>{
                 const css = [];
                 if (task.type == "project") {
-                    css.push("no_progress_drag");
                     css.push("no_link_drag");
                 }
                 if (task.type == "milestone") {
@@ -134,6 +133,9 @@ const GlpiGantt = (function() {
                 }
                 if (task.type == "project") {
                     css.push("gantt_project");
+                }
+                if(task.auto_percent_done || task.type == "project"){
+                    css.push("no_progress_drag");
                 }
 
                 return css.join(" ");
@@ -569,7 +571,12 @@ const GlpiGantt = (function() {
      */
     function parentProgress(id) {
         gantt.eachParent((task) => {
-            const children = gantt.getChildren(task.id);
+            if(!task.auto_percent_done){
+                return;
+            }
+
+            const children = getAllChildren(task.id);
+
             let childProgress = 0;
             for (let i = 0; i < children.length; i++) {
                 const child = gantt.getTask(children[i]);
@@ -578,6 +585,20 @@ const GlpiGantt = (function() {
             task.progress = childProgress / children.length / 100;
         }, id);
         gantt.render();
+    }
+
+    /**
+     * Gets all children of a task, including sub-children (recursive)
+     * @param {*} taskId
+     */
+    function getAllChildren(taskId) {
+        const children = [];
+        const directChildren = gantt.getChildren(taskId);
+        for (let i = 0; i < directChildren.length; i++) {
+            children.push(directChildren[i]);
+            children.push(...getAllChildren(directChildren[i]));
+        }
+        return children;
     }
 
     /**
