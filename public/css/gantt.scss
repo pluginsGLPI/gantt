@@ -162,6 +162,16 @@
     }
 }
 
+.gantt_tooltip_description {
+    padding-left:25px;
+    max-width:650px;
+    max-height:150px;
+    overflow-x:auto;
+    overflow-y:auto;
+    word-wrap:break-word;
+    white-space:pre-wrap;
+}
+
 #page {
     #gantt-loader-overlay {
         background-color: black;
