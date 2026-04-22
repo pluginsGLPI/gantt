@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-30 03:18+0000\n"
+"POT-Creation-Date: 2026-04-22 03:21+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -66,6 +66,19 @@ msgstr ""
 msgid "by name"
 msgstr ""
 
+#: src/ProjectDAO.php:45 src/ProjectDAO.php:84 src/ProjectDAO.php:102
+#: src/TaskDAO.php:45 src/TaskDAO.php:89 src/TaskDAO.php:115
+msgid "Not enough rights"
+msgstr ""
+
+#: src/ProjectTab.php:41
+msgid "Gantt"
+msgstr ""
+
+#: src/ProjectTab.php:73 src/ProjectTab.php:75
+msgid "Global GANTT"
+msgstr ""
+
 #: ajax/gantt.php:111
 msgid "Target item must be of project type"
 msgstr ""
@@ -76,19 +89,6 @@ msgstr ""
 
 #: ajax/gantt.php:205
 msgid "Link already exist!"
-msgstr ""
-
-#: src/TaskDAO.php:45 src/TaskDAO.php:89 src/TaskDAO.php:115
-#: src/ProjectDAO.php:45 src/ProjectDAO.php:84 src/ProjectDAO.php:102
-msgid "Not enough rights"
-msgstr ""
-
-#: src/ProjectTab.php:41
-msgid "Gantt"
-msgstr ""
-
-#: src/ProjectTab.php:73 src/ProjectTab.php:75
-msgid "Global GANTT"
 msgstr ""
 
 #: public/js/gantt-helper.js:66

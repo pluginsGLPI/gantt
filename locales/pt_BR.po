@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-18 02:44+0000\n"
+"POT-Creation-Date: 2026-04-22 03:21+0000\n"
 "PO-Revision-Date: 2022-05-06 13:53+0000\n"
 "Last-Translator: Eduardo Mozart de Oliveira <eduardomozart182@gmail.com>, 2026\n"
 "Language-Team: Portuguese (Brazil) (https://app.transifex.com/teclib/teams/28042/pt_BR/)\n"
@@ -70,6 +70,19 @@ msgstr "Filtro"
 msgid "by name"
 msgstr "por nome"
 
+#: src/ProjectDAO.php:45 src/ProjectDAO.php:84 src/ProjectDAO.php:102
+#: src/TaskDAO.php:45 src/TaskDAO.php:89 src/TaskDAO.php:115
+msgid "Not enough rights"
+msgstr "Não tem permissão suficiente"
+
+#: src/ProjectTab.php:41
+msgid "Gantt"
+msgstr "Gantt"
+
+#: src/ProjectTab.php:73 src/ProjectTab.php:75
+msgid "Global GANTT"
+msgstr "Gantt global"
+
 #: ajax/gantt.php:111
 msgid "Target item must be of project type"
 msgstr "Destino do item deve ser um tipo de projeto"
@@ -81,19 +94,6 @@ msgstr "Item deve ser um tipo de projeto"
 #: ajax/gantt.php:205
 msgid "Link already exist!"
 msgstr "O link já existe!"
-
-#: src/TaskDAO.php:45 src/TaskDAO.php:89 src/TaskDAO.php:115
-#: src/ProjectDAO.php:45 src/ProjectDAO.php:84 src/ProjectDAO.php:102
-msgid "Not enough rights"
-msgstr "Não tem permissão suficiente"
-
-#: src/ProjectTab.php:41
-msgid "Gantt"
-msgstr "Gantt"
-
-#: src/ProjectTab.php:73 src/ProjectTab.php:75
-msgid "Global GANTT"
-msgstr "Gantt global"
 
 #: public/js/gantt-helper.js:66
 msgid "Project"

@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-18 02:44+0000\n"
+"POT-Creation-Date: 2026-04-22 03:21+0000\n"
 "PO-Revision-Date: 2022-05-06 13:53+0000\n"
 "Last-Translator: Cédric Anne, 2022\n"
 "Language-Team: Ukrainian (Ukraine) (https://app.transifex.com/teclib/teams/28042/uk_UA/)\n"
@@ -69,6 +69,19 @@ msgstr "Фільтр"
 msgid "by name"
 msgstr "по назві"
 
+#: src/ProjectDAO.php:45 src/ProjectDAO.php:84 src/ProjectDAO.php:102
+#: src/TaskDAO.php:45 src/TaskDAO.php:89 src/TaskDAO.php:115
+msgid "Not enough rights"
+msgstr "Недостатньо прав"
+
+#: src/ProjectTab.php:41
+msgid "Gantt"
+msgstr ""
+
+#: src/ProjectTab.php:73 src/ProjectTab.php:75
+msgid "Global GANTT"
+msgstr "Глобальний GANTT"
+
 #: ajax/gantt.php:111
 msgid "Target item must be of project type"
 msgstr "Цільовий елемент повинен мати тип проекту"
@@ -80,19 +93,6 @@ msgstr "Елемент повинен мати тип проекту"
 #: ajax/gantt.php:205
 msgid "Link already exist!"
 msgstr "Зв'язок вже існує!"
-
-#: src/TaskDAO.php:45 src/TaskDAO.php:89 src/TaskDAO.php:115
-#: src/ProjectDAO.php:45 src/ProjectDAO.php:84 src/ProjectDAO.php:102
-msgid "Not enough rights"
-msgstr "Недостатньо прав"
-
-#: src/ProjectTab.php:41
-msgid "Gantt"
-msgstr ""
-
-#: src/ProjectTab.php:73 src/ProjectTab.php:75
-msgid "Global GANTT"
-msgstr "Глобальний GANTT"
 
 #: public/js/gantt-helper.js:66
 msgid "Project"
