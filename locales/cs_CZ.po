@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-04-22 03:21+0000\n"
+"POT-Creation-Date: 2026-05-15 03:57+0000\n"
 "PO-Revision-Date: 2022-05-06 13:53+0000\n"
 "Last-Translator: Cédric Anne, 2022\n"
 "Language-Team: Czech (Czech Republic) (https://app.transifex.com/teclib/teams/28042/cs_CZ/)\n"
@@ -69,8 +69,8 @@ msgstr "Filtr"
 msgid "by name"
 msgstr "podle jména"
 
-#: src/ProjectDAO.php:45 src/ProjectDAO.php:84 src/ProjectDAO.php:102
 #: src/TaskDAO.php:45 src/TaskDAO.php:89 src/TaskDAO.php:115
+#: src/ProjectDAO.php:45 src/ProjectDAO.php:84 src/ProjectDAO.php:102
 msgid "Not enough rights"
 msgstr "Nedostatečná oprávnění"
 
@@ -115,125 +115,125 @@ msgid "Milestone"
 msgstr "Milník"
 
 #: public/js/gantt-helper.js:77 public/js/gantt-helper.js:82
-#: public/js/gantt-helper.js:351
+#: public/js/gantt-helper.js:353
 msgid "New project"
 msgstr "Nový projekt"
 
-#: public/js/gantt-helper.js:169
+#: public/js/gantt-helper.js:171
 msgid "Today"
 msgstr ""
 
-#: public/js/gantt-helper.js:174
+#: public/js/gantt-helper.js:176
 msgid "Start date:"
 msgstr "Datum zahájení:"
 
-#: public/js/gantt-helper.js:176
+#: public/js/gantt-helper.js:178
 msgid "End date:"
 msgstr "Datum ukončení:"
 
-#: public/js/gantt-helper.js:177
+#: public/js/gantt-helper.js:179
 msgid "Progress:"
 msgstr "Postup:"
 
-#: public/js/gantt-helper.js:179
+#: public/js/gantt-helper.js:181
 msgid "Description:"
 msgstr "Popis:"
 
-#: public/js/gantt-helper.js:182
+#: public/js/gantt-helper.js:184
 msgid "Comment:"
 msgstr "Komentář:"
 
-#: public/js/gantt-helper.js:189
+#: public/js/gantt-helper.js:191
 msgid "Project / Task"
 msgstr "Projekt / Úkol"
 
-#: public/js/gantt-helper.js:190
+#: public/js/gantt-helper.js:192
 msgid "Start date"
 msgstr "Datum zahájení"
 
-#: public/js/gantt-helper.js:191
+#: public/js/gantt-helper.js:193
 msgid "Duration"
 msgstr "Trvání"
 
-#: public/js/gantt-helper.js:240
+#: public/js/gantt-helper.js:242
 #, javascript-format
 msgid "Week #%s"
 msgstr "Týden #%s"
 
-#: public/js/gantt-helper.js:400
+#: public/js/gantt-helper.js:402
 msgid "Finish to Start: "
 msgstr ""
 
-#: public/js/gantt-helper.js:403
+#: public/js/gantt-helper.js:405
 msgid "Finish to Finish: "
 msgstr ""
 
-#: public/js/gantt-helper.js:406
+#: public/js/gantt-helper.js:408
 msgid "Start to Start: "
 msgstr ""
 
-#: public/js/gantt-helper.js:409
+#: public/js/gantt-helper.js:411
 msgid "Start to Finish: "
 msgstr ""
 
-#: public/js/gantt-helper.js:418
+#: public/js/gantt-helper.js:420
 msgid "Lag"
 msgstr ""
 
-#: public/js/gantt-helper.js:421
+#: public/js/gantt-helper.js:423
 msgid "Save"
 msgstr "Uložit"
 
-#: public/js/gantt-helper.js:422
+#: public/js/gantt-helper.js:424
 msgid "Cancel"
 msgstr "Storno"
 
-#: public/js/gantt-helper.js:423
+#: public/js/gantt-helper.js:425
 msgid "Delete"
 msgstr "Smazat"
 
-#: public/js/gantt-helper.js:557
+#: public/js/gantt-helper.js:559
 msgid "Gantt mode: 'Readonly'"
 msgstr "Režim Gantt: 'Pouze pro čtení'"
 
-#: public/js/gantt-helper.js:616
+#: public/js/gantt-helper.js:637
 msgid "Links between projects cannot be created."
 msgstr "Odkazy mezi projekty nelze vytvářet."
 
-#: public/js/gantt-helper.js:619
+#: public/js/gantt-helper.js:640
 msgid "Links between projects and tasks cannot be created."
 msgstr "Odkazy mezi projekty a úkoly nelze vytvářet."
 
-#: public/js/gantt-helper.js:622
+#: public/js/gantt-helper.js:643
 msgid "Target task can't start before source task ends."
 msgstr "Cílová úloha nemůže být spuštěna před ukončením zdrojové úlohy."
 
-#: public/js/gantt-helper.js:625
+#: public/js/gantt-helper.js:646
 msgid "Target task can't start before source task starts."
 msgstr "Cílová úloha nemůže být spuštěna před spuštěním zdrojové úlohy."
 
-#: public/js/gantt-helper.js:628
+#: public/js/gantt-helper.js:649
 msgid "Target task can't end before source task ends."
 msgstr "Cílová úloha nemůže skončit dříve, než skončí zdrojová úloha."
 
-#: public/js/gantt-helper.js:631
+#: public/js/gantt-helper.js:652
 msgid "Target task can't end before the source task starts."
 msgstr "Cílová úloha nemůže skončit před spuštěním zdrojové úlohy."
 
-#: public/js/gantt-helper.js:664
+#: public/js/gantt-helper.js:685
 msgid "Could not create task: "
 msgstr "Nepodařilo se vytvořit úkol: "
 
-#: public/js/gantt-helper.js:703 public/js/gantt-helper.js:736
+#: public/js/gantt-helper.js:724 public/js/gantt-helper.js:757
 #, javascript-format
 msgid "Could not update Task[%s]: "
 msgstr "Nepodařilo se aktualizovat Úkol[%s]: "
 
-#: public/js/gantt-helper.js:828
+#: public/js/gantt-helper.js:849
 msgid "Could not create project: "
 msgstr "Nepodařilo se vytvořit projekt: "
 
-#: public/js/gantt-helper.js:861
+#: public/js/gantt-helper.js:882
 #, javascript-format
 msgid "Could not update Project[%s]: "
 msgstr "Nepodařilo se aktualizovat Project[%s]: "
