@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-05-15 03:57+0000\n"
+"POT-Creation-Date: 2026-05-29 04:10+0000\n"
 "PO-Revision-Date: 2022-05-06 13:53+0000\n"
 "Last-Translator: Edwin Elias Alvarez <sistemas@cyalimentos.com>, 2026\n"
 "Language-Team: Spanish (Mexico) (https://app.transifex.com/teclib/teams/28042/es_MX/)\n"
@@ -71,19 +71,6 @@ msgstr "Filtrar"
 msgid "by name"
 msgstr "por nombre"
 
-#: src/TaskDAO.php:45 src/TaskDAO.php:89 src/TaskDAO.php:115
-#: src/ProjectDAO.php:45 src/ProjectDAO.php:84 src/ProjectDAO.php:102
-msgid "Not enough rights"
-msgstr "Sin permisos suficientes"
-
-#: src/ProjectTab.php:41
-msgid "Gantt"
-msgstr "GANTT"
-
-#: src/ProjectTab.php:73 src/ProjectTab.php:75
-msgid "Global GANTT"
-msgstr "GANTT global"
-
 #: ajax/gantt.php:111
 msgid "Target item must be of project type"
 msgstr "El elemento destino debe ser del tipo proyecto"
@@ -95,6 +82,19 @@ msgstr "El elemento debe ser del tipo de proyecto"
 #: ajax/gantt.php:205
 msgid "Link already exist!"
 msgstr "¡El enlace ya existe!"
+
+#: src/ProjectTab.php:41
+msgid "Gantt"
+msgstr "GANTT"
+
+#: src/ProjectTab.php:73 src/ProjectTab.php:75
+msgid "Global GANTT"
+msgstr "GANTT global"
+
+#: src/TaskDAO.php:45 src/TaskDAO.php:89 src/TaskDAO.php:115
+#: src/ProjectDAO.php:45 src/ProjectDAO.php:84 src/ProjectDAO.php:102
+msgid "Not enough rights"
+msgstr "Sin permisos suficientes"
 
 #: public/js/gantt-helper.js:66
 msgid "Project"
