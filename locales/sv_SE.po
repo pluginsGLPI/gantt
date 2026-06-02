@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-05-15 03:57+0000\n"
+"POT-Creation-Date: 2026-05-29 04:10+0000\n"
 "PO-Revision-Date: 2022-05-06 13:53+0000\n"
 "Last-Translator: Peter Rundqvist, 2025\n"
 "Language-Team: Swedish (Sweden) (https://app.transifex.com/teclib/teams/28042/sv_SE/)\n"
@@ -70,19 +70,6 @@ msgstr "Filter"
 msgid "by name"
 msgstr "efter namn"
 
-#: src/TaskDAO.php:45 src/TaskDAO.php:89 src/TaskDAO.php:115
-#: src/ProjectDAO.php:45 src/ProjectDAO.php:84 src/ProjectDAO.php:102
-msgid "Not enough rights"
-msgstr "Otillräckliga behörigheter"
-
-#: src/ProjectTab.php:41
-msgid "Gantt"
-msgstr "Gantt"
-
-#: src/ProjectTab.php:73 src/ProjectTab.php:75
-msgid "Global GANTT"
-msgstr "Global GANTT"
-
 #: ajax/gantt.php:111
 msgid "Target item must be of project type"
 msgstr "Målobjektet måste vara ett projekt"
@@ -94,6 +81,19 @@ msgstr "Objektet måste vara ett projekt"
 #: ajax/gantt.php:205
 msgid "Link already exist!"
 msgstr "Länk finns redan!"
+
+#: src/ProjectTab.php:41
+msgid "Gantt"
+msgstr "Gantt"
+
+#: src/ProjectTab.php:73 src/ProjectTab.php:75
+msgid "Global GANTT"
+msgstr "Global GANTT"
+
+#: src/TaskDAO.php:45 src/TaskDAO.php:89 src/TaskDAO.php:115
+#: src/ProjectDAO.php:45 src/ProjectDAO.php:84 src/ProjectDAO.php:102
+msgid "Not enough rights"
+msgstr "Otillräckliga behörigheter"
 
 #: public/js/gantt-helper.js:66
 msgid "Project"

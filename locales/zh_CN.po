@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-05-15 03:57+0000\n"
+"POT-Creation-Date: 2026-05-29 04:10+0000\n"
 "PO-Revision-Date: 2022-05-06 13:53+0000\n"
 "Last-Translator: DWXXX, 2026\n"
 "Language-Team: Chinese (China) (https://app.transifex.com/teclib/teams/28042/zh_CN/)\n"
@@ -70,19 +70,6 @@ msgstr "过滤器"
 msgid "by name"
 msgstr "依名称"
 
-#: src/TaskDAO.php:45 src/TaskDAO.php:89 src/TaskDAO.php:115
-#: src/ProjectDAO.php:45 src/ProjectDAO.php:84 src/ProjectDAO.php:102
-msgid "Not enough rights"
-msgstr "权限不足"
-
-#: src/ProjectTab.php:41
-msgid "Gantt"
-msgstr "甘特图"
-
-#: src/ProjectTab.php:73 src/ProjectTab.php:75
-msgid "Global GANTT"
-msgstr "全局甘特图"
-
 #: ajax/gantt.php:111
 msgid "Target item must be of project type"
 msgstr "目标项必须是项目类型"
@@ -94,6 +81,19 @@ msgstr "此项必须是项目类型"
 #: ajax/gantt.php:205
 msgid "Link already exist!"
 msgstr "链接已存在!"
+
+#: src/ProjectTab.php:41
+msgid "Gantt"
+msgstr "甘特图"
+
+#: src/ProjectTab.php:73 src/ProjectTab.php:75
+msgid "Global GANTT"
+msgstr "全局甘特图"
+
+#: src/TaskDAO.php:45 src/TaskDAO.php:89 src/TaskDAO.php:115
+#: src/ProjectDAO.php:45 src/ProjectDAO.php:84 src/ProjectDAO.php:102
+msgid "Not enough rights"
+msgstr "权限不足"
 
 #: public/js/gantt-helper.js:66
 msgid "Project"

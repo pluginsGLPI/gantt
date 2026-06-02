@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-05-15 03:57+0000\n"
+"POT-Creation-Date: 2026-05-29 04:10+0000\n"
 "PO-Revision-Date: 2022-05-06 13:53+0000\n"
 "Last-Translator: iDazai, 2023\n"
 "Language-Team: German (Germany) (https://app.transifex.com/teclib/teams/28042/de_DE/)\n"
@@ -71,19 +71,6 @@ msgstr "Filter"
 msgid "by name"
 msgstr "nach Name"
 
-#: src/TaskDAO.php:45 src/TaskDAO.php:89 src/TaskDAO.php:115
-#: src/ProjectDAO.php:45 src/ProjectDAO.php:84 src/ProjectDAO.php:102
-msgid "Not enough rights"
-msgstr "Nicht ausreichend Rechte"
-
-#: src/ProjectTab.php:41
-msgid "Gantt"
-msgstr "Gantt"
-
-#: src/ProjectTab.php:73 src/ProjectTab.php:75
-msgid "Global GANTT"
-msgstr "Globales GANTT"
-
 #: ajax/gantt.php:111
 msgid "Target item must be of project type"
 msgstr "Das Zielelement muss vom Typ Projekt sein"
@@ -95,6 +82,19 @@ msgstr "Das Objekt muss ein Projekt sein"
 #: ajax/gantt.php:205
 msgid "Link already exist!"
 msgstr "Die Verknüpfung existiert bereits"
+
+#: src/ProjectTab.php:41
+msgid "Gantt"
+msgstr "Gantt"
+
+#: src/ProjectTab.php:73 src/ProjectTab.php:75
+msgid "Global GANTT"
+msgstr "Globales GANTT"
+
+#: src/TaskDAO.php:45 src/TaskDAO.php:89 src/TaskDAO.php:115
+#: src/ProjectDAO.php:45 src/ProjectDAO.php:84 src/ProjectDAO.php:102
+msgid "Not enough rights"
+msgstr "Nicht ausreichend Rechte"
 
 #: public/js/gantt-helper.js:66
 msgid "Project"
