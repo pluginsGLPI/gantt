@@ -8,7 +8,8 @@
   },
   "scripts": {
     "build": "webpack --config .webpack.config.js",
-    "postinstall": "npm run-script build"
+    "postinstall": "npm run-script build",
+    "test": "jest --colors"
   },
   "devDependencies": {
     "clean-webpack-plugin": "^4.0.0",
