@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [Unreleased]
+
+### Added
+
+- Added a Jest test detecting dhtmlx-gantt upgrades that break the Gantt view.
+
 ## [1.3.3] - 2026-04-22
 
 ### Fixed

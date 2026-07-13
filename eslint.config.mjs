@@ -1,3 +1,5 @@
+import globals from 'globals';
+
 import glpiEslintConfig from '../../eslint.config.mjs';
 
 const filteredConfig = glpiEslintConfig.filter(config => !config.ignores);
@@ -16,6 +18,13 @@ export default [
         files: ["public/js/libs.js"],
         languageOptions: {
             sourceType: "module"
+        }
+    },
+    {
+        // Node config files
+        files: ["jest.config.js"],
+        languageOptions: {
+            globals: {...globals.node}
         }
     }
 ];
