@@ -55,6 +55,16 @@ const GlpiGantt = (function() {
 
     const formatFunc = gantt.date.date_to_str(parseDateFormat);
 
+    const escapeHtml = (str) => {
+        return String(str ?? '').replace(/[&<>"']/g, (char) => ({
+            '&': '&amp;',
+            '<': '&lt;',
+            '>': '&gt;',
+            '"': '&quot;',
+            "'": '&#39;',
+        }[char]));
+    };
+
     return {
         /**
          * Initialize the Gantt chart
@@ -172,16 +182,16 @@ const GlpiGantt = (function() {
             });
 
             gantt.templates.tooltip_text = (start, end, task) => {
-                let text = `<b><span class="capitalize">${ 
-                    task.type  }:</span></b> ${  task.text  }<br/><b>${  __("Start date:", 'gantt')  }</b> ${ 
-                    gantt.templates.tooltip_date_format(start) 
-                }<br/><b>${  __("End date:", 'gantt')  }</b> ${  gantt.templates.tooltip_date_format(end) 
+                let text = `<b><span class="capitalize">${
+                    escapeHtml(task.type)  }:</span></b> ${  escapeHtml(task.text)  }<br/><b>${  __("Start date:", 'gantt')  }</b> ${
+                    gantt.templates.tooltip_date_format(start)
+                }<br/><b>${  __("End date:", 'gantt')  }</b> ${  gantt.templates.tooltip_date_format(end)
                 }<br/><b>${  __("Progress:", 'gantt')  }</b> ${  parseInt(task.progress * 100)  }%`;
                 if (task.content && task.content.length > 0) {
                     text += `<br/><b>${  __("Description:", 'gantt')  }</b><div class="gantt_tooltip_description">${  task.content  }</div>`;
                 }
                 if (task.comment && task.comment.length > 0) {
-                    text += `<br/><b>${  __("Comment:", 'gantt')  }</b><div class="gantt_tooltip_description">${  task.comment  }</div>`;
+                    text += `<br/><b>${  __("Comment:", 'gantt')  }</b><div class="gantt_tooltip_description">${  escapeHtml(task.comment)  }</div>`;
                 }
                 return text;
             };

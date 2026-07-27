@@ -52,6 +52,10 @@ class TaskDAO
         if (!is_numeric($task->parent) && $t->getFromDBByCrit(['uuid' => $task->parent])) {
             $parentTask = $t;
             $projectId  = $parentTask->fields['projects_id'];
+
+            if (!$parentTask->canViewItem()) {
+                throw new Exception(__s('Not enough rights', 'gantt'));
+            }
         }
 
         $input = [
@@ -70,6 +74,11 @@ class TaskDAO
         } else {
             $p = new Project();
             $p->getFromDB($projectId);
+
+            if (!$p->canViewItem()) {
+                throw new Exception(__s('Not enough rights', 'gantt'));
+            }
+
             $input['entities_id']  = $p->fields['entities_id'];
             $input['is_recursive'] = $p->fields['is_recursive'];
         }

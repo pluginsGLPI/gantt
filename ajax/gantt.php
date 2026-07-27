@@ -201,6 +201,15 @@ if (isset($_REQUEST['getData'])) {
     try {
         $taskLink = new ProjectTaskLink();
 
+        if (!$taskLink::canCreate()) {
+            throw new Exception(__s('Not enough rights', 'gantt'));
+        }
+
+        $taskLink->fields = $_POST['taskLink'];
+        if (!$taskLink->canCreateItem()) {
+            throw new Exception(__s('Not enough rights', 'gantt'));
+        }
+
         if ($taskLink->checkIfExist($_POST['taskLink'])) {
             throw new Exception(__s('Link already exist!', 'gantt'));
         }
@@ -221,6 +230,12 @@ if (isset($_REQUEST['getData'])) {
 } elseif (isset($_POST['updateTaskLink'])) {
     try {
         $taskLink = new ProjectTaskLink();
+        $taskLink->getFromDB($_POST['taskLink']['id']);
+
+        if (!$taskLink::canUpdate() || !$taskLink->canUpdateItem()) {
+            throw new Exception(__s('Not enough rights', 'gantt'));
+        }
+
         $taskLink->update($_POST['taskLink']);
         $result = [
             'ok' => true,
@@ -236,6 +251,12 @@ if (isset($_REQUEST['getData'])) {
 } elseif (isset($_POST['deleteTaskLink'])) {
     try {
         $taskLink = new ProjectTaskLink();
+        $taskLink->getFromDB($_POST['id']);
+
+        if (!$taskLink::canDelete() || !$taskLink->canDeleteItem()) {
+            throw new Exception(__s('Not enough rights', 'gantt'));
+        }
+
         $taskLink->delete($_POST);
         $result = [
             'ok' => true,
