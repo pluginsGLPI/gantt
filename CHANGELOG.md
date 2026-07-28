@@ -11,6 +11,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 - Added a Jest test detecting dhtmlx-gantt upgrades that break the Gantt view.
 
+### Fixed
+
+- Fixed missing rights checks on task/project creation and on task links, and unescaped text in the Gantt tooltip.
+
 ## [1.3.3] - 2026-04-22
 
 ### Fixed

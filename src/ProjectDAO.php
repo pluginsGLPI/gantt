@@ -51,6 +51,10 @@ class ProjectDAO
 
         // Fallback values for a sub-project
         if ($project->parent && $parent = Project::getById($project->parent)) {
+            if (!$parent->canViewItem()) {
+                throw new Exception(__s('Not enough rights', 'gantt'));
+            }
+
             $entities_id  = $parent->fields['entities_id'];
             $is_recursive = $parent->fields['is_recursive'];
         }
