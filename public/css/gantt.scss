@@ -185,9 +185,9 @@
     }
 }
 
-.gantt_today, .gantt_marker.today {
-    color: var(--dhx-gantt-base-colors-white);
-    font-size: var(--dhx-gantt-caption-font-size);
-    line-height: var(--dhx-gantt-caption-line-height);
-    font-weight: var(--dhx-gantt-caption-line-weight);
+// highlights the current day column in the timeline (replaces the dhtmlx-gantt marker plugin, dropped in v10 community edition)
+.gantt_task_cell.today {
+    background-color: rgb(255, 0, 0, 8%);
+    border-left: 1px solid red;
+    border-right: 1px solid red;
 }

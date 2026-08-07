@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+### Changed
+
+- Upgraded dhtmlx-gantt to v10.
+
+### Added
+
+- Added Playwright e2e tests covering the Gantt view (render, today highlight, drag and drop with rollback).
+
 ### Fixed
 
 - CI: fix Psalm cache directory, drop the stray `glpi-project/tools` composer dependency, declare a unique composer autoloader suffix

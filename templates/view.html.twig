@@ -27,7 +27,7 @@
  #}
 
 <input type="hidden" id="hf_gantt_item_state" value="" />
-<div id="gantt-container" class="gantt-block" style="width:100%; height:63vh;"></div>
+<div id="gantt-container" class="gantt-block" style="width:100%; height:63vh;" data-testid="gantt-container"></div>
 <div class="gantt-block__features">
    <ul class="gantt-block__controls mt-3">
       <li class="gantt-menu-item gantt-menu-item-right">
@@ -57,7 +57,7 @@
             </span>
 
             <input type="radio" id="scale1" class="btn-check gantt_radio" name="scale" value="day" checked />
-            <label class="btn btn-outline-secondary" for="scale1">{{ __('Days', 'gantt') }}</label>
+            <label class="btn btn-outline-secondary" for="scale1" data-testid="gantt-zoom-days">{{ __('Days', 'gantt') }}</label>
 
             <input type="radio" id="scale2" class="btn-check gantt_radio" name="scale" value="week" />
             <label class="btn btn-outline-secondary" for="scale2">{{ __('Weeks', 'gantt') }}</label>

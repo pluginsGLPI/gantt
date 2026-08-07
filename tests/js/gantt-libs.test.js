@@ -39,18 +39,14 @@ describe('dhtmlx-gantt bundle (public/lib/libs.js)', () => {
         expect(typeof window.gantt).toBe('object');
     });
 
-    test('enables the tooltip/fullscreen/undo/marker plugins used by gantt-helper.js', () => {
+    test('enables the tooltip/fullscreen plugins used by gantt-helper.js', () => {
         expect(() => {
             window.gantt.plugins({
                 tooltip: true,
                 fullscreen: true,
-                undo: true,
-                marker: true,
             });
         }).not.toThrow();
 
-        expect(typeof window.gantt.addMarker).toBe('function');
-        expect(typeof window.gantt.undo).toBe('function');
         expect(typeof window.gantt.ext.fullscreen).toBe('object');
         expect(typeof window.gantt.ext.zoom).toBe('object');
     });

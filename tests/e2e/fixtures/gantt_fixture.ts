@@ -26,8 +26,5 @@
  * -------------------------------------------------------------------------
  */
 
-// v10's UMD bundle (dhtmlxgantt.js) isn't statically analyzable by webpack,
-// so its default export resolves to undefined; the real ESM build works.
-import gantt from 'dhtmlx-gantt/codebase/dhtmlxgantt.es.js';
-window.gantt = gantt;
-import 'dhtmlx-gantt/codebase/dhtmlxgantt.css';
+// Re-export GLPI's own worker/profile/api fixtures, no plugin-specific fixture needed yet.
+export * from '../../../../../tests/e2e/fixtures/glpi_fixture';
