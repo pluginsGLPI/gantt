@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-05-29 04:10+0000\n"
+"POT-Creation-Date: 2026-08-07 02:53+0000\n"
 "PO-Revision-Date: 2022-05-06 13:53+0000\n"
 "Last-Translator: EpicIT33, 2025\n"
 "Language-Team: French (France) (https://app.transifex.com/teclib/teams/28042/fr_FR/)\n"
@@ -71,17 +71,12 @@ msgstr "Filtrer"
 msgid "by name"
 msgstr "par nom"
 
-#: ajax/gantt.php:111
-msgid "Target item must be of project type"
-msgstr "L'item cible doit être de type projet."
-
-#: ajax/gantt.php:140
-msgid "Item must be of project type"
-msgstr "L'item doit être de type projet."
-
-#: ajax/gantt.php:205
-msgid "Link already exist!"
-msgstr "Le lien existe déjà !"
+#: src/ProjectDAO.php:45 src/ProjectDAO.php:55 src/ProjectDAO.php:88
+#: src/ProjectDAO.php:106 src/TaskDAO.php:45 src/TaskDAO.php:57
+#: src/TaskDAO.php:79 src/TaskDAO.php:98 src/TaskDAO.php:124
+#: ajax/gantt.php:205 ajax/gantt.php:210 ajax/gantt.php:236 ajax/gantt.php:257
+msgid "Not enough rights"
+msgstr "Autorisations insuffisantes"
 
 #: src/ProjectTab.php:41
 msgid "Gantt"
@@ -91,150 +86,157 @@ msgstr "Gantt"
 msgid "Global GANTT"
 msgstr "GANTT Global"
 
-#: src/TaskDAO.php:45 src/TaskDAO.php:89 src/TaskDAO.php:115
-#: src/ProjectDAO.php:45 src/ProjectDAO.php:84 src/ProjectDAO.php:102
-msgid "Not enough rights"
-msgstr "Autorisations insuffisantes"
+#: ajax/gantt.php:111
+msgid "Target item must be of project type"
+msgstr "L'item cible doit être de type projet."
 
-#: public/js/gantt-helper.js:66
+#: ajax/gantt.php:140
+msgid "Item must be of project type"
+msgstr "L'item doit être de type projet."
+
+#: ajax/gantt.php:214
+msgid "Link already exist!"
+msgstr "Le lien existe déjà !"
+
+#: public/js/gantt-helper.js:76
 msgid "Project"
 msgid_plural "Projects"
 msgstr[0] "Projet"
 msgstr[1] "Projets"
 msgstr[2] "Projets"
 
-#: public/js/gantt-helper.js:67 public/js/gantt-helper.js:72
+#: public/js/gantt-helper.js:77 public/js/gantt-helper.js:82
 msgid "Task"
 msgid_plural "Tasks"
 msgstr[0] "Tâche"
 msgstr[1] "Tâches"
 msgstr[2] "Tâches"
 
-#: public/js/gantt-helper.js:68 public/js/gantt-helper.js:73
+#: public/js/gantt-helper.js:78 public/js/gantt-helper.js:83
 msgid "Milestone"
 msgstr "Étape"
 
-#: public/js/gantt-helper.js:77 public/js/gantt-helper.js:82
-#: public/js/gantt-helper.js:353
+#: public/js/gantt-helper.js:87 public/js/gantt-helper.js:92
+#: public/js/gantt-helper.js:363
 msgid "New project"
 msgstr "Nouveau projet"
 
-#: public/js/gantt-helper.js:171
+#: public/js/gantt-helper.js:181
 msgid "Today"
 msgstr "Aujourd'hui"
 
-#: public/js/gantt-helper.js:176
+#: public/js/gantt-helper.js:186
 msgid "Start date:"
 msgstr "Date de début"
 
-#: public/js/gantt-helper.js:178
+#: public/js/gantt-helper.js:188
 msgid "End date:"
 msgstr "Date de fin"
 
-#: public/js/gantt-helper.js:179
+#: public/js/gantt-helper.js:189
 msgid "Progress:"
 msgstr "Progression"
 
-#: public/js/gantt-helper.js:181
+#: public/js/gantt-helper.js:191
 msgid "Description:"
 msgstr "Description"
 
-#: public/js/gantt-helper.js:184
+#: public/js/gantt-helper.js:194
 msgid "Comment:"
 msgstr "Commentaires"
 
-#: public/js/gantt-helper.js:191
+#: public/js/gantt-helper.js:201
 msgid "Project / Task"
 msgstr "Projet / Tâche"
 
-#: public/js/gantt-helper.js:192
+#: public/js/gantt-helper.js:202
 msgid "Start date"
 msgstr "Date de début"
 
-#: public/js/gantt-helper.js:193
+#: public/js/gantt-helper.js:203
 msgid "Duration"
 msgstr "Durée"
 
-#: public/js/gantt-helper.js:242
+#: public/js/gantt-helper.js:252
 #, javascript-format
 msgid "Week #%s"
 msgstr "Semaine # %s"
 
-#: public/js/gantt-helper.js:402
+#: public/js/gantt-helper.js:412
 msgid "Finish to Start: "
 msgstr "Fin-Début :"
 
-#: public/js/gantt-helper.js:405
+#: public/js/gantt-helper.js:415
 msgid "Finish to Finish: "
 msgstr "Fin-Fin :"
 
-#: public/js/gantt-helper.js:408
+#: public/js/gantt-helper.js:418
 msgid "Start to Start: "
 msgstr "Début-Début :"
 
-#: public/js/gantt-helper.js:411
+#: public/js/gantt-helper.js:421
 msgid "Start to Finish: "
 msgstr "Début-Fin :"
 
-#: public/js/gantt-helper.js:420
+#: public/js/gantt-helper.js:430
 msgid "Lag"
 msgstr "Latence"
 
-#: public/js/gantt-helper.js:423
+#: public/js/gantt-helper.js:433
 msgid "Save"
 msgstr "Enregistrer"
 
-#: public/js/gantt-helper.js:424
+#: public/js/gantt-helper.js:434
 msgid "Cancel"
 msgstr "Annuler"
 
-#: public/js/gantt-helper.js:425
+#: public/js/gantt-helper.js:435
 msgid "Delete"
 msgstr "Supprimer"
 
-#: public/js/gantt-helper.js:559
+#: public/js/gantt-helper.js:569
 msgid "Gantt mode: 'Readonly'"
 msgstr "Mode Gantt : 'Lecture seule'"
 
-#: public/js/gantt-helper.js:637
+#: public/js/gantt-helper.js:647
 msgid "Links between projects cannot be created."
 msgstr "Les liens entre les projets ne peuvent pas être créés."
 
-#: public/js/gantt-helper.js:640
+#: public/js/gantt-helper.js:650
 msgid "Links between projects and tasks cannot be created."
 msgstr "Les liens entre les projets et les tâches ne peuvent pas être créés."
 
-#: public/js/gantt-helper.js:643
+#: public/js/gantt-helper.js:653
 msgid "Target task can't start before source task ends."
 msgstr "La tâche cible ne peut pas démarrer avant la fin de la tâche source."
 
-#: public/js/gantt-helper.js:646
+#: public/js/gantt-helper.js:656
 msgid "Target task can't start before source task starts."
 msgstr ""
 "La tâche cible ne peut pas démarrer avant le début de la tâche source."
 
-#: public/js/gantt-helper.js:649
+#: public/js/gantt-helper.js:659
 msgid "Target task can't end before source task ends."
 msgstr "La tâche cible ne peut pas se finir avant la fin de la tâche source."
 
-#: public/js/gantt-helper.js:652
+#: public/js/gantt-helper.js:662
 msgid "Target task can't end before the source task starts."
 msgstr "La tâche cible ne peut pas se finir avant le début la tâche source."
 
-#: public/js/gantt-helper.js:685
+#: public/js/gantt-helper.js:695
 msgid "Could not create task: "
 msgstr "Ne peut pas créer la tâche:"
 
-#: public/js/gantt-helper.js:724 public/js/gantt-helper.js:757
+#: public/js/gantt-helper.js:734 public/js/gantt-helper.js:767
 #, javascript-format
 msgid "Could not update Task[%s]: "
 msgstr "Ne peut pas mettre à jour la tâche[%s]:"
 
-#: public/js/gantt-helper.js:849
+#: public/js/gantt-helper.js:859
 msgid "Could not create project: "
 msgstr "Ne peut pas créer le projet:"
 
-#: public/js/gantt-helper.js:882
+#: public/js/gantt-helper.js:892
 #, javascript-format
 msgid "Could not update Project[%s]: "
 msgstr "Ne peut pas mettre à jour le projet[%s]:"
