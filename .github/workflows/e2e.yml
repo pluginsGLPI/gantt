@@ -74,6 +74,19 @@ jobs:
         run: |
           composer install --ansi --no-interaction --no-progress --prefer-dist
 
+      - name: "Restore npm cache"
+        uses: "actions/cache@v6"
+        with:
+          path: "/var/www/glpi/plugins/${{ env.PLUGIN_KEY }}/node_modules"
+          key: "${{ env.PLUGIN_KEY }}-npm-${{ hashFiles(format('{0}/package-lock.json', env.PLUGIN_KEY)) }}"
+
+      - name: "Build plugin frontend assets"
+        # `npm install` triggers the `postinstall` script, which runs the webpack
+        # build; its output (public/lib, public/build) is gitignored.
+        working-directory: "/var/www/glpi/plugins/${{ env.PLUGIN_KEY }}"
+        run: |
+          npm install
+
       - name: "Install e2e database"
         # Port 8090 is the vhost bound to GLPI_ENVIRONMENT_TYPE=e2e_testing in
         # this image; port 80 serves a different (unconfigured) environment.
