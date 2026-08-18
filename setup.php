@@ -35,9 +35,9 @@ use function Safe\define;
 define('PLUGIN_GANTT_VERSION', '1.3.4');
 
 // Minimal GLPI version, inclusive
-define('PLUGIN_GANTT_MIN_GLPI_VERSION', '11.0.0');
+define('PLUGIN_GANTT_MIN_GLPI_VERSION', '12.0.0');
 // Maximum GLPI version, exclusive
-define('PLUGIN_GANTT_MAX_GLPI_VERSION', '11.0.99');
+define('PLUGIN_GANTT_MAX_GLPI_VERSION', '12.0.99');
 
 
 /**
