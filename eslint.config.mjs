@@ -22,8 +22,9 @@ export default [
     },
     {
         // Node config files
-        files: ["jest.config.js"],
+        files: ["vitest.config.js"],
         languageOptions: {
+            sourceType: "module",
             globals: {...globals.node}
         }
     }

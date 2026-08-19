@@ -26,8 +26,17 @@
  * -------------------------------------------------------------------------
  */
 
-module.exports = {
-    testEnvironment: 'jsdom',
-    testMatch: ['<rootDir>/tests/js/**/*.test.js'],
-    transform: {},
-};
+import { defineConfig } from 'vitest/config';
+
+export default defineConfig({
+    test: {
+        dir: './tests/js',
+        globals: true,
+        environment: 'jsdom',
+        environmentOptions: {
+            jsdom: {
+                url: 'http://localhost',
+            },
+        },
+    },
+});
