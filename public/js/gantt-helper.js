@@ -174,13 +174,9 @@ const GlpiGantt = (function() {
 
             // highlight the current day column (no marker plugin in dhtmlx-gantt 10 community edition)
             gantt.templates.timeline_cell_class = (task, date) => {
-                const today = new Date();
-                if (date.getFullYear() === today.getFullYear()
-                    && date.getMonth() === today.getMonth()
-                    && date.getDate() === today.getDate()) {
-                    return "today";
-                }
-                return "";
+                const now = new Date();
+                const cell_end = gantt.date.add(date, 1, gantt.getScale().unit);
+                return date <= now && now < cell_end ? "today" : "";
             };
 
             gantt.templates.tooltip_text = (start, end, task) => {

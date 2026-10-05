@@ -101,4 +101,35 @@ export class GanttPage extends GlpiPage {
         await this.page.mouse.up();
         await drop_marker.waitFor({ state: 'hidden' });
     }
+
+    /** The rendered timeline bar for the given dhtmlx task id. */
+    public getTaskBar(task_id: number | string): Locator {
+        // eslint-disable-next-line playwright/no-raw-locators -- dhtmlx-gantt bar, no semantic hook available
+        return this.page.locator(`.gantt_task_line[data-task-id="${task_id}"]`);
+    }
+
+    /**
+     * Drags a task bar horizontally by the given number of days (moves it, does not resize it).
+     * Requires the "Days" zoom level so that one timeline column equals one day.
+     */
+    public async dragTaskBarByDays(task_id: number | string, days: number): Promise<void> {
+        const bar_box = await this.getTaskBar(task_id).boundingBox();
+        // eslint-disable-next-line playwright/no-raw-locators -- dhtmlx-gantt cell, no semantic hook available
+        const day_cell_box = await this.page.locator('.gantt_task_cell').first().boundingBox();
+        if (bar_box === null || day_cell_box === null) {
+            throw new Error('Could not locate the task bar or a day column to drag');
+        }
+
+        const offset_x = days * day_cell_box.width;
+        // Grabs near the bar's start (not its center, which can extend past the visible
+        // viewport for long tasks) and past the left resize handle, which has its own drag mode.
+        const start_x = bar_box.x + 20;
+        const start_y = bar_box.y + bar_box.height / 2;
+
+        await this.page.mouse.move(start_x, start_y);
+        await this.page.mouse.down();
+        await this.page.mouse.move(start_x + offset_x / 2, start_y, { steps: 5 });
+        await this.page.mouse.move(start_x + offset_x, start_y, { steps: 5 });
+        await this.page.mouse.up();
+    }
 }

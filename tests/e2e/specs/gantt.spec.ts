@@ -33,6 +33,8 @@ import { getWorkerEntityId } from '../../../../../tests/e2e/utils/WorkerEntities
 
 // Marks a changeParent() request among gantt.php's other POST actions.
 const CHANGE_ITEM_PARENT_FLAG = 'changeItemParent=1';
+// Marks an onTaskDrag() request among gantt.php's other POST actions.
+const UPDATE_TASK_FLAG = 'updateTask=1';
 
 function toGlpiDate(date: Date): string {
     return date.toISOString().slice(0, 19).replace('T', ' ');
@@ -111,5 +113,52 @@ test.describe('Gantt view', () => {
         await gantt.dragRowOnto('E2E Task C', 'E2E Task A');
         const task_c_id = await gantt.getTaskId('E2E Task C');
         expect(String(await gantt.getParentId(task_c_id!))).toBe(String(project_id));
+    });
+
+    test('rolls back a task drag on a server-rejected date change', async ({ page, profile, api }) => {
+        await profile.set(Profiles.SuperAdmin);
+
+        const project_id = await api.createItem('Project', {
+            name: `E2E Gantt drag project ${test.info().workerIndex}-${Date.now()}`,
+            entities_id: getWorkerEntityId(),
+            plan_start_date: toGlpiDate(plan_start),
+            plan_end_date: toGlpiDate(plan_end),
+        });
+
+        await api.createItem('ProjectTask', {
+            name: 'E2E Task D',
+            projects_id: project_id,
+            entities_id: getWorkerEntityId(),
+            plan_start_date: toGlpiDate(today),
+            plan_end_date: toGlpiDate(plan_end),
+        });
+
+        const gantt = new GanttPage(page);
+        await gantt.goto(project_id);
+        await gantt.zoomToDays();
+
+        const task_id = await gantt.getTaskId('E2E Task D');
+        const original_dates = await page.evaluate((id) => {
+            const task = (window as any).gantt.getTask(id);
+            return { start_date: task.start_date.getTime(), end_date: task.end_date.getTime() };
+        }, task_id);
+
+        await page.route('**/ajax/gantt.php', async (route) => {
+            const post_data = route.request().postData() ?? '';
+            if (post_data.includes(UPDATE_TASK_FLAG)) {
+                await route.fulfill({ json: { ok: false, error: 'Simulated rejection' } });
+                return;
+            }
+            await route.continue();
+        });
+
+        await gantt.dragTaskBarByDays(task_id!, 2);
+        await expect(page.getByText('Simulated rejection')).toBeVisible();
+
+        const rolled_back_dates = await page.evaluate((id) => {
+            const task = (window as any).gantt.getTask(id);
+            return { start_date: task.start_date.getTime(), end_date: task.end_date.getTime() };
+        }, task_id);
+        expect(rolled_back_dates).toEqual(original_dates);
     });
 });
