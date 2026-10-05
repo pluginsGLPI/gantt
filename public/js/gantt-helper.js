@@ -38,6 +38,7 @@ const GlpiGantt = (function() {
     const url = `${plugin_path   }/ajax/gantt.php`;
     const parseDateFormat = "%Y-%m-%d %H:%i";
     let uiDateFormat = null;
+    let lastDragState = null;
     switch (CFG_GLPI.date_format) {
         case 1:
             uiDateFormat = '%d-%m-%Y';
@@ -166,20 +167,17 @@ const GlpiGantt = (function() {
             // enable tooltips and fullscreen mode
             gantt.plugins({
                 tooltip: true,
-                fullscreen: true,
-                undo: true,
-                marker: true
+                fullscreen: true
             });
 
-            gantt.config.show_marker = true;
             gantt.config.current_date = new Date();
 
-            const today = new Date();
-            gantt.addMarker({
-                start_date: today,
-                css: "today",
-                text: __("Today", 'gantt')
-            });
+            // highlight the current day column (no marker plugin in dhtmlx-gantt 10 community edition)
+            gantt.templates.timeline_cell_class = (task, date) => {
+                const now = new Date();
+                const cell_end = gantt.date.add(date, 1, gantt.getScale().unit);
+                return date <= now && now < cell_end ? "today" : "";
+            };
 
             gantt.templates.tooltip_text = (start, end, task) => {
                 let text = `<b><span class="capitalize">${
@@ -324,7 +322,20 @@ const GlpiGantt = (function() {
             });
 
             if (!readonly) {
-            // catch task drag event to update db
+                // snapshot task state before a drag, to allow rolling back on server error
+                // (dhtmlx-gantt 10 community edition dropped the undo plugin)
+                gantt.attachEvent("onBeforeTaskDrag", (id) => {
+                    const task = gantt.getTask(id);
+                    lastDragState = {
+                        id,
+                        start_date: task.start_date,
+                        end_date: task.end_date,
+                        progress: task.progress
+                    };
+                    return true;
+                });
+
+                // catch task drag event to update db
                 gantt.attachEvent("onAfterTaskDrag", (id) => {
                     const task = gantt.getTask(id);
                     const progress = (Math.round(task.progress * 100 / 5) * 5) / 100; // prevent server side exception for wrong stepping
@@ -765,7 +776,13 @@ const GlpiGantt = (function() {
                     displayAjaxMessageAfterRedirect();
                 } else {
                     gantt.alert(__('Could not update Task[%s]: ', 'gantt').replace('%s', task.text) + json.error);
-                    gantt.undo();
+                    if (lastDragState && lastDragState.id === task.id) {
+                        task.start_date = lastDragState.start_date;
+                        task.end_date = lastDragState.end_date;
+                        task.progress = lastDragState.progress;
+                        gantt.updateTask(task.id);
+                        gantt.render();
+                    }
                 }
             }
         });
