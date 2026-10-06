@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 
 - Added Playwright e2e tests covering the Gantt view (render, today highlight, drag and drop with rollback).
+- GLPI 12 compatibility
 
 ### Fixed
 

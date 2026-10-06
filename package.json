@@ -9,7 +9,8 @@
   "scripts": {
     "build": "webpack --config .webpack.config.js",
     "postinstall": "npm run-script build",
-    "test": "jest --colors"
+    "test": "vitest",
+    "test:run": "vitest run"
   },
   "devDependencies": {
     "clean-webpack-plugin": "^4.0.0",

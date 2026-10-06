@@ -37,13 +37,15 @@ use ProjectTaskLink;
  */
 class LinkDAO
 {
-    public function getLinksForItemIDs($ids)
+    /**
+     * @param array<int|string> $ids
+     */
+    public function getLinksForItemIDs(array $ids)
     {
         $links    = [];
         $tasklink = new ProjectTaskLink();
 
-        $ids      = implode(',', $ids);
-        $iterator = $tasklink->getFromDBForItemIDs($ids);
+        $iterator = $tasklink->getFromDBForItemIDs(array_map(intval(...), $ids));
         foreach ($iterator as $data) {
             $links[] = $this->populateFromDB($data);
         }

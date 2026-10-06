@@ -104,7 +104,6 @@ export class GanttPage extends GlpiPage {
 
     /** The rendered timeline bar for the given dhtmlx task id. */
     public getTaskBar(task_id: number | string): Locator {
-        // eslint-disable-next-line playwright/no-raw-locators -- dhtmlx-gantt bar, no semantic hook available
         return this.page.locator(`.gantt_task_line[data-task-id="${task_id}"]`);
     }
 
