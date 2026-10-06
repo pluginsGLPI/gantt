@@ -45,7 +45,7 @@ class LinkDAO
         $links    = [];
         $tasklink = new ProjectTaskLink();
 
-        $iterator = $tasklink->getFromDBForItemIDs(array_map('intval', $ids));
+        $iterator = $tasklink->getFromDBForItemIDs(array_map(intval(...), $ids));
         foreach ($iterator as $data) {
             $links[] = $this->populateFromDB($data);
         }
