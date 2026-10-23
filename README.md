@@ -16,3 +16,7 @@ The feature was removed from core from 10.0.1 version due to license incompatibi
 
 ![Project tab](screenshots/project_tab.png)
 ![Create task](screenshots/create_task.png)
+
+## Additional resources
+
+* [Translations on Transifex](https://explore.transifex.com/teclib/glpi-plugin-gantt/)
