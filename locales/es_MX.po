@@ -6,16 +6,16 @@
 # Translators:
 # Cédric Anne, 2022
 # Carlos Moreno Rodríguez <carlosm.rodriguez@prodigy.net.mx>, 2022
-# Edwin Elias Alvarez <sistemas@cyalimentos.com>, 2026
+# CYAsistemas <sistemas@cyalimentos.com>, 2026
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-08 05:30+0000\n"
+"POT-Creation-Date: 2026-11-06 05:57+0000\n"
 "PO-Revision-Date: 2022-05-06 13:53+0000\n"
-"Last-Translator: Edwin Elias Alvarez <sistemas@cyalimentos.com>, 2026\n"
+"Last-Translator: CYAsistemas <sistemas@cyalimentos.com>, 2026\n"
 "Language-Team: Spanish (Mexico) (https://app.transifex.com/teclib/teams/28042/es_MX/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
