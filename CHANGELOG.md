@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [Unreleased]
+
+### Fixed
+
+- Perf: remove the N+1 in the Gantt data, one chart render, assets only where used
+
 ## [1.3.5] - 2026-10-06
 
 ### Changed
