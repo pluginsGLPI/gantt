@@ -31,7 +31,7 @@
 <div class="gantt-block__features">
    <ul class="gantt-block__controls mt-3">
       <li class="gantt-menu-item gantt-menu-item-right">
-         <a href="#" class="btn btn-outline-secondary btn-icon" onclick="gantt.ext.fullscreen.toggle();"
+         <a href="#" class="btn btn-outline-secondary btn-icon" data-gantt-fullscreen
             title="{{ __('Fullscreen', 'gantt') }}" data-bs-toggle="tooltip">
             <i class="fas fa-expand"></i>
          </a>
@@ -90,7 +90,7 @@
 
             <input id="search" data-text-filter type="field" placeholder="{{ __('by name', 'gantt') }}"
                    class="form-control"
-                   oninput="gantt.$doFilter(this.value);" />
+                   data-gantt-filter />
          </div>
       </li>
    </ul>
