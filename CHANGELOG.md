@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [Unreleased]
+
+### Changed
+
+- Make the plugin compatible with the Content Security Policy: inline event handlers in the Gantt view are replaced by delegated listeners.
+
 ## [1.3.5] - 2026-10-06
 
 ### Changed
