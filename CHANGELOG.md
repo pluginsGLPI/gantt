@@ -11,6 +11,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 - Add Transifex translations link to README
 
+### Changed
+
+- Make the plugin compatible with the Content Security Policy: inline event handlers in the Gantt view are replaced by delegated listeners.
+
 ## [1.4.0] - 2026-10-06
 
 ### Changed
