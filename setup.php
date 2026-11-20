@@ -81,6 +81,7 @@ function plugin_version_gantt()
     return [
         'name'         => 'gantt',
         'version'      => PLUGIN_GANTT_VERSION,
+        'csp_compliant' => true,
         'author'       => '<a href="http://www.teclib.com">Teclib\'</a>',
         'license'      => 'GPL-2.0-or-later',
         'homepage'     => '',
