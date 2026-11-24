@@ -27,7 +27,7 @@
  #}
 
 <input type="hidden" id="hf_gantt_item_state" value="" />
-<div id="gantt-container" class="gantt-block" style="width:100%; height:63vh;" data-testid="gantt-container"></div>
+<div id="gantt-container" class="gantt-block" style="width:100%; height:63vh;" data-testid="gantt-container" data-gantt-view="{{ id }}"></div>
 <div class="gantt-block__features">
    <ul class="gantt-block__controls mt-3">
       <li class="gantt-menu-item gantt-menu-item-right">
@@ -96,23 +96,4 @@
    </ul>
 </div>
 
-<script type="text/javascript">
-$(function() {
-
-   $(document).ajaxSend(function(event, request, settings) {
-      if (settings.url.indexOf('gantt.php') != -1) {
-         $('#gantt-loader, #gantt-loader-overlay').fadeIn('fast');
-      }
-   });
-
-   $(document).ajaxStop(function (event, request, settings) {
-      $('#gantt-loader, #gantt-loader-overlay').fadeOut('fast');
-   });
-
-   GlpiGantt.init("{{ id }}");
-
-   $('.gantt-block').append('<div id="gantt-loader" class="spin-center"></div>');
-   $('#page').append('<div id="gantt-loader-overlay" style="display: none;"></div>');
-
-});
-</script>
+{{ call('Html::script', ['/plugins/gantt/js/gantt-view.js', {}, false])|raw }}
