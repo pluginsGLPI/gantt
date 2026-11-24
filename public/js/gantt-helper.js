@@ -1062,3 +1062,17 @@ const GlpiGantt = (function() {
 
     // <<<<< Functions
 })();
+
+// Delegated listeners for the view template, bound once at file load
+document.addEventListener('click', (e) => {
+    if (e.target.closest('[data-gantt-fullscreen]') !== null) {
+        gantt.ext.fullscreen.toggle();
+    }
+});
+
+document.addEventListener('input', (e) => {
+    const input = e.target.closest('[data-gantt-filter]');
+    if (input !== null) {
+        gantt.$doFilter(input.value);
+    }
+});

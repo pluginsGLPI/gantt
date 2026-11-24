@@ -10,6 +10,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Fixed
 
 - Perf: remove the N+1 in the Gantt data, one chart render, assets only where used
+- 
+### Changed
+
+- Make the plugin compatible with the Content Security Policy: inline event handlers in the Gantt view are replaced by delegated listeners.
 
 ## [1.3.5] - 2026-10-06
 
