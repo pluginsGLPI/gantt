@@ -26,21 +26,23 @@
  * -------------------------------------------------------------------------
  */
 
-$(function() {
+/* global GlpiGantt */
 
-   $(document).ajaxSend(function(event, request, settings) {
-      if (settings.url.indexOf('gantt.php') != -1) {
-         $('#gantt-loader, #gantt-loader-overlay').fadeIn('fast');
-      }
-   });
+$(() => {
 
-   $(document).ajaxStop(function (event, request, settings) {
-      $('#gantt-loader, #gantt-loader-overlay').fadeOut('fast');
-   });
+    $(document).ajaxSend((event, request, settings) => {
+        if (settings.url.indexOf('gantt.php') != -1) {
+            $('#gantt-loader, #gantt-loader-overlay').fadeIn('fast');
+        }
+    });
 
-   GlpiGantt.init($('[data-gantt-view]').attr('data-gantt-view'));
+    $(document).ajaxStop(() => {
+        $('#gantt-loader, #gantt-loader-overlay').fadeOut('fast');
+    });
 
-   $('.gantt-block').append('<div id="gantt-loader" class="spin-center"></div>');
-   $('#page').append('<div id="gantt-loader-overlay" style="display: none;"></div>');
+    GlpiGantt.init($('[data-gantt-view]').attr('data-gantt-view'));
+
+    $('.gantt-block').append('<div id="gantt-loader" class="spin-center"></div>');
+    $('#page').append('<div id="gantt-loader-overlay" style="display: none;"></div>');
 
 });
