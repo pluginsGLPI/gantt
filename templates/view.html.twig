@@ -96,4 +96,4 @@
    </ul>
 </div>
 
-{{ call('Html::script', ['/plugins/gantt/js/gantt-view.js', {}, false])|raw }}
+{{ call('Html::script', ['/plugins/gantt/js/gantt-view.js', {'version': constant('PLUGIN_GANTT_VERSION')}, false])|raw }}
