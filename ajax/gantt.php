@@ -33,7 +33,6 @@ use GlpiPlugin\Gantt\ProjectDAO;
 use GlpiPlugin\Gantt\TaskDAO;
 
 use function Safe\json_encode;
-use function Safe\session_write_close;
 
 /** @var array $CFG_GLPI */
 global $CFG_GLPI;
@@ -51,7 +50,7 @@ if (isset($_REQUEST['id'])) {
 
 if (isset($_REQUEST['getData'])) {
     // Read-only request: release the session lock so that parallel requests are not serialized
-    session_write_close();
+    Session::writeClose();
 
     $itemArray = [];
     $factory   = new DataFactory();

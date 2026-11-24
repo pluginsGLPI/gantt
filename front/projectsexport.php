@@ -34,7 +34,6 @@
 use GlpiPlugin\Gantt\ProjectsExport;
 
 use function Safe\preg_replace;
-use function Safe\session_write_close;
 
 $project_id = $_GET['project_id'] ?? -1;
 
@@ -42,7 +41,7 @@ $project_id = $_GET['project_id'] ?? -1;
 Session::checkRightsOr(Project::$rightname, [Project::READALL, Project::READMY]);
 
 // Read-only request: release the session lock so that parallel requests are not serialized
-session_write_close();
+Session::writeClose();
 
 // Get the project name
 $project = new Project();
