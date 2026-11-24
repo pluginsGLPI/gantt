@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Changed
 
 - Make the plugin compatible with the Content Security Policy: inline event handlers in the Gantt view are replaced by delegated listeners.
+- Move the Gantt view inline scripts to JavaScript files for the Content Security Policy.
 
 ## [1.3.5] - 2026-10-06
 
