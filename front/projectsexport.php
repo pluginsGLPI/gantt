@@ -40,6 +40,9 @@ $project_id = $_GET['project_id'] ?? -1;
 // Check right
 Session::checkRightsOr(Project::$rightname, [Project::READALL, Project::READMY]);
 
+// Read-only request: release the session lock so that parallel requests are not serialized
+Session::writeClose();
+
 // Get the project name
 $project = new Project();
 $project->getFromDB($project_id);

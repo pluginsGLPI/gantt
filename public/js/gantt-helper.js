@@ -600,8 +600,9 @@ const GlpiGantt = (function() {
     /**
      * Update parent item progress
      * @param id
+     * @param {boolean} render Redraw the chart once the parents are updated
      */
-    function parentProgress(id) {
+    function parentProgress(id, render = true) {
         gantt.eachParent((task) => {
             if(!task.auto_percent_done){
                 return;
@@ -616,7 +617,10 @@ const GlpiGantt = (function() {
             }
             task.progress = childProgress / children.length / 100;
         }, id);
-        gantt.render();
+
+        if (render) {
+            gantt.render();
+        }
     }
 
     /**
@@ -639,9 +643,10 @@ const GlpiGantt = (function() {
     function calculateProgress() {
         gantt.eachTask((item) => {
             if (item.progress > 0) {
-                parentProgress(item.id);
+                parentProgress(item.id, false);
             }
         });
+        gantt.render();
     }
 
     /**
