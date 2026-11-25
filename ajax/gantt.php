@@ -49,6 +49,9 @@ if (isset($_REQUEST['id'])) {
 }
 
 if (isset($_REQUEST['getData'])) {
+    // Read-only request: release the session lock so that parallel requests are not serialized
+    Session::writeClose();
+
     $itemArray = [];
     $factory   = new DataFactory();
     $factory->getItemsForProject($itemArray, $id);

@@ -15,6 +15,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 - Make the plugin compatible with the Content Security Policy: inline event handlers in the Gantt view are replaced by delegated listeners.
 
+### Fixed
+
+- Perf: remove the N+1 in the Gantt data, one chart render, assets only where used
+
 ## [1.4.0] - 2026-10-06
 
 ### Changed

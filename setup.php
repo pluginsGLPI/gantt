@@ -53,18 +53,21 @@ function plugin_init_gantt()
 
     $PLUGIN_HOOKS['csrf_compliant']['gantt'] = true;
 
-    if (!Plugin::isPluginActive('gantt')) {
-        return;
-    }
-
     Plugin::registerClass(ProjectTab::class, [
         'addtabon' => 'Project',
     ]);
 
-    $PLUGIN_HOOKS[Hooks::ADD_JAVASCRIPT]['gantt'][] = 'lib/libs.js';
-    $PLUGIN_HOOKS[Hooks::ADD_JAVASCRIPT]['gantt'][] = 'js/gantt-helper.js';
+    // The Gantt is only displayed in the project form (tab) and in the global Gantt page
+    $request_uri = $_SERVER['REQUEST_URI'] ?? '';
+    if (
+        str_contains($request_uri, '/front/project.form.php')
+        || str_contains($request_uri, '/gantt/front/global.php')
+    ) {
+        $PLUGIN_HOOKS[Hooks::ADD_JAVASCRIPT]['gantt'][] = 'lib/libs.js';
+        $PLUGIN_HOOKS[Hooks::ADD_JAVASCRIPT]['gantt'][] = 'js/gantt-helper.js';
 
-    $PLUGIN_HOOKS[Hooks::ADD_CSS]['gantt'][] = 'css/gantt.scss';
+        $PLUGIN_HOOKS[Hooks::ADD_CSS]['gantt'][] = 'css/gantt.scss';
+    }
 
     $PLUGIN_HOOKS[Hooks::REDEFINE_MENUS]['gantt'] = ProjectTab::addGlobalGanttToMenu(...);
 }
