@@ -231,7 +231,7 @@ class DataFactory
      */
     private function canViewRecord(string $class, array $record): bool
     {
-        $this->can_read_all ??= (bool) Session::haveRight(Project::$rightname, Project::READALL);
+        $this->can_read_all ??= Session::haveRight(Project::$rightname, Project::READALL);
 
         if ($this->can_read_all) {
             return Session::haveAccessToEntity((int) $record['entities_id'], (bool) $record['is_recursive']);
