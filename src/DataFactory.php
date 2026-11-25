@@ -34,6 +34,7 @@ use DBmysql;
 use Glpi\RichText\RichText;
 use Project;
 use ProjectTask;
+use Session;
 
 use function Safe\strtotime;
 
@@ -42,6 +43,18 @@ use function Safe\strtotime;
  */
 class DataFactory
 {
+    /**
+     * Whether the current user can read all projects, resolved once per instance.
+     */
+    private ?bool $can_read_all = null;
+
+    /**
+     * UUID of the tasks already loaded, indexed by task id (used to resolve parent tasks without a query).
+     *
+     * @var array<int, string>
+     */
+    private array $task_uuids = [];
+
     /**
      * Recursive function used to get all subitems of a project, when $id > 0.
      * Returns all projects with their subitems if $id == -1 (for global gantt view).
@@ -124,10 +137,7 @@ class DataFactory
         ]);
 
         foreach ($iterator as $record) {
-            $proj = new Project();
-            $proj->getFromDB($record['id']);
-
-            if ($proj->canViewItem()) {
+            if ($this->canViewRecord(Project::class, $record)) {
                 $itemArray[] = $this->populateGanttItem($record, 'project');
                 $this->getSubprojects($itemArray, $record['id']);
                 $this->getProjectTasks($itemArray, $record['id']);
@@ -143,11 +153,10 @@ class DataFactory
      */
     public function getProjectTasks(&$itemArray, $projectId)
     {
-        $taskRecords[] = ProjectTask::getAllForProject($projectId);
-        foreach ($taskRecords[0] as $record) {
-            $task = new ProjectTask();
-            $task->getFromDB($record['id']);
-            if (!$task->canViewItem() || $record['is_template'] == 1) {
+        $taskRecords = ProjectTask::getAllForProject($projectId);
+        $this->rememberTaskUuids($taskRecords);
+        foreach ($taskRecords as $record) {
+            if ($record['is_template'] == 1 || !$this->canViewRecord(ProjectTask::class, $record)) {
                 continue;
             }
 
@@ -163,13 +172,12 @@ class DataFactory
      */
     public function getSubtasks(&$itemArray, $taskId)
     {
-        $taskRecords[] = ProjectTask::getAllForProjectTask($taskId);
-        foreach ($taskRecords[0] as $record) {
+        $taskRecords = ProjectTask::getAllForProjectTask($taskId);
+        $this->rememberTaskUuids($taskRecords);
+        foreach ($taskRecords as $record) {
             $this->getSubtasks($itemArray, $record['id']);
 
-            $task = new ProjectTask();
-            $task->getFromDB($record['id']);
-            if (!$task->canViewItem() || $record['is_template'] == 1) {
+            if ($record['is_template'] == 1 || !$this->canViewRecord(ProjectTask::class, $record)) {
                 continue;
             }
 
@@ -193,9 +201,7 @@ class DataFactory
 
         $parentTaskUid = '';
         if (($type == 'task' || $type == 'milestone') && $record['projecttasks_id'] > 0) {
-            $parentTask = new ProjectTask();
-            $parentTask->getFromDB($record['projecttasks_id']);
-            $parentTaskUid = $parentTask->fields['uuid'];
+            $parentTaskUid = $this->getTaskUuid((int) $record['projecttasks_id']);
         }
 
         $item              = new Item();
@@ -212,5 +218,58 @@ class DataFactory
         $item->auto_percent_done = $record['auto_percent_done'] ?? 0;
 
         return $item;
+    }
+
+    /**
+     * Check that the current user can view a project or a task from its database record.
+     *
+     * With the right to read all projects, only the entity access is left to check and the record
+     * already holds it. Users limited to their own projects keep the full item check.
+     *
+     * @param class-string<Project|ProjectTask> $class
+     * @param array $record Database record of the item
+     */
+    private function canViewRecord(string $class, array $record): bool
+    {
+        $this->can_read_all ??= (bool) Session::haveRight(Project::$rightname, Project::READALL);
+
+        if ($this->can_read_all) {
+            return Session::haveAccessToEntity((int) $record['entities_id'], (bool) $record['is_recursive']);
+        }
+
+        $item = $class === Project::class ? new Project() : new ProjectTask();
+
+        return $item->getFromDB($record['id']) && $item->canViewItem();
+    }
+
+    /**
+     * Keep the UUID of tasks that were just read, so that their children do not need a query.
+     *
+     * @param array $records Task records
+     */
+    private function rememberTaskUuids(array $records): void
+    {
+        foreach ($records as $record) {
+            $this->task_uuids[(int) $record['id']] = (string) $record['uuid'];
+        }
+    }
+
+    /**
+     * Get the UUID of a task, from the tasks already read or with a single light query.
+     */
+    private function getTaskUuid(int $task_id): string
+    {
+        if (!isset($this->task_uuids[$task_id])) {
+            /** @var DBmysql $DB */
+            global $DB;
+            $row = $DB->request([
+                'SELECT' => ['uuid'],
+                'FROM'   => ProjectTask::getTable(),
+                'WHERE'  => ['id' => $task_id],
+            ])->current();
+            $this->task_uuids[$task_id] = (string) ($row['uuid'] ?? '');
+        }
+
+        return $this->task_uuids[$task_id];
     }
 }
